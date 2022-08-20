@@ -4,6 +4,8 @@
  */
 package proyectofoca;
 
+import Vista.ViewLogin;
+
 /**
  *
  * @author chris
@@ -21,5 +23,7 @@ public class ProyectoFOCA {
         
         System.out.println("christiano");
         System.out.println("i lov chayanne :>");
+        ViewLogin vl = new ViewLogin();
+        vl.setVisible(true);
     }
 }
