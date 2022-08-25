@@ -103,7 +103,6 @@ public class ViewLogin extends javax.swing.JFrame {
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 260, 30));
 
         btnIngresar.setBackground(new java.awt.Color(222, 214, 224));
-        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/InicioSes.png"))); // NOI18N
         btnIngresar.setText(" INGRESAR");
         btnIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 130, 30));
