@@ -21,6 +21,7 @@ public class ProyectoFOCA {
         ViewLogin vl = new ViewLogin();
         vl.setVisible(true);
         System.out.println("HELLOOOOOOOO");
+        System.out.println("PURA PRUEBAAA");
         /// holaaaaa
 
     }
