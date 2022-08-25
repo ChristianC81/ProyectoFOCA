@@ -16,6 +16,7 @@ public class ViewAsistente extends javax.swing.JFrame {
      */
     public ViewAsistente() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -27,127 +28,26 @@ public class ViewAsistente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        pnAñadir = new javax.swing.JPanel();
-        pnModificar = new javax.swing.JPanel();
-        pnEliminar = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        pnBuscar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setText("Menu \n Asistente");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 70));
-
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-
-        pnAñadir.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout pnAñadirLayout = new javax.swing.GroupLayout(pnAñadir);
-        pnAñadir.setLayout(pnAñadirLayout);
-        pnAñadirLayout.setHorizontalGroup(
-            pnAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-        );
-        pnAñadirLayout.setVerticalGroup(
-            pnAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Añadir", pnAñadir);
-
-        pnModificar.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout pnModificarLayout = new javax.swing.GroupLayout(pnModificar);
-        pnModificar.setLayout(pnModificarLayout);
-        pnModificarLayout.setHorizontalGroup(
-            pnModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-        );
-        pnModificarLayout.setVerticalGroup(
-            pnModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Modificar", pnModificar);
-
-        pnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setText("Tabbed pane");
-
-        javax.swing.GroupLayout pnEliminarLayout = new javax.swing.GroupLayout(pnEliminar);
-        pnEliminar.setLayout(pnEliminarLayout);
-        pnEliminarLayout.setHorizontalGroup(
-            pnEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnEliminarLayout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addComponent(jLabel4)
-                .addContainerGap(372, Short.MAX_VALUE))
-        );
-        pnEliminarLayout.setVerticalGroup(
-            pnEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnEliminarLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel4)
-                .addContainerGap(307, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Eliminar", pnEliminar);
-
-        pnBuscar.setBackground(new java.awt.Color(51, 51, 51));
-        pnBuscar.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel5.setText("Tabbed pane");
-
-        javax.swing.GroupLayout pnBuscarLayout = new javax.swing.GroupLayout(pnBuscar);
-        pnBuscar.setLayout(pnBuscarLayout);
-        pnBuscarLayout.setHorizontalGroup(
-            pnBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnBuscarLayout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addComponent(jLabel5)
-                .addContainerGap(372, Short.MAX_VALUE))
-        );
-        pnBuscarLayout.setVerticalGroup(
-            pnBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnBuscarLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel5)
-                .addContainerGap(307, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Buscar", pnBuscar);
-
-        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 780, 460));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 240));
-
-        jPanel1.setBackground(new java.awt.Color(149, 119, 90));
+        jPanel1.setBackground(new java.awt.Color(209, 200, 184));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setText("Salir");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 120, -1));
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setBackground(new java.awt.Color(149, 119, 90));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-allotment-64.png"))); // NOI18N
         jButton5.setText("Benefactor");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -155,9 +55,10 @@ public class ViewAsistente extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 160, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 180, -1));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setBackground(new java.awt.Color(149, 119, 90));
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-beneficiary-64 (1).png"))); // NOI18N
         jButton6.setText("Beneficiario");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -165,9 +66,10 @@ public class ViewAsistente extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 180, -1));
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setBackground(new java.awt.Color(149, 119, 90));
+        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-form-64.png"))); // NOI18N
         jButton7.setText("Formulario");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -175,16 +77,77 @@ public class ViewAsistente extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 160, -1));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 180, -1));
 
-        jLabel2.setText("Menu Asistente");
-        jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 840, 90));
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 170, 90));
 
-        jLabel1.setText("Menu Asistente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 670));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 180, 550));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 467, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Añadir", jPanel2);
+
+        jPanel9.setBackground(new java.awt.Color(249, 247, 250));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 467, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar", jPanel9);
+
+        jPanel12.setBackground(new java.awt.Color(249, 247, 250));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 467, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Buscar", jPanel12);
+
+        jPanel6.setBackground(new java.awt.Color(249, 247, 250));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 467, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar", jPanel6);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 960, 500));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 960, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,7 +159,6 @@ public class ViewAsistente extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
-                                        
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -232,6 +194,10 @@ public class ViewAsistente extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -242,22 +208,16 @@ public class ViewAsistente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel pnAñadir;
-    private javax.swing.JPanel pnBuscar;
-    private javax.swing.JPanel pnEliminar;
-    private javax.swing.JPanel pnModificar;
     // End of variables declaration//GEN-END:variables
 }
