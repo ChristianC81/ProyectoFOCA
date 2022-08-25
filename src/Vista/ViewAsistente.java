@@ -51,12 +51,10 @@ public class ViewAsistente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Menu \n Asistente");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 90, 70));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         pnAñadir.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -143,10 +141,9 @@ public class ViewAsistente extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton4.setText("Salir");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 120, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 120, -1));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-allotment-64.png"))); // NOI18N
         jButton5.setText("Benefactor");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -154,10 +151,9 @@ public class ViewAsistente extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 160, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 160, -1));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-beneficiary-64 (1).png"))); // NOI18N
         jButton6.setText("Beneficiario");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +164,6 @@ public class ViewAsistente extends javax.swing.JFrame {
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-form-64.png"))); // NOI18N
         jButton7.setText("Formulario");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
