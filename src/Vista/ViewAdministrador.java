@@ -16,6 +16,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
      */
     public ViewAdministrador() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
