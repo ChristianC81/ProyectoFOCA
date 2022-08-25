@@ -36,6 +36,7 @@ public class ViewAsistente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         pnBuscar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -62,7 +63,7 @@ public class ViewAsistente extends javax.swing.JFrame {
         pnAñadir.setLayout(pnAñadirLayout);
         pnAñadirLayout.setHorizontalGroup(
             pnAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 838, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
         pnAñadirLayout.setVerticalGroup(
             pnAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +78,7 @@ public class ViewAsistente extends javax.swing.JFrame {
         pnModificar.setLayout(pnModificarLayout);
         pnModificarLayout.setHorizontalGroup(
             pnModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 838, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
         pnModificarLayout.setVerticalGroup(
             pnModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +98,7 @@ public class ViewAsistente extends javax.swing.JFrame {
             .addGroup(pnEliminarLayout.createSequentialGroup()
                 .addGap(340, 340, 340)
                 .addComponent(jLabel4)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         pnEliminarLayout.setVerticalGroup(
             pnEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +122,7 @@ public class ViewAsistente extends javax.swing.JFrame {
             .addGroup(pnBuscarLayout.createSequentialGroup()
                 .addGap(340, 340, 340)
                 .addComponent(jLabel5)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         pnBuscarLayout.setVerticalGroup(
             pnBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +134,12 @@ public class ViewAsistente extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Buscar", pnBuscar);
 
-        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 840, 460));
+        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 780, 460));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 120));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 240));
 
         jPanel1.setBackground(new java.awt.Color(149, 119, 90));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -180,7 +184,7 @@ public class ViewAsistente extends javax.swing.JFrame {
         jLabel1.setText("Menu Asistente");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 550));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 180, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,6 +200,7 @@ public class ViewAsistente extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        System.out.println("sad");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
@@ -243,6 +248,7 @@ public class ViewAsistente extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
