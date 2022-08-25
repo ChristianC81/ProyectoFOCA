@@ -33,7 +33,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -58,18 +58,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jButton4.setText("jButton4");
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 120, -1));
 
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 540));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("panel");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 540));
 
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, 180));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, 180));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -164,7 +156,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
