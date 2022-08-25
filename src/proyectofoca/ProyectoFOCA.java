@@ -20,6 +20,6 @@ public class ProyectoFOCA {
         
         ViewLogin vl = new ViewLogin();
         vl.setVisible(true);
-        
+
     }
 }
