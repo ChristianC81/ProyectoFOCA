@@ -98,7 +98,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="                            E N C A B E Z A D O O O O O O O OO O OO O O OO O O O O OO O O OO O O O"/>
+        <Property name="text" type="java.lang.String" value="                            E N C A B E Z A D O "/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
             <MatteColorBorder/>

@@ -9,12 +9,12 @@ package Vista;
  *
  * @author USER
  */
-public class ViewAdministrador extends javax.swing.JFrame {
+public class ViewJefe extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewSistema
      */
-    public ViewAdministrador() {
+    public ViewJefe() {
         initComponents();
     }
 
@@ -65,7 +65,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 540));
 
-        jLabel1.setText("                            E N C A B E Z A D O O O O O O O OO O OO O O OO O O O O OO O O OO O O O");
+        jLabel1.setText("                            E N C A B E Z A D O ");
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 840, 90));
 
@@ -141,21 +141,23 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJefe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJefe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJefe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJefe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewAdministrador().setVisible(true);
+                new ViewJefe().setVisible(true);
             }
         });
     }
