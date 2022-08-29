@@ -8,16 +8,19 @@ package modelo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,7 +40,14 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Persona.findByCorreoper", query = "SELECT p FROM Persona p WHERE p.correoper = :correoper"),
     @NamedQuery(name = "Persona.findByGeneroper", query = "SELECT p FROM Persona p WHERE p.generoper = :generoper"),
     @NamedQuery(name = "Persona.findByFechanacimiento", query = "SELECT p FROM Persona p WHERE p.fechanacimiento = :fechanacimiento"),
-    @NamedQuery(name = "Persona.findByEstadocivil", query = "SELECT p FROM Persona p WHERE p.estadocivil = :estadocivil")})
+    @NamedQuery(name = "Persona.findByEstadocivil", query = "SELECT p FROM Persona p WHERE p.estadocivil = :estadocivil"),
+    @NamedQuery(name = "Persona.findBySalariobenefac", query = "SELECT p FROM Persona p WHERE p.salariobenefac = :salariobenefac"),
+    @NamedQuery(name = "Persona.findByEstratosbenefi", query = "SELECT p FROM Persona p WHERE p.estratosbenefi = :estratosbenefi"),
+    @NamedQuery(name = "Persona.findByTitulo", query = "SELECT p FROM Persona p WHERE p.titulo = :titulo"),
+    @NamedQuery(name = "Persona.findBySeguro", query = "SELECT p FROM Persona p WHERE p.seguro = :seguro"),
+    @NamedQuery(name = "Persona.findByHorario", query = "SELECT p FROM Persona p WHERE p.horario = :horario"),
+    @NamedQuery(name = "Persona.findByPeriodovol", query = "SELECT p FROM Persona p WHERE p.periodovol = :periodovol"),
+    @NamedQuery(name = "Persona.findByTipovol", query = "SELECT p FROM Persona p WHERE p.tipovol = :tipovol")})
 public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -66,6 +76,30 @@ public class Persona implements Serializable {
     private Date fechanacimiento;
     @Column(name = "ESTADOCIVIL")
     private String estadocivil;
+    @Column(name = "SALARIOBENEFAC")
+    private Double salariobenefac;
+    @Column(name = "ESTRATOSBENEFI")
+    private String estratosbenefi;
+    @Column(name = "TITULO")
+    private String titulo;
+    @Column(name = "SEGURO")
+    private String seguro;
+    @Column(name = "HORARIO")
+    private String horario;
+    @Column(name = "PERIODOVOL")
+    private String periodovol;
+    @Column(name = "TIPOVOL")
+    private String tipovol;
+    @OneToMany(mappedBy = "idpersona")
+    private List<Inscripcion> inscripcionList;
+    @OneToMany(mappedBy = "idpersona")
+    private List<Proyecto> proyectoList;
+    @OneToMany(mappedBy = "idpersona")
+    private List<Donacion> donacionList;
+    @OneToMany(mappedBy = "idpersona")
+    private List<Usuario> usuarioList;
+    @OneToMany(mappedBy = "idpersona")
+    private List<Formulario> formularioList;
 
     public Persona() {
     }
@@ -157,6 +191,107 @@ public class Persona implements Serializable {
 
     public void setEstadocivil(String estadocivil) {
         this.estadocivil = estadocivil;
+    }
+
+    public Double getSalariobenefac() {
+        return salariobenefac;
+    }
+
+    public void setSalariobenefac(Double salariobenefac) {
+        this.salariobenefac = salariobenefac;
+    }
+
+    public String getEstratosbenefi() {
+        return estratosbenefi;
+    }
+
+    public void setEstratosbenefi(String estratosbenefi) {
+        this.estratosbenefi = estratosbenefi;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getSeguro() {
+        return seguro;
+    }
+
+    public void setSeguro(String seguro) {
+        this.seguro = seguro;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getPeriodovol() {
+        return periodovol;
+    }
+
+    public void setPeriodovol(String periodovol) {
+        this.periodovol = periodovol;
+    }
+
+    public String getTipovol() {
+        return tipovol;
+    }
+
+    public void setTipovol(String tipovol) {
+        this.tipovol = tipovol;
+    }
+
+    @XmlTransient
+    public List<Inscripcion> getInscripcionList() {
+        return inscripcionList;
+    }
+
+    public void setInscripcionList(List<Inscripcion> inscripcionList) {
+        this.inscripcionList = inscripcionList;
+    }
+
+    @XmlTransient
+    public List<Proyecto> getProyectoList() {
+        return proyectoList;
+    }
+
+    public void setProyectoList(List<Proyecto> proyectoList) {
+        this.proyectoList = proyectoList;
+    }
+
+    @XmlTransient
+    public List<Donacion> getDonacionList() {
+        return donacionList;
+    }
+
+    public void setDonacionList(List<Donacion> donacionList) {
+        this.donacionList = donacionList;
+    }
+
+    @XmlTransient
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
+    }
+
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
+    }
+
+    @XmlTransient
+    public List<Formulario> getFormularioList() {
+        return formularioList;
+    }
+
+    public void setFormularioList(List<Formulario> formularioList) {
+        this.formularioList = formularioList;
     }
 
     @Override

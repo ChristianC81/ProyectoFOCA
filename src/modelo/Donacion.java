@@ -53,9 +53,9 @@ public class Donacion implements Serializable {
     private String motivodona;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "donacion")
     private Producto producto;
-    @JoinColumn(name = "IDBENEFACDONA", referencedColumnName = "IDBENEFAC")
+    @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
     @ManyToOne
-    private Benefactor idbenefacdona;
+    private Persona idpersona;
 
     public Donacion() {
     }
@@ -104,12 +104,12 @@ public class Donacion implements Serializable {
         this.producto = producto;
     }
 
-    public Benefactor getIdbenefacdona() {
-        return idbenefacdona;
+    public Persona getIdpersona() {
+        return idpersona;
     }
 
-    public void setIdbenefacdona(Benefactor idbenefacdona) {
-        this.idbenefacdona = idbenefacdona;
+    public void setIdpersona(Persona idpersona) {
+        this.idpersona = idpersona;
     }
 
     @Override

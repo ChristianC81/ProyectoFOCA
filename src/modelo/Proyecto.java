@@ -60,9 +60,9 @@ public class Proyecto implements Serializable {
     private List<Producto> productoList;
     @OneToMany(mappedBy = "idproyins")
     private List<Inscripcion> inscripcionList;
-    @JoinColumn(name = "IDBENEFIPROY", referencedColumnName = "IDBENEFI")
+    @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
     @ManyToOne
-    private Beneficiario idbenefiproy;
+    private Persona idpersona;
 
     public Proyecto() {
     }
@@ -129,12 +129,12 @@ public class Proyecto implements Serializable {
         this.inscripcionList = inscripcionList;
     }
 
-    public Beneficiario getIdbenefiproy() {
-        return idbenefiproy;
+    public Persona getIdpersona() {
+        return idpersona;
     }
 
-    public void setIdbenefiproy(Beneficiario idbenefiproy) {
-        this.idbenefiproy = idbenefiproy;
+    public void setIdpersona(Persona idpersona) {
+        this.idpersona = idpersona;
     }
 
     @Override

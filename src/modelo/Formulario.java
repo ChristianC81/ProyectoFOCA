@@ -76,9 +76,9 @@ public class Formulario implements Serializable {
     private String servbasicos;
     @Column(name = "NINTEFAMFORM")
     private BigInteger nintefamform;
-    @JoinColumn(name = "IDBENEFIFORM", referencedColumnName = "IDBENEFI")
+    @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
     @ManyToOne
-    private Beneficiario idbenefiform;
+    private Persona idpersona;
 
     public Formulario() {
     }
@@ -199,12 +199,12 @@ public class Formulario implements Serializable {
         this.nintefamform = nintefamform;
     }
 
-    public Beneficiario getIdbenefiform() {
-        return idbenefiform;
+    public Persona getIdpersona() {
+        return idpersona;
     }
 
-    public void setIdbenefiform(Beneficiario idbenefiform) {
-        this.idbenefiform = idbenefiform;
+    public void setIdpersona(Persona idpersona) {
+        this.idpersona = idpersona;
     }
 
     @Override

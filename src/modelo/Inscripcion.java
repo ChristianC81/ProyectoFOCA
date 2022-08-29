@@ -40,12 +40,12 @@ public class Inscripcion implements Serializable {
     private BigDecimal idins;
     @Column(name = "NDIASPARTICIPACIONINS")
     private BigInteger ndiasparticipacionins;
+    @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
+    @ManyToOne
+    private Persona idpersona;
     @JoinColumn(name = "IDPROYINS", referencedColumnName = "IDPROY")
     @ManyToOne
     private Proyecto idproyins;
-    @JoinColumn(name = "IDVOLINS", referencedColumnName = "IDVOL")
-    @ManyToOne
-    private Voluntario idvolins;
 
     public Inscripcion() {
     }
@@ -70,20 +70,20 @@ public class Inscripcion implements Serializable {
         this.ndiasparticipacionins = ndiasparticipacionins;
     }
 
+    public Persona getIdpersona() {
+        return idpersona;
+    }
+
+    public void setIdpersona(Persona idpersona) {
+        this.idpersona = idpersona;
+    }
+
     public Proyecto getIdproyins() {
         return idproyins;
     }
 
     public void setIdproyins(Proyecto idproyins) {
         this.idproyins = idproyins;
-    }
-
-    public Voluntario getIdvolins() {
-        return idvolins;
-    }
-
-    public void setIdvolins(Voluntario idvolins) {
-        this.idvolins = idvolins;
     }
 
     @Override
