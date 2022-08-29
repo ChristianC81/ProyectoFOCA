@@ -20,6 +20,7 @@ public class ProyectoFOCA {
         
         ViewLogin vl = new ViewLogin();
         vl.setVisible(true);
+        System.out.println("Jonny's Cabeza de ñoco");
         System.out.println("HELLOOOOOOOO");
         System.out.println("PURA PRUEBAAA");
         /// holaaaaa
