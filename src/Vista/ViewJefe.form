@@ -59,8 +59,8 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="A&#xf1;adir">
-                <Property name="tabTitle" type="java.lang.String" value="A&#xf1;adir"/>
+              <JTabbedPaneConstraints tabName="Proyectos">
+                <Property name="tabTitle" type="java.lang.String" value="Proyectos"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -81,8 +81,8 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Editar">
-                <Property name="tabTitle" type="java.lang.String" value="Editar"/>
+              <JTabbedPaneConstraints tabName="Donaciones">
+                <Property name="tabTitle" type="java.lang.String" value="Donaciones"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -103,8 +103,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Eliminar">
-                <Property name="tabTitle" type="java.lang.String" value="Eliminar"/>
+              <JTabbedPaneConstraints tabName="Ofertas Laborables">
+                <Property name="tabTitle" type="java.lang.String" value="Ofertas Laborables"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -121,6 +121,28 @@
               </Group>
             </DimensionLayout>
           </Layout>
+        </Container>
+        <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Empleos">
+                <Property name="tabTitle" type="java.lang.String" value="Empleos"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+        </Container>
+        <Container class="javax.swing.JTabbedPane" name="jTabbedPane3">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Productos">
+                <Property name="tabTitle" type="java.lang.String" value="Productos"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
         </Container>
       </SubComponents>
     </Container>

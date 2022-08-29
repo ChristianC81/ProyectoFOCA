@@ -32,6 +32,8 @@ public class ViewJefe extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -62,7 +64,7 @@ public class ViewJefe extends javax.swing.JFrame {
             .addGap(0, 461, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Añadir", jPanel2);
+        jTabbedPane1.addTab("Proyectos", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -75,7 +77,7 @@ public class ViewJefe extends javax.swing.JFrame {
             .addGap(0, 461, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Editar", jPanel3);
+        jTabbedPane1.addTab("Donaciones", jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -88,7 +90,9 @@ public class ViewJefe extends javax.swing.JFrame {
             .addGap(0, 461, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Eliminar", jPanel4);
+        jTabbedPane1.addTab("Ofertas Laborables", jPanel4);
+        jTabbedPane1.addTab("Empleos", jTabbedPane2);
+        jTabbedPane1.addTab("Productos", jTabbedPane3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 890, 490));
 
@@ -216,5 +220,7 @@ public class ViewJefe extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     // End of variables declaration//GEN-END:variables
 }
