@@ -34,8 +34,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         pnCRUD = new javax.swing.JTabbedPane();
         pnReportes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -213,27 +213,27 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
         jButton1.setText("USUARIOS");
-        pnBarraLateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 220, 50));
+        pnBarraLateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 180, 50));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empresario.png"))); // NOI18N
         jButton2.setText("JEFE ");
-        pnBarraLateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 220, 50));
+        pnBarraLateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 180, 50));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/assistant.png"))); // NOI18N
         jButton3.setText("ASISTENTE");
-        pnBarraLateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 220, 50));
+        pnBarraLateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 180, 50));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/report.png"))); // NOI18N
         jButton4.setText("REPORTES");
-        pnBarraLateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, 50));
+        pnBarraLateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 50));
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
+        jButton5.setText("SALIR");
+        pnBarraLateral.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 240, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
-        jButton6.setText("SALIR");
-        pnBarraLateral.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 220, 50));
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
-        jButton7.setText("CONFIGURACIÓN");
-        pnBarraLateral.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 220, 50));
+        jButton6.setText("CONFIGURACIÓN");
+        pnBarraLateral.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 180, -1));
 
         pnPrincipal.add(pnBarraLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 770));
 
@@ -553,7 +553,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         );
         pnPersonasLayout.setVerticalGroup(
             pnPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1215,8 +1215,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
