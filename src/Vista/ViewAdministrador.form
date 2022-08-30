@@ -125,7 +125,7 @@
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="170" width="1310" height="560"/>
+              <AbsoluteConstraints x="240" y="170" width="1310" height="800"/>
             </Constraint>
           </Constraints>
 
@@ -155,7 +155,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="270" max="-2" attributes="0"/>
-                          <EmptySpace pref="136" max="32767" attributes="0"/>
+                          <EmptySpace pref="376" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1133,23 +1133,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanel11" min="-2" pref="904" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel11" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel11" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jPanel11" pref="768" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jPanel5" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1165,24 +1161,6 @@
                     <Property name="useNullLayout" type="boolean" value="false"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="txtBsq1">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="fa" green="f7" red="f9" type="rgb"/>
-                        </Property>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Leelawadee UI" size="11" style="0"/>
-                        </Property>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="null"/>
-                        </Property>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="30" y="70" width="250" height="-1"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1312,7 +1290,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="240" y="10" width="670" height="-1"/>
+                          <AbsoluteConstraints x="10" y="10" width="670" height="-1"/>
                         </Constraint>
                       </Constraints>
 
@@ -1323,15 +1301,17 @@
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="jLabel22" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <EmptySpace pref="304" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtBsq1" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <Component id="jLabel22" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="53" max="32767" attributes="0"/>
                                           <Component id="btnbuscarPer1" min="-2" pref="80" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="btnlimpiarPerbsq1" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Component id="chekBsqPer1" min="-2" pref="110" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel21" min="-2" pref="140" max="-2" attributes="0"/>
@@ -1343,19 +1323,21 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel21" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="chekBsqPer1" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="btnbuscarPer1" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="btnlimpiarPerbsq1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel21" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel22" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtBsq1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel22" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="btnbuscarPer1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnlimpiarPerbsq1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="chekBsqPer1" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                                  <EmptySpace pref="26" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1425,6 +1407,19 @@
                             <Property name="text" type="java.lang.String" value="Criterio"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="txtBsq1">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="f7" red="f9" type="rgb"/>
+                            </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Leelawadee UI" size="11" style="0"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="null"/>
+                            </Property>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -1478,50 +1473,38 @@
                                   <Component id="jSeparator37" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbxTipo" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSeparator41" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtdireccionPer4" alignment="1" max="32767" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                                          <Component id="btnguardarPer4" min="-2" pref="40" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="btnlimpiarPer4" min="-2" pref="40" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="txtnombrePer8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          <Component id="jSeparator48" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          <Component id="jSeparator40" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="txtnombrePer10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          <Component id="jSeparator51" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                              <Component id="jSeparator50" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="txtnombrePer9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jSeparator41" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtdireccionPer4" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtnombrePer8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator48" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator40" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtnombrePer10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator51" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="jSeparator50" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtnombrePer9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txtcorreoPer4" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="btneditarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="txtcorreoPer4" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="35" max="32767" attributes="0"/>
+                              <EmptySpace pref="112" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="txtnombrePer5" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                                                   <Component id="jSeparator46" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
@@ -1543,27 +1526,37 @@
                                                       <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="jSeparator80" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="txtnombrePer11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="txtnombrePer7" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jSeparator45" alignment="1" pref="200" max="32767" attributes="0"/>
-                                                          <Component id="jCheckBox1" alignment="1" max="32767" attributes="0"/>
-                                                          <Component id="jSeparator49" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                              </Group>
+                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="btneliminarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="jSeparator80" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtnombrePer11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtnombrePer7" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jSeparator45" alignment="1" pref="200" max="32767" attributes="0"/>
+                                                      <Component id="jCheckBox1" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="jSeparator49" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Component id="btnguardarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="btnlimpiarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btneditarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btneliminarPer4" min="-2" pref="40" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -1691,32 +1684,36 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jSeparator51" min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtnombrePer7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jSeparator45" min="-2" pref="24" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jSeparator49" min="-2" pref="12" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtnombrePer11" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Component id="jSeparator80" min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="btnlimpiarPer4" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtnombrePer7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jSeparator45" min="-2" pref="24" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jSeparator49" min="-2" pref="12" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtnombrePer11" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator80" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="btnguardarPer4" min="-2" pref="30" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="btneditarPer4" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="btneliminarPer4" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btneliminarPer4" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btnguardarPer4" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btnlimpiarPer4" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btneditarPer4" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2333,7 +2330,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel13" alignment="0" pref="534" max="32767" attributes="0"/>
+                      <Component id="jPanel13" alignment="0" pref="774" max="32767" attributes="0"/>
                       <Component id="jPanel14" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
