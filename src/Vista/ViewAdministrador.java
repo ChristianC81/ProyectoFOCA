@@ -28,6 +28,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -104,64 +105,44 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnimprimirPer2 = new javax.swing.JButton();
         btncancelarPer = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        txtnombrePer1 = new javax.swing.JTextField();
-        txtapellidoPer1 = new javax.swing.JTextField();
-        txtcedulaPer1 = new javax.swing.JTextField();
-        txtcorreoPer1 = new javax.swing.JTextField();
-        txtcelularPer1 = new javax.swing.JTextField();
-        txtdireccionPer1 = new javax.swing.JTextField();
-        btnguardarPer1 = new javax.swing.JButton();
-        btneditarPer1 = new javax.swing.JButton();
-        btneliminarPer1 = new javax.swing.JButton();
-        btnlimpiarPer1 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jSeparator28 = new javax.swing.JSeparator();
-        jSeparator29 = new javax.swing.JSeparator();
-        jSeparator30 = new javax.swing.JSeparator();
-        jSeparator31 = new javax.swing.JSeparator();
-        jSeparator32 = new javax.swing.JSeparator();
-        jSeparator33 = new javax.swing.JSeparator();
-        jSeparator34 = new javax.swing.JSeparator();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator35 = new javax.swing.JSeparator();
-        jSeparator36 = new javax.swing.JSeparator();
         jPanel11 = new javax.swing.JPanel();
-        jSeparator37 = new javax.swing.JSeparator();
-        jSeparator38 = new javax.swing.JSeparator();
-        jSeparator39 = new javax.swing.JSeparator();
-        jSeparator40 = new javax.swing.JSeparator();
-        jSeparator41 = new javax.swing.JSeparator();
-        jSeparator42 = new javax.swing.JSeparator();
-        jSeparator43 = new javax.swing.JSeparator();
-        jSeparator44 = new javax.swing.JSeparator();
-        jSeparator45 = new javax.swing.JSeparator();
-        jSeparator46 = new javax.swing.JSeparator();
-        jSeparator47 = new javax.swing.JSeparator();
-        jSeparator48 = new javax.swing.JSeparator();
-        jSeparator49 = new javax.swing.JSeparator();
-        jSeparator50 = new javax.swing.JSeparator();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         txtBsq1 = new javax.swing.JTextField();
-        btnbuscarPer1 = new javax.swing.JButton();
-        btnlimpiarPerbsq1 = new javax.swing.JButton();
-        chekBsqPer1 = new javax.swing.JCheckBox();
         jLabel23 = new javax.swing.JLabel();
-        jSeparator51 = new javax.swing.JSeparator();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblPersonas1 = new javax.swing.JTable();
         jSeparator52 = new javax.swing.JSeparator();
         btnimprimirPer1 = new javax.swing.JButton();
         btnimprimirPer3 = new javax.swing.JButton();
         btncancelarPer1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        btnlimpiarPerbsq1 = new javax.swing.JButton();
+        btnbuscarPer1 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        chekBsqPer1 = new javax.swing.JCheckBox();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        txtnombrePer4 = new javax.swing.JTextField();
+        txtapellidoPer4 = new javax.swing.JTextField();
+        txtcedulaPer4 = new javax.swing.JTextField();
+        txtcorreoPer4 = new javax.swing.JTextField();
+        txtcelularPer4 = new javax.swing.JTextField();
+        txtdireccionPer4 = new javax.swing.JTextField();
+        btnguardarPer4 = new javax.swing.JButton();
+        btneditarPer4 = new javax.swing.JButton();
+        btneliminarPer4 = new javax.swing.JButton();
+        btnlimpiarPer4 = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jSeparator37 = new javax.swing.JSeparator();
+        jSeparator38 = new javax.swing.JSeparator();
+        jSeparator39 = new javax.swing.JSeparator();
+        jSeparator40 = new javax.swing.JSeparator();
+        jSeparator41 = new javax.swing.JSeparator();
+        jSeparator42 = new javax.swing.JSeparator();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -224,7 +205,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(209, 200, 184));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(209, 200, 184));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -249,7 +232,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jButton5.setText("CONFIGURACIÓN");
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 180, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 730));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 730));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -271,14 +254,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reportes", jPanel2);
@@ -562,12 +545,12 @@ public class ViewAdministrador extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 949, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -575,217 +558,17 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(249, 247, 250));
 
-        jPanel10.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel13.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("  Administración de Jefes");
-        jPanel10.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 176, 20));
-
-        txtnombrePer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtnombrePer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtnombrePer1.setBorder(null);
-        jPanel10.add(txtnombrePer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 290, -1));
-
-        txtapellidoPer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtapellidoPer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtapellidoPer1.setBorder(null);
-        jPanel10.add(txtapellidoPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 290, -1));
-
-        txtcedulaPer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtcedulaPer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtcedulaPer1.setBorder(null);
-        jPanel10.add(txtcedulaPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 290, -1));
-
-        txtcorreoPer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtcorreoPer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtcorreoPer1.setBorder(null);
-        jPanel10.add(txtcorreoPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 290, -1));
-
-        txtcelularPer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtcelularPer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtcelularPer1.setBorder(null);
-        jPanel10.add(txtcelularPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 290, -1));
-
-        txtdireccionPer1.setBackground(new java.awt.Color(249, 247, 250));
-        txtdireccionPer1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtdireccionPer1.setBorder(null);
-        jPanel10.add(txtdireccionPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 290, -1));
-
-        btnguardarPer1.setBackground(new java.awt.Color(249, 247, 250));
-        btnguardarPer1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnguardarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel10.add(btnguardarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 40, 30));
-
-        btneditarPer1.setBackground(new java.awt.Color(249, 247, 250));
-        btneditarPer1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btneditarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel10.add(btneditarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 40, 30));
-
-        btneliminarPer1.setBackground(new java.awt.Color(249, 247, 250));
-        btneliminarPer1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btneliminarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel10.add(btneliminarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 40, 30));
-
-        btnlimpiarPer1.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarPer1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel10.add(btnlimpiarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 40, 30));
-
-        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel14.setText("Identificación");
-        jPanel10.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("Nombres:");
-        jPanel10.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel16.setText("Apellidos:");
-        jPanel10.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel17.setText("Correo");
-        jPanel10.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel18.setText("Teléfono:");
-        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel19.setText("Correo:");
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-
-        jSeparator28.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 290, -1));
-
-        jSeparator29.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 290, -1));
-
-        jSeparator30.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 290, -1));
-
-        jSeparator31.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 290, -1));
-
-        jSeparator32.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 290, 10));
-
-        jSeparator33.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 290, 10));
-
-        jSeparator34.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 160, 10));
-
-        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel10.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 10, 390));
-
-        jSeparator35.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel10.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 330, 10));
-
-        jSeparator36.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator36.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel10.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 60, 380));
-
         jPanel11.setBackground(new java.awt.Color(249, 247, 250));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jSeparator37.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 19, 220, 13));
-
-        jSeparator38.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator38.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel11.add(jSeparator38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 30, 390));
-
-        jSeparator39.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 590, 10));
-
-        jSeparator40.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 220, 10));
-
-        jSeparator41.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator41, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 420, 10));
-
-        jSeparator42.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator42.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel11.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 40, 70));
-
-        jSeparator43.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 10, 10));
-
-        jSeparator44.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 570, 10));
-
-        jSeparator45.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator45, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 10, 10));
-
-        jSeparator46.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator46, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 450, 10));
-
-        jSeparator47.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator47.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel11.add(jSeparator47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 20, 260));
-
-        jSeparator48.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator48.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel11.add(jSeparator48, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 10, 70));
-
-        jSeparator49.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, 10));
-
-        jSeparator50.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator50.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel11.add(jSeparator50, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 10, 390));
-
-        jLabel20.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
-        jLabel20.setText("Búsqueda de Jefes");
-        jPanel11.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
-        jLabel21.setText(" Opciones de Búsqueda");
-        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
-
-        jLabel22.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel22.setText("Criterio");
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 50, 20));
 
         txtBsq1.setBackground(new java.awt.Color(249, 247, 250));
         txtBsq1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txtBsq1.setBorder(null);
         jPanel11.add(txtBsq1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 250, -1));
 
-        btnbuscarPer1.setBackground(new java.awt.Color(249, 247, 250));
-        btnbuscarPer1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        btnbuscarPer1.setText("Buscar");
-        btnbuscarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel11.add(btnbuscarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 80, 30));
-
-        btnlimpiarPerbsq1.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarPerbsq1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarPerbsq1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel11.add(btnlimpiarPerbsq1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 40, 30));
-
-        chekBsqPer1.setBackground(new java.awt.Color(249, 247, 250));
-        chekBsqPer1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        chekBsqPer1.setText("Mostrar Todos");
-        chekBsqPer1.setBorder(null);
-        jPanel11.add(chekBsqPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 110, 30));
-
         jLabel23.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
         jLabel23.setText(" Lista de Jefes");
         jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
-
-        jSeparator51.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 570, 10));
 
         tblPersonas1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         tblPersonas1.setModel(new javax.swing.table.DefaultTableModel(
@@ -823,24 +606,290 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btncancelarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel11.add(btncancelarPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 80, 30));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+
+        btnlimpiarPerbsq1.setBackground(new java.awt.Color(249, 247, 250));
+        btnlimpiarPerbsq1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnlimpiarPerbsq1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnbuscarPer1.setBackground(new java.awt.Color(249, 247, 250));
+        btnbuscarPer1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnbuscarPer1.setText("Buscar");
+        btnbuscarPer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel21.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
+        jLabel21.setText(" Opciones de Búsqueda");
+
+        chekBsqPer1.setBackground(new java.awt.Color(249, 247, 250));
+        chekBsqPer1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        chekBsqPer1.setText("Mostrar Todos");
+        chekBsqPer1.setBorder(null);
+
+        jLabel22.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel22.setText("Criterio");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                        .addComponent(btnbuscarPer1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnlimpiarPerbsq1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chekBsqPer1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(chekBsqPer1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnbuscarPer1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnlimpiarPerbsq1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        jPanel11.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 670, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+
+        txtnombrePer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtnombrePer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtnombrePer4.setBorder(null);
+
+        txtapellidoPer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtapellidoPer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtapellidoPer4.setBorder(null);
+
+        txtcedulaPer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtcedulaPer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtcedulaPer4.setBorder(null);
+
+        txtcorreoPer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtcorreoPer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtcorreoPer4.setBorder(null);
+
+        txtcelularPer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtcelularPer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtcelularPer4.setBorder(null);
+
+        txtdireccionPer4.setBackground(new java.awt.Color(249, 247, 250));
+        txtdireccionPer4.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtdireccionPer4.setBorder(null);
+
+        btnguardarPer4.setBackground(new java.awt.Color(249, 247, 250));
+        btnguardarPer4.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnguardarPer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btneditarPer4.setBackground(new java.awt.Color(249, 247, 250));
+        btneditarPer4.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btneditarPer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btneliminarPer4.setBackground(new java.awt.Color(249, 247, 250));
+        btneliminarPer4.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btneliminarPer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnlimpiarPer4.setBackground(new java.awt.Color(249, 247, 250));
+        btnlimpiarPer4.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnlimpiarPer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel44.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel44.setText("Identificación");
+
+        jLabel45.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel45.setText("Nombres:");
+
+        jLabel46.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel46.setText("Apellidos:");
+
+        jLabel47.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel47.setText("Correo");
+
+        jLabel48.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel48.setText("Teléfono:");
+
+        jLabel49.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel49.setText("Correo:");
+
+        jSeparator37.setForeground(new java.awt.Color(204, 204, 204));
+
+        jSeparator38.setForeground(new java.awt.Color(204, 204, 204));
+
+        jSeparator39.setForeground(new java.awt.Color(204, 204, 204));
+
+        jSeparator40.setForeground(new java.awt.Color(204, 204, 204));
+
+        jSeparator41.setForeground(new java.awt.Color(204, 204, 204));
+
+        jSeparator42.setForeground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel44))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel45))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel46))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel47))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel48))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel49))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(btnguardarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btneditarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btneliminarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnlimpiarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator41, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtdireccionPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator42, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtcelularPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator40, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtcorreoPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator39, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtcedulaPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator38, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtapellidoPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(txtnombrePer4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(304, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel44)
+                .addGap(6, 6, 6)
+                .addComponent(txtnombrePer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel45)
+                .addGap(6, 6, 6)
+                .addComponent(txtapellidoPer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator38, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel46)
+                .addGap(6, 6, 6)
+                .addComponent(txtcedulaPer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator39, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel47)
+                .addGap(6, 6, 6)
+                .addComponent(txtcorreoPer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator40, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel48)
+                .addGap(6, 6, 6)
+                .addComponent(txtcelularPer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator42, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel49)
+                .addGap(6, 6, 6)
+                .addComponent(txtdireccionPer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator41, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnguardarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btneditarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btneliminarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnlimpiarPer4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1107,16 +1156,19 @@ public class ViewAdministrador extends javax.swing.JFrame {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Asistentes", jPanel12);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 960, 560));
+        jPanel3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 1310, 560));
 
+        jLabel2.setBackground(new java.awt.Color(209, 200, 184));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Encabezado.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 960, 210));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 960, -1));
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1165,14 +1217,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btncancelarPer1;
     private javax.swing.JButton btncancelarPer2;
     private javax.swing.JButton btneditarPer;
-    private javax.swing.JButton btneditarPer1;
     private javax.swing.JButton btneditarPer2;
+    private javax.swing.JButton btneditarPer4;
     private javax.swing.JButton btneliminarPer;
-    private javax.swing.JButton btneliminarPer1;
     private javax.swing.JButton btneliminarPer2;
+    private javax.swing.JButton btneliminarPer4;
     private javax.swing.JButton btnguardarPer;
-    private javax.swing.JButton btnguardarPer1;
     private javax.swing.JButton btnguardarPer2;
+    private javax.swing.JButton btnguardarPer4;
     private javax.swing.JButton btnimprimirPer;
     private javax.swing.JButton btnimprimirPer1;
     private javax.swing.JButton btnimprimirPer2;
@@ -1180,8 +1232,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnimprimirPer4;
     private javax.swing.JButton btnimprimirPer5;
     private javax.swing.JButton btnlimpiarPer;
-    private javax.swing.JButton btnlimpiarPer1;
     private javax.swing.JButton btnlimpiarPer2;
+    private javax.swing.JButton btnlimpiarPer4;
     private javax.swing.JButton btnlimpiarPerbsq;
     private javax.swing.JButton btnlimpiarPerbsq1;
     private javax.swing.JButton btnlimpiarPerbsq2;
@@ -1198,15 +1250,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1225,18 +1269,26 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -1245,7 +1297,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
@@ -1265,16 +1316,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator25;
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
-    private javax.swing.JSeparator jSeparator28;
-    private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator30;
-    private javax.swing.JSeparator jSeparator31;
-    private javax.swing.JSeparator jSeparator32;
-    private javax.swing.JSeparator jSeparator33;
-    private javax.swing.JSeparator jSeparator34;
-    private javax.swing.JSeparator jSeparator35;
-    private javax.swing.JSeparator jSeparator36;
     private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator38;
     private javax.swing.JSeparator jSeparator39;
@@ -1282,16 +1324,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator40;
     private javax.swing.JSeparator jSeparator41;
     private javax.swing.JSeparator jSeparator42;
-    private javax.swing.JSeparator jSeparator43;
-    private javax.swing.JSeparator jSeparator44;
-    private javax.swing.JSeparator jSeparator45;
-    private javax.swing.JSeparator jSeparator46;
-    private javax.swing.JSeparator jSeparator47;
-    private javax.swing.JSeparator jSeparator48;
-    private javax.swing.JSeparator jSeparator49;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator50;
-    private javax.swing.JSeparator jSeparator51;
     private javax.swing.JSeparator jSeparator52;
     private javax.swing.JSeparator jSeparator53;
     private javax.swing.JSeparator jSeparator54;
@@ -1335,22 +1368,22 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtBsq1;
     private javax.swing.JTextField txtBsq2;
     private javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtapellidoPer1;
     private javax.swing.JTextField txtapellidoPer2;
+    private javax.swing.JTextField txtapellidoPer4;
     private javax.swing.JTextField txtcedula;
-    private javax.swing.JTextField txtcedulaPer1;
     private javax.swing.JTextField txtcedulaPer2;
-    private javax.swing.JTextField txtcelularPer1;
+    private javax.swing.JTextField txtcedulaPer4;
     private javax.swing.JTextField txtcelularPer2;
+    private javax.swing.JTextField txtcelularPer4;
     private javax.swing.JTextField txtcorreo;
-    private javax.swing.JTextField txtcorreoPer1;
     private javax.swing.JTextField txtcorreoPer2;
+    private javax.swing.JTextField txtcorreoPer4;
     private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtdireccionPer1;
     private javax.swing.JTextField txtdireccionPer2;
+    private javax.swing.JTextField txtdireccionPer4;
     private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtnombrePer1;
     private javax.swing.JTextField txtnombrePer2;
+    private javax.swing.JTextField txtnombrePer4;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }
