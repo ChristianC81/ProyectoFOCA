@@ -42,7 +42,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="b8" green="c8" red="d1" type="rgb"/>
+              <Color blue="41" green="1a" red="1c" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -3251,12 +3251,13 @@
               <Color blue="b8" green="c8" red="d1" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Encabezado.png"/>
+              <Image iconType="3" name="/images/fonduki3.jpg"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="0" width="960" height="-1"/>
+              <AbsoluteConstraints x="240" y="0" width="1310" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
