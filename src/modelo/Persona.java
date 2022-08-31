@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
 
@@ -13,6 +12,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author miri
+ * @author chris
  */
 @Entity
 @Table(name = "PERSONA")
@@ -90,6 +90,9 @@ public class Persona implements Serializable {
     private String periodovol;
     @Column(name = "TIPOVOL")
     private String tipovol;
+    @Lob
+    @Column(name = "FOTO")
+    private Serializable foto;
     @OneToMany(mappedBy = "idpersona")
     private List<Inscripcion> inscripcionList;
     @OneToMany(mappedBy = "idpersona")
@@ -247,6 +250,14 @@ public class Persona implements Serializable {
 
     public void setTipovol(String tipovol) {
         this.tipovol = tipovol;
+    }
+
+    public Serializable getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Serializable foto) {
+        this.foto = foto;
     }
 
     @XmlTransient

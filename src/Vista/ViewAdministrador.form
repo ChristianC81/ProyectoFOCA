@@ -1145,7 +1145,7 @@
                           <Component id="jPanel11" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jPanel5" pref="774" max="32767" attributes="0"/>
+                      <Component id="jPanel5" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1493,10 +1493,6 @@
                                                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jSeparator47" alignment="0" pref="200" max="32767" attributes="0"/>
-                                          </Group>
                                           <Component id="txtcorreoPer4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                           <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -1504,6 +1500,10 @@
                                               <Component id="txtnombrePer6" min="-2" pref="200" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="txtnombrePer8" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jSeparator47" alignment="0" pref="200" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1622,10 +1622,15 @@
                                       <Component id="btnExaminarFoto" min="-2" pref="21" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel51" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser2" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -2334,7 +2339,7 @@
                         <Property name="text" type="java.lang.String" value="Examinar"/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+                    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
                     </Component>
                   </SubComponents>
                 </Container>
