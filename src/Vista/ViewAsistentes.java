@@ -9,12 +9,12 @@ package Vista;
  *
  * @author USER
  */
-public class ViewAdministrador extends javax.swing.JFrame {
+public class ViewAsistentes extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewSistema
      */
-    public ViewAdministrador() {
+    public ViewAsistentes() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
@@ -30,10 +30,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         pnPrincipal = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnPersona = new javax.swing.JPanel();
@@ -225,6 +222,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -235,21 +234,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPrincipal.setBackground(new java.awt.Color(28, 26, 65));
         pnPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
-        jButton1.setText("USUARIOS");
-        pnPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 180, 50));
-
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empresario.png"))); // NOI18N
         jButton2.setText("JEFE ");
-        pnPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 180, 50));
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/assistant.png"))); // NOI18N
-        jButton3.setText("ASISTENTE");
-        pnPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 180, 50));
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/report.png"))); // NOI18N
-        jButton4.setText("REPORTES");
-        pnPrincipal.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 50));
+        pnPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 180, 50));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
         jButton5.setText("CONFIGURACIÓN");
@@ -1151,6 +1138,26 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
         pnPrincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1370, -1));
 
+        jButton6.setBackground(new java.awt.Color(43, 45, 66));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-allotment-64.png"))); // NOI18N
+        jButton6.setText("BENEFACTOR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        pnPrincipal.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 180, -1));
+
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-beneficiary-64 (1).png"))); // NOI18N
+        jButton7.setText("BENEFICIARIO");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        pnPrincipal.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 180, -1));
+
         jPanel3.add(pnPrincipal, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
@@ -1161,6 +1168,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private void rbtFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFemeninoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtFemeninoActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1179,21 +1194,23 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAsistentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAsistentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAsistentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAsistentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewAdministrador().setVisible(true);
+                new ViewAsistentes().setVisible(true);
             }
         });
     }
@@ -1201,7 +1218,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExaminarFoto;
     private javax.swing.JButton btnbuscarPer;
-    private javax.swing.JButton btnbuscarPer1;
     private javax.swing.JButton btnbuscarPer2;
     private javax.swing.JButton btnbuscarPer4;
     private javax.swing.JButton btncancelarPer;
@@ -1223,19 +1239,16 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnlimpiarPer2;
     private javax.swing.JButton btnlimpiarPer4;
     private javax.swing.JButton btnlimpiarPerbsq;
-    private javax.swing.JButton btnlimpiarPerbsq1;
     private javax.swing.JButton btnlimpiarPerbsq2;
     private javax.swing.JButton btnlimpiarPerbsq4;
     private javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JCheckBox chekBsqPer;
-    private javax.swing.JCheckBox chekBsqPer1;
     private javax.swing.JCheckBox chekBsqPer2;
     private javax.swing.JCheckBox chekBsqPer4;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JCheckBox jCheckBox1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
@@ -1243,8 +1256,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -1289,7 +1300,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -1375,7 +1385,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTable tblPersonas;
     private javax.swing.JTable tblPersonas2;
     private javax.swing.JTextField txtBsq;
-    private javax.swing.JTextField txtBsq1;
     private javax.swing.JTextField txtBsq2;
     private javax.swing.JTextField txtBsq4;
     private javax.swing.JTextField txtapellido;
