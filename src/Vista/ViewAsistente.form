@@ -41,7 +41,7 @@
         <Container class="javax.swing.JPanel" name="pnPrincipal">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="41" green="1a" red="1c" type="rgb"/>
+              <Color blue="40" green="1c" red="1e" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>

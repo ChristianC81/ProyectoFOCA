@@ -231,7 +231,7 @@ public class ViewAsistente extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(209, 200, 184));
         jPanel3.setLayout(new java.awt.BorderLayout());
 
-        pnPrincipal.setBackground(new java.awt.Color(28, 26, 65));
+        pnPrincipal.setBackground(new java.awt.Color(30, 28, 64));
         pnPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton5.setBackground(new java.awt.Color(43, 45, 66));
