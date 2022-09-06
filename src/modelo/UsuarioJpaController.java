@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.exceptions.NonexistentEntityException;
@@ -192,6 +193,29 @@ public class UsuarioJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+    public Usuario buscarUsuario(String usuario,String clave){
+        Usuario u = null;
+        for(Usuario user:findUsuarioEntities()){
+            if(user.getNombreusuario().equals(usuario)&&user.getClave().equals(clave)){
+                u=user;
+            }
+        }
+        return u;
+    }
+    
+    public List<Usuario> buscarUSU(String nombre) {
+        System.out.println(nombre);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Usuario> query = em.createNamedQuery("Usuario.findByNombreusuario", Usuario.class);
+            query.setParameter("nombreusuario", nombre);
+            List<Usuario> list = query.getResultList();
+            return list;
         } finally {
             em.close();
         }

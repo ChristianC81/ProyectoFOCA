@@ -5,6 +5,22 @@
  */
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.accessibility.AccessibleContext;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JRootPane;
+import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author USER
@@ -19,6 +35,1249 @@ public class ViewAdministrador extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
     }
 
+    public JButton getBtnCANCELARDON() {
+        return btnCANCELARDON;
+    }
+
+    public void setBtnCANCELARDON(JButton btnCANCELARDON) {
+        this.btnCANCELARDON = btnCANCELARDON;
+    }
+
+    public JButton getBtnCANCELARINSCRIP() {
+        return btnCANCELARINSCRIP;
+    }
+
+    public void setBtnCANCELARINSCRIP(JButton btnCANCELARINSCRIP) {
+        this.btnCANCELARINSCRIP = btnCANCELARINSCRIP;
+    }
+
+    public JButton getBtnCANCELARPER() {
+        return btnCANCELARPER;
+    }
+
+    public void setBtnCANCELARPER(JButton btnCANCELARPER) {
+        this.btnCANCELARPER = btnCANCELARPER;
+    }
+
+    public JButton getBtnCANCELARPROD() {
+        return btnCANCELARPROD;
+    }
+
+    public void setBtnCANCELARPROD(JButton btnCANCELARPROD) {
+        this.btnCANCELARPROD = btnCANCELARPROD;
+    }
+
+    public JButton getBtnCANCELARPROD3() {
+        return btnCANCELARPROD3;
+    }
+
+    public void setBtnCANCELARPROD3(JButton btnCANCELARPROD3) {
+        this.btnCANCELARPROD3 = btnCANCELARPROD3;
+    }
+
+    public JButton getBtnCANCELARPROYE() {
+        return btnCANCELARPROYE;
+    }
+
+    public void setBtnCANCELARPROYE(JButton btnCANCELARPROYE) {
+        this.btnCANCELARPROYE = btnCANCELARPROYE;
+    }
+
+    public JButton getBtnCREARDON() {
+        return btnCREARDON;
+    }
+
+    public void setBtnCREARDON(JButton btnCREARDON) {
+        this.btnCREARDON = btnCREARDON;
+    }
+
+    public JButton getBtnCREARINSCRIP() {
+        return btnCREARINSCRIP;
+    }
+
+    public void setBtnCREARINSCRIP(JButton btnCREARINSCRIP) {
+        this.btnCREARINSCRIP = btnCREARINSCRIP;
+    }
+
+    public JButton getBtnCREARPER() {
+        return btnCREARPER;
+    }
+
+    public void setBtnCREARPER(JButton btnCREARPER) {
+        this.btnCREARPER = btnCREARPER;
+    }
+
+    public JButton getBtnCREARPROD() {
+        return btnCREARPROD;
+    }
+
+    public void setBtnCREARPROD(JButton btnCREARPROD) {
+        this.btnCREARPROD = btnCREARPROD;
+    }
+
+    public JButton getBtnCREARPROD3() {
+        return btnCREARPROD3;
+    }
+
+    public void setBtnCREARPROD3(JButton btnCREARPROD3) {
+        this.btnCREARPROD3 = btnCREARPROD3;
+    }
+
+    public JButton getBtnCREARPROYE() {
+        return btnCREARPROYE;
+    }
+
+    public void setBtnCREARPROYE(JButton btnCREARPROYE) {
+        this.btnCREARPROYE = btnCREARPROYE;
+    }
+
+    public JButton getBtnEDITARDON() {
+        return btnEDITARDON;
+    }
+
+    public void setBtnEDITARDON(JButton btnEDITARDON) {
+        this.btnEDITARDON = btnEDITARDON;
+    }
+
+    public JButton getBtnEDITARINSCRIP() {
+        return btnEDITARINSCRIP;
+    }
+
+    public void setBtnEDITARINSCRIP(JButton btnEDITARINSCRIP) {
+        this.btnEDITARINSCRIP = btnEDITARINSCRIP;
+    }
+
+    public JButton getBtnEDITARPER() {
+        return btnEDITARPER;
+    }
+
+    public void setBtnEDITARPER(JButton btnEDITARPER) {
+        this.btnEDITARPER = btnEDITARPER;
+    }
+
+    public JButton getBtnEDITARPROD() {
+        return btnEDITARPROD;
+    }
+
+    public void setBtnEDITARPROD(JButton btnEDITARPROD) {
+        this.btnEDITARPROD = btnEDITARPROD;
+    }
+
+    public JButton getBtnEDITARPROD3() {
+        return btnEDITARPROD3;
+    }
+
+    public void setBtnEDITARPROD3(JButton btnEDITARPROD3) {
+        this.btnEDITARPROD3 = btnEDITARPROD3;
+    }
+
+    public JButton getBtnEDITARPROYE() {
+        return btnEDITARPROYE;
+    }
+
+    public void setBtnEDITARPROYE(JButton btnEDITARPROYE) {
+        this.btnEDITARPROYE = btnEDITARPROYE;
+    }
+
+    public JButton getBtnELIMINARDON() {
+        return btnELIMINARDON;
+    }
+
+    public void setBtnELIMINARDON(JButton btnELIMINARDON) {
+        this.btnELIMINARDON = btnELIMINARDON;
+    }
+
+    public JButton getBtnELIMINARINSCRIP() {
+        return btnELIMINARINSCRIP;
+    }
+
+    public void setBtnELIMINARINSCRIP(JButton btnELIMINARINSCRIP) {
+        this.btnELIMINARINSCRIP = btnELIMINARINSCRIP;
+    }
+
+    public JButton getBtnELIMINARPER() {
+        return btnELIMINARPER;
+    }
+
+    public void setBtnELIMINARPER(JButton btnELIMINARPER) {
+        this.btnELIMINARPER = btnELIMINARPER;
+    }
+
+    public JButton getBtnELIMINARPROD() {
+        return btnELIMINARPROD;
+    }
+
+    public void setBtnELIMINARPROD(JButton btnELIMINARPROD) {
+        this.btnELIMINARPROD = btnELIMINARPROD;
+    }
+
+    public JButton getBtnELIMINARPROD3() {
+        return btnELIMINARPROD3;
+    }
+
+    public void setBtnELIMINARPROD3(JButton btnELIMINARPROD3) {
+        this.btnELIMINARPROD3 = btnELIMINARPROD3;
+    }
+
+    public JButton getBtnELIMINARPROYE() {
+        return btnELIMINARPROYE;
+    }
+
+    public void setBtnELIMINARPROYE(JButton btnELIMINARPROYE) {
+        this.btnELIMINARPROYE = btnELIMINARPROYE;
+    }
+
+    public JButton getBtnExaminarFoto() {
+        return btnExaminarFoto;
+    }
+
+    public void setBtnExaminarFoto(JButton btnExaminarFoto) {
+        this.btnExaminarFoto = btnExaminarFoto;
+    }
+
+    public JButton getBtnIMPRIMIRDON() {
+        return btnIMPRIMIRDON;
+    }
+
+    public void setBtnIMPRIMIRDON(JButton btnIMPRIMIRDON) {
+        this.btnIMPRIMIRDON = btnIMPRIMIRDON;
+    }
+
+    public JButton getBtnIMPRIMIRINSCRIP() {
+        return btnIMPRIMIRINSCRIP;
+    }
+
+    public void setBtnIMPRIMIRINSCRIP(JButton btnIMPRIMIRINSCRIP) {
+        this.btnIMPRIMIRINSCRIP = btnIMPRIMIRINSCRIP;
+    }
+
+    public JButton getBtnIMPRIMIRPER() {
+        return btnIMPRIMIRPER;
+    }
+
+    public void setBtnIMPRIMIRPER(JButton btnIMPRIMIRPER) {
+        this.btnIMPRIMIRPER = btnIMPRIMIRPER;
+    }
+
+    public JButton getBtnIMPRIMIRPROD() {
+        return btnIMPRIMIRPROD;
+    }
+
+    public void setBtnIMPRIMIRPROD(JButton btnIMPRIMIRPROD) {
+        this.btnIMPRIMIRPROD = btnIMPRIMIRPROD;
+    }
+
+    public JButton getBtnIMPRIMIRPROD3() {
+        return btnIMPRIMIRPROD3;
+    }
+
+    public void setBtnIMPRIMIRPROD3(JButton btnIMPRIMIRPROD3) {
+        this.btnIMPRIMIRPROD3 = btnIMPRIMIRPROD3;
+    }
+
+    public JButton getBtnIMPRIMIRPROYE() {
+        return btnIMPRIMIRPROYE;
+    }
+
+    public void setBtnIMPRIMIRPROYE(JButton btnIMPRIMIRPROYE) {
+        this.btnIMPRIMIRPROYE = btnIMPRIMIRPROYE;
+    }
+
+    public JButton getBtnLIMPIARDON() {
+        return btnLIMPIARDON;
+    }
+
+    public void setBtnLIMPIARDON(JButton btnLIMPIARDON) {
+        this.btnLIMPIARDON = btnLIMPIARDON;
+    }
+
+    public JButton getBtnLIMPIARINSCRIP() {
+        return btnLIMPIARINSCRIP;
+    }
+
+    public void setBtnLIMPIARINSCRIP(JButton btnLIMPIARINSCRIP) {
+        this.btnLIMPIARINSCRIP = btnLIMPIARINSCRIP;
+    }
+
+    public JButton getBtnLIMPIARPER() {
+        return btnLIMPIARPER;
+    }
+
+    public void setBtnLIMPIARPER(JButton btnLIMPIARPER) {
+        this.btnLIMPIARPER = btnLIMPIARPER;
+    }
+
+    public JButton getBtnLIMPIARPROD() {
+        return btnLIMPIARPROD;
+    }
+
+    public void setBtnLIMPIARPROD(JButton btnLIMPIARPROD) {
+        this.btnLIMPIARPROD = btnLIMPIARPROD;
+    }
+
+    public JButton getBtnLIMPIARPROD3() {
+        return btnLIMPIARPROD3;
+    }
+
+    public void setBtnLIMPIARPROD3(JButton btnLIMPIARPROD3) {
+        this.btnLIMPIARPROD3 = btnLIMPIARPROD3;
+    }
+
+    public JButton getBtnLIMPIARPROYE() {
+        return btnLIMPIARPROYE;
+    }
+
+    public void setBtnLIMPIARPROYE(JButton btnLIMPIARPROYE) {
+        this.btnLIMPIARPROYE = btnLIMPIARPROYE;
+    }
+
+    public JButton getBtnREPORTEGENERALDON() {
+        return btnREPORTEGENERALDON;
+    }
+
+    public void setBtnREPORTEGENERALDON(JButton btnREPORTEGENERALDON) {
+        this.btnREPORTEGENERALDON = btnREPORTEGENERALDON;
+    }
+
+    public JButton getBtnREPORTEGENERALINSCRIP() {
+        return btnREPORTEGENERALINSCRIP;
+    }
+
+    public void setBtnREPORTEGENERALINSCRIP(JButton btnREPORTEGENERALINSCRIP) {
+        this.btnREPORTEGENERALINSCRIP = btnREPORTEGENERALINSCRIP;
+    }
+
+    public JButton getBtnREPORTEGENERALPER() {
+        return btnREPORTEGENERALPER;
+    }
+
+    public void setBtnREPORTEGENERALPER(JButton btnREPORTEGENERALPER) {
+        this.btnREPORTEGENERALPER = btnREPORTEGENERALPER;
+    }
+
+    public JButton getBtnREPORTEGENERALPROD() {
+        return btnREPORTEGENERALPROD;
+    }
+
+    public void setBtnREPORTEGENERALPROD(JButton btnREPORTEGENERALPROD) {
+        this.btnREPORTEGENERALPROD = btnREPORTEGENERALPROD;
+    }
+
+    public JButton getBtnREPORTEGENERALPROD3() {
+        return btnREPORTEGENERALPROD3;
+    }
+
+    public void setBtnREPORTEGENERALPROD3(JButton btnREPORTEGENERALPROD3) {
+        this.btnREPORTEGENERALPROD3 = btnREPORTEGENERALPROD3;
+    }
+
+    public JButton getBtnREPORTEGENERALPROYE() {
+        return btnREPORTEGENERALPROYE;
+    }
+
+    public void setBtnREPORTEGENERALPROYE(JButton btnREPORTEGENERALPROYE) {
+        this.btnREPORTEGENERALPROYE = btnREPORTEGENERALPROYE;
+    }
+
+    public JButton getBtnbuscarDon() {
+        return btnbuscarDon;
+    }
+
+    public void setBtnbuscarDon(JButton btnbuscarDon) {
+        this.btnbuscarDon = btnbuscarDon;
+    }
+
+    public JButton getBtnbuscarInscrip() {
+        return btnbuscarInscrip;
+    }
+
+    public void setBtnbuscarInscrip(JButton btnbuscarInscrip) {
+        this.btnbuscarInscrip = btnbuscarInscrip;
+    }
+
+    public JButton getBtnbuscarPer() {
+        return btnbuscarPer;
+    }
+
+    public void setBtnbuscarPer(JButton btnbuscarPer) {
+        this.btnbuscarPer = btnbuscarPer;
+    }
+
+    public JButton getBtnbuscarProd() {
+        return btnbuscarProd;
+    }
+
+    public void setBtnbuscarProd(JButton btnbuscarProd) {
+        this.btnbuscarProd = btnbuscarProd;
+    }
+
+    public JButton getBtnbuscarProd3() {
+        return btnbuscarProd3;
+    }
+
+    public void setBtnbuscarProd3(JButton btnbuscarProd3) {
+        this.btnbuscarProd3 = btnbuscarProd3;
+    }
+
+    public JButton getBtnbuscarProyecto() {
+        return btnbuscarProyecto;
+    }
+
+    public void setBtnbuscarProyecto(JButton btnbuscarProyecto) {
+        this.btnbuscarProyecto = btnbuscarProyecto;
+    }
+
+    public JButton getBtndonaciones() {
+        return btndonaciones;
+    }
+
+    public void setBtndonaciones(JButton btndonaciones) {
+        this.btndonaciones = btndonaciones;
+    }
+
+    public JButton getBtneditarPer4() {
+        return btneditarPer4;
+    }
+
+    public void setBtneditarPer4(JButton btneditarPer4) {
+        this.btneditarPer4 = btneditarPer4;
+    }
+
+    public JButton getBtneditarPer5() {
+        return btneditarPer5;
+    }
+
+    public void setBtneditarPer5(JButton btneditarPer5) {
+        this.btneditarPer5 = btneditarPer5;
+    }
+
+    public JButton getBtneditarPer6() {
+        return btneditarPer6;
+    }
+
+    public void setBtneditarPer6(JButton btneditarPer6) {
+        this.btneditarPer6 = btneditarPer6;
+    }
+
+    public JButton getBtneditarPer7() {
+        return btneditarPer7;
+    }
+
+    public void setBtneditarPer7(JButton btneditarPer7) {
+        this.btneditarPer7 = btneditarPer7;
+    }
+
+    public JButton getBtneditarPer8() {
+        return btneditarPer8;
+    }
+
+    public void setBtneditarPer8(JButton btneditarPer8) {
+        this.btneditarPer8 = btneditarPer8;
+    }
+
+    public JButton getBtneditarPer9() {
+        return btneditarPer9;
+    }
+
+    public void setBtneditarPer9(JButton btneditarPer9) {
+        this.btneditarPer9 = btneditarPer9;
+    }
+
+    public JButton getBtneliminarPer4() {
+        return btneliminarPer4;
+    }
+
+    public void setBtneliminarPer4(JButton btneliminarPer4) {
+        this.btneliminarPer4 = btneliminarPer4;
+    }
+
+    public JButton getBtneliminarPer5() {
+        return btneliminarPer5;
+    }
+
+    public void setBtneliminarPer5(JButton btneliminarPer5) {
+        this.btneliminarPer5 = btneliminarPer5;
+    }
+
+    public JButton getBtneliminarPer6() {
+        return btneliminarPer6;
+    }
+
+    public void setBtneliminarPer6(JButton btneliminarPer6) {
+        this.btneliminarPer6 = btneliminarPer6;
+    }
+
+    public JButton getBtneliminarPer7() {
+        return btneliminarPer7;
+    }
+
+    public void setBtneliminarPer7(JButton btneliminarPer7) {
+        this.btneliminarPer7 = btneliminarPer7;
+    }
+
+    public JButton getBtneliminarPer8() {
+        return btneliminarPer8;
+    }
+
+    public void setBtneliminarPer8(JButton btneliminarPer8) {
+        this.btneliminarPer8 = btneliminarPer8;
+    }
+
+    public JButton getBtneliminarPer9() {
+        return btneliminarPer9;
+    }
+
+    public void setBtneliminarPer9(JButton btneliminarPer9) {
+        this.btneliminarPer9 = btneliminarPer9;
+    }
+
+    public JButton getBtnformularios() {
+        return btnformularios;
+    }
+
+    public void setBtnformularios(JButton btnformularios) {
+        this.btnformularios = btnformularios;
+    }
+
+    public JButton getBtnformularios1() {
+        return btnformularios1;
+    }
+
+    public void setBtnformularios1(JButton btnformularios1) {
+        this.btnformularios1 = btnformularios1;
+    }
+
+    public JButton getBtnguardarPer4() {
+        return btnguardarPer4;
+    }
+
+    public void setBtnguardarPer4(JButton btnguardarPer4) {
+        this.btnguardarPer4 = btnguardarPer4;
+    }
+
+    public JButton getBtnguardarPer5() {
+        return btnguardarPer5;
+    }
+
+    public void setBtnguardarPer5(JButton btnguardarPer5) {
+        this.btnguardarPer5 = btnguardarPer5;
+    }
+
+    public JButton getBtnguardarPer6() {
+        return btnguardarPer6;
+    }
+
+    public void setBtnguardarPer6(JButton btnguardarPer6) {
+        this.btnguardarPer6 = btnguardarPer6;
+    }
+
+    public JButton getBtnguardarPer7() {
+        return btnguardarPer7;
+    }
+
+    public void setBtnguardarPer7(JButton btnguardarPer7) {
+        this.btnguardarPer7 = btnguardarPer7;
+    }
+
+    public JButton getBtnguardarPer8() {
+        return btnguardarPer8;
+    }
+
+    public void setBtnguardarPer8(JButton btnguardarPer8) {
+        this.btnguardarPer8 = btnguardarPer8;
+    }
+
+    public JButton getBtnguardarPer9() {
+        return btnguardarPer9;
+    }
+
+    public void setBtnguardarPer9(JButton btnguardarPer9) {
+        this.btnguardarPer9 = btnguardarPer9;
+    }
+
+    public JButton getBtnlimpiarDONbsq() {
+        return btnlimpiarDONbsq;
+    }
+
+    public void setBtnlimpiarDONbsq(JButton btnlimpiarDONbsq) {
+        this.btnlimpiarDONbsq = btnlimpiarDONbsq;
+    }
+
+    public JButton getBtnlimpiarInscripBsqa() {
+        return btnlimpiarInscripBsqa;
+    }
+
+    public void setBtnlimpiarInscripBsqa(JButton btnlimpiarInscripBsqa) {
+        this.btnlimpiarInscripBsqa = btnlimpiarInscripBsqa;
+    }
+
+    public JButton getBtnlimpiarPer4() {
+        return btnlimpiarPer4;
+    }
+
+    public void setBtnlimpiarPer4(JButton btnlimpiarPer4) {
+        this.btnlimpiarPer4 = btnlimpiarPer4;
+    }
+
+    public JButton getBtnlimpiarPer5() {
+        return btnlimpiarPer5;
+    }
+
+    public void setBtnlimpiarPer5(JButton btnlimpiarPer5) {
+        this.btnlimpiarPer5 = btnlimpiarPer5;
+    }
+
+    public JButton getBtnlimpiarPer6() {
+        return btnlimpiarPer6;
+    }
+
+    public void setBtnlimpiarPer6(JButton btnlimpiarPer6) {
+        this.btnlimpiarPer6 = btnlimpiarPer6;
+    }
+
+    public JButton getBtnlimpiarPer7() {
+        return btnlimpiarPer7;
+    }
+
+    public void setBtnlimpiarPer7(JButton btnlimpiarPer7) {
+        this.btnlimpiarPer7 = btnlimpiarPer7;
+    }
+
+    public JButton getBtnlimpiarPer8() {
+        return btnlimpiarPer8;
+    }
+
+    public void setBtnlimpiarPer8(JButton btnlimpiarPer8) {
+        this.btnlimpiarPer8 = btnlimpiarPer8;
+    }
+
+    public JButton getBtnlimpiarPer9() {
+        return btnlimpiarPer9;
+    }
+
+    public void setBtnlimpiarPer9(JButton btnlimpiarPer9) {
+        this.btnlimpiarPer9 = btnlimpiarPer9;
+    }
+
+    public JButton getBtnlimpiarPerbsq() {
+        return btnlimpiarPerbsq;
+    }
+
+    public void setBtnlimpiarPerbsq(JButton btnlimpiarPerbsq) {
+        this.btnlimpiarPerbsq = btnlimpiarPerbsq;
+    }
+
+    public JButton getBtnlimpiarProdBsqa() {
+        return btnlimpiarProdBsqa;
+    }
+
+    public void setBtnlimpiarProdBsqa(JButton btnlimpiarProdBsqa) {
+        this.btnlimpiarProdBsqa = btnlimpiarProdBsqa;
+    }
+
+    public JButton getBtnlimpiarProdBsqa3() {
+        return btnlimpiarProdBsqa3;
+    }
+
+    public void setBtnlimpiarProdBsqa3(JButton btnlimpiarProdBsqa3) {
+        this.btnlimpiarProdBsqa3 = btnlimpiarProdBsqa3;
+    }
+
+    public JButton getBtnlimpiarProyectoBsqa() {
+        return btnlimpiarProyectoBsqa;
+    }
+
+    public void setBtnlimpiarProyectoBsqa(JButton btnlimpiarProyectoBsqa) {
+        this.btnlimpiarProyectoBsqa = btnlimpiarProyectoBsqa;
+    }
+
+    public JButton getBtnproductos() {
+        return btnproductos;
+    }
+
+    public void setBtnproductos(JButton btnproductos) {
+        this.btnproductos = btnproductos;
+    }
+
+    public JButton getBtnproyectos() {
+        return btnproyectos;
+    }
+
+    public void setBtnproyectos(JButton btnproyectos) {
+        this.btnproyectos = btnproyectos;
+    }
+
+    public JButton getBtnroles() {
+        return btnroles;
+    }
+
+    public void setBtnroles(JButton btnroles) {
+        this.btnroles = btnroles;
+    }
+
+    public ButtonGroup getButtonGroupGenero() {
+        return buttonGroupGenero;
+    }
+
+    public void setButtonGroupGenero(ButtonGroup buttonGroupGenero) {
+        this.buttonGroupGenero = buttonGroupGenero;
+    }
+
+    public JComboBox<String> getCbxCodigoBeneficiario() {
+        return cbxCodigoBeneficiario;
+    }
+
+    public void setCbxCodigoBeneficiario(JComboBox<String> cbxCodigoBeneficiario) {
+        this.cbxCodigoBeneficiario = cbxCodigoBeneficiario;
+    }
+
+    public JComboBox<String> getCbxCodigoProyecto() {
+        return cbxCodigoProyecto;
+    }
+
+    public void setCbxCodigoProyecto(JComboBox<String> cbxCodigoProyecto) {
+        this.cbxCodigoProyecto = cbxCodigoProyecto;
+    }
+
+    public JComboBox<String> getCbxCodigoVoluntario() {
+        return cbxCodigoVoluntario;
+    }
+
+    public void setCbxCodigoVoluntario(JComboBox<String> cbxCodigoVoluntario) {
+        this.cbxCodigoVoluntario = cbxCodigoVoluntario;
+    }
+
+    public JComboBox<String> getCbxIdDonacion() {
+        return cbxIdDonacion;
+    }
+
+    public void setCbxIdDonacion(JComboBox<String> cbxIdDonacion) {
+        this.cbxIdDonacion = cbxIdDonacion;
+    }
+
+    public JComboBox<String> getCbxIdDonacion3() {
+        return cbxIdDonacion3;
+    }
+
+    public void setCbxIdDonacion3(JComboBox<String> cbxIdDonacion3) {
+        this.cbxIdDonacion3 = cbxIdDonacion3;
+    }
+
+    public JComboBox<String> getCbxTipoPer() {
+        return cbxTipoPer;
+    }
+
+    public void setCbxTipoPer(JComboBox<String> cbxTipoPer) {
+        this.cbxTipoPer = cbxTipoPer;
+    }
+
+    public JCheckBox getChekBsqDON() {
+        return chekBsqDON;
+    }
+
+    public void setChekBsqDON(JCheckBox chekBsqDON) {
+        this.chekBsqDON = chekBsqDON;
+    }
+
+    public JCheckBox getChekBsqInscrip() {
+        return chekBsqInscrip;
+    }
+
+    public void setChekBsqInscrip(JCheckBox chekBsqInscrip) {
+        this.chekBsqInscrip = chekBsqInscrip;
+    }
+
+    public JCheckBox getChekBsqPer() {
+        return chekBsqPer;
+    }
+
+    public void setChekBsqPer(JCheckBox chekBsqPer) {
+        this.chekBsqPer = chekBsqPer;
+    }
+
+    public JCheckBox getChekBsqProds() {
+        return chekBsqProds;
+    }
+
+    public void setChekBsqProds(JCheckBox chekBsqProds) {
+        this.chekBsqProds = chekBsqProds;
+    }
+
+    public JCheckBox getChekBsqProds3() {
+        return chekBsqProds3;
+    }
+
+    public void setChekBsqProds3(JCheckBox chekBsqProds3) {
+        this.chekBsqProds3 = chekBsqProds3;
+    }
+
+    public JCheckBox getChekBsqProyectos() {
+        return chekBsqProyectos;
+    }
+
+    public void setChekBsqProyectos(JCheckBox chekBsqProyectos) {
+        this.chekBsqProyectos = chekBsqProyectos;
+    }
+
+    public JCheckBox getChkseguroiees() {
+        return chkseguroiees;
+    }
+
+    public void setChkseguroiees(JCheckBox chkseguroiees) {
+        this.chkseguroiees = chkseguroiees;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JButton getjButton6() {
+        return jButton6;
+    }
+
+    public void setjButton6(JButton jButton6) {
+        this.jButton6 = jButton6;
+    }
+
+    public JDateChooser getjDateChooserFechaFin() {
+        return jDateChooserFechaFin;
+    }
+
+    public void setjDateChooserFechaFin(JDateChooser jDateChooserFechaFin) {
+        this.jDateChooserFechaFin = jDateChooserFechaFin;
+    }
+
+    public JDateChooser getjDateChooserFechaInicio() {
+        return jDateChooserFechaInicio;
+    }
+
+    public void setjDateChooserFechaInicio(JDateChooser jDateChooserFechaInicio) {
+        this.jDateChooserFechaInicio = jDateChooserFechaInicio;
+    }
+
+    public JDateChooser getjDateFechaentregaDON() {
+        return jDateFechaentregaDON;
+    }
+
+    public void setjDateFechaentregaDON(JDateChooser jDateFechaentregaDON) {
+        this.jDateFechaentregaDON = jDateFechaentregaDON;
+    }
+
+    public JDateChooser getjDatefechanaci() {
+        return jDatefechanaci;
+    }
+
+    public void setjDatefechanaci(JDateChooser jDatefechanaci) {
+        this.jDatefechanaci = jDatefechanaci;
+    }
+
+    public JSpinner getjSpinnerCantidad() {
+        return jSpinnerCantidad;
+    }
+
+    public void setjSpinnerCantidad(JSpinner jSpinnerCantidad) {
+        this.jSpinnerCantidad = jSpinnerCantidad;
+    }
+
+    public JSpinner getjSpinnerCantidad3() {
+        return jSpinnerCantidad3;
+    }
+
+    public void setjSpinnerCantidad3(JSpinner jSpinnerCantidad3) {
+        this.jSpinnerCantidad3 = jSpinnerCantidad3;
+    }
+
+    public JSpinner getjSpinnerDiasParticipacion() {
+        return jSpinnerDiasParticipacion;
+    }
+
+    public void setjSpinnerDiasParticipacion(JSpinner jSpinnerDiasParticipacion) {
+        this.jSpinnerDiasParticipacion = jSpinnerDiasParticipacion;
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+
+    public void setjTabbedPane1(JTabbedPane jTabbedPane1) {
+        this.jTabbedPane1 = jTabbedPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTable getjTableDatosDonaciones() {
+        return jTableDatosDonaciones;
+    }
+
+    public void setjTableDatosDonaciones(JTable jTableDatosDonaciones) {
+        this.jTableDatosDonaciones = jTableDatosDonaciones;
+    }
+
+    public JTable getjTableDatosInscripciones() {
+        return jTableDatosInscripciones;
+    }
+
+    public void setjTableDatosInscripciones(JTable jTableDatosInscripciones) {
+        this.jTableDatosInscripciones = jTableDatosInscripciones;
+    }
+
+    public JTable getjTableDatosPersonas() {
+        return jTableDatosPersonas;
+    }
+
+    public void setjTableDatosPersonas(JTable jTableDatosPersonas) {
+        this.jTableDatosPersonas = jTableDatosPersonas;
+    }
+
+    public JTable getjTableDatosProductos() {
+        return jTableDatosProductos;
+    }
+
+    public void setjTableDatosProductos(JTable jTableDatosProductos) {
+        this.jTableDatosProductos = jTableDatosProductos;
+    }
+
+    public JTable getjTableDatosProductos3() {
+        return jTableDatosProductos3;
+    }
+
+    public void setjTableDatosProductos3(JTable jTableDatosProductos3) {
+        this.jTableDatosProductos3 = jTableDatosProductos3;
+    }
+
+    public JTable getjTableDatosProyectos() {
+        return jTableDatosProyectos;
+    }
+
+    public void setjTableDatosProyectos(JTable jTableDatosProyectos) {
+        this.jTableDatosProyectos = jTableDatosProyectos;
+    }
+
+    public JLabel getLblFoto() {
+        return lblFoto;
+    }
+
+    public void setLblFoto(JLabel lblFoto) {
+        this.lblFoto = lblFoto;
+    }
+
+    public JPanel getPn() {
+        return pn;
+    }
+
+    public void setPn(JPanel pn) {
+        this.pn = pn;
+    }
+
+    public JPanel getPnPersona() {
+        return pnPersona;
+    }
+
+    public void setPnPersona(JPanel pnPersona) {
+        this.pnPersona = pnPersona;
+    }
+
+    public JPanel getPnPrincipal() {
+        return pnPrincipal;
+    }
+
+    public void setPnPrincipal(JPanel pnPrincipal) {
+        this.pnPrincipal = pnPrincipal;
+    }
+
+    public JRadioButton getRbtFemenino() {
+        return rbtFemenino;
+    }
+
+    public void setRbtFemenino(JRadioButton rbtFemenino) {
+        this.rbtFemenino = rbtFemenino;
+    }
+
+    public JRadioButton getRbtMasculino() {
+        return rbtMasculino;
+    }
+
+    public void setRbtMasculino(JRadioButton rbtMasculino) {
+        this.rbtMasculino = rbtMasculino;
+    }
+
+    public JTextArea getTxaDetalleProdDON() {
+        return txaDetalleProdDON;
+    }
+
+    public void setTxaDetalleProdDON(JTextArea txaDetalleProdDON) {
+        this.txaDetalleProdDON = txaDetalleProdDON;
+    }
+
+    public JTextArea getTxaMotivoDON() {
+        return txaMotivoDON;
+    }
+
+    public void setTxaMotivoDON(JTextArea txaMotivoDON) {
+        this.txaMotivoDON = txaMotivoDON;
+    }
+
+    public JTextField getTxtBsqDonaciones() {
+        return txtBsqDonaciones;
+    }
+
+    public void setTxtBsqDonaciones(JTextField txtBsqDonaciones) {
+        this.txtBsqDonaciones = txtBsqDonaciones;
+    }
+
+    public JTextField getTxtBsqInscripciones() {
+        return txtBsqInscripciones;
+    }
+
+    public void setTxtBsqInscripciones(JTextField txtBsqInscripciones) {
+        this.txtBsqInscripciones = txtBsqInscripciones;
+    }
+
+    public JTextField getTxtBsqPersonas() {
+        return txtBsqPersonas;
+    }
+
+    public void setTxtBsqPersonas(JTextField txtBsqPersonas) {
+        this.txtBsqPersonas = txtBsqPersonas;
+    }
+
+    public JTextField getTxtBsqProductos() {
+        return txtBsqProductos;
+    }
+
+    public void setTxtBsqProductos(JTextField txtBsqProductos) {
+        this.txtBsqProductos = txtBsqProductos;
+    }
+
+    public JTextField getTxtBsqProductos3() {
+        return txtBsqProductos3;
+    }
+
+    public void setTxtBsqProductos3(JTextField txtBsqProductos3) {
+        this.txtBsqProductos3 = txtBsqProductos3;
+    }
+
+    public JTextField getTxtBsqProyecto() {
+        return txtBsqProyecto;
+    }
+
+    public void setTxtBsqProyecto(JTextField txtBsqProyecto) {
+        this.txtBsqProyecto = txtBsqProyecto;
+    }
+
+    public JTextField getTxtCodigoInscripcion() {
+        return txtCodigoInscripcion;
+    }
+
+    public void setTxtCodigoInscripcion(JTextField txtCodigoInscripcion) {
+        this.txtCodigoInscripcion = txtCodigoInscripcion;
+    }
+
+    public JTextField getTxtLugar() {
+        return txtLugar;
+    }
+
+    public void setTxtLugar(JTextField txtLugar) {
+        this.txtLugar = txtLugar;
+    }
+
+    public JTextField getTxtNombreProyecto() {
+        return txtNombreProyecto;
+    }
+
+    public void setTxtNombreProyecto(JTextField txtNombreProyecto) {
+        this.txtNombreProyecto = txtNombreProyecto;
+    }
+
+    public JTextField getTxtNumeroProyecto() {
+        return txtNumeroProyecto;
+    }
+
+    public void setTxtNumeroProyecto(JTextField txtNumeroProyecto) {
+        this.txtNumeroProyecto = txtNumeroProyecto;
+    }
+
+    public JTextField getTxtTipoProducto() {
+        return txtTipoProducto;
+    }
+
+    public void setTxtTipoProducto(JTextField txtTipoProducto) {
+        this.txtTipoProducto = txtTipoProducto;
+    }
+
+    public JTextField getTxtTipoProducto3() {
+        return txtTipoProducto3;
+    }
+
+    public void setTxtTipoProducto3(JTextField txtTipoProducto3) {
+        this.txtTipoProducto3 = txtTipoProducto3;
+    }
+
+    public JTextField getTxtTipoVol() {
+        return txtTipoVol;
+    }
+
+    public void setTxtTipoVol(JTextField txtTipoVol) {
+        this.txtTipoVol = txtTipoVol;
+    }
+
+    public JTextField getTxtTitulo() {
+        return txtTitulo;
+    }
+
+    public void setTxtTitulo(JTextField txtTitulo) {
+        this.txtTitulo = txtTitulo;
+    }
+
+    public JTextField getTxtapellidoPer() {
+        return txtapellidoPer;
+    }
+
+    public void setTxtapellidoPer(JTextField txtapellidoPer) {
+        this.txtapellidoPer = txtapellidoPer;
+    }
+
+    public JTextField getTxtcedulaPer() {
+        return txtcedulaPer;
+    }
+
+    public void setTxtcedulaPer(JTextField txtcedulaPer) {
+        this.txtcedulaPer = txtcedulaPer;
+    }
+
+    public JTextField getTxtcorreoPer() {
+        return txtcorreoPer;
+    }
+
+    public void setTxtcorreoPer(JTextField txtcorreoPer) {
+        this.txtcorreoPer = txtcorreoPer;
+    }
+
+    public JTextField getTxtdireccionPer() {
+        return txtdireccionPer;
+    }
+
+    public void setTxtdireccionPer(JTextField txtdireccionPer) {
+        this.txtdireccionPer = txtdireccionPer;
+    }
+
+    public JTextField getTxtestadocivil() {
+        return txtestadocivil;
+    }
+
+    public void setTxtestadocivil(JTextField txtestadocivil) {
+        this.txtestadocivil = txtestadocivil;
+    }
+
+    public JTextField getTxtestrato() {
+        return txtestrato;
+    }
+
+    public void setTxtestrato(JTextField txtestrato) {
+        this.txtestrato = txtestrato;
+    }
+
+    public JTextField getTxthorario() {
+        return txthorario;
+    }
+
+    public void setTxthorario(JTextField txthorario) {
+        this.txthorario = txthorario;
+    }
+
+    public JTextField getTxtnombrePer() {
+        return txtnombrePer;
+    }
+
+    public void setTxtnombrePer(JTextField txtnombrePer) {
+        this.txtnombrePer = txtnombrePer;
+    }
+
+    public JTextField getTxtperiodo() {
+        return txtperiodo;
+    }
+
+    public void setTxtperiodo(JTextField txtperiodo) {
+        this.txtperiodo = txtperiodo;
+    }
+
+    public JTextField getTxtsalario() {
+        return txtsalario;
+    }
+
+    public void setTxtsalario(JTextField txtsalario) {
+        this.txtsalario = txtsalario;
+    }
+
+    public JTextField getTxttelefono() {
+        return txttelefono;
+    }
+
+    public void setTxttelefono(JTextField txttelefono) {
+        this.txttelefono = txttelefono;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
+    }
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
