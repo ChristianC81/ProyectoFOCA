@@ -38,7 +38,7 @@ public class ControllerPersona {
             ControllerSistema.vp = new ViewAdministrador();
             this.vistaA = ControllerSistema.vp;
             this.panelEscritorio.add(this.vistaA);
-            this.vistaA.getjTableDatosPersonas().setModel(modeloTP);
+        //    this.vistaA.getjTableDatosPersonas().setModel(modeloTP);
             ControllerSistema.vp.show();
             //controlMetodosPersona();
 
