@@ -650,7 +650,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         btnbuscarPer.setBackground(new java.awt.Color(249, 247, 250));
         btnbuscarPer.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        btnbuscarPer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-search-48.png"))); // NOI18N
         btnbuscarPer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel16.add(btnbuscarPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 40, 30));
 
