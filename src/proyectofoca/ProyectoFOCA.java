@@ -4,7 +4,8 @@
  */
 package proyectofoca;
 
-import Vista.ViewLogin;
+import Vista.InicioSistema;
+import Vista.ViewSistema;
 
 /**
  *
@@ -18,13 +19,8 @@ public class ProyectoFOCA {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        ViewLogin vl = new ViewLogin();
+        InicioSistema vl = new InicioSistema();
         vl.setVisible(true);
-        System.out.println("Jonny's Cabeza de ñoco");
-        System.out.println("HELLOOOOOOOO");
-        System.out.println("PURA PRUEBAAA");
-        /// holaaaaa
-        System.out.println("joragaaaaaaa");
-
+        
     }
 }
