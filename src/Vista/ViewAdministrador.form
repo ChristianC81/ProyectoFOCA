@@ -1592,7 +1592,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTextArea" name="txaMotivoDON1">
+                            <Component class="javax.swing.JTextArea" name="txaMotivoDON">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -1618,7 +1618,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTextArea" name="txaDetalleProdDON1">
+                            <Component class="javax.swing.JTextArea" name="txaDetalleProdDON">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -1632,7 +1632,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCREARPER2">
+                        <Component class="javax.swing.JButton" name="btnCREARDONA">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-save-48.png"/>
@@ -1644,7 +1644,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnEDITARPER2">
+                        <Component class="javax.swing.JButton" name="btnEDITARDONA">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-edit-48.png"/>
@@ -1656,7 +1656,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnELIMINARPER2">
+                        <Component class="javax.swing.JButton" name="btnELIMINARDONA">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-delete-48.png"/>
@@ -1668,7 +1668,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnLIMPIARPER2">
+                        <Component class="javax.swing.JButton" name="btnLIMPIARDONA">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icon-clear.png"/>
@@ -1709,11 +1709,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
-                                  <Component id="btnIMPRIMIRDON1" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnREPORTEINDIVIDUAL" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="btnREPORTEGENERALDON1" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnREPORTEGENERALDON" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="btnCANCELARDON1" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnCANCELARDON" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -1730,9 +1730,9 @@
                                   <Component id="jScrollPane15" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARDON1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="btnIMPRIMIRDON1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="btnREPORTEGENERALDON1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnCANCELARDON" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnREPORTEINDIVIDUAL" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnREPORTEGENERALDON" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                               </Group>
@@ -1747,7 +1747,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="jTableDatosDonaciones1">
+                            <Component class="javax.swing.JTable" name="jTableDatosDonacione">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="de" green="f7" red="f9" type="rgb"/>
@@ -1787,11 +1787,11 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARDON1">
+                        <Component class="javax.swing.JButton" name="btnCANCELARDON">
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnIMPRIMIRDON1">
+                        <Component class="javax.swing.JButton" name="btnREPORTEINDIVIDUAL">
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnREPORTEGENERALDON1">
+                        <Component class="javax.swing.JButton" name="btnREPORTEGENERALDON">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1821,7 +1821,7 @@
                         <Property name="useNullLayout" type="boolean" value="false"/>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JButton" name="btnlimpiarProdBsqa2">
+                        <Component class="javax.swing.JButton" name="btnlimpiarDONABUSQ">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -1841,7 +1841,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnbuscarProd2">
+                        <Component class="javax.swing.JButton" name="btnbuscarDONA">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -1861,7 +1861,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="chekBsqProds2">
+                        <Component class="javax.swing.JCheckBox" name="chekBsqDONA">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -2122,7 +2122,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JSpinner" name="jSpinnerCantidad1">
+                        <Component class="javax.swing.JSpinner" name="jSpinnerCantidad">
                           <Properties>
                             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                               <SpinnerModel initial="1" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
@@ -2137,7 +2137,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtTipoProducto1">
+                        <Component class="javax.swing.JTextField" name="txtTipoProducto">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="80" y="200" width="220" height="30"/>
@@ -2160,7 +2160,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxIdDonacion1">
+                        <Component class="javax.swing.JComboBox" name="cbxIdDonacion">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="0"/>
@@ -2175,7 +2175,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnCREARPER3">
+                        <Component class="javax.swing.JButton" name="btnCREARPROD">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-save-48.png"/>
@@ -2187,7 +2187,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnEDITARPER3">
+                        <Component class="javax.swing.JButton" name="btnEDITARPROD">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-edit-48.png"/>
@@ -2199,7 +2199,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnELIMINARPER3">
+                        <Component class="javax.swing.JButton" name="btnELIMINARPROD">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icons8-delete-48.png"/>
@@ -2211,7 +2211,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnLIMPIARPER3">
+                        <Component class="javax.swing.JButton" name="btnLIMPIARPROD">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/images/icon-clear.png"/>
@@ -2251,7 +2251,7 @@
                         <Property name="useNullLayout" type="boolean" value="false"/>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JButton" name="btnlimpiarProdBsqa1">
+                        <Component class="javax.swing.JButton" name="btnlimpiarProdbsqd">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -2271,7 +2271,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnbuscarProd1">
+                        <Component class="javax.swing.JButton" name="btnbuscarProd">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -2291,7 +2291,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="chekBsqProds1">
+                        <Component class="javax.swing.JCheckBox" name="chekBsqProds">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -2326,7 +2326,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtBsqProductos1">
+                        <Component class="javax.swing.JTextField" name="txtBsqProductos">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="f7" red="f9" type="rgb"/>
@@ -2391,11 +2391,11 @@
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="btnIMPRIMIRDON3" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="btnIMPRIMIRPROD" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                          <Component id="btnREPORTEGENERALDON3" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="btnREPORTEGENERALPROD" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARDON3" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="btnCANCELARPROD" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2409,9 +2409,9 @@
                                   <Component id="jScrollPane17" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARDON3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="btnIMPRIMIRDON3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="btnREPORTEGENERALDON3" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnCANCELARPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnIMPRIMIRPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnREPORTEGENERALPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="148" max="32767" attributes="0"/>
                               </Group>
@@ -2426,7 +2426,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="jTableDatosDonaciones3">
+                            <Component class="javax.swing.JTable" name="jTableDatosProductos">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="de" green="f7" red="f9" type="rgb"/>
@@ -2465,11 +2465,11 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARDON3">
+                        <Component class="javax.swing.JButton" name="btnCANCELARPROD">
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnIMPRIMIRDON3">
+                        <Component class="javax.swing.JButton" name="btnIMPRIMIRPROD">
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnREPORTEGENERALDON3">
+                        <Component class="javax.swing.JButton" name="btnREPORTEGENERALPROD">
                         </Component>
                       </SubComponents>
                     </Container>

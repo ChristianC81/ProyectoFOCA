@@ -5,6 +5,16 @@
  */
 package Vista;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author USER
@@ -125,23 +135,23 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator116 = new javax.swing.JSeparator();
         jSeparator117 = new javax.swing.JSeparator();
         jScrollPane13 = new javax.swing.JScrollPane();
-        txaMotivoDON1 = new javax.swing.JTextArea();
+        txaMotivoDON = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
-        txaDetalleProdDON1 = new javax.swing.JTextArea();
-        btnCREARPER2 = new javax.swing.JButton();
-        btnEDITARPER2 = new javax.swing.JButton();
-        btnELIMINARPER2 = new javax.swing.JButton();
-        btnLIMPIARPER2 = new javax.swing.JButton();
+        txaDetalleProdDON = new javax.swing.JTextArea();
+        btnCREARDONA = new javax.swing.JButton();
+        btnEDITARDONA = new javax.swing.JButton();
+        btnELIMINARDONA = new javax.swing.JButton();
+        btnLIMPIARDONA = new javax.swing.JButton();
         jPanel38 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jTableDatosDonaciones1 = new javax.swing.JTable();
-        btnCANCELARDON1 = new javax.swing.JButton();
-        btnIMPRIMIRDON1 = new javax.swing.JButton();
-        btnREPORTEGENERALDON1 = new javax.swing.JButton();
+        jTableDatosDonacione = new javax.swing.JTable();
+        btnCANCELARDON = new javax.swing.JButton();
+        btnREPORTEINDIVIDUAL = new javax.swing.JButton();
+        btnREPORTEGENERALDON = new javax.swing.JButton();
         jPanel34 = new javax.swing.JPanel();
-        btnlimpiarProdBsqa2 = new javax.swing.JButton();
-        btnbuscarProd2 = new javax.swing.JButton();
-        chekBsqProds2 = new javax.swing.JCheckBox();
+        btnlimpiarDONABUSQ = new javax.swing.JButton();
+        btnbuscarDONA = new javax.swing.JButton();
+        chekBsqDONA = new javax.swing.JCheckBox();
         jLabel62 = new javax.swing.JLabel();
         txtBsqProductos2 = new javax.swing.JTextField();
         jSeparator106 = new javax.swing.JSeparator();
@@ -156,27 +166,27 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator83 = new javax.swing.JSeparator();
         jSeparator86 = new javax.swing.JSeparator();
         jSeparator96 = new javax.swing.JSeparator();
-        jSpinnerCantidad1 = new javax.swing.JSpinner();
-        txtTipoProducto1 = new javax.swing.JTextField();
+        jSpinnerCantidad = new javax.swing.JSpinner();
+        txtTipoProducto = new javax.swing.JTextField();
         jLabel110 = new javax.swing.JLabel();
-        cbxIdDonacion1 = new javax.swing.JComboBox<>();
-        btnCREARPER3 = new javax.swing.JButton();
-        btnEDITARPER3 = new javax.swing.JButton();
-        btnELIMINARPER3 = new javax.swing.JButton();
-        btnLIMPIARPER3 = new javax.swing.JButton();
+        cbxIdDonacion = new javax.swing.JComboBox<>();
+        btnCREARPROD = new javax.swing.JButton();
+        btnEDITARPROD = new javax.swing.JButton();
+        btnELIMINARPROD = new javax.swing.JButton();
+        btnLIMPIARPROD = new javax.swing.JButton();
         jPanel33 = new javax.swing.JPanel();
-        btnlimpiarProdBsqa1 = new javax.swing.JButton();
-        btnbuscarProd1 = new javax.swing.JButton();
-        chekBsqProds1 = new javax.swing.JCheckBox();
+        btnlimpiarProdbsqd = new javax.swing.JButton();
+        btnbuscarProd = new javax.swing.JButton();
+        chekBsqProds = new javax.swing.JCheckBox();
         jLabel59 = new javax.swing.JLabel();
-        txtBsqProductos1 = new javax.swing.JTextField();
+        txtBsqProductos = new javax.swing.JTextField();
         jSeparator105 = new javax.swing.JSeparator();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jTableDatosDonaciones3 = new javax.swing.JTable();
-        btnCANCELARDON3 = new javax.swing.JButton();
-        btnIMPRIMIRDON3 = new javax.swing.JButton();
-        btnREPORTEGENERALDON3 = new javax.swing.JButton();
+        jTableDatosProductos = new javax.swing.JTable();
+        btnCANCELARPROD = new javax.swing.JButton();
+        btnIMPRIMIRPROD = new javax.swing.JButton();
+        btnREPORTEGENERALPROD = new javax.swing.JButton();
         pnProyectos = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         btnguardarPer15 = new javax.swing.JButton();
@@ -790,33 +800,33 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator117.setForeground(new java.awt.Color(204, 204, 204));
         jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, 13));
 
-        txaMotivoDON1.setBackground(new java.awt.Color(249, 247, 250));
-        txaMotivoDON1.setColumns(20);
-        txaMotivoDON1.setRows(5);
-        txaMotivoDON1.setBorder(null);
-        jScrollPane13.setViewportView(txaMotivoDON1);
+        txaMotivoDON.setBackground(new java.awt.Color(249, 247, 250));
+        txaMotivoDON.setColumns(20);
+        txaMotivoDON.setRows(5);
+        txaMotivoDON.setBorder(null);
+        jScrollPane13.setViewportView(txaMotivoDON);
 
         jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 80));
 
-        txaDetalleProdDON1.setBackground(new java.awt.Color(249, 247, 250));
-        txaDetalleProdDON1.setColumns(20);
-        txaDetalleProdDON1.setRows(5);
-        txaDetalleProdDON1.setBorder(null);
-        jScrollPane14.setViewportView(txaDetalleProdDON1);
+        txaDetalleProdDON.setBackground(new java.awt.Color(249, 247, 250));
+        txaDetalleProdDON.setColumns(20);
+        txaDetalleProdDON.setRows(5);
+        txaDetalleProdDON.setBorder(null);
+        jScrollPane14.setViewportView(txaDetalleProdDON);
 
         jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 80));
 
-        btnCREARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel36.add(btnCREARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 40, 50));
+        btnCREARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
+        jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 40, 50));
 
-        btnEDITARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel36.add(btnEDITARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 40, 50));
+        btnEDITARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
+        jPanel36.add(btnEDITARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 40, 50));
 
-        btnELIMINARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel36.add(btnELIMINARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 40, 50));
+        btnELIMINARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
+        jPanel36.add(btnELIMINARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 40, 50));
 
-        btnLIMPIARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel36.add(btnLIMPIARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 40, 50));
+        btnLIMPIARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 40, 50));
 
         pnDonaciones.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
@@ -824,8 +834,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel38.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTableDatosDonaciones1.setBackground(new java.awt.Color(249, 247, 222));
-        jTableDatosDonaciones1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDatosDonacione.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosDonacione.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -847,8 +857,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 "Codigo", "Producto", "Fecha Entrega", "Motivo"
             }
         ));
-        jTableDatosDonaciones1.setToolTipText("");
-        jScrollPane15.setViewportView(jTableDatosDonaciones1);
+        jTableDatosDonacione.setToolTipText("");
+        jScrollPane15.setViewportView(jTableDatosDonacione);
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -856,11 +866,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
                 .addGap(238, 238, 238)
-                .addComponent(btnIMPRIMIRDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnREPORTEINDIVIDUAL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(btnREPORTEGENERALDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(btnCANCELARDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCANCELARDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
@@ -874,9 +884,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIMPRIMIRDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALDON1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCANCELARDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEINDIVIDUAL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(230, 230, 230))
         );
 
@@ -887,21 +897,21 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel34.setForeground(new java.awt.Color(255, 255, 255));
         jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnlimpiarProdBsqa2.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarProdBsqa2.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarProdBsqa2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel34.add(btnlimpiarProdBsqa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 40, 30));
+        btnlimpiarDONABUSQ.setBackground(new java.awt.Color(249, 247, 250));
+        btnlimpiarDONABUSQ.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnlimpiarDONABUSQ.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel34.add(btnlimpiarDONABUSQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 40, 30));
 
-        btnbuscarProd2.setBackground(new java.awt.Color(249, 247, 250));
-        btnbuscarProd2.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        btnbuscarProd2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel34.add(btnbuscarProd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 50, 30));
+        btnbuscarDONA.setBackground(new java.awt.Color(249, 247, 250));
+        btnbuscarDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnbuscarDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel34.add(btnbuscarDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 50, 30));
 
-        chekBsqProds2.setBackground(new java.awt.Color(249, 247, 250));
-        chekBsqProds2.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        chekBsqProds2.setText("Mostrar Todos");
-        chekBsqProds2.setBorder(null);
-        jPanel34.add(chekBsqProds2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 140, 30));
+        chekBsqDONA.setBackground(new java.awt.Color(249, 247, 250));
+        chekBsqDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        chekBsqDONA.setText("Mostrar Todos");
+        chekBsqDONA.setBorder(null);
+        jPanel34.add(chekBsqDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 140, 30));
 
         jLabel62.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(102, 102, 102));
@@ -967,29 +977,29 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator96.setForeground(new java.awt.Color(204, 204, 204));
         jPanel17.add(jSeparator96, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 333, 220, 10));
 
-        jSpinnerCantidad1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        jSpinnerCantidad1.setBorder(null);
-        jPanel17.add(jSpinnerCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 220, 30));
-        jPanel17.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, 30));
+        jSpinnerCantidad.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        jSpinnerCantidad.setBorder(null);
+        jPanel17.add(jSpinnerCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 220, 30));
+        jPanel17.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, 30));
 
         jLabel110.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel110.setForeground(new java.awt.Color(102, 102, 102));
         jLabel110.setText("Cantidad:");
         jPanel17.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, 20));
 
-        jPanel17.add(cbxIdDonacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, 30));
+        jPanel17.add(cbxIdDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, 30));
 
-        btnCREARPER3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel17.add(btnCREARPER3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 40, 50));
+        btnCREARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
+        jPanel17.add(btnCREARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 40, 50));
 
-        btnEDITARPER3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel17.add(btnEDITARPER3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 40, 50));
+        btnEDITARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
+        jPanel17.add(btnEDITARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 40, 50));
 
-        btnELIMINARPER3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel17.add(btnELIMINARPER3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 40, 50));
+        btnELIMINARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
+        jPanel17.add(btnELIMINARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 40, 50));
 
-        btnLIMPIARPER3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel17.add(btnLIMPIARPER3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 40, 50));
+        btnLIMPIARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        jPanel17.add(btnLIMPIARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 40, 50));
 
         pnProductos.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
@@ -998,31 +1008,31 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel33.setForeground(new java.awt.Color(255, 255, 255));
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnlimpiarProdBsqa1.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarProdBsqa1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarProdBsqa1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel33.add(btnlimpiarProdBsqa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 40, 30));
+        btnlimpiarProdbsqd.setBackground(new java.awt.Color(249, 247, 250));
+        btnlimpiarProdbsqd.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnlimpiarProdbsqd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel33.add(btnlimpiarProdbsqd, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 40, 30));
 
-        btnbuscarProd1.setBackground(new java.awt.Color(249, 247, 250));
-        btnbuscarProd1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        btnbuscarProd1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel33.add(btnbuscarProd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 50, 30));
+        btnbuscarProd.setBackground(new java.awt.Color(249, 247, 250));
+        btnbuscarProd.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnbuscarProd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel33.add(btnbuscarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 50, 30));
 
-        chekBsqProds1.setBackground(new java.awt.Color(249, 247, 250));
-        chekBsqProds1.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        chekBsqProds1.setText("Mostrar Todos");
-        chekBsqProds1.setBorder(null);
-        jPanel33.add(chekBsqProds1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 140, 30));
+        chekBsqProds.setBackground(new java.awt.Color(249, 247, 250));
+        chekBsqProds.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        chekBsqProds.setText("Mostrar Todos");
+        chekBsqProds.setBorder(null);
+        jPanel33.add(chekBsqProds, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 140, 30));
 
         jLabel59.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(102, 102, 102));
         jLabel59.setText("Criterio");
         jPanel33.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 50, 20));
 
-        txtBsqProductos1.setBackground(new java.awt.Color(249, 247, 250));
-        txtBsqProductos1.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtBsqProductos1.setBorder(null);
-        jPanel33.add(txtBsqProductos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 210, -1));
+        txtBsqProductos.setBackground(new java.awt.Color(249, 247, 250));
+        txtBsqProductos.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtBsqProductos.setBorder(null);
+        jPanel33.add(txtBsqProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 210, -1));
 
         jSeparator105.setForeground(new java.awt.Color(204, 204, 204));
         jPanel33.add(jSeparator105, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 210, 10));
@@ -1033,8 +1043,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel40.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTableDatosDonaciones3.setBackground(new java.awt.Color(249, 247, 222));
-        jTableDatosDonaciones3.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDatosProductos.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1056,8 +1066,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 "Cantidad", "Tipo de Producto", "Donación"
             }
         ));
-        jTableDatosDonaciones3.setToolTipText("");
-        jScrollPane17.setViewportView(jTableDatosDonaciones3);
+        jTableDatosProductos.setToolTipText("");
+        jScrollPane17.setViewportView(jTableDatosProductos);
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -1070,11 +1080,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel40Layout.createSequentialGroup()
-                        .addComponent(btnIMPRIMIRDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIMPRIMIRPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(btnREPORTEGENERALDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(btnCANCELARDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCANCELARPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(271, 271, 271))))
         );
         jPanel40Layout.setVerticalGroup(
@@ -1084,9 +1094,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIMPRIMIRDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALDON3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCANCELARPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIMPRIMIRPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
 
@@ -1815,9 +1825,288 @@ public class ViewAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtFemeninoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public JButton getBtnCANCELARDON() {
+        return btnCANCELARDON;
+    }
+
+    public void setBtnCANCELARDON(JButton btnCANCELARDON) {
+        this.btnCANCELARDON = btnCANCELARDON;
+    }
+
+    public JButton getBtnCREARDONA() {
+        return btnCREARDONA;
+    }
+
+    public void setBtnCREARDONA(JButton btnCREARDONA) {
+        this.btnCREARDONA = btnCREARDONA;
+    }
+
+    public JButton getBtnCREARPER() {
+        return btnCREARPER;
+    }
+
+    public void setBtnCREARPER(JButton btnCREARPER) {
+        this.btnCREARPER = btnCREARPER;
+    }
+
+    public JButton getBtnCREARPROD() {
+        return btnCREARPROD;
+    }
+
+    public void setBtnCREARPROD(JButton btnCREARPROD) {
+        this.btnCREARPROD = btnCREARPROD;
+    }
+
+    public JButton getBtnEDITARDONA() {
+        return btnEDITARDONA;
+    }
+
+    public void setBtnEDITARDONA(JButton btnEDITARDONA) {
+        this.btnEDITARDONA = btnEDITARDONA;
+    }
+
+    public JButton getBtnEDITARPROD() {
+        return btnEDITARPROD;
+    }
+
+    public void setBtnEDITARPROD(JButton btnEDITARPROD) {
+        this.btnEDITARPROD = btnEDITARPROD;
+    }
+
+    public JButton getBtnELIMINARDONA() {
+        return btnELIMINARDONA;
+    }
+
+    public void setBtnELIMINARDONA(JButton btnELIMINARDONA) {
+        this.btnELIMINARDONA = btnELIMINARDONA;
+    }
+
+    public JButton getBtnELIMINARPER() {
+        return btnELIMINARPER;
+    }
+
+    public void setBtnELIMINARPER(JButton btnELIMINARPER) {
+        this.btnELIMINARPER = btnELIMINARPER;
+    }
+
+    public JButton getBtnELIMINARPROD() {
+        return btnELIMINARPROD;
+    }
+
+    public void setBtnELIMINARPROD(JButton btnELIMINARPROD) {
+        this.btnELIMINARPROD = btnELIMINARPROD;
+    }
+
+    public JButton getBtnExaminarFoto() {
+        return btnExaminarFoto;
+    }
+
+    public void setBtnExaminarFoto(JButton btnExaminarFoto) {
+        this.btnExaminarFoto = btnExaminarFoto;
+    }
+
+    public JButton getBtnIMPRIMIRPROD() {
+        return btnIMPRIMIRPROD;
+    }
+
+    public void setBtnIMPRIMIRPROD(JButton btnIMPRIMIRPROD) {
+        this.btnIMPRIMIRPROD = btnIMPRIMIRPROD;
+    }
+
+    public JButton getBtnLIMPIARDONA() {
+        return btnLIMPIARDONA;
+    }
+
+    public void setBtnLIMPIARDONA(JButton btnLIMPIARDONA) {
+        this.btnLIMPIARDONA = btnLIMPIARDONA;
+    }
+
+    public JButton getBtnLIMPIARPER() {
+        return btnLIMPIARPER;
+    }
+
+    public void setBtnLIMPIARPER(JButton btnLIMPIARPER) {
+        this.btnLIMPIARPER = btnLIMPIARPER;
+    }
+
+    public JButton getBtnREPORTEGENERALDON() {
+        return btnREPORTEGENERALDON;
+    }
+
+    public void setBtnREPORTEGENERALDON(JButton btnREPORTEGENERALDON) {
+        this.btnREPORTEGENERALDON = btnREPORTEGENERALDON;
+    }
+
+    public JButton getBtnREPORTEGENERALPROD() {
+        return btnREPORTEGENERALPROD;
+    }
+
+    public void setBtnREPORTEGENERALPROD(JButton btnREPORTEGENERALPROD) {
+        this.btnREPORTEGENERALPROD = btnREPORTEGENERALPROD;
+    }
+
+    public JButton getBtnREPORTEINDIVIDUAL() {
+        return btnREPORTEINDIVIDUAL;
+    }
+
+    public void setBtnREPORTEINDIVIDUAL(JButton btnREPORTEINDIVIDUAL) {
+        this.btnREPORTEINDIVIDUAL = btnREPORTEINDIVIDUAL;
+    }
+
+    public JButton getBtnbuscarDONA() {
+        return btnbuscarDONA;
+    }
+
+    public void setBtnbuscarDONA(JButton btnbuscarDONA) {
+        this.btnbuscarDONA = btnbuscarDONA;
+    }
+
+    public JButton getBtnbuscarPer() {
+        return btnbuscarPer;
+    }
+
+    public void setBtnbuscarPer(JButton btnbuscarPer) {
+        this.btnbuscarPer = btnbuscarPer;
+    }
+
+    public JButton getBtnbuscarProd() {
+        return btnbuscarProd;
+    }
+
+    public void setBtnbuscarProd(JButton btnbuscarProd) {
+        this.btnbuscarProd = btnbuscarProd;
+    }
+
+    public ButtonGroup getButtonGroupGenero() {
+        return buttonGroupGenero;
+    }
+
+    public void setButtonGroupGenero(ButtonGroup buttonGroupGenero) {
+        this.buttonGroupGenero = buttonGroupGenero;
+    }
+
+    public JComboBox<String> getCbxIdDonacion() {
+        return cbxIdDonacion;
+    }
+
+    public void setCbxIdDonacion(JComboBox<String> cbxIdDonacion) {
+        this.cbxIdDonacion = cbxIdDonacion;
+    }
+
+    public JComboBox<String> getCbxTipoPer() {
+        return cbxTipoPer;
+    }
+
+    public void setCbxTipoPer(JComboBox<String> cbxTipoPer) {
+        this.cbxTipoPer = cbxTipoPer;
+    }
+
+    public JCheckBox getChekBsqDONA() {
+        return chekBsqDONA;
+    }
+
+    public void setChekBsqDONA(JCheckBox chekBsqDONA) {
+        this.chekBsqDONA = chekBsqDONA;
+    }
+
+    public JCheckBox getChekBsqPer() {
+        return chekBsqPer;
+    }
+
+    public void setChekBsqPer(JCheckBox chekBsqPer) {
+        this.chekBsqPer = chekBsqPer;
+    }
+
+    public JTable getjTableDatosDonacione() {
+        return jTableDatosDonacione;
+    }
+
+    public void setjTableDatosDonacione(JTable jTableDatosDonacione) {
+        this.jTableDatosDonacione = jTableDatosDonacione;
+    }
+
+    public JTable getjTableDatosProductos() {
+        return jTableDatosProductos;
+    }
+
+    public void setjTableDatosProductos(JTable jTableDatosProductos) {
+        this.jTableDatosProductos = jTableDatosProductos;
+    }
+
+    public JLabel getLblFoto() {
+        return lblFoto;
+    }
+
+    public void setLblFoto(JLabel lblFoto) {
+        this.lblFoto = lblFoto;
+    }
+
+    public JTextArea getTxaDetalleProdDON() {
+        return txaDetalleProdDON;
+    }
+
+    public void setTxaDetalleProdDON(JTextArea txaDetalleProdDON) {
+        this.txaDetalleProdDON = txaDetalleProdDON;
+    }
+
+    public JTextArea getTxaMotivoDON() {
+        return txaMotivoDON;
+    }
+
+    public void setTxaMotivoDON(JTextArea txaMotivoDON) {
+        this.txaMotivoDON = txaMotivoDON;
+    }
+
+    public JButton getBtnlimpiarDONABUSQ() {
+        return btnlimpiarDONABUSQ;
+    }
+
+    public void setBtnlimpiarDONABUSQ(JButton btnlimpiarDONABUSQ) {
+        this.btnlimpiarDONABUSQ = btnlimpiarDONABUSQ;
+    }
+
+    public JButton getBtnlimpiarProdbsqd() {
+        return btnlimpiarProdbsqd;
+    }
+
+    public void setBtnlimpiarProdbsqd(JButton btnlimpiarProdbsqd) {
+        this.btnlimpiarProdbsqd = btnlimpiarProdbsqd;
+    }
+
+    public JCheckBox getChekBsqProds() {
+        return chekBsqProds;
+    }
+
+    public void setChekBsqProds(JCheckBox chekBsqProds) {
+        this.chekBsqProds = chekBsqProds;
+    }
+
+    public JTextField getTxtTipoProducto() {
+        return txtTipoProducto;
+    }
+
+    public void setTxtTipoProducto(JTextField txtTipoProducto) {
+        this.txtTipoProducto = txtTipoProducto;
+    }
+
+    public JSpinner getjSpinnerCantidad() {
+        return jSpinnerCantidad;
+    }
+
+    public void setjSpinnerCantidad(JSpinner jSpinnerCantidad) {
+        this.jSpinnerCantidad = jSpinnerCantidad;
+    }
+
+    public JTextField getTxtBsqPersonas() {
+        return txtBsqPersonas;
+    }
+
+    public void setTxtBsqPersonas(JTextField txtBsqPersonas) {
+        this.txtBsqPersonas = txtBsqPersonas;
+    }
+
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1852,53 +2141,53 @@ public class ViewAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCANCELARDON1;
-    private javax.swing.JButton btnCANCELARDON3;
+    private javax.swing.JButton btnCANCELARDON;
     private javax.swing.JButton btnCANCELARDON4;
     private javax.swing.JButton btnCANCELARDON5;
     private javax.swing.JButton btnCANCELARPER1;
     private javax.swing.JButton btnCANCELARPER2;
+    private javax.swing.JButton btnCANCELARPROD;
+    private javax.swing.JButton btnCREARDONA;
     private javax.swing.JButton btnCREARPER;
-    private javax.swing.JButton btnCREARPER2;
-    private javax.swing.JButton btnCREARPER3;
     private javax.swing.JButton btnCREARPER4;
     private javax.swing.JButton btnCREARPER5;
     private javax.swing.JButton btnCREARPER6;
+    private javax.swing.JButton btnCREARPROD;
+    private javax.swing.JButton btnEDITARDONA;
     private javax.swing.JButton btnEDITARPER;
-    private javax.swing.JButton btnEDITARPER2;
-    private javax.swing.JButton btnEDITARPER3;
     private javax.swing.JButton btnEDITARPER4;
     private javax.swing.JButton btnEDITARPER5;
     private javax.swing.JButton btnEDITARPER6;
+    private javax.swing.JButton btnEDITARPROD;
+    private javax.swing.JButton btnELIMINARDONA;
     private javax.swing.JButton btnELIMINARPER;
-    private javax.swing.JButton btnELIMINARPER2;
-    private javax.swing.JButton btnELIMINARPER3;
     private javax.swing.JButton btnELIMINARPER4;
     private javax.swing.JButton btnELIMINARPER5;
     private javax.swing.JButton btnELIMINARPER6;
+    private javax.swing.JButton btnELIMINARPROD;
     private javax.swing.JButton btnExaminarFoto;
-    private javax.swing.JButton btnIMPRIMIRDON1;
-    private javax.swing.JButton btnIMPRIMIRDON3;
     private javax.swing.JButton btnIMPRIMIRDON4;
     private javax.swing.JButton btnIMPRIMIRDON5;
     private javax.swing.JButton btnIMPRIMIRPER1;
     private javax.swing.JButton btnIMPRIMIRPER2;
+    private javax.swing.JButton btnIMPRIMIRPROD;
+    private javax.swing.JButton btnLIMPIARDONA;
     private javax.swing.JButton btnLIMPIARPER;
-    private javax.swing.JButton btnLIMPIARPER2;
-    private javax.swing.JButton btnLIMPIARPER3;
     private javax.swing.JButton btnLIMPIARPER4;
     private javax.swing.JButton btnLIMPIARPER5;
     private javax.swing.JButton btnLIMPIARPER6;
-    private javax.swing.JButton btnREPORTEGENERALDON1;
-    private javax.swing.JButton btnREPORTEGENERALDON3;
+    private javax.swing.JButton btnLIMPIARPROD;
+    private javax.swing.JButton btnREPORTEGENERALDON;
     private javax.swing.JButton btnREPORTEGENERALDON4;
     private javax.swing.JButton btnREPORTEGENERALDON5;
     private javax.swing.JButton btnREPORTEGENERALPER1;
     private javax.swing.JButton btnREPORTEGENERALPER2;
+    private javax.swing.JButton btnREPORTEGENERALPROD;
+    private javax.swing.JButton btnREPORTEINDIVIDUAL;
+    private javax.swing.JButton btnbuscarDONA;
     private javax.swing.JButton btnbuscarPer;
     private javax.swing.JButton btnbuscarPer1;
-    private javax.swing.JButton btnbuscarProd1;
-    private javax.swing.JButton btnbuscarProd2;
+    private javax.swing.JButton btnbuscarProd;
     private javax.swing.JButton btnbuscarProd3;
     private javax.swing.JButton btnbuscarProd5;
     private javax.swing.JButton btndonaciones;
@@ -1922,6 +2211,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnguardarPer15;
     private javax.swing.JButton btnguardarPer4;
     private javax.swing.JButton btnguardarPer9;
+    private javax.swing.JButton btnlimpiarDONABUSQ;
     private javax.swing.JButton btnlimpiarPer10;
     private javax.swing.JButton btnlimpiarPer12;
     private javax.swing.JButton btnlimpiarPer13;
@@ -1930,17 +2220,16 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnlimpiarPer9;
     private javax.swing.JButton btnlimpiarPerbsq;
     private javax.swing.JButton btnlimpiarPerbsq1;
-    private javax.swing.JButton btnlimpiarProdBsqa1;
-    private javax.swing.JButton btnlimpiarProdBsqa2;
     private javax.swing.JButton btnlimpiarProdBsqa3;
     private javax.swing.JButton btnlimpiarProdBsqa5;
+    private javax.swing.JButton btnlimpiarProdbsqd;
     private javax.swing.JButton btnproductos;
     private javax.swing.JButton btnproyectos;
     private javax.swing.JButton btnroles;
     private javax.swing.ButtonGroup buttonGroupGenero;
     private javax.swing.JComboBox<String> cbxCodigoProyecto1;
     private javax.swing.JComboBox<String> cbxCodigoVoluntario1;
-    private javax.swing.JComboBox<String> cbxIdDonacion1;
+    private javax.swing.JComboBox<String> cbxIdDonacion;
     private javax.swing.JComboBox<String> cbxTipoPer;
     private javax.swing.JComboBox<String> cbxTipoPer1;
     private javax.swing.JComboBox<String> cbxTipoPer10;
@@ -1952,10 +2241,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxTipoPer6;
     private javax.swing.JComboBox<String> cbxTipoPer7;
     private javax.swing.JComboBox<String> cbxTipoPer9;
+    private javax.swing.JCheckBox chekBsqDONA;
     private javax.swing.JCheckBox chekBsqPer;
     private javax.swing.JCheckBox chekBsqPer1;
-    private javax.swing.JCheckBox chekBsqProds1;
-    private javax.swing.JCheckBox chekBsqProds2;
+    private javax.swing.JCheckBox chekBsqProds;
     private javax.swing.JCheckBox chekBsqProds3;
     private javax.swing.JCheckBox chekBsqProds5;
     private javax.swing.JCheckBox chkseguroiees;
@@ -2090,14 +2379,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator96;
     private javax.swing.JSeparator jSeparator97;
     private javax.swing.JSeparator jSeparator98;
-    private javax.swing.JSpinner jSpinnerCantidad1;
+    private javax.swing.JSpinner jSpinnerCantidad;
     private javax.swing.JSpinner jSpinnerDiasParticipacion1;
-    private javax.swing.JTable jTableDatosDonaciones1;
-    private javax.swing.JTable jTableDatosDonaciones3;
+    private javax.swing.JTable jTableDatosDonacione;
     private javax.swing.JTable jTableDatosDonaciones4;
     private javax.swing.JTable jTableDatosDonaciones5;
     private javax.swing.JTable jTableDatosPersonas1;
     private javax.swing.JTable jTableDatosPersonas2;
+    private javax.swing.JTable jTableDatosProductos;
     private javax.swing.JLabel lblFoto;
     private javax.swing.JPanel pnAdministrar;
     private javax.swing.JPanel pnDonaciones;
@@ -2111,11 +2400,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel pnProyectos;
     private javax.swing.JRadioButton rbtFemenino;
     private javax.swing.JRadioButton rbtMasculino;
-    private javax.swing.JTextArea txaDetalleProdDON1;
-    private javax.swing.JTextArea txaMotivoDON1;
+    private javax.swing.JTextArea txaDetalleProdDON;
+    private javax.swing.JTextArea txaMotivoDON;
     private javax.swing.JTextField txtBsqPersonas;
     private javax.swing.JTextField txtBsqPersonas1;
-    private javax.swing.JTextField txtBsqProductos1;
+    private javax.swing.JTextField txtBsqProductos;
     private javax.swing.JTextField txtBsqProductos2;
     private javax.swing.JTextField txtBsqProductos3;
     private javax.swing.JTextField txtBsqProductos5;
@@ -2123,7 +2412,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtLugar1;
     private javax.swing.JTextField txtNombreProyecto1;
     private javax.swing.JTextField txtNumeroProyecto1;
-    private javax.swing.JTextField txtTipoProducto1;
+    private javax.swing.JTextField txtTipoProducto;
     private javax.swing.JTextField txtTipoVol;
     private javax.swing.JTextField txtTitulo;
     private javax.swing.JTextField txtapellidoPer;
