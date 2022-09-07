@@ -124,7 +124,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator115 = new javax.swing.JSeparator();
         jSeparator116 = new javax.swing.JSeparator();
         jSeparator117 = new javax.swing.JSeparator();
-        jDateFechaentregaDON1 = new com.toedter.calendar.JDateChooser();
         jScrollPane13 = new javax.swing.JScrollPane();
         txaMotivoDON1 = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
@@ -790,7 +789,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jSeparator117.setForeground(new java.awt.Color(204, 204, 204));
         jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, 13));
-        jPanel36.add(jDateFechaentregaDON1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 220, 30));
 
         txaMotivoDON1.setBackground(new java.awt.Color(249, 247, 250));
         txaMotivoDON1.setColumns(20);
@@ -1968,7 +1966,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private com.toedter.calendar.JDateChooser jDateFechaentregaDON1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel109;
