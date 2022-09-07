@@ -19,17 +19,32 @@ import proyectofoca.ManagerFactory;
  */
 public class ControllerPersona {
 
-    ViewAdministrador vistaA;
+    ViewAdministrador vista;
     ManagerFactory manager;
     PersonaJpaController modeloPersona;
     Persona per;
     ModeloTablaPersona modeloTP;
     ListSelectionModel listapersonamodel;
 
-    public ControllerPersona(ViewAdministrador vistaA, ManagerFactory manager,PersonaJpaController modeloPersona) {
-        this.vistaA = vistaA;
+    public void ControllerPersonaAdmin(ViewAdministrador vista, ManagerFactory manager, PersonaJpaController modeloPersona) {
+        this.vista = vista;
+        this.vista.setVisible(true);
         this.manager = manager;
         this.modeloPersona = modeloPersona;
-        this.vistaA.setVisible(true);
+
+    }
+
+    public void ControllerPersonaJefe(ViewAdministrador vista, ManagerFactory manager, PersonaJpaController modeloPersona) {
+        this.vista = vista;
+        this.manager = manager;
+        this.modeloPersona = modeloPersona;
+        this.vista.setVisible(true);
+    }
+
+    public void ControllerPersonaAsistente(ViewAdministrador vista, ManagerFactory manager, PersonaJpaController modeloPersona) {
+        this.vista = vista;
+        this.manager = manager;
+        this.modeloPersona = modeloPersona;
+        this.vista.setVisible(true);
     }
 }

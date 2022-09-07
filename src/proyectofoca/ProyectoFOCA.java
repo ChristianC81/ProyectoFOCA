@@ -27,7 +27,7 @@ public class ProyectoFOCA {
     ViewSistema vista = new ViewSistema();
     ManagerFactory manager= new ManagerFactory();
     ViewSistema vistaSis = new ViewSistema();
-    PersonaJpaController modelo=new PersonaJpaController(manager.getEmf());
+    UsuarioJpaController modelo=new UsuarioJpaController(manager.getEmf());
     
     
       ControllerSistema cs= new ControllerSistema(manager, vistaSis,modelo);

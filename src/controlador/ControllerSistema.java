@@ -17,11 +17,10 @@ import proyectofoca.ManagerFactory;
 public class ControllerSistema {
     public static ViewSistema vista;
     ManagerFactory manager;
-    PersonaJpaController modelo;
-    public static ViewLogin vistaLogin;
-    ViewAdministrador vistaAdmin = new ViewAdministrador();
+    UsuarioJpaController modelo;
+    ViewLogin vistaLogin = new ViewLogin();
     
-    public ControllerSistema(ManagerFactory manager,ViewSistema vista, PersonaJpaController modelo) {
+    public ControllerSistema(ManagerFactory manager,ViewSistema vista, UsuarioJpaController modelo) {
         this.vista = vista;
         this.manager = manager;
         this.modelo=modelo;
@@ -37,15 +36,8 @@ public class ControllerSistema {
 //        vista.getjMenuItemAsistente().addActionListener(pro->cargarVistaAsistente());
     }
     public void cargarVistaAdmin(){
-        new ControllerPersona(vistaAdmin,manager,new PersonaJpaController(manager.getEmf()));
+        new ControllerLogin(vistaLogin,manager,new UsuarioJpaController(manager.getEmf()));
         System.out.println("");
     }
-//    public void cargarVistaJefe(){
-//        new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
-//        System.out.println("");
-//    }
-//    public void cargarVistaAsistente(){
-//       new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
-//        System.out.println("");
-//    }
+
 }
