@@ -5,7 +5,12 @@
 package proyectofoca;
 
 import Vista.InicioSistema;
+import Vista.ViewAdministrador;
+import Vista.ViewLogin;
 import Vista.ViewSistema;
+import controlador.ControllerSistema;
+import modelo.PersonaJpaController;
+import modelo.UsuarioJpaController;
 
 /**
  *
@@ -18,9 +23,15 @@ public class ProyectoFOCA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        InicioSistema vl = new InicioSistema();
-        vl.setVisible(true);
+      
+    ViewSistema vista = new ViewSistema();
+    ManagerFactory manager= new ManagerFactory();
+    ViewSistema vistaSis = new ViewSistema();
+    PersonaJpaController modelo=new PersonaJpaController(manager.getEmf());
+    
+    
+      ControllerSistema cs= new ControllerSistema(manager, vistaSis,modelo);
+    
         
     }
 }

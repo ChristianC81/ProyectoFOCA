@@ -18,33 +18,18 @@ import proyectofoca.ManagerFactory;
  * @author miri
  */
 public class ControllerPersona {
+
     ViewAdministrador vistaA;
     ManagerFactory manager;
     PersonaJpaController modeloPersona;
     Persona per;
-    JDesktopPane panelEscritorio;
     ModeloTablaPersona modeloTP;
     ListSelectionModel listapersonamodel;
 
-    public ControllerPersona(ViewAdministrador vistaA, ManagerFactory manager, PersonaJpaController modeloPersona, /*Persona per,*/ JDesktopPane panelEscritorio) {
-        
+    public ControllerPersona(ViewAdministrador vistaA, ManagerFactory manager,PersonaJpaController modeloPersona) {
+        this.vistaA = vistaA;
         this.manager = manager;
         this.modeloPersona = modeloPersona;
-        this.panelEscritorio = panelEscritorio;
-        this.modeloTP = new ModeloTablaPersona();
-        this.modeloTP.setFilas(modeloPersona.findPersonaEntities());
-
-        if (ControllerSistema.vp == null) {
-            ControllerSistema.vp = new ViewAdministrador();
-            this.vistaA = ControllerSistema.vp;
-            this.panelEscritorio.add(this.vistaA);
-        //    this.vistaA.getjTableDatosPersonas().setModel(modeloTP);
-            ControllerSistema.vp.show();
-            //controlMetodosPersona();
-
-        } else {
-            ControllerSistema.vp.show();
-        }
+        this.vistaA.setVisible(true);
     }
-
 }

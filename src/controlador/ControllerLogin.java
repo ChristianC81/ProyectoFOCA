@@ -6,7 +6,6 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
-import static controlador.ControllerSistema.vistaS;
 import javax.persistence.PersistenceException;
 import modelo.Usuario;
 import modelo.UsuarioJpaController;
@@ -47,7 +46,7 @@ public class ControllerLogin {
             Usuario user = modelo.buscarUsuario(usuario, clave);
         if(user!=null){
             Resouces.success("Usuario Correcto","~ BIENVENID@ ~");
-            new ControllerSistema(vistaS, manager);
+//            new ControllerSistema(manager,vistaL, modelo);
             limpiarLogin();
             vistaA.setVisible(true);
             vistaL.dispose();
@@ -62,10 +61,10 @@ public class ControllerLogin {
         //JOptionPane.showMessageDialog(vistaL, "~Saliendo del programa~");
         System.exit(0);
     }
-//    public void regresar(){
-//        vistaA.dispose();
-//        vistaL.setVisible(true);
-//    }
+    public void regresar(){
+        vistaA.dispose();
+        vistaL.setVisible(true);
+    }
     public void limpiarLogin(){
         vistaL.getTxtusuario().setText("");
         vistaL.getTxtPass().setText("");

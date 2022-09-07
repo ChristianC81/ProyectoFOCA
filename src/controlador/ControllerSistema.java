@@ -2,6 +2,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import Vista.ViewLogin;
 import Vista.ViewSistema;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import modelo.PersonaJpaController;
@@ -14,34 +15,37 @@ import proyectofoca.ManagerFactory;
  * @author miri
  */
 public class ControllerSistema {
-    public static ViewSistema vistaS;
+    public static ViewSistema vista;
     ManagerFactory manager;
-    public static ViewAdministrador vp;
-
+    PersonaJpaController modelo;
+    public static ViewLogin vistaLogin;
+    ViewAdministrador vistaAdmin = new ViewAdministrador();
     
-    public ControllerSistema(ViewSistema vistaS, ManagerFactory manager) {
-        this.vistaS = vistaS;
+    public ControllerSistema(ManagerFactory manager,ViewSistema vista, PersonaJpaController modelo) {
+        this.vista = vista;
         this.manager = manager;
-        this.vistaS.setExtendedState(MAXIMIZED_BOTH);
-
+        this.modelo=modelo;
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setExtendedState(MAXIMIZED_BOTH);
+        this.vista.setVisible(true);
         controlEvento();
     }
     
     public void controlEvento(){
-        vistaS.getjMenuItemAdministrador().addActionListener(p->cargarVistaAdmin());
-        vistaS.getjMenuItemJefeOperaciones().addActionListener(u->cargarVistaJefe());
-        vistaS.getjMenuItemAsistente().addActionListener(pro->cargarVistaAsistente());
+        vista.getjMenuItemAdministrador().addActionListener(p->cargarVistaAdmin());
+//        vista.getjMenuItemJefeOperaciones().addActionListener(u->cargarVistaJefe());
+//        vista.getjMenuItemAsistente().addActionListener(pro->cargarVistaAsistente());
     }
     public void cargarVistaAdmin(){
-        new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
+        new ControllerPersona(vistaAdmin,manager,new PersonaJpaController(manager.getEmf()));
         System.out.println("");
     }
-    public void cargarVistaJefe(){
-        new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
-        System.out.println("");
-    }
-    public void cargarVistaAsistente(){
-       new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
-        System.out.println("");
-    }
+//    public void cargarVistaJefe(){
+//        new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
+//        System.out.println("");
+//    }
+//    public void cargarVistaAsistente(){
+//       new ControllerPersona(vp,manager,new PersonaJpaController(manager.getEmf()),vistaS.getjDesktopPane1());
+//        System.out.println("");
+//    }
 }
