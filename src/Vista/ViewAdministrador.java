@@ -93,7 +93,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
         btnExaminarFoto = new javax.swing.JButton();
-        jDatefechanaci = new com.toedter.calendar.JDateChooser();
         jSeparator47 = new javax.swing.JSeparator();
         btnLIMPIARPER = new javax.swing.JButton();
         btnCREARPER = new javax.swing.JButton();
@@ -192,9 +191,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel116 = new javax.swing.JLabel();
         txtNumeroProyecto1 = new javax.swing.JTextField();
         jSeparator112 = new javax.swing.JSeparator();
-        jDateChooserFechaFin1 = new com.toedter.calendar.JDateChooser();
         jLabel117 = new javax.swing.JLabel();
-        jDateChooserFechaInicio1 = new com.toedter.calendar.JDateChooser();
         jSeparator113 = new javax.swing.JSeparator();
         jLabel118 = new javax.swing.JLabel();
         txtNombreProyecto1 = new javax.swing.JTextField();
@@ -619,7 +616,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         btnExaminarFoto.setText("Examinar");
         pnAdministrar.add(btnExaminarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 147, 21));
-        pnAdministrar.add(jDatefechanaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 299, 200, 20));
 
         jSeparator47.setForeground(new java.awt.Color(204, 204, 204));
         pnAdministrar.add(jSeparator47, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 200, 10));
@@ -1153,13 +1149,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jSeparator112.setForeground(new java.awt.Color(204, 204, 204));
         jPanel19.add(jSeparator112, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 90, 10));
-        jPanel19.add(jDateChooserFechaFin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 200, 30));
 
         jLabel117.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel117.setForeground(new java.awt.Color(102, 102, 102));
         jLabel117.setText("Fecha Inicio");
         jPanel19.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
-        jPanel19.add(jDateChooserFechaInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 30));
 
         jSeparator113.setForeground(new java.awt.Color(204, 204, 204));
         jPanel19.add(jSeparator113, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, 10));
@@ -1974,10 +1968,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private com.toedter.calendar.JDateChooser jDateChooserFechaFin1;
-    private com.toedter.calendar.JDateChooser jDateChooserFechaInicio1;
     private com.toedter.calendar.JDateChooser jDateFechaentregaDON1;
-    private com.toedter.calendar.JDateChooser jDatefechanaci;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel109;
