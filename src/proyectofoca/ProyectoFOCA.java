@@ -32,6 +32,6 @@ public class ProyectoFOCA {
     
       ControllerSistema cs= new ControllerSistema(manager, vistaSis,modelo);
     
-        
+          System.out.println("Palcambio");  
     }
 }
