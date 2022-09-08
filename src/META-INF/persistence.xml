@@ -2,22 +2,16 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="ProyectoFOCAPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>modelo.Donacion</class>
-    <class>modelo.Formulario</class>
-    <class>modelo.Jefe</class>
-    <class>modelo.Voluntario</class>
-    <class>modelo.Benefactor</class>
-    <class>modelo.Administrador</class>
-    <class>modelo.Inscripcion</class>
-    <class>modelo.Asistente</class>
-    <class>modelo.Proyecto</class>
-    <class>modelo.Beneficiario</class>
-    <class>modelo.Producto</class>
-    <class>modelo.Persona</class>
-    <class>modelo.Usuario</class>
     <class>modelo.Roles</class>
+    <class>modelo.Formulario</class>
+    <class>modelo.Proyecto</class>
+    <class>modelo.Usuario</class>
+    <class>modelo.Donacion</class>
+    <class>modelo.Producto</class>
+    <class>modelo.Inscripcion</class>
+    <class>modelo.Persona</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.18.7:1521:XE"/>
       <property name="javax.persistence.jdbc.user" value="ProyectoFinalM3B"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
       <property name="javax.persistence.jdbc.password" value="pfinalm3b"/>

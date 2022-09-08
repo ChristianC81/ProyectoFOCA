@@ -19,38 +19,62 @@ import proyectofoca.ManagerFactory;
  * @author chris
  */
 public class ControllerLogin {
-   ViewSistema vistaS;
+
+    ViewSistema vistaS = new ViewSistema();
     ViewLogin vistaL;
     ManagerFactory manager;
     UsuarioJpaController modelo;
     Usuario usuario;
     ViewAdministrador vistaAdmin = new ViewAdministrador();
-     public ControllerLogin(ViewLogin vistaL, ManagerFactory manager,UsuarioJpaController modelo) {
+
+    public ControllerLogin(ViewLogin vistaL, ManagerFactory manager, UsuarioJpaController modelo) {
         this.vistaL = vistaL;
         this.manager = manager;
         this.modelo = modelo;
+        this.vistaL.setLocationRelativeTo(null);
         this.vistaL.setVisible(true);
         iniciaControl();
     }
-     public void iniciaControl(){
-        vistaL.getBtnIniciar().addActionListener(le->controlLogin());
-        vistaL.getBtnSalir().addActionListener(ls ->salirLogin() );
+
+    public void iniciaControl() {
+        vistaL.getBtnIniciar().addActionListener(le -> controlLogin());
+        vistaL.getBtnSalir().addActionListener(ls -> salirLogin());
         //vistaA.getjButtonAtras().addActionListener(lb -> regresar());
     }
-    
+
     public void controlLogin() {
         try {
             DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
             String usuario = vistaL.getTxtusuario().getText();
             String contrasenia = new String(vistaL.getTxtPass().getPassword());
             Usuario user = modelo.buscarUsuario(usuario, contrasenia);
+            System.out.println(user.getIdpersona().getNombresper());
+            System.out.println(user.getIdrol().getNombrerol());
             if (user != null) {
-                Resouces.success("!BIENVENIDO!", "");
-            
-                ControllerRolesUsuario con=new ControllerRolesUsuario(user);
-                con.controlLogin();
-                    vistaAdmin.setVisible(true);
-                vistaL.dispose();
+                if (user.getIdrol().getNombrerol().equals("Administrador")) {
+                    ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                    Resouces.success("!BIENVENIDO!", "Administrador: " + user.getIdpersona().getNombresper());
+                    cjf.cargarRolAdministrador();
+                    vistaS.dispose();
+                    vistaL.dispose();
+                    
+                } else {
+                    if (user.getIdrol().getNombrerol().equals("Jefe")) {
+                        ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                        Resouces.success("!BIENVENIDO!", "Jefe: " + user.getIdpersona().getNombresper());
+                        cjf.cargarRolJefe();
+                        vistaS.dispose();
+                        vistaL.dispose();
+                    } else {
+                        if (user.getIdrol().getNombrerol().equals("Asistente")) {
+                            ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                            Resouces.success("!BIENVENIDO!", "Asistente: " + user.getIdpersona().getNombresper());
+                            cjf.cargarRolAdministrador();
+                            vistaS.dispose();
+                            vistaL.dispose();
+                        }
+                    }
+                }
             } else {
                 Resouces.error("Usuario Incorrecto", "Ingrese correctamente sus credenciales :D");
             }
@@ -59,16 +83,18 @@ public class ControllerLogin {
             System.out.println(e.getMessage());
         }
     }
-    
-    public void  salirLogin(){
+
+    public void salirLogin() {
         //JOptionPane.showMessageDialog(vistaL, "~Saliendo del programa~");
         System.exit(0);
     }
-    public void regresar(){
+
+    public void regresar() {
         vistaL.dispose();
         vistaL.setVisible(true);
     }
-    public void limpiarLogin(){
+
+    public void limpiarLogin() {
         vistaL.getTxtusuario().setText("");
         vistaL.getTxtPass().setText("");
     }

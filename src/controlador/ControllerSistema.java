@@ -31,13 +31,12 @@ public class ControllerSistema {
     }
     
     public void controlEvento(){
-        vista.getjMenuItemAdministrador().addActionListener(p->cargarVistaAdmin());
-//        vista.getjMenuItemJefeOperaciones().addActionListener(u->cargarVistaJefe());
-//        vista.getjMenuItemAsistente().addActionListener(pro->cargarVistaAsistente());
+        vista.getjMenuItemAdministrador().addActionListener(p->cargarVistaLogin());
+        vista.getjMenuItemJefeOperaciones().addActionListener(u->cargarVistaLogin());
+        vista.getjMenuItemAsistente().addActionListener(pro->cargarVistaLogin());
     }
-    public void cargarVistaAdmin(){
+    public void cargarVistaLogin(){
         new ControllerLogin(vistaLogin,manager,new UsuarioJpaController(manager.getEmf()));
-        System.out.println("");
+        vista.dispose();
     }
-
 }

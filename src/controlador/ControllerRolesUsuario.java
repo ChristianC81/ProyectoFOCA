@@ -6,15 +6,9 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import Vista.ViewLogin;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import javax.persistence.PersistenceException;
-import javax.swing.ListSelectionModel;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Usuario;
-import modelo.UsuarioJpaController;
 import proyectofoca.ManagerFactory;
 
 /**
@@ -22,25 +16,23 @@ import proyectofoca.ManagerFactory;
  * @author Laptop
  */
 public class ControllerRolesUsuario {
-    ControllerPersona cp= new ControllerPersona();
-    ViewAdministrador vistaL;
+    ViewAdministrador vistaL = new ViewAdministrador();
     ManagerFactory manager;
     PersonaJpaController modeloAdministrador;
     PersonaJpaController modeloJefe;
     PersonaJpaController modeloAsistente;
-    Persona persona;
-    Usuario u;
-    ViewAdministrador vistaAdmin = new ViewAdministrador();
-
-    public ControllerRolesUsuario(Usuario u) {
-        this.u= u;
-        System.out.println("AQUI");
-        }
-  public void controlLogin(){
-         if (u.getIdrol().getNombrerol()=="Jefe") {
-             System.out.println("AQUI");
-                Resouces.success("!BIENVENIDO!", " Inicio de Sesión exitoso \n Fecha de Inicio: \n Usuario: "+u.getNombreusuario());
-                cp.ControllerPersonaAdmin(vistaL, manager,modeloAdministrador);
-         } 
+ 
+     public void cargarRolAdministrador() {
+         ControllerPersona ca = new ControllerPersona();
+         ca.ControllerPersonaAdministrador(vistaL);
+    }
+    public void cargarRolJefe() {
+         ControllerPersona ca = new ControllerPersona();
+         ca.ControllerPersonaJefe(vistaL);
+    }
+     public void cargarVistaAsistente() {
+       ControllerPersona ca = new ControllerPersona();
+         ca.ControllerPersonaAsistente(vistaL);
+    }
   }
-}
+
