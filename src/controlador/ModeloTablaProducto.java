@@ -6,8 +6,9 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Persona;
+import modelo.Producto;
 import javax.swing.table.AbstractTableModel;
+import modelo.Producto;
 
 /**
  *
@@ -15,9 +16,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaProducto extends AbstractTableModel {
 
-    private String[] columnas = {"NOMBRE", "APELLIDO", "CÉDULA", "CELULAR", "CORREO", "DIRECCIÓN"};
-    public static List<Persona> filas;
-    private Persona personaSelecionado;
+    private String[] columnas = {"TIPO", "CANTIDAD", "PROYECTO", "DONACIÓN"};
+    public static List<Producto> filas;
+    private Producto productoSeleccionado;
     private int indice;
 
     public ModeloTablaProducto() {
@@ -39,23 +40,19 @@ public class ModeloTablaProducto extends AbstractTableModel {
         return columnas[column];
     }
 
-    @Override 
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        personaSelecionado = filas.get(rowIndex);
+        productoSeleccionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                //return personaSelecionado.getNombrePer();
+                return productoSeleccionado.getTipoprod();
             case 1:
-                //return personaSelecionado.getApellidoPer();
+                return productoSeleccionado.getCantidadprod();
             case 2:
-                //return personaSelecionado.getCedulaPer();
+                return productoSeleccionado.getIdproyprod().getNombreproy();
             case 3:
-                //return personaSelecionado.getCelularPer();
-            case 4:
-                //return personaSelecionado.getCorreoPer();
-            case 5:
-                //return personaSelecionado.getDireccionPer();
+                return productoSeleccionado.getIddonaprod();
             default:
                 return null;
         }
@@ -67,15 +64,11 @@ public class ModeloTablaProducto extends AbstractTableModel {
             case 0:
                 return String.class;
             case 1:
-                return String.class;
+                return Double.class;
             case 2:
-                return String.class;
+                return Integer.class;
             case 3:
-                return String.class;
-            case 4:
-                return String.class;
-            case 5:
-                return String.class;
+                return Integer.class;
             default:
                 return Object.class;
         }
@@ -89,20 +82,20 @@ public class ModeloTablaProducto extends AbstractTableModel {
         this.columnas = columnas;
     }
 
-    public List<Persona> getFilas() {
+    public List<Producto> getFilas() {
         return filas;
     }
 
-    public void setFilas(List<Persona> filas) {
+    public void setFilas(List<Producto> filas) {
         this.filas = filas;
     }
 
-    public Persona getPersonaSelecionado() {
-        return personaSelecionado;
+    public Producto getProductoSelecionado() {
+        return productoSeleccionado;
     }
 
-    public void setPersonaSelecionado(Persona personaSelecionado) {
-        this.personaSelecionado = personaSelecionado;
+    public void setProductoSelecionado(Producto productoSeleccionado) {
+        this.productoSeleccionado = productoSeleccionado;
     }
 
     public int getIndice() {
@@ -113,22 +106,22 @@ public class ModeloTablaProducto extends AbstractTableModel {
         this.indice = indice;
     }
 
-    public void actualizar(Persona p) {
-        setPersonaSelecionado(null);
+    public void actualizar(Producto p) {
+        setProductoSelecionado(null);
         if (p != null) {
             filas.add(indice, p);
             fireTableDataChanged();
         }
     }
 
-    public void agregar(Persona p) {
+    public void agregar(Producto p) {
         if (p != null) {
             filas.add(p);
             fireTableDataChanged();
         }
     }
 
-    public void eliminar(Persona p) {
+    public void eliminar(Producto p) {
         if (p != null) {
             filas.remove(p);
             fireTableDataChanged();

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
@@ -221,6 +222,20 @@ public class ProductoJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+    
+        public List<Producto> buscarProducto(String nombre) {
+        System.out.println(nombre);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Producto> query = em.createNamedQuery("Producto.findByTipoprod", Producto.class);
+            query.setParameter("tipoprod", nombre);
+            List<Producto> list = query.getResultList();
+            return list;
         } finally {
             em.close();
         }
