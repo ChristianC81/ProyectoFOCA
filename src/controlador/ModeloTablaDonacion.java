@@ -5,8 +5,9 @@
 package controlador;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import modelo.Persona;
+import modelo.*;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -15,9 +16,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaDonacion extends AbstractTableModel {
 
-    private String[] columnas = {"NOMBRE", "APELLIDO", "CÉDULA", "CELULAR", "CORREO", "DIRECCIÓN"};
-    public static List<Persona> filas;
-    private Persona personaSelecionado;
+    private String[] columnas = {"PERSONA", "DETALLE DE PRODUCTO", "FECHA DE ENTREGA", "MOTIVO DE DONACIÓN"};
+    public static List<Donacion> filas;
+    private Donacion donacionSelecionado;
     private int indice;
 
     public ModeloTablaDonacion() {
@@ -41,21 +42,17 @@ public class ModeloTablaDonacion extends AbstractTableModel {
 
     @Override 
     public Object getValueAt(int rowIndex, int columnIndex) {
-        personaSelecionado = filas.get(rowIndex);
+        donacionSelecionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                //return personaSelecionado.getNombrePer();
+                return donacionSelecionado.getIdpersona();
             case 1:
-                //return personaSelecionado.getApellidoPer();
+                return donacionSelecionado.getDetalleproductodona();
             case 2:
-                //return personaSelecionado.getCedulaPer();
+                return donacionSelecionado.getFechaentregadona();
             case 3:
-                //return personaSelecionado.getCelularPer();
-            case 4:
-                //return personaSelecionado.getCorreoPer();
-            case 5:
-                //return personaSelecionado.getDireccionPer();
+                return donacionSelecionado.getMotivodona();
             default:
                 return null;
         }
@@ -65,16 +62,12 @@ public class ModeloTablaDonacion extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return String.class;
+                return Integer.class;
             case 1:
                 return String.class;
             case 2:
-                return String.class;
+                return Date.class;
             case 3:
-                return String.class;
-            case 4:
-                return String.class;
-            case 5:
                 return String.class;
             default:
                 return Object.class;
@@ -89,20 +82,20 @@ public class ModeloTablaDonacion extends AbstractTableModel {
         this.columnas = columnas;
     }
 
-    public List<Persona> getFilas() {
+    public List<Donacion> getFilas() {
         return filas;
     }
 
-    public void setFilas(List<Persona> filas) {
+    public void setFilas(List<Donacion> filas) {
         this.filas = filas;
     }
 
-    public Persona getPersonaSelecionado() {
-        return personaSelecionado;
+    public Donacion getDonacionSelecionado() {
+        return donacionSelecionado;
     }
 
-    public void setPersonaSelecionado(Persona personaSelecionado) {
-        this.personaSelecionado = personaSelecionado;
+    public void setDonacionSelecionado(Donacion donacionSelecionado) {
+        this.donacionSelecionado = donacionSelecionado;
     }
 
     public int getIndice() {
@@ -113,24 +106,24 @@ public class ModeloTablaDonacion extends AbstractTableModel {
         this.indice = indice;
     }
 
-    public void actualizar(Persona p) {
-        setPersonaSelecionado(null);
-        if (p != null) {
-            filas.add(indice, p);
+    public void actualizar(Donacion d) {
+        setDonacionSelecionado(null);
+        if (d != null) {
+            filas.add(indice, d);
             fireTableDataChanged();
         }
     }
 
-    public void agregar(Persona p) {
-        if (p != null) {
-            filas.add(p);
+    public void agregar(Donacion d) {
+        if (d != null) {
+            filas.add(d);
             fireTableDataChanged();
         }
     }
 
-    public void eliminar(Persona p) {
-        if (p != null) {
-            filas.remove(p);
+    public void eliminar(Donacion d) {
+        if (d != null) {
+            filas.remove(d);
             fireTableDataChanged();
         }
 

@@ -135,6 +135,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnEDITARDONA = new javax.swing.JButton();
         btnELIMINARDONA = new javax.swing.JButton();
         btnLIMPIARDONA = new javax.swing.JButton();
+        jLabel123 = new javax.swing.JLabel();
+        jComboBoxPersonasBenefactDon = new javax.swing.JComboBox<>();
         jPanel38 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTableDatosDonacione = new javax.swing.JTable();
@@ -146,7 +148,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnbuscarDONA = new javax.swing.JButton();
         chekBsqDONA = new javax.swing.JCheckBox();
         jLabel62 = new javax.swing.JLabel();
-        txtBsqProductos2 = new javax.swing.JTextField();
+        txtBsqDonacionesCriterio = new javax.swing.JTextField();
         jSeparator106 = new javax.swing.JSeparator();
         pnProductos = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -347,7 +349,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnAdministrar.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         pnAdministrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtcedulaPer.setBackground(new java.awt.Color(249, 247, 250));
@@ -595,7 +597,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona.add(pnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 570));
 
         jPanel16.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel16.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -637,7 +639,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel29.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel29.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosPersonas.setBackground(new java.awt.Color(249, 247, 222));
@@ -714,7 +716,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel36.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel36.setMinimumSize(new java.awt.Dimension(640, 811));
         jPanel36.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -726,21 +728,21 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel121.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel121.setForeground(new java.awt.Color(102, 102, 102));
         jLabel121.setText("Fecha de Entrega:");
-        jPanel36.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+        jPanel36.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
 
         jLabel122.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel122.setForeground(new java.awt.Color(102, 102, 102));
         jLabel122.setText("Motivo de Donación:");
-        jPanel36.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        jPanel36.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
         jSeparator115.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 220, 10));
+        jPanel36.add(jSeparator115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 220, 10));
 
         jSeparator116.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 220, 12));
+        jPanel36.add(jSeparator116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, 10));
 
         jSeparator117.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, 13));
+        jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 220, 13));
 
         txaMotivoDON.setBackground(new java.awt.Color(249, 247, 250));
         txaMotivoDON.setColumns(20);
@@ -748,7 +750,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txaMotivoDON.setBorder(null);
         jScrollPane13.setViewportView(txaMotivoDON);
 
-        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 80));
+        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 80));
 
         txaDetalleProdDON.setBackground(new java.awt.Color(249, 247, 250));
         txaDetalleProdDON.setColumns(20);
@@ -756,7 +758,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txaDetalleProdDON.setBorder(null);
         jScrollPane14.setViewportView(txaDetalleProdDON);
 
-        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 80));
+        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 80));
 
         btnCREARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
         jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 40, 50));
@@ -770,10 +772,18 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnLIMPIARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
         jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 40, 50));
 
+        jLabel123.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel123.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel123.setText("Detalle de Producto: ");
+        jPanel36.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+
+        jComboBoxPersonasBenefactDon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel36.add(jComboBoxPersonasBenefactDon, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 220, -1));
+
         pnDonaciones.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         jPanel38.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel38.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosDonacione.setBackground(new java.awt.Color(249, 247, 222));
@@ -844,7 +854,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         jPanel34.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel34.setForeground(new java.awt.Color(255, 255, 255));
         jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -872,10 +882,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel62.setText("Criterio");
         jPanel34.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 50, 20));
 
-        txtBsqProductos2.setBackground(new java.awt.Color(249, 247, 250));
-        txtBsqProductos2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtBsqProductos2.setBorder(null);
-        jPanel34.add(txtBsqProductos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 210, -1));
+        txtBsqDonacionesCriterio.setBackground(new java.awt.Color(249, 247, 250));
+        txtBsqDonacionesCriterio.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtBsqDonacionesCriterio.setBorder(null);
+        jPanel34.add(txtBsqDonacionesCriterio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 210, -1));
 
         jSeparator106.setForeground(new java.awt.Color(204, 204, 204));
         jPanel34.add(jSeparator106, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 210, 10));
@@ -888,7 +898,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel17.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel17.setPreferredSize(new java.awt.Dimension(640, 811));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -938,7 +948,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel33.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel33.setForeground(new java.awt.Color(255, 255, 255));
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -977,7 +987,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel40.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel40.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProductos.setBackground(new java.awt.Color(249, 247, 222));
@@ -1053,7 +1063,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel37.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel37.setForeground(new java.awt.Color(255, 255, 255));
         jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1092,7 +1102,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 740, 100));
 
         jPanel41.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel41.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProyectos.setBackground(new java.awt.Color(249, 247, 222));
@@ -1163,7 +1173,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 740, 470));
 
         jPanel12.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel75.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1238,7 +1248,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel11.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel72.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1300,7 +1310,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel35.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel35.setForeground(new java.awt.Color(255, 255, 255));
         jPanel35.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1339,7 +1349,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel42.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel42.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosInscripciones.setBackground(new java.awt.Color(249, 247, 222));
@@ -1415,7 +1425,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel28.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel28.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Formularios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel28.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Formularios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNumFormu.setBackground(new java.awt.Color(249, 247, 250));
@@ -1567,7 +1577,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona1.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 570));
 
         jPanel30.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel30.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosFormularios.setBackground(new java.awt.Color(249, 247, 222));
@@ -1636,7 +1646,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona1.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 650, 470));
 
         jPanel31.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel31.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel31.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel31.setForeground(new java.awt.Color(255, 255, 255));
         jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1782,6 +1792,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
     public void setBtnCANCELARINSCRI(JButton btnCANCELARINSCRI) {
         this.btnCANCELARINSCRI = btnCANCELARINSCRI;
+    }
+
+    public JTextField getTxtBsqDonacionesCriterio() {
+        return txtBsqDonacionesCriterio;
+    }
+
+    public void setTxtBsqDonacionesCriterio(JTextField txtBsqDonacionesCriterio) {
+        this.txtBsqDonacionesCriterio = txtBsqDonacionesCriterio;
     }
 
     public JButton getBtnCANCELARPER() {
@@ -2783,6 +2801,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     public void setTxtNumProye(JTextField txtNumProye) {
         this.txtNumProye = txtNumProye;
     }
+
+    public JComboBox<String> getjComboBoxPersonasBenefactDon() {
+        return jComboBoxPersonasBenefactDon;
+    }
+
+    public void setjComboBoxPersonasBenefactDon(JComboBox<String> jComboBoxPersonasBenefactDon) {
+        this.jComboBoxPersonasBenefactDon = jComboBoxPersonasBenefactDon;
+    }
     
     
     
@@ -2912,6 +2938,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkAccesoInternet;
     private javax.swing.JCheckBox chkDiscapacidad;
     private javax.swing.JCheckBox chkseguroiees;
+    private javax.swing.JComboBox<String> jComboBoxPersonasBenefactDon;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel109;
@@ -2920,6 +2947,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel44;
@@ -3059,11 +3087,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtMasculino;
     private javax.swing.JTextArea txaDetalleProdDON;
     private javax.swing.JTextArea txaMotivoDON;
+    private javax.swing.JTextField txtBsqDonacionesCriterio;
     private javax.swing.JTextField txtBsqFormularios;
     private javax.swing.JTextField txtBsqInscripiones;
     private javax.swing.JTextField txtBsqPersonas;
     private javax.swing.JTextField txtBsqProductos;
-    private javax.swing.JTextField txtBsqProductos2;
     private javax.swing.JTextField txtBsqProyectos;
     private javax.swing.JTextField txtCodigoInscripcion;
     private javax.swing.JTextField txtDomicilio;

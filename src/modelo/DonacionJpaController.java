@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
@@ -220,5 +221,17 @@ public class DonacionJpaController implements Serializable {
             em.close();
         }
     }
-    
+    public List<Donacion> buscarDonacion(String nombre) {
+        System.out.println(nombre);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Donacion> query = em.createNamedQuery("Donacion.findByDetalleproductodona", Donacion.class);
+            query.setParameter("detalleproductodona", nombre);
+            List<Donacion> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+        }
+    }
 }
