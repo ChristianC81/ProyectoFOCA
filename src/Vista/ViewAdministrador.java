@@ -136,6 +136,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnEDITARDONA = new javax.swing.JButton();
         btnELIMINARDONA = new javax.swing.JButton();
         btnLIMPIARDONA = new javax.swing.JButton();
+        jLabel123 = new javax.swing.JLabel();
+        jComboBoxIDBENEFACTOR = new javax.swing.JComboBox<>();
         jPanel38 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTableDatosDonacione = new javax.swing.JTable();
@@ -727,24 +729,24 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jLabel120.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel120.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel120.setText("Detalle de Producto: ");
-        jPanel36.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        jLabel120.setText("Persona:");
+        jPanel36.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         jLabel121.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel121.setForeground(new java.awt.Color(102, 102, 102));
         jLabel121.setText("Fecha de Entrega:");
-        jPanel36.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+        jPanel36.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         jLabel122.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel122.setForeground(new java.awt.Color(102, 102, 102));
         jLabel122.setText("Motivo de Donación:");
-        jPanel36.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        jPanel36.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         jSeparator115.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 220, 10));
+        jPanel36.add(jSeparator115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 220, 10));
 
         jSeparator116.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 220, 12));
+        jPanel36.add(jSeparator116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 220, 10));
 
         jSeparator117.setForeground(new java.awt.Color(204, 204, 204));
         jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, 13));
@@ -755,7 +757,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txaMotivoDON.setBorder(null);
         jScrollPane13.setViewportView(txaMotivoDON);
 
-        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 80));
+        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, 80));
 
         txaDetalleProdDON.setBackground(new java.awt.Color(249, 247, 250));
         txaDetalleProdDON.setColumns(20);
@@ -763,10 +765,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txaDetalleProdDON.setBorder(null);
         jScrollPane14.setViewportView(txaDetalleProdDON);
 
-        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 80));
+        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 80));
 
         btnCREARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 40, 50));
+        jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 40, 50));
 
         btnEDITARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
         btnEDITARDONA.addActionListener(new java.awt.event.ActionListener() {
@@ -774,13 +776,20 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 btnEDITARDONAActionPerformed(evt);
             }
         });
-        jPanel36.add(btnEDITARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 40, 50));
+        jPanel36.add(btnEDITARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 40, 50));
 
         btnELIMINARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel36.add(btnELIMINARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 40, 50));
+        jPanel36.add(btnELIMINARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 40, 50));
 
         btnLIMPIARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 40, 50));
+        jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 40, 50));
+
+        jLabel123.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel123.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel123.setText("Detalle de Producto: ");
+        jPanel36.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+
+        jPanel36.add(jComboBoxIDBENEFACTOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 220, -1));
 
         pnDonaciones.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
@@ -1758,6 +1767,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private void btnEDITARDONAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEDITARDONAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEDITARDONAActionPerformed
+
+    public JComboBox<String> getjComboBoxIDBENEFACTOR() {
+        return jComboBoxIDBENEFACTOR;
+    }
+
+    public void setjComboBoxIDBENEFACTOR(JComboBox<String> jComboBoxIDBENEFACTOR) {
+        this.jComboBoxIDBENEFACTOR = jComboBoxIDBENEFACTOR;
+    }
 
     public JButton getBtnAsistente() {
         return btnAsistente;
@@ -2928,6 +2945,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkAccesoInternet;
     private javax.swing.JCheckBox chkDiscapacidad;
     private javax.swing.JCheckBox chkseguroiees;
+    private javax.swing.JComboBox<String> jComboBoxIDBENEFACTOR;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel109;
@@ -2936,6 +2954,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel44;
