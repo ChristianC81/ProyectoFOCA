@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 /**
@@ -20,8 +24,15 @@ public class InicioSistema extends javax.swing.JFrame {
         initComponents();
     }
     public void conexHtml(){
-    
-    }
+        String url= System.getProperty("user.dir")+"\\html\\index.html";
+        File rec = new File(url);
+        epCarrousel.setEditable(false);
+        try {
+            epCarrousel.setPage(rec.toURI().toURL());
+        } catch (Exception ex) {
+            Logger.getLogger(InicioSistema.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +47,7 @@ public class InicioSistema extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
+        epCarrousel = new javax.swing.JEditorPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +64,7 @@ public class InicioSistema extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
 
-        jScrollPane1.setViewportView(jEditorPane1);
+        jScrollPane1.setViewportView(epCarrousel);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,7 +169,7 @@ public class InicioSistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresoSistema;
-    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JEditorPane epCarrousel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
