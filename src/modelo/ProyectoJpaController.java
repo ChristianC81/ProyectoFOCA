@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -263,6 +264,19 @@ public class ProyectoJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+    public List<Proyecto> buscarProyecto(BigDecimal id) {
+        System.out.println(id);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Proyecto> query = em.createNamedQuery("Proyecto.findByIdproy", Proyecto.class);
+            query.setParameter("tipoprod", id);
+            List<Proyecto> list = query.getResultList();
+            return list;
         } finally {
             em.close();
         }
