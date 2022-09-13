@@ -24,9 +24,8 @@ public class ProyectoFOCA {
     public static void main(String[] args) {
         // TODO code application logic here
       
-    ViewSistema vista = new ViewSistema();
     ManagerFactory manager= new ManagerFactory();
-    ViewSistema vistaSis = new ViewSistema();
+    InicioSistema vistaSis = new InicioSistema();
     UsuarioJpaController modelo=new UsuarioJpaController(manager.getEmf());
     
     

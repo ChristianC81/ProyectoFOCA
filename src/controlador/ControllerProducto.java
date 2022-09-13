@@ -33,21 +33,23 @@ public class ControllerProducto {
         this.vistad = vistad;
         this.manager = manager;
         this.modelPd = modelPd;
+        this.vistad.getPnMenu().setSelectedIndex(5);
+         System.out.println("Continuo bien karnal");
     }
-
-    public void guardarProducto() throws PreexistingEntityException, Exception {
+    
+    public void guardarProducto( Producto p){
+        try{
         if (validarCampos() != true) {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
-            producto = new Producto();
-            producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
-            producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
-            modelPd.create(producto);
+            modelPd.create(p);
             modeloTablaProd.agregar(producto);
             Resouces.success(" ATENCIÓN!!!", "Producto creado correctamente :>!");
             limpiarProd();
         }
-
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     public void editarProducto() {

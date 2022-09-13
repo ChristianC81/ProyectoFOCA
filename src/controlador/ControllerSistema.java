@@ -1,6 +1,7 @@
 
 package controlador;
 
+import Vista.InicioSistema;
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
 import Vista.ViewSistema;
@@ -15,12 +16,12 @@ import proyectofoca.ManagerFactory;
  * @author miri
  */
 public class ControllerSistema {
-    public static ViewSistema vista;
+    public static InicioSistema vista;
     ManagerFactory manager;
     UsuarioJpaController modelo;
     ViewLogin vistaLogin = new ViewLogin();
     
-    public ControllerSistema(ManagerFactory manager,ViewSistema vista, UsuarioJpaController modelo) {
+    public ControllerSistema(ManagerFactory manager,InicioSistema vista, UsuarioJpaController modelo) {
         this.vista = vista;
         this.manager = manager;
         this.modelo=modelo;
@@ -31,9 +32,7 @@ public class ControllerSistema {
     }
     
     public void controlEvento(){
-        vista.getjMenuItemAdministrador().addActionListener(p->cargarVistaLogin());
-        vista.getjMenuItemJefeOperaciones().addActionListener(u->cargarVistaLogin());
-        vista.getjMenuItemAsistente().addActionListener(pro->cargarVistaLogin());
+        vista.getBtnIngresoSistema().addActionListener(p->cargarVistaLogin());
     }
     public void cargarVistaLogin(){
         new ControllerLogin(vistaLogin,manager,new UsuarioJpaController(manager.getEmf()));

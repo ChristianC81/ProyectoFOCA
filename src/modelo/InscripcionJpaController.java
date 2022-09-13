@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.exceptions.NonexistentEntityException;
@@ -196,5 +197,17 @@ public class InscripcionJpaController implements Serializable {
             em.close();
         }
     }
-    
+     public List<Inscripcion> buscarFor(String id) {
+        System.out.println(id);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Inscripcion> query = em.createNamedQuery("Inscripcion.findByIdins", Inscripcion.class);
+            query.setParameter("idins", id);
+            List<Inscripcion> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+        }
+    }
 }

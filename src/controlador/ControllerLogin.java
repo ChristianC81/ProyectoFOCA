@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import Vista.InicioSistema;
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
 import Vista.ViewSistema;
@@ -20,7 +21,7 @@ import proyectofoca.ManagerFactory;
  */
 public class ControllerLogin {
 
-    ViewSistema vistaS = new ViewSistema();
+    InicioSistema vistaS = new InicioSistema();
     ViewLogin vistaL;
     ManagerFactory manager;
     UsuarioJpaController modelo;

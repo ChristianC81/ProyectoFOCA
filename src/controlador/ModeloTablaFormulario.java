@@ -6,8 +6,9 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Persona;
+import modelo.Formulario;
 import javax.swing.table.AbstractTableModel;
+import modelo.Formulario;
 
 /**
  *
@@ -15,9 +16,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaFormulario extends AbstractTableModel {
 
-    private String[] columnas = {"NOMBRE", "APELLIDO", "CÉDULA", "CELULAR", "CORREO", "DIRECCIÓN"};
-    public static List<Persona> filas;
-    private Persona personaSelecionado;
+    private String[] columnas = {"IDFORM", "DOMICILIOFORM", "INGRESOFORM", "NIVELEDUFORM", "TIPOVIVIENDAFORM", "NHIJOSFORM","ETNIAFORM","DISCAPACIDAFORM","NPROPIEDADES","IEESFORM","INTERNETFORM","NDISPOSITIVOS","SERVBASICOS","NINTEFAMFORM","IDPERSONA"};
+    public static List<Formulario> filas;
+    private Formulario formularioSelecionado;
     private int indice;
 
     public ModeloTablaFormulario() {
@@ -41,21 +42,21 @@ public class ModeloTablaFormulario extends AbstractTableModel {
 
     @Override 
     public Object getValueAt(int rowIndex, int columnIndex) {
-        personaSelecionado = filas.get(rowIndex);
+        formularioSelecionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                //return personaSelecionado.getNombrePer();
+                //return formularioSelecionado.getNombrePer();
             case 1:
-                //return personaSelecionado.getApellidoPer();
+                //return formularioSelecionado.getApellidoPer();
             case 2:
-                //return personaSelecionado.getCedulaPer();
+                //return formularioSelecionado.getCedulaPer();
             case 3:
-                //return personaSelecionado.getCelularPer();
+                //return formularioSelecionado.getCelularPer();
             case 4:
-                //return personaSelecionado.getCorreoPer();
+                //return formularioSelecionado.getCorreoPer();
             case 5:
-                //return personaSelecionado.getDireccionPer();
+                //return formularioSelecionado.getDireccionPer();
             default:
                 return null;
         }
@@ -89,20 +90,20 @@ public class ModeloTablaFormulario extends AbstractTableModel {
         this.columnas = columnas;
     }
 
-    public List<Persona> getFilas() {
+    public List<Formulario> getFilas() {
         return filas;
     }
 
-    public void setFilas(List<Persona> filas) {
+    public void setFilas(List<Formulario> filas) {
         this.filas = filas;
     }
 
-    public Persona getPersonaSelecionado() {
-        return personaSelecionado;
+    public Formulario getFormularioSelecionado() {
+        return formularioSelecionado;
     }
 
-    public void setPersonaSelecionado(Persona personaSelecionado) {
-        this.personaSelecionado = personaSelecionado;
+    public void setFormularioSelecionado(Formulario formularioSelecionado) {
+        this.formularioSelecionado = formularioSelecionado;
     }
 
     public int getIndice() {
@@ -113,22 +114,22 @@ public class ModeloTablaFormulario extends AbstractTableModel {
         this.indice = indice;
     }
 
-    public void actualizar(Persona p) {
-        setPersonaSelecionado(null);
+    public void actualizar(Formulario p) {
+        setFormularioSelecionado(null);
         if (p != null) {
             filas.add(indice, p);
             fireTableDataChanged();
         }
     }
 
-    public void agregar(Persona p) {
+    public void agregar(Formulario p) {
         if (p != null) {
             filas.add(p);
             fireTableDataChanged();
         }
     }
 
-    public void eliminar(Persona p) {
+    public void eliminar(Formulario p) {
         if (p != null) {
             filas.remove(p);
             fireTableDataChanged();

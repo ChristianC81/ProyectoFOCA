@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.exceptions.NonexistentEntityException;
@@ -169,4 +170,17 @@ public class FormularioJpaController implements Serializable {
         }
     }
     
+    public List<Formulario> buscarFor(String id) {
+        System.out.println(id);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Formulario> query = em.createNamedQuery("Formulario.findByIdform", Formulario.class);
+            query.setParameter("idform", id);
+            List<Formulario> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+        }
+    }
 }

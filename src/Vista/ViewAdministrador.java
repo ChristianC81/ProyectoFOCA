@@ -4044,6 +4044,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     public void setBtnInscripciones(JButton btnInscripciones) {
         this.btnInscripciones = btnInscripciones;
     }
+
+    public JComboBox<String> getCbxProyecto() {
+        return cbxProyecto;
+    }
+
+    public void setCbxProyecto(JComboBox<String> cbxProyecto) {
+        this.cbxProyecto = cbxProyecto;
+    }
     
     
     

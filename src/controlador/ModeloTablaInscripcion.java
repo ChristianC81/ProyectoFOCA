@@ -6,8 +6,8 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Persona;
 import javax.swing.table.AbstractTableModel;
+import modelo.Inscripcion;
 
 /**
  *
@@ -15,9 +15,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaInscripcion extends AbstractTableModel {
 
-    private String[] columnas = {"NOMBRE", "APELLIDO", "CÉDULA", "CELULAR", "CORREO", "DIRECCIÓN"};
-    public static List<Persona> filas;
-    private Persona personaSelecionado;
+    private String[] columnas = {"IDINS", "NDIASPARTICIPACIONINS", "IDPROYINS", "IDPERSONA"};
+    public static List<Inscripcion> filas;
+    private Inscripcion inscripcionSelecionado;
     private int indice;
 
     public ModeloTablaInscripcion() {
@@ -41,7 +41,7 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
 
     @Override 
     public Object getValueAt(int rowIndex, int columnIndex) {
-        personaSelecionado = filas.get(rowIndex);
+        inscripcionSelecionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
@@ -89,20 +89,20 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
         this.columnas = columnas;
     }
 
-    public List<Persona> getFilas() {
+    public List<Inscripcion> getFilas() {
         return filas;
     }
 
-    public void setFilas(List<Persona> filas) {
+    public void setFilas(List<Inscripcion> filas) {
         this.filas = filas;
     }
 
-    public Persona getPersonaSelecionado() {
-        return personaSelecionado;
+    public Inscripcion getInscripcionSelecionado() {
+        return inscripcionSelecionado;
     }
 
-    public void setPersonaSelecionado(Persona personaSelecionado) {
-        this.personaSelecionado = personaSelecionado;
+    public void setInscripcionSelecionado(Inscripcion inscripcionSelecionado) {
+        this.inscripcionSelecionado = inscripcionSelecionado;
     }
 
     public int getIndice() {
@@ -113,22 +113,22 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
         this.indice = indice;
     }
 
-    public void actualizar(Persona p) {
-        setPersonaSelecionado(null);
+    public void actualizar(Inscripcion p) {
+        setInscripcionSelecionado(null);
         if (p != null) {
             filas.add(indice, p);
             fireTableDataChanged();
         }
     }
 
-    public void agregar(Persona p) {
+    public void agregar(Inscripcion p) {
         if (p != null) {
             filas.add(p);
             fireTableDataChanged();
         }
     }
 
-    public void eliminar(Persona p) {
+    public void eliminar(Inscripcion p) {
         if (p != null) {
             filas.remove(p);
             fireTableDataChanged();
