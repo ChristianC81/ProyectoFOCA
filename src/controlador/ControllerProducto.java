@@ -7,11 +7,17 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import java.math.BigInteger;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import modelo.DonacionJpaController;
 import modelo.Producto;
 import modelo.ProductoJpaController;
+import modelo.ProyectoJpaController;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 import proyectofoca.ManagerFactory;
@@ -33,23 +39,99 @@ public class ControllerProducto {
         this.vistad = vistad;
         this.manager = manager;
         this.modelPd = modelPd;
-        this.vistad.getPnMenu().setSelectedIndex(5);
-         System.out.println("Continuo bien karnal");
+        //inicializar la tabla
+        this.modeloTablaProd = new ModeloTablaProducto();
+        // devuelve la lista de personas
+        this.modeloTablaProd.setFilas(modelPd.findProductoEntities());
+        this.vistad.getjTableDatosProductos().setModel(modeloTablaProd);
+
     }
-    
-    public void guardarProducto( Producto p){
-        try{
+
+    // Inicniar control producto 
+    public void iniciarControlProd() {
+        this.vistad.getBtnCREARPROD().addActionListener(l -> guardarProducto());
+        this.vistad.getBtnEDITARPROD().addActionListener(l -> editarProducto());
+        this.vistad.getBtnELIMINARPROD().addActionListener(l -> eliminarProd());
+        this.vistad.getBtnLIMPIARPROD().addActionListener(l -> limpiarProd());
+        this.vistad.getBtnlimpiarProdbsqd().addActionListener(l -> limpiarBuscadorProd());
+        this.vistad.getBtnbuscarProd().addActionListener(l -> buscarProducto());
+        this.vistad.getChekBsqProds().addActionListener(l -> buscarProducto());
+
+        // eventos tabla
+        this.vistad.getjTableDatosProductos().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.listaProductoModel = this.vistad.getjTableDatosProductos().getSelectionModel();
+        listaProductoModel.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    productoSeleccionado();
+                }
+            }
+        });
+
+//        this.vistad.getBtnReporteGeneral().addActionListener(l -> reporteGeneral());
+//        this.vistad.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
+        // control de botones inicio
+        this.vistad.getBtnEDITARPROD().setEnabled(false);
+        this.vistad.getBtnELIMINARPROD().setEnabled(false);
+    }
+
+    public void cargarComboBoxDona() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new DonacionJpaController(manager.getEmf()).findDonacionEntities());
+            this.vistad.getCbxIdDonacion().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
+
+    public void cargarComboBoxProy() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
+            this.vistad.getCbxProyecto().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
+
+    private void productoSeleccionado() {
+        if (this.vistad.getjTableDatosProductos().getSelectedRow() != -1) {
+            producto = modeloTablaProd.getFilas().get(this.vistad.getjTableDatosProductos().getSelectedRow());
+            //cargar los datos a la vista
+            this.vistad.getTxtTipoProducto().setText(producto.getTipoprod());
+            this.vistad.getjSpinnerCantidad().setValue(producto.getCantidadprod());
+            this.vistad.getCbxProyecto().setSelectedItem(producto.getIdproyprod().getNombreproy());
+            this.vistad.getCbxIdDonacion().setSelectedItem(producto.getIddonaprod());
+            // control de botones seleccionados
+            this.vistad.getBtnEDITARPROD().setEnabled(true);
+            this.vistad.getBtnELIMINARPROD().setEnabled(true);
+            this.vistad.getBtnCREARPROD().setEnabled(false);
+
+        }
+    }
+
+    // Métodos
+    public void guardarProducto() {
         if (validarCampos() != true) {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
-            modelPd.create(p);
+            producto = new Producto();
+            producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
+            producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
+            try {
+                modelPd.create(producto);
+            } catch (PreexistingEntityException ex) {
+                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
             modeloTablaProd.agregar(producto);
             Resouces.success(" ATENCIÓN!!!", "Producto creado correctamente :>!");
             limpiarProd();
         }
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
+
     }
 
     public void editarProducto() {
@@ -100,13 +182,15 @@ public class ControllerProducto {
         }
 
     }
-    
-    
+
     //limipiar y validar
     public void limpiarProd() {
         this.vistad.getTxtTipoProducto().setText("");
         this.vistad.getjSpinnerCantidad().setValue(0);
-        this.vistad.getCbxIdDonacion().setSelectedItem(0);
+        this.vistad.getCbxIdDonacion().setSelectedIndex(0);
+        this.vistad.getBtnEDITARPROD().setEnabled(false);
+        this.vistad.getBtnELIMINARPROD().setEnabled(false);
+        this.vistad.getBtnCREARPROD().setEnabled(true);
     }
 
     public void limpiarBuscadorProd() {
@@ -122,7 +206,7 @@ public class ControllerProducto {
             Resouces.warning("Atención!!!", "El campo tipo esta vacio");
             valid = false;
         }
-        
+
         return valid;
     }
 }

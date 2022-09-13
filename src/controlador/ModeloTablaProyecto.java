@@ -6,8 +6,9 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Persona;
+
 import javax.swing.table.AbstractTableModel;
+import modelo.Proyecto;
 
 /**
  *
@@ -15,9 +16,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaProyecto extends AbstractTableModel {
 
-    private String[] columnas = {"NOMBRE", "APELLIDO", "CÉDULA", "CELULAR", "CORREO", "DIRECCIÓN"};
-    public static List<Persona> filas;
-    private Persona personaSelecionado;
+    private String[] columnas = {"NUMERO_PROYECTO", "NOMBRE", "FECHA INICIO", "FECHA FIN", "LUGAR"};
+    public static List<Proyecto> filas;
+    private Proyecto proyectoSeleccionado;
     private int indice;
 
     public ModeloTablaProyecto() {
@@ -41,21 +42,19 @@ public class ModeloTablaProyecto extends AbstractTableModel {
 
     @Override 
     public Object getValueAt(int rowIndex, int columnIndex) {
-        personaSelecionado = filas.get(rowIndex);
+        proyectoSeleccionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                //return personaSelecionado.getNombrePer();
+                return proyectoSeleccionado.getIdproy();
             case 1:
-                //return personaSelecionado.getApellidoPer();
+                return proyectoSeleccionado.getNombreproy();
             case 2:
-                //return personaSelecionado.getCedulaPer();
+                return proyectoSeleccionado.getFechainicioproy();
             case 3:
-                //return personaSelecionado.getCelularPer();
+                return proyectoSeleccionado.getFechafinproy();
             case 4:
-                //return personaSelecionado.getCorreoPer();
-            case 5:
-                //return personaSelecionado.getDireccionPer();
+                return proyectoSeleccionado.getLugarproy();
             default:
                 return null;
         }
@@ -74,8 +73,6 @@ public class ModeloTablaProyecto extends AbstractTableModel {
                 return String.class;
             case 4:
                 return String.class;
-            case 5:
-                return String.class;
             default:
                 return Object.class;
         }
@@ -89,20 +86,20 @@ public class ModeloTablaProyecto extends AbstractTableModel {
         this.columnas = columnas;
     }
 
-    public List<Persona> getFilas() {
+    public List<Proyecto> getFilas() {
         return filas;
     }
 
-    public void setFilas(List<Persona> filas) {
+    public void setFilas(List<Proyecto> filas) {
         this.filas = filas;
     }
 
-    public Persona getPersonaSelecionado() {
-        return personaSelecionado;
+    public Proyecto getProyectoSelecionado() {
+        return proyectoSeleccionado;
     }
 
-    public void setPersonaSelecionado(Persona personaSelecionado) {
-        this.personaSelecionado = personaSelecionado;
+    public void setProyectoSelecionado(Proyecto personaSelecionado) {
+        this.proyectoSeleccionado = proyectoSeleccionado;
     }
 
     public int getIndice() {
@@ -113,22 +110,22 @@ public class ModeloTablaProyecto extends AbstractTableModel {
         this.indice = indice;
     }
 
-    public void actualizar(Persona p) {
-        setPersonaSelecionado(null);
+    public void actualizar(Proyecto p) {
+        setProyectoSelecionado(null);
         if (p != null) {
             filas.add(indice, p);
             fireTableDataChanged();
         }
     }
 
-    public void agregar(Persona p) {
+    public void agregar(Proyecto p) {
         if (p != null) {
             filas.add(p);
             fireTableDataChanged();
         }
     }
 
-    public void eliminar(Persona p) {
+    public void eliminar(Proyecto p) {
         if (p != null) {
             filas.remove(p);
             fireTableDataChanged();

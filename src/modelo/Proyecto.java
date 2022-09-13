@@ -160,5 +160,6 @@ public class Proyecto implements Serializable {
     public String toString() {
         return "modelo.Proyecto[ idproy=" + idproy + " ]";
     }
+
     
 }

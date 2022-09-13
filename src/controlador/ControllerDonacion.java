@@ -9,13 +9,16 @@ import Vista.ViewAdministrador;
 import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import modelo.*;
+import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import proyectofoca.ManagerFactory;
 //import donayectofoca.ManagerFactory;
@@ -45,18 +48,18 @@ public class ControllerDonacion {
 //            ControllerSistema.vista = new ViewAdministrador();
 //            this.vistaDona = ControllerSistema.vista;
 //            this.panelEscritorio.add(this.vistaPro);
-//            this.vistaDona.getjTableDatosProductos().setModel(modeloTdona);
+            this.vistaDona.getjTableDatosDonacione().setModel(modeloTdona);
 //            ControllerSistema.vdona.show();
-            controlMetodosDonacion();
+        controlMetodosDonacion();
+        cargarCombobox();
 
 //        } else {
 //            ControllerSistema.vista.show();
 //        }
     }
-        
 
     public void controlMetodosDonacion() {
-        //this.vistaDona.getBtnCREARDONA().addActionListener(c -> crearDonacion());
+        this.vistaDona.getBtnCREARDONA().addActionListener(c -> crearDonacion());
         this.vistaDona.getBtnEDITARDONA().addActionListener(e -> editarDonacion());
         this.vistaDona.getBtnELIMINARDONA().addActionListener(el -> eliminarDonacion());
         //this.vistaDona.getBtnLIMPIARDONA().addActionListener(lim -> limpiarProductos());
@@ -79,33 +82,44 @@ public class ControllerDonacion {
 
     //M É T O D O S  C R U D 
     //CREAR PERSONA
-//    public void crearDonacion() {
-//        if (validarCampos() == false) {
-//            Resouces.warning("Atención!!", "Por favor, llene todos los campos");
-//        } else {
-//            dona = new Donacion();
-//            dona.setNombrePro(this.vistaDona.getjTextFieldNombrePro().getText());
-//            dona.setPrecioPro(Double.parseDouble(this.vistaPro.getjTextFieldPrecioPro().getText()));
-//            dona.setCantidadPro(Integer.parseInt(this.vistaPro.getjSpinnerCantidad().getValue().toString()));
-//
-//            modeloDonacion.create(dona);
-//            modeloTdona.agregar(dona);
-//            limpiarProductos();
-//            Resouces.success("Atención!!", "Donación Creada Exitosamente");
-//        }
-//    }
+    public void crearDonacion() {
+        if (camposVacios() == false) {
+            Resouces.warning("ATENCIÓN!!", "Por favor, llene todos los campos");
+        } else {
+            if (validarCampos() == true) {
+                Resouces.warning("Atención!!", "Por favor, llene todos los campos");
+            } else {
+                dona = new Donacion();
+                dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
+                dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
+                //FALTA FECHA
+                dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
 
+                try {
+                    modeloDonacion.create(dona);
+                    modeloTdona.agregar(dona);
+                    limpiarDonaciones();
+                } catch (Exception ex) {
+                    Logger.getLogger(ControllerDonacion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                limpiarDonaciones();
+                Resouces.success("Atención!!", "Donación Creada Exitosamente");
+            }
+        }
+    }
     //EDITAR PERSONA
+
     public void editarDonacion() {
         if (validarCampos() == false) {
             Resouces.warning("Atención!!", "Por favor, llene todos los campos");
         } else {
             if (dona != null) {
-//                dona.setNombrePro(this.vistaDona.getjTextFieldNombrePro().getText());
-//                dona.setPrecioPro(Double.parseDouble(this.vistaDona.getjTextFieldPrecioPro().getText()));
-//                dona.setCantidadPro(Integer.parseInt(this.vistaDona.getjSpinnerCantidad().getValue().toString()));
+                dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
+                //FALTA FECHA
+                dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
+                dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
                 try {
-                    int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTE PRODUCTO?");
+                    int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
                     if (select == JOptionPane.YES_OPTION) {
                         modeloDonacion.edit(dona);
                         modeloTdona.eliminar(dona);
@@ -123,18 +137,32 @@ public class ControllerDonacion {
     //ELIMINAR PERSONA
     public void eliminarDonacion() {
         if (dona != null) {
-//            try {
-//                int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
-//                if (select == JOptionPane.YES_OPTION) {
-//                    //modeloDonacion.destroy(dona.getIddona());
-//                    modeloTdona.eliminar(dona);
-//                    //modeloTPro.actualizar(dona);
-//                    limpiarDonaciones();
-//                    Resouces.success("Atención!!", "Donación Eliminado Exitosamente");
-//                }
-//            } catch (NonexistentEntityException e) {
-//                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
-//            }
+            try {
+                int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
+                if (select == JOptionPane.YES_OPTION) {
+                    try {
+                        modeloDonacion.destroy(dona.getIddona());
+                        modeloTdona.eliminar(dona);
+                        modeloTdona.actualizar(dona);
+                    } catch (IllegalOrphanException ex) {
+                        Logger.getLogger(ControllerDonacion.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    limpiarDonaciones();
+                    Resouces.success("Atención!!", "Donación Eliminado Exitosamente");
+                }
+            } catch (NonexistentEntityException e) {
+                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+    }
+
+    public void cargarCombobox() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new DonacionJpaController(manage.getEmf()).findDonacionEntities());
+            this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargarCombobox");
         }
     }
 
@@ -151,7 +179,6 @@ public class ControllerDonacion {
 //            Resouces.warning("Atención!!", "Debe seleccionar un donaducto");
 //        }
 //    }
-
     public void limpiarDonaciones() {
         vistaDona.getTxaDetalleProdDON().setText("");
         vistaDona.getTxaMotivoDON().setText("");
@@ -195,15 +222,31 @@ public class ControllerDonacion {
         }
     }
 
-    public boolean validarCampos() {
+    public boolean camposVacios() {
         boolean validar = true;
         if (this.vistaDona.getTxaDetalleProdDON().getText().isEmpty()) {
             validar = false;
         }
         if (this.vistaDona.getTxaMotivoDON().getText().isEmpty()) {
             validar = false;
-        } 
+        }
         return validar;
+    }
+
+    public boolean validarCampos() {
+        Validaciones validar = new Validaciones();
+        boolean validado = false;
+
+        if (validar.validarCadenaSinCaracteres(this.vistaDona.getTxaDetalleProdDON().getText())) {
+            if (validar.validarCadena(this.vistaDona.getTxaMotivoDON().getText())) {
+                validado = true;
+            } else {
+                Resouces.warning("Atención", "Incorrecto");
+            }
+        } else {
+            Resouces.warning("Atención", "Incorrecto");
+        }
+        return validado;
     }
 
 }
