@@ -44,7 +44,7 @@ public class ControllerProyecto {
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         // devuelve la lista de personas
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
-        this.vistad.getjTableDatosProductos().setModel(modeloTablaProyecto);
+        this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
     }
 
     // Inicniar control producto 
@@ -81,7 +81,6 @@ public class ControllerProyecto {
             proyecto = modeloTablaProyecto.getFilas().get(this.vistad.getjTableDatosProyectos().getSelectedRow());
             //CARGAR A LA VISTA
             String numproye = String.valueOf(proyecto.getIdproy());
-            this.vistad.getTxtNumProye().setText(numproye);
             this.vistad.getTxtNombreProye().setText(proyecto.getNombreproy());
             //this.vistad.fechainicio
             //this.vistad.fechafin
@@ -100,10 +99,11 @@ public class ControllerProyecto {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
             proyecto = new Proyecto();
-            String numproye = String.valueOf(proyecto.getIdproy());
-            double idp = Double.parseDouble(this.vistad.getTxtNumProye().getText());
-            BigDecimal idproye = BigDecimal.valueOf(idp);
-            proyecto.setIdproy(idproye);
+            //de String a BigDecimal
+//            String numproye = String.valueOf(proyecto.getIdproy());
+//            double idp = Double.parseDouble(this.vistad.getTxtNumProye().getText());
+//            BigDecimal idproye = BigDecimal.valueOf(idp);
+//            proyecto.setIdproy(idproye);
             proyecto.setNombreproy(this.vistad.getTxtNombreProye().getText());
             //proyecto.setFechainicio
             //proyecto.setFechaFin
@@ -170,7 +170,6 @@ public class ControllerProyecto {
                 //de String a BigDecimal
                 double idp = Double.parseDouble(this.vistad.getTxtBsqProyectos().getText());
                 BigDecimal idproye = BigDecimal.valueOf(idp);
-
                 modeloTablaProyecto.setFilas(modeloProyecto.buscarProyecto(idproye));
                 modeloTablaProyecto.fireTableDataChanged();
             }
@@ -181,7 +180,6 @@ public class ControllerProyecto {
     //limipiar y validar
     public void limpiar() {
 
-        this.vistad.getTxtNumProye().setText("");
         this.vistad.getTxtNombreProye().setText("");
         //this.vistad.fechainicio;
         //this.vistad.fechafin

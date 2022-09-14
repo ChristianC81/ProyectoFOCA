@@ -16,7 +16,7 @@ import modelo.Formulario;
  */
 public class ModeloTablaFormulario extends AbstractTableModel {
 
-    private String[] columnas = {"IDFORM", "DOMICILIOFORM", "INGRESOFORM", "NIVELEDUFORM", "TIPOVIVIENDAFORM", "NHIJOSFORM","ETNIAFORM","DISCAPACIDAFORM","NPROPIEDADES","IEESFORM","INTERNETFORM","NDISPOSITIVOS","SERVBASICOS","NINTEFAMFORM","IDPERSONA"};
+    private String[] columnas = {"DOMICILIOFORM", "INGRESOFORM", "NIVELEDUFORM", "TIPOVIVIENDAFORM", "NHIJOSFORM","ETNIAFORM","DISCAPACIDAFORM","NPROPIEDADES","IEESFORM","INTERNETFORM","NDISPOSITIVOS","SERVBASICOS","NINTEFAMFORM","IDPERSONA"};
     public static List<Formulario> filas;
     private Formulario formularioSelecionado;
     private int indice;
