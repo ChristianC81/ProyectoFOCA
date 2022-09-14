@@ -15,7 +15,7 @@ import modelo.Inscripcion;
  */
 public class ModeloTablaInscripcion extends AbstractTableModel {
 
-    private String[] columnas = {"IDINS", "NDIASPARTICIPACIONINS", "IDPROYINS", "IDPERSONA"};
+    private String[] columnas = {"IDPERSONA", "IDPROYINS", "NDIASPARTICIPACIONINS"};
     public static List<Inscripcion> filas;
     private Inscripcion inscripcionSelecionado;
     private int indice;
@@ -45,17 +45,11 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                //return personaSelecionado.getNombrePer();
+                return inscripcionSelecionado.getIdpersona();
             case 1:
-                //return personaSelecionado.getApellidoPer();
+                return inscripcionSelecionado.getIdproyins();
             case 2:
-                //return personaSelecionado.getCedulaPer();
-            case 3:
-                //return personaSelecionado.getCelularPer();
-            case 4:
-                //return personaSelecionado.getCorreoPer();
-            case 5:
-                //return personaSelecionado.getDireccionPer();
+                return inscripcionSelecionado.getNdiasparticipacionins();                
             default:
                 return null;
         }
@@ -65,17 +59,11 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return String.class;
+                return Integer.class;
             case 1:
-                return String.class;
+                return Integer.class;
             case 2:
-                return String.class;
-            case 3:
-                return String.class;
-            case 4:
-                return String.class;
-            case 5:
-                return String.class;
+                return Integer.class;
             default:
                 return Object.class;
         }

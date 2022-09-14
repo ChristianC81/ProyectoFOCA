@@ -5,6 +5,7 @@
 package controlador;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
@@ -16,7 +17,7 @@ import modelo.Proyecto;
  */
 public class ModeloTablaProyecto extends AbstractTableModel {
 
-    private String[] columnas = {"NUMERO_PROYECTO", "NOMBRE", "FECHA INICIO", "FECHA FIN", "LUGAR"};
+    private String[] columnas = {"NOMBRE", "FECHA INICIO", "FECHA FIN", "LUGAR"};
     public static List<Proyecto> filas;
     private Proyecto proyectoSeleccionado;
     private int indice;
@@ -46,14 +47,12 @@ public class ModeloTablaProyecto extends AbstractTableModel {
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                return proyectoSeleccionado.getIdproy();
-            case 1:
                 return proyectoSeleccionado.getNombreproy();
-            case 2:
+            case 1:
                 return proyectoSeleccionado.getFechainicioproy();
-            case 3:
+            case 2:
                 return proyectoSeleccionado.getFechafinproy();
-            case 4:
+            case 3:
                 return proyectoSeleccionado.getLugarproy();
             default:
                 return null;
@@ -63,15 +62,14 @@ public class ModeloTablaProyecto extends AbstractTableModel {
     @Override
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
+            
             case 0:
                 return String.class;
             case 1:
-                return String.class;
+                return Date.class;
             case 2:
-                return String.class;
+                return Date.class;
             case 3:
-                return String.class;
-            case 4:
                 return String.class;
             default:
                 return Object.class;

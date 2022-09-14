@@ -197,7 +197,7 @@ public class InscripcionJpaController implements Serializable {
             em.close();
         }
     }
-     public List<Inscripcion> buscarFor(String id) {
+     public List<Inscripcion> buscarInscripcion(Number id) {
         System.out.println(id);
         EntityManager em = getEntityManager();
         try {
