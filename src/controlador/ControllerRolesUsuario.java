@@ -6,6 +6,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Usuario;
@@ -16,23 +17,26 @@ import proyectofoca.ManagerFactory;
  * @author Laptop
  */
 public class ControllerRolesUsuario {
-    ViewAdministrador vistaL = new ViewAdministrador();
-    ManagerFactory manager;
-    PersonaJpaController modeloAdministrador;
-    PersonaJpaController modeloJefe;
-    PersonaJpaController modeloAsistente;
- 
-     public void cargarRolAdministrador() {
-         ControllerPersona ca = new ControllerPersona();
-         ca.ControllerPersonaAdministrador(vistaL);
-    }
-    public void cargarRolJefe() {
-         ControllerPersona ca = new ControllerPersona();
-         ca.ControllerPersonaJefe(vistaL);
-    }
-     public void cargarVistaAsistente() {
-       ControllerPersona ca = new ControllerPersona();
-         ca.ControllerPersonaAsistente(vistaL);
-    }
-  }
 
+    ViewAdministrador vista;
+    ManagerFactory manager;
+
+    public ControllerRolesUsuario(ViewAdministrador vista, ManagerFactory manager) {
+        this.vista = vista;
+        this.manager = manager;
+        this.vista.setExtendedState(MAXIMIZED_BOTH);
+        this.vista.setVisible(true);
+    }
+
+    public void cargarRolAdministrador() {
+        
+    }
+
+    public void cargarRolJefe() {
+        new ControllerJefe(vista, manager, new PersonaJpaController(manager.getEmf()));
+    }
+
+    public void cargarVistaAsistente() {
+    new ControllerAsistente(vista, manager, new PersonaJpaController(manager.getEmf()));
+    }
+}

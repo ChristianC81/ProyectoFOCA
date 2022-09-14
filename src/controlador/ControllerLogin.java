@@ -11,6 +11,7 @@ import Vista.ViewSistema;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.persistence.PersistenceException;
+import modelo.PersonaJpaController;
 import modelo.Usuario;
 import modelo.UsuarioJpaController;
 import proyectofoca.ManagerFactory;
@@ -26,7 +27,7 @@ public class ControllerLogin {
     ManagerFactory manager;
     UsuarioJpaController modelo;
     Usuario usuario;
-    ViewAdministrador vistaAdmin = new ViewAdministrador();
+    ViewAdministrador vista = new ViewAdministrador();
 
     public ControllerLogin(ViewLogin vistaL, ManagerFactory manager, UsuarioJpaController modelo) {
         this.vistaL = vistaL;
@@ -53,24 +54,22 @@ public class ControllerLogin {
             System.out.println(user.getIdrol().getNombrerol());
             if (user != null) {
                 if (user.getIdrol().getNombrerol().equals("Administrador")) {
-                    ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                    
                     Resouces.success("!BIENVENIDO!", "Administrador: " + user.getIdpersona().getNombresper());
-                    cjf.cargarRolAdministrador();
+                    
                     vistaS.dispose();
                     vistaL.dispose();
                     
                 } else {
                     if (user.getIdrol().getNombrerol().equals("Jefe")) {
-                        ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                        new ControllerJefe(vista, manager, new PersonaJpaController(manager.getEmf()));
                         Resouces.success("!BIENVENIDO!", "Jefe: " + user.getIdpersona().getNombresper());
-                        cjf.cargarRolJefe();
                         vistaS.dispose();
                         vistaL.dispose();
                     } else {
                         if (user.getIdrol().getNombrerol().equals("Asistente")) {
-                            ControllerRolesUsuario cjf = new ControllerRolesUsuario();
+                             new ControllerAsistente(vista, manager, new PersonaJpaController(manager.getEmf()));
                             Resouces.success("!BIENVENIDO!", "Asistente: " + user.getIdpersona().getNombresper());
-                            cjf.cargarRolAdministrador();
                             vistaS.dispose();
                             vistaL.dispose();
                         }

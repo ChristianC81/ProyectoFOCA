@@ -11,18 +11,26 @@ import Vista.ViewSistema;
 import static controlador.ControllerSistema.vista;
 import java.awt.Dimension;
 import java.math.BigInteger;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JDesktopPane;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import modelo.Donacion;
+import modelo.DonacionJpaController;
 import modelo.InscripcionJpaController;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Producto;
 import modelo.ProductoJpaController;
 import modelo.Proyecto;
+import modelo.ProyectoJpaController;
 import modelo.UsuarioJpaController;
+import modelo.exceptions.NonexistentEntityException;
+import modelo.exceptions.PreexistingEntityException;
 import proyectofoca.ManagerFactory;
 
 /**
@@ -31,112 +39,155 @@ import proyectofoca.ManagerFactory;
  */
 public class ControllerPersona {
 
+ViewAdministrador vistap;
     ManagerFactory manager;
-    PersonaJpaController modeloPersona;
-    Persona per;
-    ModeloTablaPersona modeloTP;
-    ListSelectionModel listapersonamodel;
+    PersonaJpaController modelPer;
+    Persona persona;
+    ModeloTablaPersona modeloTablaPer;
+    ListSelectionModel listaProductoModel;
 
-    //Vista Login 
-    ManagerFactory managerLog;
-    ViewLogin vistaLogin = new ViewLogin();
-    ViewAdministrador vistaAdmin= new ViewAdministrador();
-
-    public void ControllerPersonaAdministrador(ViewAdministrador vista) {
-        this.vistaAdmin = vista;
-        vista.setVisible(true);
-        IniciarEventoAdministrador(vista);
-        System.out.println("eres un administrador");
+    public ControllerPersona(ViewAdministrador vistap, ManagerFactory manager, PersonaJpaController modelPer) {
+        this.vistap = vistap;
+        this.manager = manager;
+        this.modelPer = modelPer;
+        //inicializar la tabla
+        this.modeloTablaPer = new ModeloTablaPersona();
+        // devuelve la lista de personas
+        this.modeloTablaPer.setFilas(modelPer.findPersonaEntities());
+        this.vistap.getjTableDatosPersonas().setModel(modeloTablaPer);
     }
 
-    public void ControllerPersonaJefe(ViewAdministrador vista) {
-        this.vistaAdmin = vista;
-        vista.setVisible(true);
-        IniciarEventoJefe(vista);
-        vista.getBtnUsuarios().setEnabled(false);
-        vista.getBtnConfiguracion().setEnabled(false);
-
-        System.out.println("eres un jefe");
+    public void cargarComboBoxDona() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new DonacionJpaController(manager.getEmf()).findDonacionEntities());
+            this.vistap.getCbxIdDonacion().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
     }
-
-    public void ControllerPersonaAsistente(ViewAdministrador vista) {
-        this.vistaAdmin = vista;
-        vista.setVisible(true);
-        IniciarEventoAsistente(vista);
-        vista.getBtnUsuarios().setEnabled(false);
-        vista.getBtnConfiguracion().setEnabled(false);
-        vista.getBtnInscripciones().setEnabled(false);
-        vista.getBtnDonaciones().setEnabled(false);
-        vista.getBtnproyectos().setEnabled(false);
-        vista.getBtnConfiguracion().setEnabled(false);
-        System.out.println("eres un asistente");
-    }
-
-    //Eventos asignados a Cada rol
-    public void IniciarEventoAdministrador(ViewAdministrador vista) {
-
-        vista.getBtnSalir().addActionListener(l -> salirVistaGeneral(vista));
-        vista.getBtnReportes().addActionListener(l -> vista.getPnMenu().setSelectedIndex(0));
-        vista.getBtnUsuarios().addActionListener(l -> vista.getPnMenu().setSelectedIndex(1));
-        vista.getBtnPersona().addActionListener(l -> vista.getPnMenu().setSelectedIndex(2));
-
-        vista.getBtnInscripciones().addActionListener(l -> vista.getPnMenu().setSelectedIndex(3));
-        vista.getBtnDonaciones().addActionListener(l -> vista.getPnMenu().setSelectedIndex(4));
-        vista.getBtnProductos().addActionListener(l -> cargarFrameProducto());
-        vista.getBtnproyectos().addActionListener(l -> vista.getPnMenu().setSelectedIndex(6));
-        vista.getBtnFormularios().addActionListener(l -> vista.getPnMenu().setSelectedIndex(7));
-        vista.getBtnConfiguracion().addActionListener(l -> vista.getPnMenu().setSelectedIndex(8));
-
-    }
-
-    public void IniciarEventoJefe(ViewAdministrador vista) {
-        vista.getBtnSalir().addActionListener(l -> salirVistaGeneral(vista));
-        vista.getBtnReportes().addActionListener(l -> vista.getPnMenu().setSelectedIndex(0));
-        vista.getBtnPersona().addActionListener(l -> vista.getPnMenu().setSelectedIndex(2));
-
-        vista.getBtnInscripciones().addActionListener(l -> vista.getPnMenu().setSelectedIndex(3));
-        vista.getBtnDonaciones().addActionListener(l -> vista.getPnMenu().setSelectedIndex(4));
-        vista.getBtnProductos().addActionListener(l -> vista.getPnMenu().setSelectedIndex(5));
-        vista.getBtnproyectos().addActionListener(l -> vista.getPnMenu().setSelectedIndex(6));
-        vista.getBtnFormularios().addActionListener(l -> vista.getPnMenu().setSelectedIndex(7));
-    }
-
-    public void IniciarEventoAsistente(ViewAdministrador vista) {
-        vista.getBtnSalir().addActionListener(l -> salirVistaGeneral(vista));
-        vista.getBtnPersona().addActionListener(l -> vista.getPnMenu().setSelectedIndex(2));
-        vista.getBtnProductos().addActionListener(l -> vista.getPnMenu().setSelectedIndex(5));
-        vista.getBtnFormularios().addActionListener(l -> vista.getPnMenu().setSelectedIndex(7));
-    }
-
-    //Metodos
-    public void salirVistaGeneral(ViewAdministrador v) {
-        vistaAdmin.dispose();
-        new ControllerLogin(vistaLogin, managerLog, new UsuarioJpaController(managerLog.getEmf()));
-    }
-
-//     public void cargarFrameUsuarios(ViewAdministrador v){
-//         System.out.println("Ta bien");
-//         v.getPnMenu().setSelectedIndex(5);
-//        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
-//         System.out.println("Continuo bien karnal");
+//
+//    public void cargarComboBoxProy() {
+//        try {
+//            Vector v = new Vector();
+//            v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
+//            this.vistad.getCbxProyecto().setModel(new DefaultComboBoxModel(v));
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("Capturando errores cargando combobox");
+//        }
 //    }
-//    public void cargarFramePersona(){
-//        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
+//
+//    private void productoSeleccionado() {
+//        if (this.vistad.getjTableDatosProductos().getSelectedRow() != -1) {
+//            persona = modeloTablaPergetFilas().get(this.vistad.getjTableDatosProductos().getSelectedRow());
+//            //cargar los datos a la vista
+//            this.vistap.getTxtTipoProducto().setText(persona.getTipoprod());
+//            this.vistap.getjSpinnerCantidad().setValue(persona.getCantidadprod());
+//            this.vistap.getCbxProyecto().setSelectedItem(persona.getIdproyprod().getNombreproy());
+//            this.vistap.getCbxIdDonacion().setSelectedItem(persona.getIddonaprod());
+//            // control de botones seleccionados
+//            this.vistap.getBtnEDITARPROD().setEnabled(true);
+//            this.vistap.getBtnELIMINARPROD().setEnabled(true);
+//            this.vistap.getBtnCREARPROD().setEnabled(false);
+//
+//        }
 //    }
-//     public void cargarFrameInscripciones(){
-//        new ControllerInscripcion(vistaAdmin, manager, new InscripcionJpaController(manager.getEmf()));
+//
+//    // Métodos
+//    public void guardarProducto() {
+//        if (validarCampos() != true) {
+//            Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
+//        } else {
+//            producto = new Producto();
+//            producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
+//            producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
+//            try {
+//                modelPd.create(producto);
+//            } catch (PreexistingEntityException ex) {
+//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//            } catch (Exception ex) {
+//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            modeloTablaProd.agregar(producto);
+//            Resouces.success(" ATENCIÓN!!!", "Producto creado correctamente :>!");
+//            limpiarProd();
+//        }
+//
 //    }
-//      public void cargarFrameDonaciones(){
-//        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
+//
+//    public void editarProducto() {
+//        if (producto != null) {
+//            producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
+//            producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
+//            try {
+//                modelPd.edit(producto);
+//                modeloTablaProd.eliminar(producto);
+//                modeloTablaProd.actualizar(producto);
+//            } catch (Exception ex) {
+//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            Resouces.success(" ATENCIÓN!!!", "Producto editado correctamente :>!");
+//            limpiarProd();
+//        } else {
+//            Resouces.error(" ATENCIÓN!!!", "No se pudo editar el producto :<!");
+//            limpiarProd();
+//        }
 //    }
-    public void cargarFrameProducto() {
-        System.out.println("Ta bien");
-        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
-    }
-//     public void cargarFrameProyectos(){
-//        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
+//
+//    public void eliminarProd() {
+//        if (producto != null) {
+//            try {
+//                modelPd.destroy(producto.getIdprod());
+//                modeloTablaProd.eliminar(producto);
+//            } catch (NonexistentEntityException ex) {
+//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            Resouces.success(" ATENCIÓN!!!", "Producto elminado correctamente :>!");
+//            limpiarProd();
+//        }
 //    }
-//      public void cargarFrameFormularios(){
-//        new ControllerProducto(vistaAdmin, manager, new ProductoJpaController(manager.getEmf()));
-//   }
+//
+//    public void buscarProducto() {
+//
+//        if (this.vistad.getChekBsqProds().isSelected()) {
+//            modeloTablaProd.setFilas(modelPd.findProductoEntities());
+//            modeloTablaProd.fireTableDataChanged();
+//        } else {
+//            if (this.vistad.getTxtBsqProductos().getText().isEmpty()) {
+//                Resouces.warning("Atención!!!", "Llene el campo de busqueda :P");
+//                limpiarBuscadorProd();
+//            } else {
+//                modeloTablaProd.setFilas(modelPd.buscarProducto(this.vistad.getTxtBsqProductos().getText()));
+//                modeloTablaProd.fireTableDataChanged();
+//            }
+//        }
+//
+//    }
+//
+//    //limipiar y validar
+//    public void limpiarProd() {
+//        this.vistad.getTxtTipoProducto().setText("");
+//        this.vistad.getjSpinnerCantidad().setValue(0);
+//        this.vistad.getCbxIdDonacion().setSelectedIndex(0);
+//        this.vistad.getBtnEDITARPROD().setEnabled(false);
+//        this.vistad.getBtnELIMINARPROD().setEnabled(false);
+//        this.vistad.getBtnCREARPROD().setEnabled(true);
+//    }
+//
+//    public void limpiarBuscadorProd() {
+//        this.vistad.getTxtBsqProductos().setText("");
+//        modeloTablaProd.setFilas(modelPd.findProductoEntities());
+//        modeloTablaProd.fireTableDataChanged();
+//    }
+//
+//    public boolean validarCampos() {
+//        boolean valid = true;
+//
+//        if (vistad.getTxtTipoProducto().getText().isEmpty()) {
+//            Resouces.warning("Atención!!!", "El campo tipo esta vacio");
+//            valid = false;
+//        }
+//
+//        return valid;
+//    }
 }
