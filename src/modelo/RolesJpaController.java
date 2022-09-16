@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -190,5 +191,17 @@ public class RolesJpaController implements Serializable {
             em.close();
         }
     }
-    
+    public List<Roles> buscarRoles(String nombre) {
+        System.out.println(nombre);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Roles> query = em.createNamedQuery("Roles.findByNombrerol", Roles.class);
+            query.setParameter("nombrerol", nombre);
+            List<Roles> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+        }
+    }
 }

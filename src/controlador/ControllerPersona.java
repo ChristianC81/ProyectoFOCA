@@ -106,7 +106,7 @@ public class ControllerPersona {
                 this.vistap.getRbtFemenino().setSelected(true);
             }
 
-            this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
+            //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
             this.vistap.getTxtestadocivil().setText(persona.getEstadocivil());
             this.vistap.getTxtestrato().setText(persona.getEstratosbenefi());
             this.vistap.getTxtTitulo().setText(persona.getTitulo());
@@ -162,8 +162,8 @@ public class ControllerPersona {
         }
          
         persona.setGeneroper(genero);
-        persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
-         persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
+        //persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+        persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
         persona.setEstratosbenefi(this.vistap.getTxtestrato().getText());
           persona.setTitulo(this.vistap.getTxtTitulo().getText());
           String seguro="";

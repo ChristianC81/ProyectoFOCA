@@ -33,39 +33,34 @@ public class ControllerDonacion {
     DonacionJpaController modeloDonacion;
     ModeloTablaDonacion modeloTdona;
     Donacion dona;
-    //JDesktopPane panelEscritorio;
     ListSelectionModel listadonacionmodel;
-    //Validaciones validacion;
+    Validaciones validacion;
 
     public ControllerDonacion(ViewAdministrador vistaDona, ManagerFactory manage, DonacionJpaController modeloDonacion) {
-        // this.vistaDona = vistaDona;
+        this.vistaDona = vistaDona;
         this.manage = manage;
         this.modeloDonacion = modeloDonacion;
         this.modeloTdona = new ModeloTablaDonacion();
         this.modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
+        this.vistaDona.getjTableDatosDonacione().setModel(modeloTdona);
 
-//        if (ControllerSistema.vista == null) {
-//            ControllerSistema.vista = new ViewAdministrador();
-//            this.vistaDona = ControllerSistema.vista;
-//            this.panelEscritorio.add(this.vistaPro);
-            this.vistaDona.getjTableDatosDonacione().setModel(modeloTdona);
-//            ControllerSistema.vdona.show();
-        controlMetodosDonacion();
-        cargarCombobox();
-
-//        } else {
-//            ControllerSistema.vista.show();
-//        }
+        cargarComboBoxBenefaDONA();
     }
 
     public void controlMetodosDonacion() {
         this.vistaDona.getBtnCREARDONA().addActionListener(c -> crearDonacion());
         this.vistaDona.getBtnEDITARDONA().addActionListener(e -> editarDonacion());
         this.vistaDona.getBtnELIMINARDONA().addActionListener(el -> eliminarDonacion());
-        //this.vistaDona.getBtnLIMPIARDONA().addActionListener(lim -> limpiarProductos());
+        this.vistaDona.getBtnLIMPIARDONA().addActionListener(lim -> limpiarDonaciones());
+        this.vistaDona.getBtnlimpiarDONABUSQ().addActionListener(lp -> limpiarBusquedaDona());
+        this.vistaDona.getBtnbuscarDONA().addActionListener(b -> buscarDonacion());
+        this.vistaDona.getChekBsqDONA().addActionListener(bc -> buscarDonacion());
+
+        //eventos tabla
         this.vistaDona.getjTableDatosDonacione().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listadonacionmodel = this.vistaDona.getjTableDatosDonacione().getSelectionModel();
-        listadonacionmodel.addListSelectionListener(new ListSelectionListener() {
+        this.listadonacionmodel = this.vistaDona.getjTableDatosDonacione().getSelectionModel();
+        this.listadonacionmodel.addListSelectionListener(new ListSelectionListener() {
+            @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
                     donacionSeleccionado();
@@ -73,11 +68,36 @@ public class ControllerDonacion {
             }
 
         });
-        this.vistaDona.getBtnbuscarDONA().addActionListener(b -> buscarDonacion());
-        this.vistaDona.getChekBsqDONA().addActionListener(bc -> buscarDonacion());
-        this.vistaDona.getBtnlimpiarDONABUSQ().addActionListener(lp -> limpiarBusquedaDona());
-//        this.vistaDona.getjButtonReportarProGeneral().addActionListener(lr -> reporteGeneral());
+//      this.vistaDona.getjButtonReportarProGeneral().addActionListener(lr -> reporteGeneral());
 //        this.vistaDona.getjButtonReporteIndivPro().addActionListener(lr -> reporteIndividual());
+        // control de botones inicio
+        this.vistaDona.getBtnEDITARDONA().setEnabled(false);
+        this.vistaDona.getBtnELIMINARDONA().setEnabled(false);
+    }
+
+    public void cargarComboBoxBenefaDONA() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new PersonaJpaController(manage.getEmf()).findPersonaEntities());
+            this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
+
+    public void donacionSeleccionado() {
+        if (this.vistaDona.getjTableDatosDonacione().getSelectedRow() != -1) {
+            dona = modeloTdona.getFilas().get(this.vistaDona.getjTableDatosDonacione().getSelectedRow());
+            //cargar los datos a la vista
+            this.vistaDona.getTxaDetalleProdDON().setText(dona.getDetalleproductodona());
+            this.vistaDona.getTxaMotivoDON().setText(dona.getMotivodona());
+            //this.vistaDona.getjDateChooserFechaEntrega.setDate(dona.getFechaentregadona());
+            this.vistaDona.getjComboBoxPersonasBenefactDon().setSelectedItem(dona.getIdpersona());
+            //CONTROLES DE BOTONES
+            this.vistaDona.getBtnEDITARDONA().setEnabled(true);
+            this.vistaDona.getBtnELIMINARDONA().setEnabled(true);
+            this.vistaDona.getBtnCREARDONA().setEnabled(false);
+        }
     }
 
     //M É T O D O S  C R U D 
@@ -91,8 +111,8 @@ public class ControllerDonacion {
             } else {
                 dona = new Donacion();
                 dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
+                //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
                 dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
-                //FALTA FECHA
                 dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
 
                 try {
@@ -115,7 +135,7 @@ public class ControllerDonacion {
         } else {
             if (dona != null) {
                 dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
-                //FALTA FECHA
+                //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
                 dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
                 dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
                 try {
@@ -130,6 +150,9 @@ public class ControllerDonacion {
                     Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
                 }
                 limpiarDonaciones();
+            } else {
+                Resouces.error(" ATENCIÓN!!!", "No se pudo editar el producto :<!");
+                limpiarDonaciones();
             }
         }
     }
@@ -143,7 +166,7 @@ public class ControllerDonacion {
                     try {
                         modeloDonacion.destroy(dona.getIddona());
                         modeloTdona.eliminar(dona);
-                        modeloTdona.actualizar(dona);
+                        //modeloTdona.actualizar(dona);
                     } catch (IllegalOrphanException ex) {
                         Logger.getLogger(ControllerDonacion.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -151,23 +174,13 @@ public class ControllerDonacion {
                     Resouces.success("Atención!!", "Donación Eliminado Exitosamente");
                 }
             } catch (NonexistentEntityException e) {
-                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(ControllerDonacion.class.getName()).log(Level.SEVERE, null, e);
             }
         }
     }
 
-    public void cargarCombobox() {
-        try {
-            Vector v = new Vector();
-            v.addAll(new DonacionJpaController(manage.getEmf()).findDonacionEntities());
-            this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Capturando errores cargarCombobox");
-        }
-    }
-
 //    public void reporteGeneral() {
-//        Resouces.imprimirReporte(ManagerFactory.getConnection(manage.getEmf().createEntityManager()), "/reportes/Productos.jasper",new HashMap());
+//        Resouces.imprimirReporte(ManagerFactory.getConnection(manage.getEmf().createEntityManager()), "/reportes/Donaciones.jasper",new HashMap());
 //    }
 //    public void reporteIndividual() {
 //        if (dona != null) {
@@ -179,35 +192,6 @@ public class ControllerDonacion {
 //            Resouces.warning("Atención!!", "Debe seleccionar un donaducto");
 //        }
 //    }
-    public void limpiarDonaciones() {
-        vistaDona.getTxaDetalleProdDON().setText("");
-        vistaDona.getTxaMotivoDON().setText("");
-        vistaDona.getjComboBoxPersonasBenefactDon().setSelectedIndex(0);
-        dona = null;
-        //CONTROL DE BOTONES
-        this.vistaDona.getBtnEDITARDONA().setEnabled(false);
-        this.vistaDona.getBtnELIMINARDONA().setEnabled(false);
-        this.vistaDona.getBtnCREARDONA().setEnabled(true);
-        this.vistaDona.getjTableDatosProductos().getSelectionModel().clearSelection();
-    }
-
-    public void limpiarBusquedaDona() {
-        vistaDona.getTxtBsqDonacionesCriterio().setText("");
-        modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
-        modeloTdona.fireTableDataChanged();
-    }
-
-    public void donacionSeleccionado() {
-        if (this.vistaDona.getjTableDatosDonacione().getSelectedRow() != -1) {
-            dona = modeloTdona.getFilas().get(this.vistaDona.getjTableDatosDonacione().getSelectedRow());
-            this.vistaDona.getTxaDetalleProdDON().setText(dona.getDetalleproductodona());
-            //CONTROLES DE BOTONES
-            this.vistaDona.getBtnEDITARDONA().setEnabled(true);
-            this.vistaDona.getBtnELIMINARDONA().setEnabled(true);
-            this.vistaDona.getBtnCREARDONA().setEnabled(false);
-        }
-    }
-
     public void buscarDonacion() {
         if (this.vistaDona.getChekBsqDONA().isSelected()) {
             modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
@@ -222,6 +206,25 @@ public class ControllerDonacion {
         }
     }
 
+    public void limpiarDonaciones() {
+        vistaDona.getTxaDetalleProdDON().setText("");
+        vistaDona.getTxaMotivoDON().setText("");
+        //vistaDona.getjDateChooserFechaEntrega.setdate(null);
+        vistaDona.getjComboBoxPersonasBenefactDon().setSelectedIndex(0);
+        dona = null;
+        //CONTROL DE BOTONES
+        this.vistaDona.getBtnEDITARDONA().setEnabled(false);
+        this.vistaDona.getBtnELIMINARDONA().setEnabled(false);
+        this.vistaDona.getBtnCREARDONA().setEnabled(true);
+        this.vistaDona.getjTableDatosProductos().getSelectionModel().clearSelection();
+    }
+
+    public void limpiarBusquedaDona() {
+        vistaDona.getTxtBsqDonacionesCriterio().setText("");
+        modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
+        modeloTdona.fireTableDataChanged();
+    }
+    
     public boolean camposVacios() {
         boolean validar = true;
         if (this.vistaDona.getTxaDetalleProdDON().getText().isEmpty()) {
@@ -248,5 +251,4 @@ public class ControllerDonacion {
         }
         return validado;
     }
-
 }
