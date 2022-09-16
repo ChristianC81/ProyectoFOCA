@@ -238,7 +238,7 @@ public class ProductoJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
     
 }

@@ -208,6 +208,6 @@ public class InscripcionJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
 }

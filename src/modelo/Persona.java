@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Persona.findAll", query = "SELECT p FROM Persona p"),
     @NamedQuery(name = "Persona.findByIdper", query = "SELECT p FROM Persona p WHERE p.idper = :idper"),
     @NamedQuery(name = "Persona.findByCedulaper", query = "SELECT p FROM Persona p WHERE p.cedulaper = :cedulaper"),
+    @NamedQuery(name = "Persona.findByTipoper", query = "SELECT p FROM Persona p WHERE p.tipoper = :tipoper"),
     @NamedQuery(name = "Persona.findByNombresper", query = "SELECT p FROM Persona p WHERE p.nombresper = :nombresper"),
     @NamedQuery(name = "Persona.findByApellidosper", query = "SELECT p FROM Persona p WHERE p.apellidosper = :apellidosper"),
     @NamedQuery(name = "Persona.findByDireccionper", query = "SELECT p FROM Persona p WHERE p.direccionper = :direccionper"),
@@ -59,6 +60,8 @@ public class Persona implements Serializable {
     @Basic(optional = false)
     @Column(name = "CEDULAPER")
     private String cedulaper;
+    @Column(name = "TIPOPER")
+    private String tipoper;
     @Column(name = "NOMBRESPER")
     private String nombresper;
     @Column(name = "APELLIDOSPER")
@@ -101,8 +104,6 @@ public class Persona implements Serializable {
     private List<Donacion> donacionList;
     @OneToMany(mappedBy = "idpersona")
     private List<Usuario> usuarioList;
-    @OneToMany(mappedBy = "idpersona")
-    private List<Formulario> formularioList;
 
     public Persona() {
     }
@@ -130,6 +131,14 @@ public class Persona implements Serializable {
 
     public void setCedulaper(String cedulaper) {
         this.cedulaper = cedulaper;
+    }
+
+    public String getTipoper() {
+        return tipoper;
+    }
+
+    public void setTipoper(String tipoper) {
+        this.tipoper = tipoper;
     }
 
     public String getNombresper() {
@@ -296,15 +305,6 @@ public class Persona implements Serializable {
         this.usuarioList = usuarioList;
     }
 
-    @XmlTransient
-    public List<Formulario> getFormularioList() {
-        return formularioList;
-    }
-
-    public void setFormularioList(List<Formulario> formularioList) {
-        this.formularioList = formularioList;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -327,7 +327,11 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Persona[ idper=" + idper + " ]";
+        return this.nombresper + " " + this.apellidosper;
     }
-    
+
+    public void setIdper(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

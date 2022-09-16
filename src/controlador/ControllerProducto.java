@@ -6,6 +6,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -118,7 +119,13 @@ public class ControllerProducto {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
             producto = new Producto();
-            producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
+             int id = 1;    
+             BigDecimal bid= BigDecimal.valueOf(id);
+            producto.setIdprod(bid);
+            int num = (int) this.vistad.getjSpinnerCantidad().getValue();    
+             BigInteger bint= BigInteger.valueOf(num);
+             System.out.println("sifuncionaaaaaaaaaaaa");
+            producto.setCantidadprod(bint);
             producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
             try {
                 modelPd.create(producto);

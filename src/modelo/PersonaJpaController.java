@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -45,9 +46,6 @@ public class PersonaJpaController implements Serializable {
         if (persona.getUsuarioList() == null) {
             persona.setUsuarioList(new ArrayList<Usuario>());
         }
-        if (persona.getFormularioList() == null) {
-            persona.setFormularioList(new ArrayList<Formulario>());
-        }
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -76,12 +74,6 @@ public class PersonaJpaController implements Serializable {
                 attachedUsuarioList.add(usuarioListUsuarioToAttach);
             }
             persona.setUsuarioList(attachedUsuarioList);
-            List<Formulario> attachedFormularioList = new ArrayList<Formulario>();
-            for (Formulario formularioListFormularioToAttach : persona.getFormularioList()) {
-                formularioListFormularioToAttach = em.getReference(formularioListFormularioToAttach.getClass(), formularioListFormularioToAttach.getIdform());
-                attachedFormularioList.add(formularioListFormularioToAttach);
-            }
-            persona.setFormularioList(attachedFormularioList);
             em.persist(persona);
             for (Inscripcion inscripcionListInscripcion : persona.getInscripcionList()) {
                 Persona oldIdpersonaOfInscripcionListInscripcion = inscripcionListInscripcion.getIdpersona();
@@ -119,15 +111,6 @@ public class PersonaJpaController implements Serializable {
                     oldIdpersonaOfUsuarioListUsuario = em.merge(oldIdpersonaOfUsuarioListUsuario);
                 }
             }
-            for (Formulario formularioListFormulario : persona.getFormularioList()) {
-                Persona oldIdpersonaOfFormularioListFormulario = formularioListFormulario.getIdpersona();
-                formularioListFormulario.setIdpersona(persona);
-                formularioListFormulario = em.merge(formularioListFormulario);
-                if (oldIdpersonaOfFormularioListFormulario != null) {
-                    oldIdpersonaOfFormularioListFormulario.getFormularioList().remove(formularioListFormulario);
-                    oldIdpersonaOfFormularioListFormulario = em.merge(oldIdpersonaOfFormularioListFormulario);
-                }
-            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             if (findPersona(persona.getIdper()) != null) {
@@ -155,8 +138,6 @@ public class PersonaJpaController implements Serializable {
             List<Donacion> donacionListNew = persona.getDonacionList();
             List<Usuario> usuarioListOld = persistentPersona.getUsuarioList();
             List<Usuario> usuarioListNew = persona.getUsuarioList();
-            List<Formulario> formularioListOld = persistentPersona.getFormularioList();
-            List<Formulario> formularioListNew = persona.getFormularioList();
             List<Inscripcion> attachedInscripcionListNew = new ArrayList<Inscripcion>();
             for (Inscripcion inscripcionListNewInscripcionToAttach : inscripcionListNew) {
                 inscripcionListNewInscripcionToAttach = em.getReference(inscripcionListNewInscripcionToAttach.getClass(), inscripcionListNewInscripcionToAttach.getIdins());
@@ -185,13 +166,6 @@ public class PersonaJpaController implements Serializable {
             }
             usuarioListNew = attachedUsuarioListNew;
             persona.setUsuarioList(usuarioListNew);
-            List<Formulario> attachedFormularioListNew = new ArrayList<Formulario>();
-            for (Formulario formularioListNewFormularioToAttach : formularioListNew) {
-                formularioListNewFormularioToAttach = em.getReference(formularioListNewFormularioToAttach.getClass(), formularioListNewFormularioToAttach.getIdform());
-                attachedFormularioListNew.add(formularioListNewFormularioToAttach);
-            }
-            formularioListNew = attachedFormularioListNew;
-            persona.setFormularioList(formularioListNew);
             persona = em.merge(persona);
             for (Inscripcion inscripcionListOldInscripcion : inscripcionListOld) {
                 if (!inscripcionListNew.contains(inscripcionListOldInscripcion)) {
@@ -261,23 +235,6 @@ public class PersonaJpaController implements Serializable {
                     }
                 }
             }
-            for (Formulario formularioListOldFormulario : formularioListOld) {
-                if (!formularioListNew.contains(formularioListOldFormulario)) {
-                    formularioListOldFormulario.setIdpersona(null);
-                    formularioListOldFormulario = em.merge(formularioListOldFormulario);
-                }
-            }
-            for (Formulario formularioListNewFormulario : formularioListNew) {
-                if (!formularioListOld.contains(formularioListNewFormulario)) {
-                    Persona oldIdpersonaOfFormularioListNewFormulario = formularioListNewFormulario.getIdpersona();
-                    formularioListNewFormulario.setIdpersona(persona);
-                    formularioListNewFormulario = em.merge(formularioListNewFormulario);
-                    if (oldIdpersonaOfFormularioListNewFormulario != null && !oldIdpersonaOfFormularioListNewFormulario.equals(persona)) {
-                        oldIdpersonaOfFormularioListNewFormulario.getFormularioList().remove(formularioListNewFormulario);
-                        oldIdpersonaOfFormularioListNewFormulario = em.merge(oldIdpersonaOfFormularioListNewFormulario);
-                    }
-                }
-            }
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
@@ -326,11 +283,6 @@ public class PersonaJpaController implements Serializable {
             for (Usuario usuarioListUsuario : usuarioList) {
                 usuarioListUsuario.setIdpersona(null);
                 usuarioListUsuario = em.merge(usuarioListUsuario);
-            }
-            List<Formulario> formularioList = persona.getFormularioList();
-            for (Formulario formularioListFormulario : formularioList) {
-                formularioListFormulario.setIdpersona(null);
-                formularioListFormulario = em.merge(formularioListFormulario);
             }
             em.remove(persona);
             em.getTransaction().commit();
@@ -386,5 +338,17 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
-    
+    public List<Persona> buscarPersona(String cedula) {
+        System.out.println(cedula);
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Persona> query = em.createNamedQuery("Persona.findByCedulaper", Persona.class);
+            query.setParameter("cedulaper", cedula);
+            List<Persona> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+}
+    }
 }

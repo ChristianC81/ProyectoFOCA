@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,9 +17,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaPersona extends AbstractTableModel {
 
-    private String[] columnas = {"CÉDULA", "NOMBRES", "APELLIDO", "DIRECCIÓN", "TELÉFONO", "CORREO", "GÉNERO",
+    private String[] columnas = {"CÉDULA", "TIPO", "NOMBRES", "APELLIDO", "DIRECCIÓN", "TELÉFONO", "CORREO", "GÉNERO",
         "FECHA NACIMIENTO", "DIRECCIÓN", "ESTADO CIVIL", "SALARIO",
-        "ESTRATO", "TITULO", "SEGURO", "HORARIO", "PERIODO", "TIPO"};
+        "ESTRATO", "TITULO", "SEGURO", "HORARIO", "PERIODO", "TIPO VOLUNTARIO"};
     public static List<Persona> filas;
     private Persona personaSelecionado;
     private int indice;
@@ -51,35 +52,39 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 0:
                 return personaSelecionado.getCedulaper();
             case 1:
-                return personaSelecionado.getNombresper();
+                return personaSelecionado.getTipoper();
             case 2:
-                return personaSelecionado.getApellidosper();
+                return personaSelecionado.getNombresper();
             case 3:
-                return personaSelecionado.getDireccionper();
+                return personaSelecionado.getApellidosper();
             case 4:
-                return personaSelecionado.getTelefonoper();
+                return personaSelecionado.getDireccionper();
             case 5:
-                return personaSelecionado.getCorreoper();
+                return personaSelecionado.getTelefonoper();
             case 6:
-                return personaSelecionado.getGeneroper();
+                return personaSelecionado.getCorreoper();
             case 7:
-                return personaSelecionado.getFechanacimiento();
+                return personaSelecionado.getGeneroper();
             case 8:
-                return personaSelecionado.getEstadocivil();
+                return personaSelecionado.getFechanacimiento();
             case 9:
-                return personaSelecionado.getSalariobenefac();
+                return personaSelecionado.getEstadocivil();
             case 10:
-                return personaSelecionado.getEstratosbenefi();
+                return personaSelecionado.getSalariobenefac();
             case 11:
-                return personaSelecionado.getTitulo();
+                return personaSelecionado.getEstratosbenefi();
             case 12:
-                return personaSelecionado.getSeguro();
+                return personaSelecionado.getTitulo();
             case 13:
-                return personaSelecionado.getHorario();
+                return personaSelecionado.getSeguro();
             case 14:
-                return personaSelecionado.getPeriodovol();
+                return personaSelecionado.getHorario();
             case 15:
+                return personaSelecionado.getPeriodovol();
+            case 16:
                 return personaSelecionado.getTipovol();
+            case 17:
+                return personaSelecionado.getFoto();
             default:
                 return null;
         }
@@ -103,13 +108,13 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 6:
                 return String.class;
             case 7:
-                return Date.class;
+                return String.class;
             case 8:
-                return String.class;
+                return Date.class;
             case 9:
-                return Double.class;
-            case 10:
                 return String.class;
+            case 10:
+                return Double.class;
             case 11:
                 return String.class;
             case 12:
@@ -120,6 +125,10 @@ public class ModeloTablaPersona extends AbstractTableModel {
                 return String.class;
             case 15:
                 return String.class;
+            case 16:
+                return String.class;
+            case 17:
+                return Serializable.class;
             default:
                 return Object.class;
         }

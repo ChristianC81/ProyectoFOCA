@@ -15,14 +15,17 @@ import proyectofoca.ManagerFactory;
  */
 public class ControllerJefe extends ControllerPersona {
     //Objetos que controlara Jefe
-ControllerProducto cprod;  
+    ControllerPersona cper;
+    ControllerProducto cprod;  
     public ControllerJefe(ViewAdministrador vistap, ManagerFactory manager, PersonaJpaController modelPer) {
         super(vistap, manager, modelPer);
         vistap.setVisible(true);
         vistap.getBtnUsuarios().setEnabled(false);
         vistap.getBtnConfiguracion().setEnabled(false);
+        cper=new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
+        cper.iniciarControlPer();
         cprod=new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf())); 
-        //cprod.controldeEventos(vistap);
+        cprod.iniciarControlProd();
         controldeEventos(vistap);
     }
 

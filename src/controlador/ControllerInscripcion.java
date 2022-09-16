@@ -45,13 +45,13 @@ public class ControllerInscripcion {
 
     //Inicniar control inscripcion
     public void iniciarControlInscripcion() {
-        this.vistad.getBtnCREARINSCRI().addActionListener(l -> guardarInscripcion());
-        this.vistad.getBtnEDITARINSCRI().addActionListener(l -> editarInscripcion());
-        this.vistad.getBtnELIMINARINSCRI().addActionListener(l -> eliminarInscripcion());
-        this.vistad.getBtnLIMPIARINSCRI().addActionListener(l -> limpiar());
-        this.vistad.getBtnlimpiarInscriBsqa().addActionListener(l -> limpiarBuscadorInscripcion());
-        this.vistad.getBtnbuscarInscri().addActionListener(l -> buscarInscripcionn());
-        this.vistad.getChekBsqInscri().addActionListener(l -> buscarInscripcionn());
+//        this.vistad.getBtnCREARINSCRI().addActionListener(l -> guardarInscripcion());
+//        this.vistad.getBtnEDITARINSCRI().addActionListener(l -> editarInscripcion());
+//        this.vistad.getBtnELIMINARINSCRI().addActionListener(l -> eliminarInscripcion());
+//        this.vistad.getBtnLIMPIARINSCRI().addActionListener(l -> limpiar());
+//        this.vistad.getBtnlimpiarInscriBsqa().addActionListener(l -> limpiarBuscadorInscripcion());
+//        this.vistad.getBtnbuscarInscri().addActionListener(l -> buscarInscripcionn());
+//        this.vistad.getChekBsqInscri().addActionListener(l -> buscarInscripcionn());
 
         //eventos tabla
         this.vistad.getjTableDatosInscripciones().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -88,43 +88,43 @@ public class ControllerInscripcion {
     }
 
     //Métodos
-    public void guardarInscripcion() {
-        inscripcion = new Inscripcion();
-        inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
-        inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-        inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
-        try {
-            modeloInscripcion.create(inscripcion);
-            modeloTablaInscripcion.agregar(inscripcion);
-        } catch (PreexistingEntityException ex) {
-            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        Resouces.success(" ATENCIÓN!!!", "Inscripción creado correctamente :>!");
-        limpiar();
-    }
-
-    public void editarInscripcion() {
-        if (inscripcion != null) {
-            inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
-            inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
-            try {
-                modeloInscripcion.edit(inscripcion);
-                modeloTablaInscripcion.eliminar(inscripcion);
-                modeloTablaInscripcion.actualizar(inscripcion);
-            } catch (Exception ex) {
-                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            Resouces.success(" ATENCIÓN!!!", "Inscripción editado correctamente :>!");
-            limpiar();
-        } else {
-            Resouces.error(" ATENCIÓN!!!", "No se pudo editar la Inscripción :<!");
-            limpiar();
-        }
-    }
+//    public void guardarInscripcion() {
+//        inscripcion = new Inscripcion();
+//        inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
+//        inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
+//        inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+//        try {
+//            modeloInscripcion.create(inscripcion);
+//            modeloTablaInscripcion.agregar(inscripcion);
+//        } catch (PreexistingEntityException ex) {
+//            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (Exception ex) {
+//            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        Resouces.success(" ATENCIÓN!!!", "Inscripción creado correctamente :>!");
+//        limpiar();
+//    }
+//
+//    public void editarInscripcion() {
+//        if (inscripcion != null) {
+//            inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
+//            inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
+//            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+//            try {
+//                modeloInscripcion.edit(inscripcion);
+//                modeloTablaInscripcion.eliminar(inscripcion);
+//                modeloTablaInscripcion.actualizar(inscripcion);
+//            } catch (Exception ex) {
+//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            Resouces.success(" ATENCIÓN!!!", "Inscripción editado correctamente :>!");
+//            limpiar();
+//        } else {
+//            Resouces.error(" ATENCIÓN!!!", "No se pudo editar la Inscripción :<!");
+//            limpiar();
+//        }
+//    }
 
     public void eliminarInscripcion() {
         if (inscripcion != null) {

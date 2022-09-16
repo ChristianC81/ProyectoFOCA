@@ -49,8 +49,9 @@ public class ControllerLogin {
             DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
             String usuario = vistaL.getTxtusuario().getText();
             String contrasenia = new String(vistaL.getTxtPass().getPassword());
+            System.out.println(usuario+""+contrasenia);
             Usuario user = modelo.buscarUsuario(usuario, contrasenia);
-            System.out.println(user.getIdpersona().getNombresper());
+            
             System.out.println(user.getIdrol().getNombrerol());
             if (user != null) {
                 if (user.getIdrol().getNombrerol().equals("Administrador")) {

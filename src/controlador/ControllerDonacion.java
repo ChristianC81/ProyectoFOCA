@@ -35,7 +35,7 @@ public class ControllerDonacion {
     Donacion dona;
     //JDesktopPane panelEscritorio;
     ListSelectionModel listadonacionmodel;
-    Validaciones validacion;
+    //Validaciones validacion;
 
     public ControllerDonacion(ViewAdministrador vistaDona, ManagerFactory manage, DonacionJpaController modeloDonacion) {
         // this.vistaDona = vistaDona;

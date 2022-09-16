@@ -232,6 +232,6 @@ public class DonacionJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
 }
