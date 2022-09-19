@@ -5,8 +5,11 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import modelo.DonacionJpaController;
+import modelo.InscripcionJpaController;
 import modelo.PersonaJpaController;
 import modelo.ProductoJpaController;
+import modelo.ProyectoJpaController;
 import proyectofoca.ManagerFactory;
 
 /**
@@ -14,18 +17,30 @@ import proyectofoca.ManagerFactory;
  * @author chris
  */
 public class ControllerJefe extends ControllerPersona {
+
     //Objetos que controlara Jefe
     ControllerPersona cper;
-    ControllerProducto cprod;  
+    ControllerProducto cprod;
+    ControllerDonacion cdona;
+    ControllerInscripcion cins;
+    ControllerProyecto cproy;
+
     public ControllerJefe(ViewAdministrador vistap, ManagerFactory manager, PersonaJpaController modelPer) {
         super(vistap, manager, modelPer);
         vistap.setVisible(true);
         vistap.getBtnUsuarios().setEnabled(false);
         vistap.getBtnConfiguracion().setEnabled(false);
-        cper=new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
+        cper = new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
         cper.iniciarControlPer();
-        cprod=new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf())); 
+        cprod = new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf()));
         cprod.iniciarControlProd();
+        cdona = new ControllerDonacion(vistap, manager, new DonacionJpaController(manager.getEmf()));
+        cdona.controlMetodosDonacion();
+        cins = new ControllerInscripcion(vistap, manager, new InscripcionJpaController(manager.getEmf()));
+        cins.iniciarControlInscripcion();
+        cproy = new ControllerProyecto(vistap, manager, new ProyectoJpaController(manager.getEmf()));
+        cproy.iniciarControlProyecto();
+        
         controldeEventos(vistap);
     }
 
@@ -33,11 +48,9 @@ public class ControllerJefe extends ControllerPersona {
 //          vistap.getBtnSalir().addActionListener(l ->);
         vistap.getBtnReportes().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(0));
         vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(2));
-
         vistap.getBtnInscripciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));
         vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(4));
         vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(5));
         vistap.getBtnproyectos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
-        vistap.getBtnFormularios().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
-      }
+    }
 }

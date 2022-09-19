@@ -158,7 +158,7 @@ public class Proyecto implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Proyecto[ idproy=" + idproy + " ]";
+        return nombreproy;
     }
     
 }

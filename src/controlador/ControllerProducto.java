@@ -8,6 +8,7 @@ package controlador;
 import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,6 +46,8 @@ public class ControllerProducto {
         // devuelve la lista de personas
         this.modeloTablaProd.setFilas(modelPd.findProductoEntities());
         this.vistad.getjTableDatosProductos().setModel(modeloTablaProd);
+        cargarComboBoxDona();
+        cargarComboBoxProy();
 
     }
 
@@ -70,7 +73,7 @@ public class ControllerProducto {
             }
         });
 
-//        this.vistad.getBtnReporteGeneral().addActionListener(l -> reporteGeneral());
+        this.vistad.getBtnREPORTEGENERALPROD().addActionListener(l -> reporteGeneral());
 //        this.vistad.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
         // control de botones inicio
         this.vistad.getBtnEDITARPROD().setEnabled(false);
@@ -119,12 +122,12 @@ public class ControllerProducto {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
             producto = new Producto();
-             int id = 1;    
-             BigDecimal bid= BigDecimal.valueOf(id);
+            int id = 1;
+            BigDecimal bid = BigDecimal.valueOf(id);
             producto.setIdprod(bid);
-            int num = (int) this.vistad.getjSpinnerCantidad().getValue();    
-             BigInteger bint= BigInteger.valueOf(num);
-             System.out.println("sifuncionaaaaaaaaaaaa");
+            int num = (int) this.vistad.getjSpinnerCantidad().getValue();
+            BigInteger bint = BigInteger.valueOf(num);
+            System.out.println("sifuncionaaaaaaaaaaaa");
             producto.setCantidadprod(bint);
             producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
             try {
@@ -188,6 +191,10 @@ public class ControllerProducto {
             }
         }
 
+    }
+
+    public void reporteGeneral() {
+        //Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProductos.jasper", new HashMap());
     }
 
     //limipiar y validar
