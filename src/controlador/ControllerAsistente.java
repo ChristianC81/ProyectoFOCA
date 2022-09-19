@@ -24,7 +24,6 @@ public class ControllerAsistente extends ControllerPersona{
         vistap.getBtnInscripciones().setEnabled(false);
         vistap.getBtnDonaciones().setEnabled(false);
         vistap.getBtnproyectos().setEnabled(false);
-        vistap.getBtnConfiguracion().setEnabled(false);
         System.out.println("Ingreso Admin");
     }
 }
