@@ -43,6 +43,6 @@ public class ControllerJefe extends ControllerPersona {
         vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(5));
         vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
         vistap.getBtnproyectos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
-        vistap.getBtnFormularios().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
+//        vistap.getBtnFormularios().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
       }
 }

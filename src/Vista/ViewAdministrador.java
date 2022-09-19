@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
@@ -23,7 +24,7 @@ import javax.swing.JTextField;
  * @author USER
  */
 public class ViewAdministrador extends javax.swing.JFrame {
-
+    private char i;
     /**
      * Creates new form ViewSistema
      */
@@ -146,73 +147,44 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txtBsqCRITERIOROL = new javax.swing.JTextField();
         jSeparator132 = new javax.swing.JSeparator();
         pnUsuario = new javax.swing.JPanel();
-        pnAdministrar2 = new javax.swing.JPanel();
-        txtcedulaPer2 = new javax.swing.JTextField();
-        txtnombrePer2 = new javax.swing.JTextField();
-        txtapellidoPer2 = new javax.swing.JTextField();
-        txtdireccionPer2 = new javax.swing.JTextField();
-        txttelefono2 = new javax.swing.JTextField();
-        txtcorreoPer2 = new javax.swing.JTextField();
-        jLabel94 = new javax.swing.JLabel();
-        jLabel95 = new javax.swing.JLabel();
-        jLabel96 = new javax.swing.JLabel();
-        jLabel102 = new javax.swing.JLabel();
-        jLabel103 = new javax.swing.JLabel();
-        jLabel104 = new javax.swing.JLabel();
-        jSeparator78 = new javax.swing.JSeparator();
-        jSeparator82 = new javax.swing.JSeparator();
-        jSeparator84 = new javax.swing.JSeparator();
-        jSeparator85 = new javax.swing.JSeparator();
-        jSeparator87 = new javax.swing.JSeparator();
-        jLabel105 = new javax.swing.JLabel();
-        cbxTipoPer2 = new javax.swing.JComboBox<>();
-        rbtFemenino2 = new javax.swing.JRadioButton();
-        jLabel11 = new javax.swing.JLabel();
-        rbtMasculino2 = new javax.swing.JRadioButton();
-        jLabel106 = new javax.swing.JLabel();
-        txtestadocivil2 = new javax.swing.JTextField();
-        jSeparator88 = new javax.swing.JSeparator();
-        jLabel107 = new javax.swing.JLabel();
-        txtestrato2 = new javax.swing.JTextField();
-        jSeparator89 = new javax.swing.JSeparator();
-        jLabel108 = new javax.swing.JLabel();
-        jLabel112 = new javax.swing.JLabel();
-        txtsalario2 = new javax.swing.JTextField();
-        jSeparator90 = new javax.swing.JSeparator();
-        jSeparator91 = new javax.swing.JSeparator();
-        jLabel113 = new javax.swing.JLabel();
-        txtTitulo2 = new javax.swing.JTextField();
-        jSeparator92 = new javax.swing.JSeparator();
-        jSeparator93 = new javax.swing.JSeparator();
-        chkseguroiees2 = new javax.swing.JCheckBox();
-        jLabel114 = new javax.swing.JLabel();
-        txthorario2 = new javax.swing.JTextField();
-        jSeparator94 = new javax.swing.JSeparator();
-        jLabel115 = new javax.swing.JLabel();
-        txtperiodo3 = new javax.swing.JTextField();
-        jSeparator95 = new javax.swing.JSeparator();
-        jLabel116 = new javax.swing.JLabel();
-        txtTipoVol2 = new javax.swing.JTextField();
-        jSeparator101 = new javax.swing.JSeparator();
-        jSeparator102 = new javax.swing.JSeparator();
-        btnLIMPIARPER2 = new javax.swing.JButton();
-        btnCREARPER2 = new javax.swing.JButton();
-        btnEDITARPER2 = new javax.swing.JButton();
-        btnELIMINARPER2 = new javax.swing.JButton();
         jPanel19 = new javax.swing.JPanel();
-        btnlimpiarPerbsq2 = new javax.swing.JButton();
-        btnbuscarPer2 = new javax.swing.JButton();
-        chekBsqPer2 = new javax.swing.JCheckBox();
+        btnlimpiarUsubsq = new javax.swing.JButton();
+        btnbuscarUsu = new javax.swing.JButton();
+        chekBsqUsu = new javax.swing.JCheckBox();
         jLabel42 = new javax.swing.JLabel();
-        txtBsqPersonas2 = new javax.swing.JTextField();
+        txtBsqUsuarios = new javax.swing.JTextField();
         jSeparator111 = new javax.swing.JSeparator();
         pnPersona5 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTableDatosPersonas2 = new javax.swing.JTable();
-        btnCANCELARPER2 = new javax.swing.JButton();
-        btnREPORTEGENERALPER2 = new javax.swing.JButton();
-        btnREPORTEINDIVIDUALPER2 = new javax.swing.JButton();
+        jTableDatosUsuario = new javax.swing.JTable();
+        btnCANCELARUSU = new javax.swing.JButton();
+        btnREPORTEGENERALUSU = new javax.swing.JButton();
+        btnREPORTEINDIVIDUALUSU = new javax.swing.JButton();
+        pnAdministrar2 = new javax.swing.JPanel();
+        txtNombreUsu = new javax.swing.JTextField();
+        txtdireccionPer2 = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jSeparator78 = new javax.swing.JSeparator();
+        jSeparator82 = new javax.swing.JSeparator();
+        jSeparator84 = new javax.swing.JSeparator();
+        jLabel105 = new javax.swing.JLabel();
+        txtestadocivil2 = new javax.swing.JTextField();
+        jSeparator88 = new javax.swing.JSeparator();
+        txtsalario2 = new javax.swing.JTextField();
+        txtTipoVol2 = new javax.swing.JTextField();
+        btnLIMPIARUSU = new javax.swing.JButton();
+        btnCREARUSU = new javax.swing.JButton();
+        btnEDITARUSU = new javax.swing.JButton();
+        btnELIMINARUSU = new javax.swing.JButton();
+        txtClave = new javax.swing.JPasswordField();
+        cbxIdPersona = new javax.swing.JComboBox<>();
+        cbxIdRol = new javax.swing.JComboBox<>();
+        lblVerClave = new javax.swing.JLabel();
+        lblNombreUsu = new javax.swing.JLabel();
+        lblClaveUsu = new javax.swing.JLabel();
         pnPersona = new javax.swing.JPanel();
         pnAdministrar = new javax.swing.JPanel();
         txtcedulaPer = new javax.swing.JTextField();
@@ -313,6 +285,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel78 = new javax.swing.JLabel();
         txtNombreProye = new javax.swing.JTextField();
         jSeparator110 = new javax.swing.JSeparator();
+        jLabel77 = new javax.swing.JLabel();
+        jComboBoxBeneficiarioProye = new javax.swing.JComboBox<>();
+        jSeparator130 = new javax.swing.JSeparator();
         pnIncripciones = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
@@ -506,7 +481,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnReportes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnAdministrar1.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         pnAdministrar1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtcedulaPer1.setBackground(new java.awt.Color(249, 247, 250));
@@ -749,7 +724,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnReportes.add(pnAdministrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 570));
 
         jPanel18.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel18.setForeground(new java.awt.Color(255, 255, 255));
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -791,7 +766,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel32.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel32.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel32.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel32.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosPersonas1.setBackground(new java.awt.Color(249, 247, 222));
@@ -868,7 +843,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnRoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel46.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel46.setMinimumSize(new java.awt.Dimension(640, 811));
         jPanel46.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -911,7 +886,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnRoles.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         jPanel47.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel47.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel47.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel47.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosROLES.setBackground(new java.awt.Color(249, 247, 222));
@@ -982,7 +957,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnRoles.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         jPanel48.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel48.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel48.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel48.setForeground(new java.awt.Color(255, 255, 255));
         jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1025,323 +1000,101 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnUsuario.setBackground(new java.awt.Color(249, 247, 250));
         pnUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnAdministrar2.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
-        pnAdministrar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtcedulaPer2.setBackground(new java.awt.Color(249, 247, 250));
-        txtcedulaPer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtcedulaPer2.setBorder(null);
-        pnAdministrar2.add(txtcedulaPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, -1));
-
-        txtnombrePer2.setBackground(new java.awt.Color(249, 247, 250));
-        txtnombrePer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtnombrePer2.setBorder(null);
-        pnAdministrar2.add(txtnombrePer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 200, -1));
-
-        txtapellidoPer2.setBackground(new java.awt.Color(249, 247, 250));
-        txtapellidoPer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtapellidoPer2.setBorder(null);
-        pnAdministrar2.add(txtapellidoPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 200, -1));
-
-        txtdireccionPer2.setBackground(new java.awt.Color(249, 247, 250));
-        txtdireccionPer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtdireccionPer2.setBorder(null);
-        pnAdministrar2.add(txtdireccionPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 200, -1));
-
-        txttelefono2.setBackground(new java.awt.Color(249, 247, 250));
-        txttelefono2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txttelefono2.setBorder(null);
-        pnAdministrar2.add(txttelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 200, 20));
-
-        txtcorreoPer2.setBackground(new java.awt.Color(249, 247, 250));
-        txtcorreoPer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtcorreoPer2.setBorder(null);
-        pnAdministrar2.add(txtcorreoPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 207, -1));
-
-        jLabel94.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel94.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel94.setText("Identificación");
-        pnAdministrar2.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
-
-        jLabel95.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel95.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel95.setText("Nombres:");
-        pnAdministrar2.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-
-        jLabel96.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel96.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel96.setText("Apellidos:");
-        pnAdministrar2.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-
-        jLabel102.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel102.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel102.setText("Dirección:");
-        pnAdministrar2.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
-
-        jLabel103.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel103.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel103.setText("Teléfono:");
-        pnAdministrar2.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
-
-        jLabel104.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel104.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel104.setText("Correo:");
-        pnAdministrar2.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
-
-        jSeparator78.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator78, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 200, 10));
-
-        jSeparator82.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator82, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 200, 10));
-
-        jSeparator84.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator84, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 200, 4));
-
-        jSeparator85.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator85, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 200, 12));
-
-        jSeparator87.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator87, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 207, 10));
-
-        jLabel105.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel105.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel105.setText("Tipo:");
-        pnAdministrar2.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        pnAdministrar2.add(cbxTipoPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 200, 20));
-
-        buttonGroupGenero.add(rbtFemenino2);
-        rbtFemenino2.setText("Femenino");
-        pnAdministrar2.add(rbtFemenino2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel11.setText("Género:");
-        pnAdministrar2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        buttonGroupGenero.add(rbtMasculino2);
-        rbtMasculino2.setText("Masculino");
-        pnAdministrar2.add(rbtMasculino2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        jLabel106.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel106.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel106.setText("Estado Civil:");
-        pnAdministrar2.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
-
-        txtestadocivil2.setBackground(new java.awt.Color(249, 247, 250));
-        txtestadocivil2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtestadocivil2.setBorder(null);
-        pnAdministrar2.add(txtestadocivil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 180, -1));
-
-        jSeparator88.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator88, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 200, 11));
-
-        jLabel107.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel107.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel107.setText("Estrato Social:");
-        pnAdministrar2.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 428, -1, -1));
-
-        txtestrato2.setBackground(new java.awt.Color(249, 247, 250));
-        txtestrato2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtestrato2.setBorder(null);
-        pnAdministrar2.add(txtestrato2, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 448, 200, -1));
-
-        jSeparator89.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator89, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 468, 200, 13));
-
-        jLabel108.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel108.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel108.setText("Fecha de Nacimiento:");
-        pnAdministrar2.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 112, -1));
-
-        jLabel112.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel112.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel112.setText("Salario:");
-        pnAdministrar2.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
-
-        txtsalario2.setBackground(new java.awt.Color(249, 247, 250));
-        txtsalario2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtsalario2.setBorder(null);
-        pnAdministrar2.add(txtsalario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 180, -1));
-
-        jSeparator90.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator90, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 180, 10));
-
-        jSeparator91.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator91, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 180, 12));
-
-        jLabel113.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel113.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel113.setText("Título:");
-        pnAdministrar2.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, -1, -1));
-
-        txtTitulo2.setBackground(new java.awt.Color(249, 247, 250));
-        txtTitulo2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtTitulo2.setBorder(null);
-        pnAdministrar2.add(txtTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 200, -1));
-
-        jSeparator92.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator92, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 200, 12));
-
-        jSeparator93.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator93, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 180, 12));
-
-        chkseguroiees2.setText("Seguro IEES");
-        pnAdministrar2.add(chkseguroiees2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 180, -1));
-
-        jLabel114.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel114.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel114.setText("Horario:");
-        pnAdministrar2.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
-
-        txthorario2.setBackground(new java.awt.Color(249, 247, 250));
-        txthorario2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txthorario2.setBorder(null);
-        pnAdministrar2.add(txthorario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 200, -1));
-
-        jSeparator94.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator94, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 200, 10));
-
-        jLabel115.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel115.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel115.setText("Periodo:");
-        pnAdministrar2.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
-
-        txtperiodo3.setBackground(new java.awt.Color(249, 247, 250));
-        txtperiodo3.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtperiodo3.setBorder(null);
-        pnAdministrar2.add(txtperiodo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 190, -1));
-
-        jSeparator95.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator95, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 190, 10));
-
-        jLabel116.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        jLabel116.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel116.setText("Tipo de Voluntario:");
-        pnAdministrar2.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
-
-        txtTipoVol2.setBackground(new java.awt.Color(249, 247, 250));
-        txtTipoVol2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtTipoVol2.setBorder(null);
-        pnAdministrar2.add(txtTipoVol2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 180, -1));
-
-        jSeparator101.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator101, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 180, 15));
-
-        jSeparator102.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator102, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 200, 10));
-
-        btnLIMPIARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        pnAdministrar2.add(btnLIMPIARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 40, 50));
-
-        btnCREARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        pnAdministrar2.add(btnCREARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 40, 50));
-
-        btnEDITARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        pnAdministrar2.add(btnEDITARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 40, 50));
-
-        btnELIMINARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        pnAdministrar2.add(btnELIMINARPER2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 40, 50));
-
-        pnUsuario.add(pnAdministrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 570));
-
         jPanel19.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel19.setForeground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnlimpiarPerbsq2.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarPerbsq2.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarPerbsq2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        btnlimpiarPerbsq2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel19.add(btnlimpiarPerbsq2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, 30));
+        btnlimpiarUsubsq.setBackground(new java.awt.Color(249, 247, 250));
+        btnlimpiarUsubsq.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        btnlimpiarUsubsq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarUsubsq.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel19.add(btnlimpiarUsubsq, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 50, 30));
 
-        btnbuscarPer2.setBackground(new java.awt.Color(249, 247, 250));
-        btnbuscarPer2.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        btnbuscarPer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
-        btnbuscarPer2.setText("Buscar");
-        btnbuscarPer2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel19.add(btnbuscarPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 70, 30));
+        btnbuscarUsu.setBackground(new java.awt.Color(249, 247, 250));
+        btnbuscarUsu.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnbuscarUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
+        btnbuscarUsu.setText("Buscar");
+        btnbuscarUsu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel19.add(btnbuscarUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 70, 30));
 
-        chekBsqPer2.setBackground(new java.awt.Color(249, 247, 250));
-        chekBsqPer2.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
-        chekBsqPer2.setText("Mostrar Todos");
-        chekBsqPer2.setBorder(null);
-        jPanel19.add(chekBsqPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 100, 30));
+        chekBsqUsu.setBackground(new java.awt.Color(249, 247, 250));
+        chekBsqUsu.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        chekBsqUsu.setText("Mostrar Todos");
+        chekBsqUsu.setBorder(null);
+        jPanel19.add(chekBsqUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 100, 30));
 
         jLabel42.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(102, 102, 102));
         jLabel42.setText("Criterio");
-        jPanel19.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 50, 20));
+        jPanel19.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 50, 20));
 
-        txtBsqPersonas2.setBackground(new java.awt.Color(249, 247, 250));
-        txtBsqPersonas2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
-        txtBsqPersonas2.setBorder(null);
-        jPanel19.add(txtBsqPersonas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, -1));
+        txtBsqUsuarios.setBackground(new java.awt.Color(249, 247, 250));
+        txtBsqUsuarios.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtBsqUsuarios.setBorder(null);
+        jPanel19.add(txtBsqUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 190, -1));
 
         jSeparator111.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(jSeparator111, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 10));
+        jPanel19.add(jSeparator111, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 190, 10));
 
-        pnUsuario.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 490, 100));
+        pnUsuario.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 680, 100));
 
         pnPersona5.setBackground(new java.awt.Color(249, 247, 250));
         pnPersona5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel39.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel39.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel39.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel39.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTableDatosPersonas2.setBackground(new java.awt.Color(249, 247, 222));
-        jTableDatosPersonas2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDatosUsuario.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Nombre de Usuario", "Contraseña", "Persona", "Rol"
             }
         ));
-        jScrollPane9.setViewportView(jTableDatosPersonas2);
+        jScrollPane9.setViewportView(jTableDatosUsuario);
 
-        btnCANCELARPER2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARPER2.setText("CANCELAR");
+        btnCANCELARUSU.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCANCELARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
+        btnCANCELARUSU.setText("CANCELAR");
 
-        btnREPORTEGENERALPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
 
-        btnREPORTEINDIVIDUALPER2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
         jPanel39Layout.setHorizontalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel39Layout.createSequentialGroup()
-                .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel39Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel39Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnREPORTEINDIVIDUALPER2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnREPORTEGENERALPER2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(btnCANCELARPER2)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(190, 190, 190)
+                .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(btnCANCELARUSU)
+                .addContainerGap(204, Short.MAX_VALUE))
+            .addGroup(jPanel39Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane9)
+                .addContainerGap())
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1350,13 +1103,115 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCANCELARPER2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALPER2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEINDIVIDUALPER2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCANCELARUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        pnPersona5.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 490, 470));
+        pnPersona5.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
+
+        pnAdministrar2.setBackground(new java.awt.Color(249, 247, 250));
+        pnAdministrar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Usuario ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtNombreUsu.setBackground(new java.awt.Color(249, 247, 250));
+        txtNombreUsu.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtNombreUsu.setBorder(null);
+        pnAdministrar2.add(txtNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 200, -1));
+
+        txtdireccionPer2.setBackground(new java.awt.Color(249, 247, 250));
+        txtdireccionPer2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtdireccionPer2.setBorder(null);
+        pnAdministrar2.add(txtdireccionPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 200, -1));
+
+        jLabel94.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel94.setText("Nombre de Usuario:");
+        pnAdministrar2.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 20));
+
+        jLabel95.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel95.setText("Persona:");
+        pnAdministrar2.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+
+        jLabel96.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel96.setText("Rol:");
+        pnAdministrar2.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+
+        jSeparator78.setForeground(new java.awt.Color(204, 204, 204));
+        pnAdministrar2.add(jSeparator78, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 200, 10));
+
+        jSeparator82.setForeground(new java.awt.Color(204, 204, 204));
+        pnAdministrar2.add(jSeparator82, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 200, 10));
+
+        jSeparator84.setForeground(new java.awt.Color(204, 204, 204));
+        pnAdministrar2.add(jSeparator84, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 200, 10));
+
+        jLabel105.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel105.setText("Contraseña:");
+        pnAdministrar2.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
+
+        txtestadocivil2.setBackground(new java.awt.Color(249, 247, 250));
+        txtestadocivil2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtestadocivil2.setBorder(null);
+        pnAdministrar2.add(txtestadocivil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 180, -1));
+
+        jSeparator88.setForeground(new java.awt.Color(204, 204, 204));
+        pnAdministrar2.add(jSeparator88, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 200, 10));
+
+        txtsalario2.setBackground(new java.awt.Color(249, 247, 250));
+        txtsalario2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtsalario2.setBorder(null);
+        pnAdministrar2.add(txtsalario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 180, -1));
+
+        txtTipoVol2.setBackground(new java.awt.Color(249, 247, 250));
+        txtTipoVol2.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        txtTipoVol2.setBorder(null);
+        pnAdministrar2.add(txtTipoVol2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 180, -1));
+
+        btnLIMPIARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        pnAdministrar2.add(btnLIMPIARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 40, 50));
+
+        btnCREARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
+        pnAdministrar2.add(btnCREARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 40, 50));
+
+        btnEDITARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
+        pnAdministrar2.add(btnEDITARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 40, 50));
+
+        btnELIMINARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
+        pnAdministrar2.add(btnELIMINARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 40, 50));
+
+        txtClave.setBackground(new java.awt.Color(255, 255, 255));
+        txtClave.setBorder(null);
+        pnAdministrar2.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 200, 20));
+
+        cbxIdPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnAdministrar2.add(cbxIdPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, 30));
+
+        cbxIdRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnAdministrar2.add(cbxIdRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 200, 30));
+
+        lblVerClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-eye-24.png"))); // NOI18N
+        lblVerClave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVerClaveMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblVerClaveMousePressed(evt);
+            }
+        });
+        pnAdministrar2.add(lblVerClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+
+        lblNombreUsu.setForeground(new java.awt.Color(204, 0, 0));
+        pnAdministrar2.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 20, 20));
+
+        lblClaveUsu.setForeground(new java.awt.Color(204, 0, 0));
+        pnAdministrar2.add(lblClaveUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 20, 20));
+
+        pnPersona5.add(pnAdministrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         pnUsuario.add(pnPersona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -1366,7 +1221,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnAdministrar.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         pnAdministrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtcedulaPer.setBackground(new java.awt.Color(249, 247, 250));
@@ -1609,7 +1464,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona.add(pnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 570));
 
         jPanel16.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel16.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1651,7 +1506,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel29.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel29.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosPersonas.setBackground(new java.awt.Color(249, 247, 222));
@@ -1728,7 +1583,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel37.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel37.setForeground(new java.awt.Color(255, 255, 255));
         jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1767,7 +1622,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 740, 100));
 
         jPanel41.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel41.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProyectos.setBackground(new java.awt.Color(249, 247, 222));
@@ -1838,7 +1693,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 740, 470));
 
         jPanel12.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel75.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1893,6 +1748,16 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator110.setForeground(new java.awt.Color(204, 204, 204));
         jPanel12.add(jSeparator110, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 12));
 
+        jLabel77.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel77.setText("Beneficiario");
+        jPanel12.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jPanel12.add(jComboBoxBeneficiarioProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 200, -1));
+
+        jSeparator130.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel12.add(jSeparator130, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 200, 12));
+
         pnProyectos.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         pnMenu.addTab("Proyectos", pnProyectos);
@@ -1901,7 +1766,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel11.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel72.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1951,7 +1816,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel35.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel35.setForeground(new java.awt.Color(255, 255, 255));
         jPanel35.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1990,7 +1855,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel42.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel42.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosInscripciones.setBackground(new java.awt.Color(249, 247, 222));
@@ -2066,7 +1931,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel36.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel36.setMinimumSize(new java.awt.Dimension(640, 811));
         jPanel36.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2132,7 +1997,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         jPanel38.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel38.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosDonacione.setBackground(new java.awt.Color(249, 247, 222));
@@ -2203,7 +2068,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         jPanel34.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel34.setForeground(new java.awt.Color(255, 255, 255));
         jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2247,7 +2112,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel17.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel17.setPreferredSize(new java.awt.Dimension(640, 811));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2316,7 +2181,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel33.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel33.setForeground(new java.awt.Color(255, 255, 255));
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2355,7 +2220,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel40.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel40.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProductos.setBackground(new java.awt.Color(249, 247, 222));
@@ -2431,7 +2296,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnConfiguraciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel43.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel43.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Formularios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel43.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Formularios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel43.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNumFormu1.setBackground(new java.awt.Color(249, 247, 250));
@@ -2583,7 +2448,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnConfiguraciones.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 570));
 
         jPanel44.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel44.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel44.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel44.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosFormularios1.setBackground(new java.awt.Color(249, 247, 222));
@@ -2652,7 +2517,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnConfiguraciones.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 650, 470));
 
         jPanel45.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Formulario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel45.setForeground(new java.awt.Color(255, 255, 255));
         jPanel45.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2745,6 +2610,17 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private void cbxProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProyectoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxProyectoActionPerformed
+
+    private void lblVerClaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMouseClicked
+        // TODO add your handling code here:
+        txtClave.setEchoChar(i);
+    }//GEN-LAST:event_lblVerClaveMouseClicked
+
+    private void lblVerClaveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMousePressed
+        // TODO add your handling code here:
+        i = getTxtClave().getEchoChar();
+        txtClave.setEchoChar((char) 0);
+    }//GEN-LAST:event_lblVerClaveMousePressed
     public JButton getBtnCANCELARDON() {
         return btnCANCELARDON;
     }
@@ -3695,7 +3571,165 @@ public class ViewAdministrador extends javax.swing.JFrame {
     public void setBtnROLES(JButton btnROLES) {
         this.btnROLES = btnROLES;
     }
-    
+    public JButton getBtnCANCELARUSU() {
+        return btnCANCELARUSU;
+    }
+
+    public void setBtnCANCELARUSU(JButton btnCANCELARUSU) {
+        this.btnCANCELARUSU = btnCANCELARUSU;
+    }
+
+    public JButton getBtnCREARUSU() {
+        return btnCREARUSU;
+    }
+
+    public void setBtnCREARUSU(JButton btnCREARUSU) {
+        this.btnCREARUSU = btnCREARUSU;
+    }
+
+    public JButton getBtnEDITARUSU() {
+        return btnEDITARUSU;
+    }
+
+    public void setBtnEDITARUSU(JButton btnEDITARUSU) {
+        this.btnEDITARUSU = btnEDITARUSU;
+    }
+
+    public JButton getBtnELIMINARUSU() {
+        return btnELIMINARUSU;
+    }
+
+    public void setBtnELIMINARUSU(JButton btnELIMINARUSU) {
+        this.btnELIMINARUSU = btnELIMINARUSU;
+    }
+
+    public JButton getBtnLIMPIARUSU() {
+        return btnLIMPIARUSU;
+    }
+
+    public void setBtnLIMPIARUSU(JButton btnLIMPIARUSU) {
+        this.btnLIMPIARUSU = btnLIMPIARUSU;
+    }
+
+    public JButton getBtnREPORTEGENERALUSU() {
+        return btnREPORTEGENERALUSU;
+    }
+
+    public void setBtnREPORTEGENERALUSU(JButton btnREPORTEGENERALUSU) {
+        this.btnREPORTEGENERALUSU = btnREPORTEGENERALUSU;
+    }
+
+    public JButton getBtnREPORTEINDIVIDUALUSU() {
+        return btnREPORTEINDIVIDUALUSU;
+    }
+
+    public void setBtnREPORTEINDIVIDUALUSU(JButton btnREPORTEINDIVIDUALUSU) {
+        this.btnREPORTEINDIVIDUALUSU = btnREPORTEINDIVIDUALUSU;
+    }
+
+    public JButton getBtnbuscarUsu() {
+        return btnbuscarUsu;
+    }
+
+    public void setBtnbuscarUsu(JButton btnbuscarUsu) {
+        this.btnbuscarUsu = btnbuscarUsu;
+    }
+
+    public JButton getBtnlimpiarUsubsq() {
+        return btnlimpiarUsubsq;
+    }
+
+    public void setBtnlimpiarUsubsq(JButton btnlimpiarUsubsq) {
+        this.btnlimpiarUsubsq = btnlimpiarUsubsq;
+    }
+
+    public JComboBox<String> getCbxIdPersona() {
+        return cbxIdPersona;
+    }
+
+    public void setCbxIdPersona(JComboBox<String> cbxIdPersona) {
+        this.cbxIdPersona = cbxIdPersona;
+    }
+
+    public JComboBox<String> getCbxIdRol() {
+        return cbxIdRol;
+    }
+
+    public void setCbxIdRol(JComboBox<String> cbxIdRol) {
+        this.cbxIdRol = cbxIdRol;
+    }
+
+    public JCheckBox getChekBsqUsu() {
+        return chekBsqUsu;
+    }
+
+    public void setChekBsqUsu(JCheckBox chekBsqUsu) {
+        this.chekBsqUsu = chekBsqUsu;
+    }
+
+    public JTable getjTableDatosUsuario() {
+        return jTableDatosUsuario;
+    }
+
+    public void setjTableDatosUsuario(JTable jTableDatosUsuario) {
+        this.jTableDatosUsuario = jTableDatosUsuario;
+    }
+
+    public JPasswordField getTxtClave() {
+        return txtClave;
+    }
+
+    public void setTxtClave(JPasswordField txtClave) {
+        this.txtClave = txtClave;
+    }
+
+    public JTextField getTxtNombreUsu() {
+        return txtNombreUsu;
+    }
+
+    public void setTxtNombreUsu(JTextField txtNombreUsu) {
+        this.txtNombreUsu = txtNombreUsu;
+    }
+
+    public JTextField getTxtBsqUsuarios() {
+        return txtBsqUsuarios;
+    }
+
+    public void setTxtBsqUsuarios(JTextField txtBsqUsuarios) {
+        this.txtBsqUsuarios = txtBsqUsuarios;
+    }
+
+    public JLabel getLblVerClave() {
+        return lblVerClave;
+    }
+
+    public void setLblVerClave(JLabel lblVerClave) {
+        this.lblVerClave = lblVerClave;
+    }
+
+    public JLabel getLblClaveUsu() {
+        return lblClaveUsu;
+    }
+
+    public void setLblClaveUsu(JLabel lblClaveUsu) {
+        this.lblClaveUsu = lblClaveUsu;
+    }
+
+    public JLabel getLblNombreUsu() {
+        return lblNombreUsu;
+    }
+
+    public void setLblNombreUsu(JLabel lblNombreUsu) {
+        this.lblNombreUsu = lblNombreUsu;
+    }
+
+    public JComboBox<String> getjComboBoxBeneficiarioProye() {
+        return jComboBoxBeneficiarioProye;
+    }
+
+    public void setjComboBoxBeneficiarioProye(JComboBox<String> jComboBoxBeneficiarioProye) {
+        this.jComboBoxBeneficiarioProye = jComboBoxBeneficiarioProye;
+    }
     
     
     
@@ -3740,19 +3774,19 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCANCELARINSCRI;
     private javax.swing.JButton btnCANCELARPER;
     private javax.swing.JButton btnCANCELARPER1;
-    private javax.swing.JButton btnCANCELARPER2;
     private javax.swing.JButton btnCANCELARPROD;
     private javax.swing.JButton btnCANCELARPROYE;
     private javax.swing.JButton btnCANCELARROL;
+    private javax.swing.JButton btnCANCELARUSU;
     private javax.swing.JButton btnCREARDONA;
     private javax.swing.JButton btnCREARFORMU1;
     private javax.swing.JButton btnCREARINSCRI;
     private javax.swing.JButton btnCREARPER;
     private javax.swing.JButton btnCREARPER1;
-    private javax.swing.JButton btnCREARPER2;
     private javax.swing.JButton btnCREARPROD;
     private javax.swing.JButton btnCREARPROYE;
     private javax.swing.JButton btnCREARROL;
+    private javax.swing.JButton btnCREARUSU;
     private javax.swing.JButton btnConfiguracion;
     private javax.swing.JButton btnDonaciones;
     private javax.swing.JButton btnEDITARDONA;
@@ -3760,19 +3794,19 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEDITARINSCRI;
     private javax.swing.JButton btnEDITARPER;
     private javax.swing.JButton btnEDITARPER1;
-    private javax.swing.JButton btnEDITARPER2;
     private javax.swing.JButton btnEDITARPROD;
     private javax.swing.JButton btnEDITARPROYE;
     private javax.swing.JButton btnEDITARROL;
+    private javax.swing.JButton btnEDITARUSU;
     private javax.swing.JButton btnELIMINARDONA;
     private javax.swing.JButton btnELIMINARFORMU1;
     private javax.swing.JButton btnELIMINARINSCRI;
     private javax.swing.JButton btnELIMINARPER;
     private javax.swing.JButton btnELIMINARPER1;
-    private javax.swing.JButton btnELIMINARPER2;
     private javax.swing.JButton btnELIMINARPROD;
     private javax.swing.JButton btnELIMINARPROYE;
     private javax.swing.JButton btnELIMINARROL;
+    private javax.swing.JButton btnELIMINARUSU;
     private javax.swing.JButton btnExaminarFoto;
     private javax.swing.JButton btnExaminarFoto1;
     private javax.swing.JButton btnIMPRIMIRINSCRI;
@@ -3782,10 +3816,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnLIMPIARINSCRI;
     private javax.swing.JButton btnLIMPIARPER;
     private javax.swing.JButton btnLIMPIARPER1;
-    private javax.swing.JButton btnLIMPIARPER2;
     private javax.swing.JButton btnLIMPIARPROD;
     private javax.swing.JButton btnLIMPIARPROYE;
     private javax.swing.JButton btnLIMPIARROL;
+    private javax.swing.JButton btnLIMPIARUSU;
     private javax.swing.JButton btnPersona;
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnREPORTEGENERALDON;
@@ -3793,18 +3827,18 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnREPORTEGENERALINSCRI;
     private javax.swing.JButton btnREPORTEGENERALPER;
     private javax.swing.JButton btnREPORTEGENERALPER1;
-    private javax.swing.JButton btnREPORTEGENERALPER2;
     private javax.swing.JButton btnREPORTEGENERALPROD;
     private javax.swing.JButton btnREPORTEGENERALPROYE;
     private javax.swing.JButton btnREPORTEGENERALROL;
+    private javax.swing.JButton btnREPORTEGENERALUSU;
     private javax.swing.JButton btnREPORTEINDIVIDUALDON;
     private javax.swing.JButton btnREPORTEINDIVIDUALFORMU1;
     private javax.swing.JButton btnREPORTEINDIVIDUALPER;
     private javax.swing.JButton btnREPORTEINDIVIDUALPER1;
-    private javax.swing.JButton btnREPORTEINDIVIDUALPER2;
     private javax.swing.JButton btnREPORTEINDIVIDUALPROD;
     private javax.swing.JButton btnREPORTEINDIVIDUALPROYE;
     private javax.swing.JButton btnREPORTEINDIVIDUALROL;
+    private javax.swing.JButton btnREPORTEINDIVIDUALUSU;
     private javax.swing.JButton btnROLES;
     private javax.swing.JButton btnReportes;
     private javax.swing.JButton btnSalir;
@@ -3815,18 +3849,18 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnbuscarInscri;
     private javax.swing.JButton btnbuscarPer;
     private javax.swing.JButton btnbuscarPer1;
-    private javax.swing.JButton btnbuscarPer2;
     private javax.swing.JButton btnbuscarProd;
     private javax.swing.JButton btnbuscarProye;
+    private javax.swing.JButton btnbuscarUsu;
     private javax.swing.JButton btnlimpiarBUSQUEDAROL;
     private javax.swing.JButton btnlimpiarDONABUSQ;
     private javax.swing.JButton btnlimpiarFormubsq1;
     private javax.swing.JButton btnlimpiarInscriBsqa;
     private javax.swing.JButton btnlimpiarPerbsq;
     private javax.swing.JButton btnlimpiarPerbsq1;
-    private javax.swing.JButton btnlimpiarPerbsq2;
     private javax.swing.JButton btnlimpiarProdbsqd;
     private javax.swing.JButton btnlimpiarProyeBsqa;
+    private javax.swing.JButton btnlimpiarUsubsq;
     private javax.swing.JButton btnproyectos;
     private javax.swing.ButtonGroup buttonGroupGenero;
     private javax.swing.JComboBox<String> cbxBeneficiario1;
@@ -3834,6 +3868,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCodigoVoluntario;
     private javax.swing.JComboBox<String> cbxEtnia1;
     private javax.swing.JComboBox<String> cbxIdDonacion;
+    private javax.swing.JComboBox<String> cbxIdPersona;
+    private javax.swing.JComboBox<String> cbxIdRol;
     private javax.swing.JComboBox<String> cbxIngresoMensual1;
     private javax.swing.JComboBox<String> cbxNivelEducacion1;
     private javax.swing.JComboBox<String> cbxNumDispoElec1;
@@ -3844,39 +3880,26 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxServiciosBasicos1;
     private javax.swing.JComboBox<String> cbxTipoPer;
     private javax.swing.JComboBox<String> cbxTipoPer1;
-    private javax.swing.JComboBox<String> cbxTipoPer2;
     private javax.swing.JComboBox<String> cbxTipoVivienda1;
     private javax.swing.JCheckBox chekBsqDONA;
     private javax.swing.JCheckBox chekBsqFormu1;
     private javax.swing.JCheckBox chekBsqInscri;
     private javax.swing.JCheckBox chekBsqPer;
     private javax.swing.JCheckBox chekBsqPer1;
-    private javax.swing.JCheckBox chekBsqPer2;
     private javax.swing.JCheckBox chekBsqProds;
     private javax.swing.JCheckBox chekBsqProyes;
     private javax.swing.JCheckBox chekBsqROL;
+    private javax.swing.JCheckBox chekBsqUsu;
     private javax.swing.JCheckBox chkAccesoInternet1;
     private javax.swing.JCheckBox chkDiscapacidad1;
     private javax.swing.JCheckBox chkseguroiees;
     private javax.swing.JCheckBox chkseguroiees1;
-    private javax.swing.JCheckBox chkseguroiees2;
+    private javax.swing.JComboBox<String> jComboBoxBeneficiarioProye;
     private javax.swing.JComboBox<String> jComboBoxPersonasBenefactDon;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
-    private javax.swing.JLabel jLabel112;
-    private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
-    private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
@@ -3934,6 +3957,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
@@ -3988,8 +4012,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator100;
-    private javax.swing.JSeparator jSeparator101;
-    private javax.swing.JSeparator jSeparator102;
     private javax.swing.JSeparator jSeparator103;
     private javax.swing.JSeparator jSeparator104;
     private javax.swing.JSeparator jSeparator105;
@@ -4017,6 +4039,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator127;
     private javax.swing.JSeparator jSeparator128;
     private javax.swing.JSeparator jSeparator129;
+    private javax.swing.JSeparator jSeparator130;
     private javax.swing.JSeparator jSeparator132;
     private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator38;
@@ -4054,17 +4077,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator82;
     private javax.swing.JSeparator jSeparator83;
     private javax.swing.JSeparator jSeparator84;
-    private javax.swing.JSeparator jSeparator85;
     private javax.swing.JSeparator jSeparator86;
-    private javax.swing.JSeparator jSeparator87;
     private javax.swing.JSeparator jSeparator88;
-    private javax.swing.JSeparator jSeparator89;
-    private javax.swing.JSeparator jSeparator90;
-    private javax.swing.JSeparator jSeparator91;
-    private javax.swing.JSeparator jSeparator92;
-    private javax.swing.JSeparator jSeparator93;
-    private javax.swing.JSeparator jSeparator94;
-    private javax.swing.JSeparator jSeparator95;
     private javax.swing.JSeparator jSeparator96;
     private javax.swing.JSeparator jSeparator98;
     private javax.swing.JSpinner jSpinnerCantidad;
@@ -4074,13 +4088,16 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTable jTableDatosInscripciones;
     private javax.swing.JTable jTableDatosPersonas;
     private javax.swing.JTable jTableDatosPersonas1;
-    private javax.swing.JTable jTableDatosPersonas2;
     private javax.swing.JTable jTableDatosProductos;
     private javax.swing.JTable jTableDatosProyectos;
     private javax.swing.JTable jTableDatosROLES;
+    private javax.swing.JTable jTableDatosUsuario;
     private javax.swing.JTextField jTextFieldNOMBREROL;
+    private javax.swing.JLabel lblClaveUsu;
     private javax.swing.JLabel lblFoto;
     private javax.swing.JLabel lblFoto1;
+    private javax.swing.JLabel lblNombreUsu;
+    private javax.swing.JLabel lblVerClave;
     private javax.swing.JPanel pnAdministrar;
     private javax.swing.JPanel pnAdministrar1;
     private javax.swing.JPanel pnAdministrar2;
@@ -4100,10 +4117,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel pnUsuario;
     private javax.swing.JRadioButton rbtFemenino;
     private javax.swing.JRadioButton rbtFemenino1;
-    private javax.swing.JRadioButton rbtFemenino2;
     private javax.swing.JRadioButton rbtMasculino;
     private javax.swing.JRadioButton rbtMasculino1;
-    private javax.swing.JRadioButton rbtMasculino2;
     private javax.swing.JTextArea txaDescripcionROL;
     private javax.swing.JTextArea txaDetalleProdDON;
     private javax.swing.JTextArea txaMotivoDON;
@@ -4113,12 +4128,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtBsqInscripiones;
     private javax.swing.JTextField txtBsqPersonas;
     private javax.swing.JTextField txtBsqPersonas1;
-    private javax.swing.JTextField txtBsqPersonas2;
     private javax.swing.JTextField txtBsqProductos;
     private javax.swing.JTextField txtBsqProyectos;
+    private javax.swing.JTextField txtBsqUsuarios;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtDomicilio1;
     private javax.swing.JTextField txtLugarProye;
     private javax.swing.JTextField txtNombreProye;
+    private javax.swing.JTextField txtNombreUsu;
     private javax.swing.JTextField txtNumFormu1;
     private javax.swing.JTextField txtTipoProducto;
     private javax.swing.JTextField txtTipoVol;
@@ -4126,16 +4143,12 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtTipoVol2;
     private javax.swing.JTextField txtTitulo;
     private javax.swing.JTextField txtTitulo1;
-    private javax.swing.JTextField txtTitulo2;
     private javax.swing.JTextField txtapellidoPer;
     private javax.swing.JTextField txtapellidoPer1;
-    private javax.swing.JTextField txtapellidoPer2;
     private javax.swing.JTextField txtcedulaPer;
     private javax.swing.JTextField txtcedulaPer1;
-    private javax.swing.JTextField txtcedulaPer2;
     private javax.swing.JTextField txtcorreoPer;
     private javax.swing.JTextField txtcorreoPer1;
-    private javax.swing.JTextField txtcorreoPer2;
     private javax.swing.JTextField txtdireccionPer;
     private javax.swing.JTextField txtdireccionPer1;
     private javax.swing.JTextField txtdireccionPer2;
@@ -4144,22 +4157,17 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtestadocivil2;
     private javax.swing.JTextField txtestrato;
     private javax.swing.JTextField txtestrato1;
-    private javax.swing.JTextField txtestrato2;
     private javax.swing.JTextField txthorario;
     private javax.swing.JTextField txthorario1;
-    private javax.swing.JTextField txthorario2;
     private javax.swing.JTextField txtnombrePer;
     private javax.swing.JTextField txtnombrePer1;
-    private javax.swing.JTextField txtnombrePer2;
     private javax.swing.JTextField txtperiodo;
     private javax.swing.JTextField txtperiodo2;
-    private javax.swing.JTextField txtperiodo3;
     private javax.swing.JTextField txtperiodo4;
     private javax.swing.JTextField txtsalario;
     private javax.swing.JTextField txtsalario1;
     private javax.swing.JTextField txtsalario2;
     private javax.swing.JTextField txttelefono;
     private javax.swing.JTextField txttelefono1;
-    private javax.swing.JTextField txttelefono2;
     // End of variables declaration//GEN-END:variables
 }
