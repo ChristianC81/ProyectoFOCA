@@ -11,10 +11,12 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
+import javax.swing.JComboBox;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -23,6 +25,9 @@ import modelo.exceptions.PreexistingEntityException;
  * @author chris
  */
 public class PersonaJpaController implements Serializable {
+
+    PersonaJpaController tjc;
+    Persona p;
 
     public PersonaJpaController(EntityManagerFactory emf) {
         this.emf = emf;
@@ -338,6 +343,7 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
+
     public List<Persona> buscarPersona(String cedula) {
         System.out.println(cedula);
         EntityManager em = getEntityManager();
@@ -349,6 +355,21 @@ public class PersonaJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-}
+        }
     }
+
+    public void obtenerbeneficiario(JComboBox<Persona> comboper) {
+        EntityManager em = tjc.getEntityManager();
+        //Para realizar consultas 
+        Iterator it = em.createQuery("SELECT p FROM Persona p").getResultList().iterator();
+        
+        try {
+            while (it.hasNext()) {
+                comboper.addItem(p);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR");
+        }
+    }
+
 }

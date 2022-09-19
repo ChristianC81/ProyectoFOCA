@@ -15,7 +15,7 @@ import modelo.Inscripcion;
  */
 public class ModeloTablaInscripcion extends AbstractTableModel {
 
-    private String[] columnas = {"IDPERSONA", "IDPROYINS", "NDIASPARTICIPACIONINS"};
+    private String[] columnas = {"ID", "DIAS PARTICIPACION", "ID PROYECTO", "ID PERSONA"};
     public static List<Inscripcion> filas;
     private Inscripcion inscripcionSelecionado;
     private int indice;
@@ -39,17 +39,19 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
         return columnas[column];
     }
 
-    @Override 
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         inscripcionSelecionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
             case 0:
-                return inscripcionSelecionado.getIdpersona();
+                return inscripcionSelecionado.getIdins();
             case 1:
-                return inscripcionSelecionado.getIdproyins();
+                return inscripcionSelecionado.getNdiasparticipacionins();
             case 2:
-                return inscripcionSelecionado.getNdiasparticipacionins();                
+                return inscripcionSelecionado.getIdproyins();
+            case 3:
+                return inscripcionSelecionado.getIdpersona();            
             default:
                 return null;
         }
@@ -59,10 +61,12 @@ public class ModeloTablaInscripcion extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return Integer.class;
+                return Number.class;
             case 1:
                 return Integer.class;
             case 2:
+                return Integer.class;
+            case 3:
                 return Integer.class;
             default:
                 return Object.class;

@@ -8,15 +8,20 @@ package controlador;
 import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import modelo.Inscripcion;
 import modelo.InscripcionJpaController;
 import modelo.Persona;
+import modelo.PersonaJpaController;
 import modelo.Proyecto;
+import modelo.ProyectoJpaController;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 import proyectofoca.ManagerFactory;
@@ -38,6 +43,9 @@ public class ControllerInscripcion {
         this.vistad = vistad;
         this.manager = manager;
         this.modeloInscripcion = modeloInscripcion;
+        iniciarControlInscripcion();
+        cargarComboBoxVoluntario();
+        cargarComboBoxProyecto();
         this.modeloTablaInscripcion = new ModeloTablaInscripcion();
         this.modeloTablaInscripcion.setFilas(modeloInscripcion.findInscripcionEntities());
         this.vistad.getjTableDatosInscripciones().setModel(modeloTablaInscripcion);
@@ -45,18 +53,18 @@ public class ControllerInscripcion {
 
     //Inicniar control inscripcion
     public void iniciarControlInscripcion() {
-//        this.vistad.getBtnCREARINSCRI().addActionListener(l -> guardarInscripcion());
-//        this.vistad.getBtnEDITARINSCRI().addActionListener(l -> editarInscripcion());
-//        this.vistad.getBtnELIMINARINSCRI().addActionListener(l -> eliminarInscripcion());
-//        this.vistad.getBtnLIMPIARINSCRI().addActionListener(l -> limpiar());
-//        this.vistad.getBtnlimpiarInscriBsqa().addActionListener(l -> limpiarBuscadorInscripcion());
-//        this.vistad.getBtnbuscarInscri().addActionListener(l -> buscarInscripcionn());
-//        this.vistad.getChekBsqInscri().addActionListener(l -> buscarInscripcionn());
+        this.vistad.getBtnCREARINSCRI().addActionListener(l -> guardarInscripcion());
+        this.vistad.getBtnEDITARINSCRI().addActionListener(l -> editarInscripcion());
+        this.vistad.getBtnELIMINARINSCRI().addActionListener(l -> eliminarInscripcion());
+        this.vistad.getBtnLIMPIARINSCRI().addActionListener(l -> limpiar());
+        this.vistad.getBtnlimpiarInscriBsqa().addActionListener(l -> limpiarBuscadorInscripcion());
+        this.vistad.getBtnbuscarInscri().addActionListener(l -> buscarInscripcionn());
+        this.vistad.getChekBsqInscri().addActionListener(l -> buscarInscripcionn());
 
         //eventos tabla
         this.vistad.getjTableDatosInscripciones().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         this.listaInscripcionModelo = this.vistad.getjTableDatosInscripciones().getSelectionModel();
-        listaInscripcionModelo.addListSelectionListener(new ListSelectionListener() {
+        this.listaInscripcionModelo.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
@@ -80,83 +88,103 @@ public class ControllerInscripcion {
             this.vistad.getCbxCodigoProyecto().setSelectedItem(inscripcion.getIdproyins());
             this.vistad.getjSpinnerDiasParticipacion().setValue(inscripcion.getNdiasparticipacionins());
 
-            this.vistad.getBtnEDITARPROYE().setEnabled(true);
-            this.vistad.getBtnELIMINARPROYE().setEnabled(true);
-            this.vistad.getBtnCREARPROYE().setEnabled(false);
+            this.vistad.getBtnEDITARINSCRI().setEnabled(true);
+            this.vistad.getBtnELIMINARINSCRI().setEnabled(true);
+            this.vistad.getBtnCREARINSCRI().setEnabled(false);
 
         }
     }
 
-    //Métodos
-//    public void guardarInscripcion() {
-//        inscripcion = new Inscripcion();
-//        inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
-//        inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-//        inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
-//        try {
-//            modeloInscripcion.create(inscripcion);
-//            modeloTablaInscripcion.agregar(inscripcion);
-//        } catch (PreexistingEntityException ex) {
-//            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (Exception ex) {
-//            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        Resouces.success(" ATENCIÓN!!!", "Inscripción creado correctamente :>!");
-//        limpiar();
-//    }
-//
-//    public void editarInscripcion() {
-//        if (inscripcion != null) {
-//            inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
-//            inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-//            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
-//            try {
-//                modeloInscripcion.edit(inscripcion);
-//                modeloTablaInscripcion.eliminar(inscripcion);
-//                modeloTablaInscripcion.actualizar(inscripcion);
-//            } catch (Exception ex) {
-//                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            Resouces.success(" ATENCIÓN!!!", "Inscripción editado correctamente :>!");
-//            limpiar();
-//        } else {
-//            Resouces.error(" ATENCIÓN!!!", "No se pudo editar la Inscripción :<!");
-//            limpiar();
-//        }
-//    }
+    public void guardarInscripcion() {
+        inscripcion = new Inscripcion();
+        inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
+        inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
+        inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+        try {
+            modeloInscripcion.create(inscripcion);
+            modeloTablaInscripcion.agregar(inscripcion);
+            Resouces.success(" ATENCIÓN!!!", "Inscripción creado correctamente");
+            limpiar();
+        } catch (PreexistingEntityException ex) {
+            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
-    public void eliminarInscripcion() {
+    public void editarInscripcion() {
         if (inscripcion != null) {
+            inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
+            inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
+            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
             try {
-                modeloInscripcion.destroy(inscripcion.getIdins());
-                modeloTablaInscripcion.eliminar(inscripcion);
-            } catch (NonexistentEntityException ex) {
+                modeloInscripcion.edit(inscripcion);
+            } catch (Exception ex) {
                 Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Resouces.success(" ATENCIÓN!!!", "Inscripción elminado correctamente :>!");
+            Resouces.success(" ATENCIÓN!!!", "Inscripción editado correctamente");
             limpiar();
+        } else {
+            Resouces.error(" ATENCIÓN!!!", "No se pudo editar la Inscripción");
         }
+
+    }
+
+    public void eliminarInscripcion() {
+        int select = JOptionPane.showConfirmDialog(vistad, "¿Estas seguro de eliminar este proyecto?");
+        if (select == JOptionPane.YES_OPTION) {
+            if (inscripcion != null) {
+                try {
+
+                    modeloInscripcion.destroy(inscripcion.getIdins());
+
+                } catch (NonexistentEntityException ex) {
+                    Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modeloTablaInscripcion.eliminar(inscripcion);
+                modeloTablaInscripcion.actualizar(inscripcion);
+                Resouces.success(" ATENCIÓN!!!", "Inscripción elminado correctamente");
+                limpiar();
+            }
+        }
+
     }
 
     public void buscarInscripcionn() {
-
         if (this.vistad.getChekBsqInscri().isSelected()) {
             modeloTablaInscripcion.setFilas(modeloInscripcion.findInscripcionEntities());
             modeloTablaInscripcion.fireTableDataChanged();
         } else {
-            if (this.vistad.getTxtBsqInscripiones().getText().isEmpty()) {
-                Resouces.warning("Atención!!!", "Llene el campo de busqueda :P");
-                limpiarBuscadorInscripcion();
-            } else {
-
+            if (!this.vistad.getTxtBsqInscripiones().getText().isEmpty()) {
                 double idp = Double.parseDouble(this.vistad.getTxtBsqProyectos().getText());
                 BigDecimal idproye = BigDecimal.valueOf(idp);
                 modeloTablaInscripcion.setFilas(modeloInscripcion.buscarInscripcion(idproye));
                 modeloTablaInscripcion.fireTableDataChanged();
+            } else {
+                limpiarBuscadorInscripcion();
             }
         }
 
+    }
+
+    public void cargarComboBoxVoluntario() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
+            this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
+
+    public void cargarComboBoxProyecto() {
+        try {
+            Vector v = new Vector();
+            v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
+            this.vistad.getCbxCodigoProyecto().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
     }
 
 //    limipiar 
@@ -164,6 +192,7 @@ public class ControllerInscripcion {
 
         this.vistad.getCbxCodigoVoluntario().setSelectedIndex(0);
         this.vistad.getCbxCodigoProyecto().setSelectedIndex(0);
+        this.vistad.getjSpinnerDiasParticipacion().setValue(1);
 
         this.vistad.getBtnEDITARINSCRI().setEnabled(false);
         this.vistad.getBtnELIMINARINSCRI().setEnabled(false);
