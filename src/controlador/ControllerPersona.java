@@ -9,6 +9,10 @@ import Vista.ViewAdministrador;
 import Vista.ViewLogin;
 import Vista.ViewSistema;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -16,9 +20,12 @@ import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -41,14 +48,15 @@ import proyectofoca.ManagerFactory;
  * @author miri
  */
 public class ControllerPersona {
-
+    
     ViewAdministrador vistap;
     ManagerFactory manager;
     PersonaJpaController modeloPersona;
     Persona persona;
     ModeloTablaPersona modeloTabla;
     ListSelectionModel listaPersonaModel;
-
+    private JFileChooser jfc;
+    
     public ControllerPersona(ViewAdministrador vistapp, ManagerFactory manager, PersonaJpaController modeloPersona) {
         this.vistap = vistapp;
         this.manager = manager;
@@ -59,22 +67,23 @@ public class ControllerPersona {
         this.modeloTabla.setFilas(modeloPersona.findPersonaEntities());
         this.vistap.getjTableDatosPersonas().setModel(modeloTabla);
     }
-
+    
     public void cargarDatosPersonaTbl() {
         this.modeloTabla = new ModeloTablaPersona();
         this.modeloTabla.setFilas(modeloPersona.findPersonaEntities());
         this.vistap.getjTableDatosPersonas().setModel(modeloTabla);
     }
-
+    
     public void iniciarControlPer() {
         this.vistap.getBtnCREARPER().addActionListener(l -> guardarPersona());
-//        this.vistap.getBtnEDITARPER().addActionListener(l -> editarPersona());
-//        this.vistap.getBtnELIMINARPER().addActionListener(l -> eliminarPersona());
+        this.vistap.getBtnEDITARPER().addActionListener(l -> editarPersona());
+        this.vistap.getBtnELIMINARPER().addActionListener(l -> eliminarPersona());
 //        this.vistap.getBtnREPORTEINDIVIDUALPER().addActionListener(l -> reporteIndividual());
 //        this.vistap.getBtnREPORTEGENERALPER().addActionListener(l -> reporteGeneral());
-//        this.vistap.getBtnLIMPIARPER().addActionListener(l -> limpiarC());
-//        this.vistap.getBtnlimpiarPerbsq().addActionListener(l -> limpiarB());
-//        this.vistap.getBtnCANCELARPER().addActionListener(l -> cancelar());
+        this.vistap.getBtnLIMPIARPER().addActionListener(l -> limpiarC());
+        this.vistap.getBtnExaminarFoto().addActionListener(l -> examinarFoto());
+        this.vistap.getBtnlimpiarPerbsq().addActionListener(l -> limpiarB());
+        this.vistap.getBtnCANCELARPER().addActionListener(l -> cancelar());
         this.vistap.getjTableDatosPersonas().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaPersonaModel = this.vistap.getjTableDatosPersonas().getSelectionModel();
         listaPersonaModel.addListSelectionListener(new ListSelectionListener() {
@@ -88,7 +97,7 @@ public class ControllerPersona {
         this.vistap.getBtnbuscarPer().addActionListener(l -> buscarPersona());
         this.vistap.getChekBsqPer().addActionListener(l -> mostrarTodos());
     }
-
+    
     public void personaSeleccionada() {
         if (this.vistap.getjTableDatosPersonas().getSelectedRow() != -1) {
             persona = modeloTabla.getFilas().get(this.vistap.getjTableDatosPersonas().getSelectedRow());
@@ -108,6 +117,7 @@ public class ControllerPersona {
 
             //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
             this.vistap.getTxtestadocivil().setText(persona.getEstadocivil());
+            this.vistap.getTxtsalario().setText(String.valueOf(persona.getSalariobenefac()));
             this.vistap.getTxtestrato().setText(persona.getEstratosbenefi());
             this.vistap.getTxtTitulo().setText(persona.getTitulo());
             if (persona.getSeguro().equals("Si")) {
@@ -115,7 +125,7 @@ public class ControllerPersona {
             } else {
                 this.vistap.getChkseguroiees().setSelected(false);
             }
-
+            
             this.vistap.getTxthorario().setText(persona.getHorario());
             this.vistap.getTxtperiodo().setText(persona.getPeriodovol());
             this.vistap.getTxtTipoVol().setText(persona.getTipovol());
@@ -124,7 +134,7 @@ public class ControllerPersona {
             this.vistap.getBtnCREARPER().setEnabled(false);
             this.vistap.getBtnEDITARPER().setEnabled(true);
             this.vistap.getBtnELIMINARPER().setEnabled(true);
-
+            
         }
     }
 //
@@ -145,76 +155,110 @@ public class ControllerPersona {
     public void guardarPersona() {
         persona = new Persona();
         //  if (validacionesCamposPersona() == true) {
-        
+
         persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
-        persona.setTipoper((String)this.vistap.getCbxTipoPer().getSelectedItem());
+        persona.setTipoper((String) this.vistap.getCbxTipoPer().getSelectedItem());
         persona.setNombresper(this.vistap.getTxtnombrePer().getText());
         persona.setApellidosper(this.vistap.getTxtapellidoPer().getText());
         persona.setDireccionper(this.vistap.getTxtdireccionPer().getText());
         persona.setTelefonoper(this.vistap.getTxttelefono().getText());
         persona.setCorreoper(this.vistap.getTxtcorreoPer().getText());
-        String genero="";
-        if( this.vistap.getRbtMasculino().isSelected()){
-            genero="Masculino";
+        String genero = "";
+        if (this.vistap.getRbtMasculino().isSelected()) {
+            genero = "Masculino";
         }
-         if( this.vistap.getRbtFemenino().isSelected()){
-            genero="Femenino";
+        if (this.vistap.getRbtFemenino().isSelected()) {
+            genero = "Femenino";
         }
-         
+        
         persona.setGeneroper(genero);
         //persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
         persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
+        persona.setSalariobenefac(Double.valueOf(this.vistap.getTxtsalario().getText()));
         persona.setEstratosbenefi(this.vistap.getTxtestrato().getText());
-          persona.setTitulo(this.vistap.getTxtTitulo().getText());
-          String seguro="";
-          if(this.vistap.getChkseguroiees().isSelected()){
-              seguro="Si";
-          }else{
-              seguro="No";
-          }
+        persona.setTitulo(this.vistap.getTxtTitulo().getText());
+        String seguro = "";
+        if (this.vistap.getChkseguroiees().isSelected()) {
+            seguro = "Si";
+        } else {
+            seguro = "No";
+        }
         persona.setSeguro(seguro);
-   
+        
         persona.setHorario(this.vistap.getTxthorario().getText());
         persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
         persona.setTipovol(this.vistap.getTxtTipoVol().getText());
-       try{
-        modeloPersona.create(persona);
-       }catch(Exception ex){
-           ex.getMessage();
-       }
+
+        //Guardar foto
+        try {
+            FileInputStream img = new FileInputStream(jfc.getSelectedFile());
+            persona.setFoto((Serializable) img);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            modeloPersona.create(persona);
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
         cargarDatosPersonaTbl();
         Resouces.success("!Persona Creada!", " Se ha creado con exito \n Persona con Nombre: " + persona.getNombresper());
-        //impiarC();
-        //} else {
-        //  Resouces.error("Error en el Proceso", " No se creo con exito D:");
-        // }
+//        limpiarC();
+//        } else {
+//          Resouces.error("Error en el Proceso", " No se creo con exito D:");
+//         }
     }
-
-//    public void editarPersona() {
-//        if (persona != null) {
-//            try {
+    
+    public void editarPersona() {
+        if (persona != null) {
+            try {
 //                if (validacionesCamposPersona() == true) {
-//                    persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
-//                     persona.se(this.vistap.getTxtnombrePer().getText());
-//                    persona.setNombresper(this.vistap.getTxtnombrePer().getText());
-//                    persona.setApellidosper(this.vistap.getTxtapellidoPer().getText());
-//                    persona.setCedula(this.vistap.getTxtCedula().getText());
-//                    persona.setCelular(this.vistap.getTxtCelular().getText());
-//                    persona.setCorreo(this.vistap.getTxtCorreo().getText());
-//                    persona.setDireccion(this.vistap.getTxtDireccion().getText());
-//
-//                    modeloPersona.edit(persona);
-//                    modeloTabla.eliminar(persona);
-//                    modeloTabla.actualizar(persona);
-//                    Resouces.success("!Persona Editada!", " Se ha editado con exito \n Persona con Nombre: " + persona.getNombre());
-////                    limpiarC();
+                persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
+                persona.setTipoper((String) this.vistap.getCbxTipoPer().getSelectedItem());
+                persona.setNombresper(this.vistap.getTxtnombrePer().getText());
+                persona.setApellidosper(this.vistap.getTxtapellidoPer().getText());
+                persona.setDireccionper(this.vistap.getTxtdireccionPer().getText());
+                persona.setTelefonoper(this.vistap.getTxttelefono().getText());
+                persona.setCorreoper(this.vistap.getTxtcorreoPer().getText());
+                String genero = "";
+                if (this.vistap.getRbtMasculino().isSelected()) {
+                    genero = "Masculino";
+                }
+                if (this.vistap.getRbtFemenino().isSelected()) {
+                    genero = "Femenino";
+                }
+                
+                persona.setGeneroper(genero);
+                //persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+                persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
+                persona.setSalariobenefac(Double.valueOf(this.vistap.getTxtsalario().getText()));
+                persona.setEstratosbenefi(this.vistap.getTxtestrato().getText());
+                persona.setTitulo(this.vistap.getTxtTitulo().getText());
+                String seguro = "";
+                if (this.vistap.getChkseguroiees().isSelected()) {
+                    seguro = "Si";
+                } else {
+                    seguro = "No";
+                }
+                persona.setSeguro(seguro);
+                
+                persona.setHorario(this.vistap.getTxthorario().getText());
+                persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
+                persona.setTipovol(this.vistap.getTxtTipoVol().getText());
+                
+                modeloPersona.edit(persona);
+                modeloTabla.eliminar(persona);
+                modeloTabla.actualizar(persona);
+                Resouces.success("!Persona Editada!", " Se ha editado con exito \n Persona con Nombre: " + persona.getNombresper());
+//                    limpiarC();
 //                }
-//            } catch (Exception ex) {
-//                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
+            } catch (Exception ex) {
+                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 //
-//    }
+    }
+    
     public void eliminarPersona() {
         if (persona != null) {
             try {
@@ -222,13 +266,13 @@ public class ControllerPersona {
                 modeloTabla.eliminar(persona);
                 Resouces.success("!Persona Eliminada!", " Se ha eliminado con exito \n Persona con Nombre: " + persona.getNombresper());
                 cargarDatosPersonaTbl();
-//                limpiarC();
+                limpiarC();
             } catch (NonexistentEntityException ex) {
                 Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-
+    
     public void mostrarTodos() {
         if (this.vistap.getChekBsqPer().isSelected()) {
             cargarDatosPersonaTbl();
@@ -236,43 +280,52 @@ public class ControllerPersona {
             buscarPersona();
         }
     }
-
+    
     public void buscarPersona() {
         if (!this.vistap.getTxtBsqPersonas().getText().isEmpty()) {
             modeloTabla.setFilas(modeloPersona.buscarPersona(this.vistap.getTxtBsqPersonas().getText()));
             modeloTabla.fireTableDataChanged();
         } else {
-//            limpiarB();
+            limpiarB();
         }
     }
+    
+    public void limpiarC() {
+        
+        this.vistap.getTxtcedulaPer().setText("");
+        this.vistap.getCbxTipoPer().setSelectedItem("");
+        this.vistap.getTxtnombrePer().setText("");
+        this.vistap.getTxtapellidoPer().setText("");
+        this.vistap.getTxtdireccionPer().setText("");
+        this.vistap.getTxttelefono().setText("");
+        this.vistap.getTxtcorreoPer().setText("");
+        //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
+        this.vistap.getTxtestadocivil().setText("");
+        this.vistap.getTxtestrato().setText("");
+        this.vistap.getTxtTitulo().setText("");
+        this.vistap.getTxthorario().setText("");
+        this.vistap.getTxtperiodo().setText("");
+        this.vistap.getTxtTipoVol().setText("");
+        this.vistap.getLblFoto().setIcon(null);
+        //Acciones de Botones
+        this.vistap.getBtnCREARPER().setEnabled(true);
+        this.vistap.getBtnELIMINARPER().setEnabled(false);
+        this.vistap.getBtnEDITARPER().setEnabled(false);
 
-//    public void limpiarC() {
-//        this.vistap.getTxtNombres().setText("");
-//        this.vistap.getTxtApellidos().setText("");
-//        this.vistap.getTxtCedula().setText("");
-//        this.vistap.getTxtCelular().setText("");
-//        this.vistap.getTxtCorreo().setText("");
-//        this.vistap.getTxtDireccion().setText("");
-//
-//        //Acciones de Botones
-//        this.vistap.getBtnCrear().setEnabled(true);
-//        this.vistap.getBtnBorrar().setEnabled(false);
-//        this.vistap.getBtnActualizar().setEnabled(false);
-//
-////Limpiar Seleccion de Tabla
-//        this.vistap.getTblPersona().clearSelection();
-//    }
-//
-//    public void limpiarB() {
-//        this.vistap.getTxtCriterio().setText("");
-//        modeloTabla.setFilas(modeloPersona.findPersonaEntities());
-//        modeloTabla.fireTableDataChanged();
-//    }
-//
-//    public void cancelar() {
-//        this.vistap.hide();
-//    }
-//
+//Limpiar Seleccion de Tabla
+        this.vistap.getjTableDatosPersonas().clearSelection();
+    }
+    
+    public void limpiarB() {
+        this.vistap.getTxtBsqPersonas().setText("");
+        modeloTabla.setFilas(modeloPersona.findPersonaEntities());
+        modeloTabla.fireTableDataChanged();
+    }
+    
+    public void cancelar() {
+        this.vistap.hide();
+    }
+
 //    public boolean validacionesCamposPersona() {
 //        Validaciones validar = new Validaciones();
 //        boolean validado = false;
@@ -341,4 +394,19 @@ public class ControllerPersona {
 //        }
 //        return validado;
 //    }
+    public void examinarFoto() {
+        jfc = new JFileChooser();
+        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int estado = jfc.showOpenDialog(vistap);
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            try {
+                Image imagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
+                Icon icono = new ImageIcon(imagen);
+                vistap.getLblFoto().setIcon(icono);
+                vistap.getLblFoto().updateUI();
+            } catch (IOException ex) {
+                Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 }

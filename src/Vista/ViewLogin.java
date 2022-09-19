@@ -15,7 +15,7 @@ import javax.swing.JTextField;
  * @author USER
  */
 public class ViewLogin extends javax.swing.JFrame {
-
+    private char i;
     public ViewLogin() {
         initComponents();
     }
@@ -68,6 +68,7 @@ public class ViewLogin extends javax.swing.JFrame {
         txtPass = new javax.swing.JPasswordField();
         btnIniciar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        lblVerClave = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
@@ -88,7 +89,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel4.setText("Contraseña");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
         jPanel2.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 132, 226, 30));
-        jPanel2.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 226, 30));
+        jPanel2.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 200, 30));
 
         btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciar.setText("Entrar");
@@ -98,6 +99,17 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("INICIAR SESIÓN");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
+        lblVerClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-eye-24.png"))); // NOI18N
+        lblVerClave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVerClaveMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblVerClaveMousePressed(evt);
+            }
+        });
+        jPanel2.add(lblVerClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 280, 360));
 
@@ -115,6 +127,17 @@ public class ViewLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblVerClaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMouseClicked
+        // TODO add your handling code here:
+        txtPass.setEchoChar(i);
+    }//GEN-LAST:event_lblVerClaveMouseClicked
+
+    private void lblVerClaveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMousePressed
+        // TODO add your handling code here:
+        i = txtPass.getEchoChar();
+        txtPass.setEchoChar((char) 0);
+    }//GEN-LAST:event_lblVerClaveMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciar;
@@ -126,6 +149,7 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblVerClave;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables

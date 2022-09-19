@@ -206,8 +206,8 @@ public class UsuarioJpaController implements Serializable {
         }
         return u;
     }
-    
-    public List<Usuario> buscarUSU(String nombre) {
+
+    public List<Usuario> buscarUsuario(String nombre) {
         System.out.println(nombre);
         EntityManager em = getEntityManager();
         try {

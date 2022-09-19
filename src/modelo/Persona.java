@@ -330,8 +330,4 @@ public class Persona implements Serializable {
         return this.nombresper + " " + this.apellidosper;
     }
 
-    public void setIdper(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 }
