@@ -117,7 +117,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Usuario[ idusuario=" + idusuario + " ]";
+        return  idrol.getNombrerol() ;
     }
     
 }

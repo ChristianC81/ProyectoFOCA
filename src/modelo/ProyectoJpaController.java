@@ -282,5 +282,4 @@ public class ProyectoJpaController implements Serializable {
             em.close();
         }
     }
-
 }

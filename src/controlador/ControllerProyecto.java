@@ -6,18 +6,15 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import java.math.BigDecimal;
-import java.math.BigInteger;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.DonacionJpaController;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Proyecto;
@@ -46,10 +43,9 @@ public class ControllerProyecto {
         this.vistad = vistad;
         this.manager = manager;
         this.modeloProyecto = modeloProyecto;
-        //
         this.vistad.setVisible(true);
         iniciarControlProyecto();
-        cargarComboBoxBeneficiario();
+//        cargarComboBoxBeneficiarios();
 //        getpersonacombo(this.vistad.getjComboBoxBeneficiarioProye());
 //        modeloPersona.setModel(modeloPersona.obtenerbeneficiario(this.vistad.getjComboBoxBeneficiarioProye()));
         this.modeloTablaProyecto = new ModeloTablaProyecto();
@@ -200,15 +196,6 @@ public class ControllerProyecto {
         this.vistad.getBtnCREARPROYE().setEnabled(true);
     }
 
-    public void cargarComboBoxBeneficiario() {
-        try {
-            Vector v = new Vector();
-            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
-            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Capturando errores cargando combobox");
-        }
-    }
 
     public void limpiarBuscadorProyecto() {
         this.vistad.getTxtBsqProyectos().setText("");
@@ -241,5 +228,13 @@ public class ControllerProyecto {
         }
         return validado;
     }
-
+// public void cargarComboBoxBeneficiarios() {
+//  try {
+//            Vector v = new Vector();
+//            v.addAll(new PersonaJpaController(manager.getEmf()).findBeneficiariosEntities());
+//            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("Capturando errores cargando combobox");
+//        }
+//    }
 }
