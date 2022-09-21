@@ -282,18 +282,4 @@ public class ProyectoJpaController implements Serializable {
             em.close();
         }
     }
-
-    public List<Persona> buscarPersonabeneficiario() {
-        EntityManager em = getEntityManager();
-        String per = "Beneficiario";
-        try {
-            TypedQuery<Persona> query = em.createNamedQuery("Persona.findByTipoper", Persona.class);
-            query.setParameter("tipoper", per);
-            List<Persona> list = query.getResultList();
-            return list;
-        } finally {
-            em.close();
-        }
-    }
-
 }

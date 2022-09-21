@@ -57,9 +57,8 @@ public class ControllerLogin {
                 System.out.println(user.getIdrol().getNombrerol());
                 if (user != null) {
                     if (user.getIdrol().getNombrerol().equals("Administrador")) {
-
+                        new ControllerAdministrador(vista, manager, new PersonaJpaController(manager.getEmf()));
                         Resouces.success("!BIENVENIDO!", "Administrador: " + user.getIdpersona().getNombresper());
-
                         vistaS.dispose();
                         vistaL.dispose();
 

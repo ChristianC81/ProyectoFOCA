@@ -1188,10 +1188,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txtClave.setBorder(null);
         pnAdministrar2.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 200, 20));
 
-        cbxIdPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxIdPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una Persona" }));
         pnAdministrar2.add(cbxIdPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, 30));
 
-        cbxIdRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxIdRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un Rol" }));
         pnAdministrar2.add(cbxIdRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 200, 30));
 
         lblVerClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-eye-24.png"))); // NOI18N

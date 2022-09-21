@@ -5,21 +5,18 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import Vista.ViewLogin;
-import java.awt.event.MouseEvent;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.PersistenceException;
-import javax.swing.Icon;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import modelo.Persona;
+import modelo.PersonaJpaController;
 import modelo.Roles;
-import modelo.Usuario;
-import modelo.UsuarioJpaController;
+import modelo.RolesJpaController;
 import modelo.Usuario;
 import modelo.UsuarioJpaController;
 import modelo.Validaciones;
@@ -36,6 +33,7 @@ public class ControllerUsuario {
     ManagerFactory manager;
     UsuarioJpaController modeloUsuario;
     Usuario usuario;
+    Persona persona;
     ModeloTablaUsuario modeloTabla;
     ListSelectionModel listaUsuarioModel;
 
@@ -43,11 +41,17 @@ public class ControllerUsuario {
         this.vistap = vistapp;
         this.manager = manager;
         this.modeloUsuario = modeloUsuario;
+
         //inicializar la tabla
         this.modeloTabla = new ModeloTablaUsuario();
+
         // devuelve la lista de usuarios
         this.modeloTabla.setFilas(modeloUsuario.findUsuarioEntities());
         this.vistap.getjTableDatosUsuario().setModel(modeloTabla);
+
+        //Metodos para cargar el combobox
+        cargarComboBoxIdPersona();
+        cargarComboBoxIdRol();
     }
 
     public void cargarDatosUsuarioTbl() {
@@ -88,13 +92,35 @@ public class ControllerUsuario {
             this.vistap.getCbxIdRol().setSelectedItem(usuario.getIdrol());
 
             //Acceso de Botones
-            this.vistap.getBtnCREARPER().setEnabled(false);
-            this.vistap.getBtnEDITARPER().setEnabled(true);
-            this.vistap.getBtnELIMINARPER().setEnabled(true);
+            this.vistap.getBtnCREARUSU().setEnabled(false);
+            this.vistap.getBtnEDITARUSU().setEnabled(true);
+            this.vistap.getBtnELIMINARUSU().setEnabled(true);
 
         }
     }
-//
+
+    public void cargarComboBoxIdPersona() {
+        try {
+            this.vistap.getCbxIdPersona().addItem("");
+            Vector v = new Vector();
+            v.add(new String("Seleccione una Persona"));
+            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
+            this.vistap.getCbxIdPersona().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
+
+    public void cargarComboBoxIdRol() {
+        try {
+            Vector v = new Vector();
+            v.add(new String("Seleccione un Rol"));
+            v.addAll(new RolesJpaController(manager.getEmf()).findRolesEntities());
+            this.vistap.getCbxIdRol().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
+    }
 //    //llamar
 ////    public void reporteGeneral() {
 ////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/Usuarios.jasper",new HashMap());
@@ -111,15 +137,17 @@ public class ControllerUsuario {
 
     public void guardarUsuario() {
         usuario = new Usuario();
-       if (validacionesCamposUsuario() == true) {
 
+//        if (validacionesCamposUsuario() == true) {
         usuario.setNombreusuario(this.vistap.getTxtNombreUsu().getText());
         usuario.setClave(this.vistap.getTxtClave().getText());
-        usuario.setIdpersona((Persona) this.vistap.getCbxTipoPer().getSelectedItem());
-        usuario.setIdrol((Roles) this.vistap.getCbxTipoPer().getSelectedItem());
+        usuario.setIdpersona((Persona) this.vistap.getCbxIdPersona().getSelectedItem());
+        usuario.setIdrol((Roles) this.vistap.getCbxIdRol().getSelectedItem());
 
         try {
             modeloUsuario.create(usuario);
+        } catch (IllegalArgumentException e) {
+            Resouces.error("Error en el Proceso", " El usuario ya existe D:");
         } catch (Exception ex) {
             ex.getMessage();
         }
@@ -127,18 +155,20 @@ public class ControllerUsuario {
         Resouces.success("!Usuario Creada!", " Se ha creado con exito \n Usuario con Nombre: " + usuario.getIdpersona().getNombresper());
         limpiarC();
 
-        } else {
-          Resouces.error("Error en el Proceso", " No se creo con exito D:");
-         }
+//        } else {
+//            Resouces.error("Error en el Proceso", " No se creo con exito D:");
+//        }
     }
 
     public void editarUsuario() {
 //        if (usuario != null) {
         try {
 //                if (validacionesCamposUsuario() == true) {
-            usuario.setNombreusuario(this.vistap.getTxtClave().getText());
-            usuario.setIdpersona((Persona) this.vistap.getCbxTipoPer().getSelectedItem());
-            usuario.setIdrol((Roles) this.vistap.getCbxTipoPer().getSelectedItem());
+
+            usuario.setNombreusuario(this.vistap.getTxtNombreUsu().getText());
+            usuario.setClave(this.vistap.getTxtClave().getText());
+            usuario.setIdpersona((Persona) this.vistap.getCbxIdPersona().getSelectedItem());
+            usuario.setIdrol((Roles) this.vistap.getCbxIdRol().getSelectedItem());
 
             modeloUsuario.edit(usuario);
 
@@ -189,16 +219,17 @@ public class ControllerUsuario {
 
         this.vistap.getTxtNombreUsu().setText("");
         this.vistap.getTxtClave().setText("");
-        this.vistap.getCbxIdPersona().setSelectedItem("");
-        this.vistap.getCbxIdRol().setSelectedItem("");
+        this.vistap.getCbxIdPersona().setSelectedIndex(0);
+        this.vistap.getCbxIdRol().setSelectedIndex(0);
 
         //Acciones de Botones
-        this.vistap.getBtnCREARPER().setEnabled(true);
-        this.vistap.getBtnELIMINARPER().setEnabled(false);
-        this.vistap.getBtnEDITARPER().setEnabled(false);
+        this.vistap.getBtnCREARUSU().setEnabled(true);
+        this.vistap.getBtnELIMINARUSU().setEnabled(false);
+        this.vistap.getBtnEDITARUSU().setEnabled(false);
 
 //Limpiar Seleccion de Tabla
         this.vistap.getjTableDatosUsuario().clearSelection();
+
     }
 
     public void limpiarB() {
@@ -275,15 +306,6 @@ public class ControllerUsuario {
             this.vistap.getLblNombreUsu().setText("*Requrido");
         }
         return validado;
-    }
-
-    public void llenarCbxIdPersona() {
-
-        this.vistap.getCbxIdPersona().setSelectedItem(manager);
-    }
-
-    public void llenarCbxIdRol() {
-
     }
 
 }

@@ -321,6 +321,38 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
+//Lista de Beneficiarios
+
+//    public List<Persona> findBeneficiariosEntities() {
+//        return findBeneficiariosEntities(true, -1, -1);
+//    }
+//
+//    public List<Persona> findBeneficiariosEntities(int maxResults, int firstResult) {
+//        return findBeneficiariosEntities(false, maxResults, firstResult);
+//    }
+//
+//    private List<Persona> findBeneficiariosEntities(boolean all, int maxResults, int firstResult) {
+//        EntityManager em = getEntityManager();
+//
+//        String queryStringBaseAll = "Select nombresper || apellidosper from persona WHERE tipoper='Beneficiario' ";
+//
+//        List<Persona> listBeneficiarios = null;
+//        try {
+//
+//            listBeneficiarios = em.createNativeQuery(queryStringBaseAll, Persona.class).getResultList();
+//        } catch (Exception ex) {
+//
+//        }
+//
+//        if (listBeneficiarios == null) {
+//            listBeneficiarios = new ArrayList<>();
+//        }
+//        for (int i = 0; i < listBeneficiarios.size(); i++) {
+//            System.out.println(listBeneficiarios.get(i).getNombresper());
+//        }
+//        return listBeneficiarios;
+//
+//    }
 
     public Persona findPersona(BigDecimal id) {
         EntityManager em = getEntityManager();
@@ -362,13 +394,27 @@ public class PersonaJpaController implements Serializable {
         EntityManager em = tjc.getEntityManager();
         //Para realizar consultas 
         Iterator it = em.createQuery("SELECT p FROM Persona p").getResultList().iterator();
-        
+
         try {
             while (it.hasNext()) {
                 comboper.addItem(p);
             }
         } catch (Exception e) {
             System.out.println("ERROR");
+        }
+    }
+
+    public List<Persona> beneficiarios() {
+        String tipo = "Beneficiario";
+        EntityManager em = getEntityManager();
+        try {
+            //Para realizar consultas 
+            TypedQuery<Persona> query = em.createNamedQuery("Persona.findByTipoper", Persona.class);
+            query.setParameter("tipoper", tipo);
+            List<Persona> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
         }
     }
 

@@ -47,7 +47,7 @@ public class ControllerDonacion {
         cargarComboBoxBenefaDONA();
     }
 
-    public void controlMetodosDonacion() {
+    public void iniciarControDonacion() {
         this.vistaDona.getBtnCREARDONA().addActionListener(c -> crearDonacion());
         this.vistaDona.getBtnEDITARDONA().addActionListener(e -> editarDonacion());
         this.vistaDona.getBtnELIMINARDONA().addActionListener(el -> eliminarDonacion());

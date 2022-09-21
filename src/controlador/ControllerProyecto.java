@@ -6,19 +6,15 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.Collection;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.DonacionJpaController;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Proyecto;
@@ -41,15 +37,17 @@ public class ControllerProyecto {
     Proyecto proyecto;
     ModeloTablaProyecto modeloTablaProyecto;
     ListSelectionModel listaProyectoModelo;
+    
 
     public ControllerProyecto(ViewAdministrador vistad, ManagerFactory manager, ProyectoJpaController modeloProyecto) {
         this.vistad = vistad;
         this.manager = manager;
         this.modeloProyecto = modeloProyecto;
-        //
         this.vistad.setVisible(true);
-        cargarComboBoxBeneficiario();
         iniciarControlProyecto();
+//        cargarComboBoxBeneficiarios();
+//        getpersonacombo(this.vistad.getjComboBoxBeneficiarioProye());
+//        modeloPersona.setModel(modeloPersona.obtenerbeneficiario(this.vistad.getjComboBoxBeneficiarioProye()));
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
         this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
@@ -180,6 +178,9 @@ public class ControllerProyecto {
         }
 
     }
+    public void getpersonacombo(JComboBox combopersona){
+        modeloPersona.obtenerbeneficiario(combopersona);
+    }
 
     //limipiar y validar
     public void limpiar() {
@@ -195,17 +196,6 @@ public class ControllerProyecto {
         this.vistad.getBtnCREARPROYE().setEnabled(true);
     }
 
-    public void cargarComboBoxBeneficiario() {
-        try {
-            this.vistad.getCbxIdPersona().addItem("");
-            Vector v = new Vector();
-            v.add(new String("Seleccione un Beneficiario"));
-            v.addAll((Collection) modeloProyecto.buscarPersonabeneficiario());
-            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Capturando errores cargando combobox");
-        }
-    }
 
     public void limpiarBuscadorProyecto() {
         this.vistad.getTxtBsqProyectos().setText("");
@@ -238,5 +228,13 @@ public class ControllerProyecto {
         }
         return validado;
     }
-
+// public void cargarComboBoxBeneficiarios() {
+//  try {
+//            Vector v = new Vector();
+//            v.addAll(new PersonaJpaController(manager.getEmf()).findBeneficiariosEntities());
+//            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("Capturando errores cargando combobox");
+//        }
+//    }
 }
