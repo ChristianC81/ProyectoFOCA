@@ -6,41 +6,23 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import Vista.ViewLogin;
-import Vista.ViewSistema;
-import java.awt.Dimension;
 import java.awt.Image;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.Donacion;
-import modelo.DonacionJpaController;
-import modelo.InscripcionJpaController;
 import modelo.Persona;
 import modelo.PersonaJpaController;
-import modelo.Producto;
-import modelo.ProductoJpaController;
-import modelo.Proyecto;
-import modelo.ProyectoJpaController;
-import modelo.UsuarioJpaController;
+import modelo.Validaciones;
 import modelo.exceptions.NonexistentEntityException;
-import modelo.exceptions.PreexistingEntityException;
 import proyectofoca.ManagerFactory;
 
 /**
@@ -79,7 +61,7 @@ public class ControllerPersona {
         this.vistap.getBtnEDITARPER().addActionListener(l -> editarPersona());
         this.vistap.getBtnELIMINARPER().addActionListener(l -> eliminarPersona());
 //        this.vistap.getBtnREPORTEINDIVIDUALPER().addActionListener(l -> reporteIndividual());
-        this.vistap.getBtnREPORTEGENERALPER().addActionListener(l -> reporteGeneral());
+//        this.vistap.getBtnREPORTEGENERALPER().addActionListener(l -> reporteGeneral());
         this.vistap.getBtnLIMPIARPER().addActionListener(l -> limpiarC());
         this.vistap.getBtnExaminarFoto().addActionListener(l -> examinarFoto());
         this.vistap.getBtnlimpiarPerbsq().addActionListener(l -> limpiarB());
@@ -139,10 +121,9 @@ public class ControllerPersona {
     }
 //
 //    //llamar
-
-    public void reporteGeneral() {
-        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGPersonas.jasper", new HashMap());
-    }
+////    public void reporteGeneral() {
+////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/Personas.jasper",new HashMap());
+////  }
 //// public void reporteIndividual() {
 ////        if(persona!=null){
 ////        Map parametros = new HashMap<>();
@@ -155,7 +136,7 @@ public class ControllerPersona {
 
     public void guardarPersona() {
         persona = new Persona();
-        //  if (validacionesCamposPersona() == true) {
+//          if (validacionesCamposPersona() == true) {
 
         persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
         persona.setTipoper((String) this.vistap.getCbxTipoPer().getSelectedItem());
@@ -192,8 +173,9 @@ public class ControllerPersona {
 
         //Guardar foto
         try {
-            FileInputStream img = new FileInputStream(jfc.getSelectedFile());
-            persona.setFoto((Serializable) img);
+         
+            Image imagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
+            persona.setFoto((Serializable) imagen);
         } catch (IOException ex) {
             Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -204,7 +186,7 @@ public class ControllerPersona {
         }
         cargarDatosPersonaTbl();
         Resouces.success("!Persona Creada!", " Se ha creado con exito \n Persona con Nombre: " + persona.getNombresper());
-//        limpiarC();
+        limpiarC();
 //        } else {
 //          Resouces.error("Error en el Proceso", " No se creo con exito D:");
 //         }
@@ -213,7 +195,7 @@ public class ControllerPersona {
     public void editarPersona() {
         if (persona != null) {
             try {
-//                if (validacionesCamposPersona() == true) {
+                if (validacionesCamposPersona() == true) {
                 persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
                 persona.setTipoper((String) this.vistap.getCbxTipoPer().getSelectedItem());
                 persona.setNombresper(this.vistap.getTxtnombrePer().getText());
@@ -251,13 +233,12 @@ public class ControllerPersona {
                 modeloTabla.eliminar(persona);
                 modeloTabla.actualizar(persona);
                 Resouces.success("!Persona Editada!", " Se ha editado con exito \n Persona con Nombre: " + persona.getNombresper());
-//                    limpiarC();
-//                }
+                    limpiarC();
+                }
             } catch (Exception ex) {
                 Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-//
     }
 
     public void eliminarPersona() {
@@ -308,6 +289,7 @@ public class ControllerPersona {
         this.vistap.getTxtperiodo().setText("");
         this.vistap.getTxtTipoVol().setText("");
         this.vistap.getLblFoto().setIcon(null);
+
         //Acciones de Botones
         this.vistap.getBtnCREARPER().setEnabled(true);
         this.vistap.getBtnELIMINARPER().setEnabled(false);
@@ -327,74 +309,125 @@ public class ControllerPersona {
         this.vistap.hide();
     }
 
-//    public boolean validacionesCamposPersona() {
-//        Validaciones validar = new Validaciones();
-//        boolean validado = false;
-//        if (!this.vistap.getTxtNombres().getText().isEmpty()) {
-//            if (validar.ValidarTextoConEspacio(this.vistap.getTxtNombres().getText())) {
-//
-//                if (!this.vistap.getTxtApellidos().getText().isEmpty()) {
-//                    if (validar.ValidarTextoConEspacio(this.vistap.getTxtApellidos().getText())) {
-//
-//                        //segunda  valid
-//                        if (!this.vistap.getTxtCedula().getText().isEmpty()) {
-//                            if (validar.validarCedula(this.vistap.getTxtCedula().getText())) {
-//
-//                                //Segunda valid
-//                                if (!this.vistap.getTxtCelular().getText().isEmpty()) {
-//                                    if (validar.validarCelu(this.vistap.getTxtCelular().getText())) {
-//
-//                                        //Segunda valid
-//                                        if (!this.vistap.getTxtCorreo().getText().isEmpty()) {
-//                                            if (validar.validarEmail(this.vistap.getTxtCorreo().getText())) {
-//
-//                                                //Segunda valid
-//                                                if (!this.vistap.getTxtDireccion().getText().isEmpty()) {
-//                                                    if (validar.validarDirec(this.vistap.getTxtDireccion().getText())) {
-//                                                        //Segunda valid
-//                                                        validado = true;
-//                                                    } else {
-//                                                        this.vistap.getLblDireccionE().setText("* Direccion Invalida");
-//                                                    }
-//                                                } else {
-//                                                    this.vistap.getLblDireccionE().setText("* Campo de Direccion Vacio");
-//                                                }
-//                                            } else {
-//                                                this.vistap.getLblCorreoE().setText("* Correo Electronico Invalida");
-//                                            }
-//                                        } else {
-//                                            this.vistap.getLblCorreoE().setText("* Campo del Correo Electronico Vacio");
-//                                        }
-//                                    } else {
-//                                        this.vistap.getLblCelularE().setText("* Celular Invalida");
-//                                    }
-//                                } else {
-//                                    this.vistap.getLblCelularE().setText("* Campo del Celular Vacio");
-//                                }
-//                            } else {
-//                                this.vistap.getLblCedulaE().setText("* Cedula Invalida");
-//
-//                            }
-//                        } else {
-//                            this.vistap.getLblCedulaE().setText("* Campo de la Cedula Vacio");
-//                        }
-//                    } else {
-//                        this.vistap.getLblApellidosE().setText("* Apellido Invalido");
-//                    }
-//                } else {
-//                    this.vistap.getLblApellidosE().setText("* Campo de Apellidos Vacio");
-//                }
-//            } else {
-//                this.vistap.getLblNombresE().setText("* Nombre Invalido");
-//            }
-//        } else {
-//            this.vistap.getLblNombresE().setText("* Campo de Nombres Vacio");
-//        }
-//        if (validado == false) {
-//            // Resouces.error("Error en el Proceso", " No se edito con exito D:");
-//        }
-//        return validado;
-//    }
+    public boolean validacionesCamposPersona() {
+        Validaciones validar = new Validaciones();
+        boolean validado = false;
+        if (!this.vistap.getTxtcedulaPer().getText().isEmpty()) {
+            if (validar.validarCedula(this.vistap.getTxtcedulaPer().getText())) {
+
+                if (this.vistap.getCbxTipoPer().getSelectedIndex() != 0) {
+
+                    //segunda  valid
+                    if (!this.vistap.getTxtnombrePer().getText().isEmpty()) {
+                        if (validar.ValidarTextoConEspacio(this.vistap.getTxtnombrePer().getText())) {
+
+                            //Segunda valid
+                            if (!this.vistap.getTxtapellidoPer().getText().isEmpty()) {
+                                if (validar.ValidarTextoConEspacio(this.vistap.getTxtapellidoPer().getText())) {
+
+                                    //Segunda valid
+                                    if (!this.vistap.getTxtdireccionPer().getText().isEmpty()) {
+                                        if (validar.validarDirec(this.vistap.getTxtdireccionPer().getText())) {
+
+                                            //Segunda valid
+                                            if (!this.vistap.getTxttelefono().getText().isEmpty()) {
+                                                if (validar.validarTelefono(this.vistap.getTxttelefono().getText())) {
+
+                                                    //Segunda valid
+                                                    if (!this.vistap.getTxttelefono().getText().isEmpty()) {
+                                                        if (validar.validarTelefono(this.vistap.getTxttelefono().getText())) {
+
+                                                            //Segunda valid
+                                                            if (!this.vistap.getTxtcorreoPer().getText().isEmpty()) {
+                                                                if (validar.validar_email(this.vistap.getTxtcorreoPer().getText())) {
+
+                                                                    //Segunda valid
+                                                                    if (!this.vistap.getRbtMasculino().isSelected()) {
+                                                                        if (!this.vistap.getRbtFemenino().isSelected()) {
+
+                                                                            //Segunda valid
+                                                                            if (validar.validarTextoSinEspacio(this.vistap.getTxtestadocivil().getText())) {
+
+                                                                                //Segunda valid
+                                                                                if (validar.ValidarTextoConEspacio(this.vistap.getTxtTitulo().getText())) {
+
+                                                                                    //Segunda valid
+                                                                                    if (validar.ValidarTextoConEspacio(this.vistap.getTxtperiodo().getText())) {
+
+                                                                                        //Segunda valid
+                                                                                        if (validar.ValidarTextoConEspacio(this.vistap.getTxtTipoVol().getText())) {
+
+                                                                                            //Segunda valid
+                                                                                        } else {
+                                                                                            Resouces.warning("ADVERTENCIA!", "Tipo de Voluntario Incorrecto");
+                                                                                        }
+                                                                                    } else {
+                                                                                        Resouces.warning("ADVERTENCIA!", "Periodo Incorrecto");
+                                                                                    }
+
+                                                                                } else {
+                                                                                    Resouces.warning("ADVERTENCIA!", "Titulo Incorrecto");
+                                                                                }
+
+                                                                            } else {
+                                                                                Resouces.warning("ADVERTENCIA!", "Estado Civil Incorrecto");
+                                                                            }
+                                                                        } else {
+                                                                            Resouces.warning("ADVERTENCIA!", "Genero no seleccionado");
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    Resouces.warning("ADVERTENCIA!", "Correo Electronico Incorrecto");
+                                                                }
+                                                            } else {
+                                                                Resouces.warning("ADVERTENCIA!", "Correo Electronico Vacio");
+                                                            }
+                                                        } else {
+                                                            Resouces.warning("ADVERTENCIA!", "Numero de Telefono Incorrecto");
+                                                        }
+                                                    } else {
+                                                        Resouces.warning("ADVERTENCIA!", "Numero de Telefono Vacio");
+                                                    }
+                                                } else {
+                                                    Resouces.warning("ADVERTENCIA!", "Numero de Telefono Incorrecto");
+                                                }
+                                            } else {
+                                                Resouces.warning("ADVERTENCIA!", "Numero de Telefono Vacio");
+                                            }
+                                        } else {
+                                            Resouces.warning("ADVERTENCIA!", "Dirección Incorrecta");
+                                        }
+                                    } else {
+                                        Resouces.warning("ADVERTENCIA!", "Dirección vacia");
+                                    }
+                                } else {
+                                    Resouces.warning("ADVERTENCIA!", "Apellido Incorrecto");
+                                }
+                            } else {
+                                Resouces.warning("ADVERTENCIA!", "Campo de apellidos vacio");
+                            }
+                        } else {
+                            Resouces.warning("ADVERTENCIA!", "Nombre Incorrecto");
+                        }
+                    } else {
+                        Resouces.warning("ADVERTENCIA!", "Campo de Nombres vacio");
+                    }
+                } else {
+                    Resouces.warning("ADVERTENCIA!", "Debe seleccionar un tipo de persona");
+                }
+
+            } else {
+                Resouces.warning("ADVERTENCIA!", "Numero de Cedula Incorrecto");
+            }
+        } else {
+            Resouces.warning("ADVERTENCIA!", "Numero de Cedula Vacio");
+        }
+        if (validado == false) {
+            Resouces.error("Error en el Proceso", " No se creo con exito D:");
+        }
+        return validado;
+    }
+
     public void examinarFoto() {
         jfc = new JFileChooser();
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);

@@ -1304,6 +1304,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel50.setText("Tipo:");
         pnAdministrar.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
+        cbxTipoPer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el Tipo de Persona" }));
         pnAdministrar.add(cbxTipoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 200, 20));
 
         buttonGroupGenero.add(rbtFemenino);
