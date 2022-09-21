@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -61,7 +62,7 @@ public class ControllerPersona {
         this.vistap.getBtnEDITARPER().addActionListener(l -> editarPersona());
         this.vistap.getBtnELIMINARPER().addActionListener(l -> eliminarPersona());
 //        this.vistap.getBtnREPORTEINDIVIDUALPER().addActionListener(l -> reporteIndividual());
-//        this.vistap.getBtnREPORTEGENERALPER().addActionListener(l -> reporteGeneral());
+        this.vistap.getBtnREPORTEGENERALPER().addActionListener(l -> reporteGeneral());
         this.vistap.getBtnLIMPIARPER().addActionListener(l -> limpiarC());
         this.vistap.getBtnExaminarFoto().addActionListener(l -> examinarFoto());
         this.vistap.getBtnlimpiarPerbsq().addActionListener(l -> limpiarB());
@@ -119,11 +120,11 @@ public class ControllerPersona {
 
         }
     }
-//
+
 //    //llamar
-////    public void reporteGeneral() {
-////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/Personas.jasper",new HashMap());
-////  }
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGPersonas.jasper",new HashMap());
+  }
 //// public void reporteIndividual() {
 ////        if(persona!=null){
 ////        Map parametros = new HashMap<>();

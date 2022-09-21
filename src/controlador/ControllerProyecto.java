@@ -6,6 +6,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import java.util.HashMap;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,6 +64,7 @@ public class ControllerProyecto {
         this.vistad.getBtnlimpiarProyeBsqa().addActionListener(l -> limpiarBuscadorProyecto());
         this.vistad.getBtnbuscarProye().addActionListener(l -> buscarProyecto());
         this.vistad.getChekBsqProyes().addActionListener(l -> buscarProyecto());
+        this.vistad.getBtnREPORTEGENERALPROYE().addActionListener(l-> reporteGeneral());
 
         // eventos tabla
         this.vistad.getjTableDatosProyectos().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -75,12 +77,15 @@ public class ControllerProyecto {
                 }
             }
         });
-
         this.vistad.getBtnEDITARPROYE().setEnabled(false);
         this.vistad.getBtnELIMINARPROYE().setEnabled(false);
 
     }
 
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper",new HashMap());
+  }
+    
     private void proyectoSeleccionado() {
         if (this.vistad.getjTableDatosProyectos().getSelectedRow() != -1) {
             proyecto = modeloTablaProyecto.getFilas().get(this.vistad.getjTableDatosProyectos().getSelectedRow());
