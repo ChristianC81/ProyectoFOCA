@@ -9,7 +9,6 @@ import Vista.ViewLogin;
 import modelo.DonacionJpaController;
 import modelo.InscripcionJpaController;
 import modelo.PersonaJpaController;
-import modelo.ProductoJpaController;
 import modelo.ProyectoJpaController;
 import modelo.UsuarioJpaController;
 import proyectofoca.ManagerFactory;

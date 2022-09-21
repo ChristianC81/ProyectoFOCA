@@ -5,11 +5,8 @@
 package controlador;
 
 import Vista.InicioSistema;
-import Vista.InicioSistema;
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
-import Vista.ViewSistema;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.persistence.PersistenceException;
 import modelo.PersonaJpaController;
