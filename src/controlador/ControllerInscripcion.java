@@ -9,6 +9,7 @@ import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,7 +75,7 @@ public class ControllerInscripcion {
             }
         });
 
-//        this.vistad.getBtnReporteGeneral().addActionListener(l -> reporteGeneral());
+        this.vistad.getBtnREPORTEGENERALINSCRI().addActionListener(l -> reporteGeneral());
 //        this.vistad.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
 //         control de botones inicio
         this.vistad.getBtnEDITARINSCRI().setEnabled(false);
@@ -186,6 +187,10 @@ public class ControllerInscripcion {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Capturando errores cargando combobox");
         }
+    }
+
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGInscripciones.jasper", new HashMap());
     }
 
 //    limipiar 

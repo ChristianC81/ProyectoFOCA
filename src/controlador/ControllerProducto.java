@@ -194,7 +194,7 @@ public class ControllerProducto {
     }
 
     public void reporteGeneral() {
-        //Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProductos.jasper", new HashMap());
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProductos.jasper", new HashMap());
     }
 
     //limipiar y validar

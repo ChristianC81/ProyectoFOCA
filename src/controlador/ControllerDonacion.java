@@ -29,16 +29,16 @@ import proyectofoca.ManagerFactory;
 public class ControllerDonacion {
 
     ViewAdministrador vistaDona;
-    ManagerFactory manage;
+    ManagerFactory manager;
     DonacionJpaController modeloDonacion;
     ModeloTablaDonacion modeloTdona;
     Donacion dona;
     ListSelectionModel listadonacionmodel;
     Validaciones validacion;
 
-    public ControllerDonacion(ViewAdministrador vistaDona, ManagerFactory manage, DonacionJpaController modeloDonacion) {
+    public ControllerDonacion(ViewAdministrador vistaDona, ManagerFactory manager, DonacionJpaController modeloDonacion) {
         this.vistaDona = vistaDona;
-        this.manage = manage;
+        this.manager = manager;
         this.modeloDonacion = modeloDonacion;
         this.modeloTdona = new ModeloTablaDonacion();
         this.modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
@@ -68,7 +68,7 @@ public class ControllerDonacion {
             }
 
         });
-//      this.vistaDona.getjButtonReportarProGeneral().addActionListener(lr -> reporteGeneral());
+        this.vistaDona.getBtnREPORTEGENERALDON().addActionListener(lr -> reporteGeneral());
 //        this.vistaDona.getjButtonReporteIndivPro().addActionListener(lr -> reporteIndividual());
         // control de botones inicio
         this.vistaDona.getBtnEDITARDONA().setEnabled(false);
@@ -78,7 +78,7 @@ public class ControllerDonacion {
     public void cargarComboBoxBenefaDONA() {
         try {
             Vector v = new Vector();
-            v.addAll(new PersonaJpaController(manage.getEmf()).findPersonaEntities());
+            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
             this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Capturando errores cargando combobox");
@@ -179,19 +179,20 @@ public class ControllerDonacion {
         }
     }
 
-//    public void reporteGeneral() {
-//        Resouces.imprimirReporte(ManagerFactory.getConnection(manage.getEmf().createEntityManager()), "/reportes/Donaciones.jasper",new HashMap());
-//    }
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGDonaciones.jasper", new HashMap());
+    }
 //    public void reporteIndividual() {
 //        if (dona != null) {
 //            Map parameters = new HashMap();
 //            parameters.put("cod", dona.getIddonaducto());
-//            Resouces.imprimirReporte(ManagerFactory.getConnection(manage.getEmf().createEntityManager()), "/reportes/donaIndividual.jasper", parameters);
+//            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/donaIndividual.jasper", parameters);
 //
 //        } else {
 //            Resouces.warning("Atención!!", "Debe seleccionar un donaducto");
 //        }
 //    }
+
     public void buscarDonacion() {
         if (this.vistaDona.getChekBsqDONA().isSelected()) {
             modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
@@ -224,7 +225,7 @@ public class ControllerDonacion {
         modeloTdona.setFilas(modeloDonacion.findDonacionEntities());
         modeloTdona.fireTableDataChanged();
     }
-    
+
     public boolean camposVacios() {
         boolean validar = true;
         if (this.vistaDona.getTxaDetalleProdDON().getText().isEmpty()) {

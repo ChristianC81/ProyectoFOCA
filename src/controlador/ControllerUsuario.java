@@ -5,6 +5,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import java.util.HashMap;
 
 import java.util.Vector;
 import java.util.logging.Level;
@@ -65,7 +66,7 @@ public class ControllerUsuario {
         this.vistap.getBtnEDITARUSU().addActionListener(l -> editarUsuario());
         this.vistap.getBtnELIMINARUSU().addActionListener(l -> eliminarUsuario());
 //        this.vistap.getBtnREPORTEINDIVIDUALUSU().addActionListener(l -> reporteIndividual());
-//        this.vistap.getBtnREPORTEGENERALUSU().addActionListener(l -> reporteGeneral());
+        this.vistap.getBtnREPORTEGENERALUSU().addActionListener(l -> reporteGeneral());
         this.vistap.getBtnLIMPIARUSU().addActionListener(l -> limpiarC());
         this.vistap.getBtnlimpiarUsubsq().addActionListener(l -> limpiarB());
         this.vistap.getBtnCANCELARUSU().addActionListener(l -> cancelar());
@@ -122,9 +123,9 @@ public class ControllerUsuario {
         }
     }
 //    //llamar
-////    public void reporteGeneral() {
-////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/Usuarios.jasper",new HashMap());
-////  }
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGUsuarios.jasper", new HashMap());
+    }
 //// public void reporteIndividual() {
 ////        if(usuario!=null){
 ////        Map parametros = new HashMap<>();

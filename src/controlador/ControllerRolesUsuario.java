@@ -9,6 +9,7 @@ import Vista.ViewAdministrador;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,7 +86,7 @@ public class ControllerRolesUsuario {
             }
         });
 
-//        this.vista.getBtnREPORTEGENERALROL().addActionListener(l -> reporteGeneral());
+        this.vista.getBtnREPORTEGENERALROL().addActionListener(l -> reporteGeneral());
 //        this.vista.getBtnREPORTEINDIVIDUALROL().addActionListener(l -> reporteIndividual());
         // control de botones inicio
         this.vista.getBtnEDITARROL().setEnabled(false);
@@ -161,7 +162,7 @@ public class ControllerRolesUsuario {
                 if (select == JOptionPane.YES_OPTION) {
                     modeloRoles.destroy(rol.getIdrol());
                     modeloTroles.eliminar(rol);
-                    
+
                     Resouces.success(" ATENCIÓN!!!", "Rol elminado correctamente");
                     limpiarRol();
                 }
@@ -185,6 +186,10 @@ public class ControllerRolesUsuario {
                 modeloTroles.fireTableDataChanged();
             }
         }
+    }
+
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGRoles.jasper", new HashMap());
     }
 
     //limipiar y validar

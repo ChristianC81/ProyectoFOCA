@@ -6,6 +6,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import java.util.HashMap;
 
 import java.util.Vector;
 import java.util.logging.Level;
@@ -37,7 +38,6 @@ public class ControllerProyecto {
     Proyecto proyecto;
     ModeloTablaProyecto modeloTablaProyecto;
     ListSelectionModel listaProyectoModelo;
-    
 
     public ControllerProyecto(ViewAdministrador vistad, ManagerFactory manager, ProyectoJpaController modeloProyecto) {
         this.vistad = vistad;
@@ -77,6 +77,8 @@ public class ControllerProyecto {
                 }
             }
         });
+
+        this.vistad.getBtnREPORTEGENERALPROYE().addActionListener(l -> reporteGeneral());
 
         this.vistad.getBtnEDITARPROYE().setEnabled(false);
         this.vistad.getBtnELIMINARPROYE().setEnabled(false);
@@ -178,8 +180,13 @@ public class ControllerProyecto {
         }
 
     }
-    public void getpersonacombo(JComboBox combopersona){
+
+    public void getpersonacombo(JComboBox combopersona) {
         modeloPersona.obtenerbeneficiario(combopersona);
+    }
+
+    public void reporteGeneral() {
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper", new HashMap());
     }
 
     //limipiar y validar
@@ -195,7 +202,6 @@ public class ControllerProyecto {
         this.vistad.getBtnELIMINARPROYE().setEnabled(false);
         this.vistad.getBtnCREARPROYE().setEnabled(true);
     }
-
 
     public void limpiarBuscadorProyecto() {
         this.vistad.getTxtBsqProyectos().setText("");

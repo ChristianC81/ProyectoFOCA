@@ -4,6 +4,15 @@
  */
 package controlador;
 
+import java.sql.Connection;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 import rojerusan.RSNotifyAnimated;
 
 /**
@@ -30,15 +39,15 @@ public class Resouces {
                 RSNotifyAnimated.TypeNotify.ERROR).setVisible(true);
     }
 
-//    public static void imprimirReporte(Connection con, String url, Map parametros) {
-//        JasperPrint print;
-//        try {
-//            print = JasperFillManager.fillReport(Resouces.class.getResourceAsStream(url), parametros, con);
-//            JasperViewer view = new JasperViewer(print,false);
-//            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-//            view.setVisible(true);
-//        } catch (JRException ex) {
-//            Logger.getLogger(Resouces.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    public static void imprimirReporte(Connection con, String url, Map parametros) {
+        JasperPrint print;
+        try {
+            print = JasperFillManager.fillReport(Resouces.class.getResourceAsStream(url), parametros, con);
+            JasperViewer view = new JasperViewer(print, false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(Resouces.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
