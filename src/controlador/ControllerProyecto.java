@@ -8,6 +8,7 @@ package controlador;
 import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +41,6 @@ public class ControllerProyecto {
     Proyecto proyecto;
     ModeloTablaProyecto modeloTablaProyecto;
     ListSelectionModel listaProyectoModelo;
-    
 
     public ControllerProyecto(ViewAdministrador vistad, ManagerFactory manager, ProyectoJpaController modeloProyecto) {
         this.vistad = vistad;
@@ -48,10 +48,8 @@ public class ControllerProyecto {
         this.modeloProyecto = modeloProyecto;
         //
         this.vistad.setVisible(true);
-        iniciarControlProyecto();
         cargarComboBoxBeneficiario();
-//        getpersonacombo(this.vistad.getjComboBoxBeneficiarioProye());
-//        modeloPersona.setModel(modeloPersona.obtenerbeneficiario(this.vistad.getjComboBoxBeneficiarioProye()));
+        iniciarControlProyecto();
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
         this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
@@ -182,9 +180,6 @@ public class ControllerProyecto {
         }
 
     }
-    public void getpersonacombo(JComboBox combopersona){
-        modeloPersona.obtenerbeneficiario(combopersona);
-    }
 
     //limipiar y validar
     public void limpiar() {
@@ -202,8 +197,10 @@ public class ControllerProyecto {
 
     public void cargarComboBoxBeneficiario() {
         try {
+            this.vistad.getCbxIdPersona().addItem("");
             Vector v = new Vector();
-            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
+            v.add(new String("Seleccione un Beneficiario"));
+            v.addAll((Collection) modeloProyecto.buscarPersonabeneficiario());
             this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Capturando errores cargando combobox");

@@ -8,6 +8,7 @@ package controlador;
 import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,7 +87,7 @@ public class ControllerInscripcion {
 //            CARGAR A LA VISTA
             this.vistad.getCbxCodigoVoluntario().setSelectedItem(inscripcion.getIdpersona());
             this.vistad.getCbxCodigoProyecto().setSelectedItem(inscripcion.getIdproyins());
-            this.vistad.getjSpinnerDiasParticipacion().setValue(inscripcion.getNdiasparticipacionins());
+//            this.vistad.getjSpinnerDiasParticipacion().setValue(inscripcion.getNdiasparticipacionins());
 
             this.vistad.getBtnEDITARINSCRI().setEnabled(true);
             this.vistad.getBtnELIMINARINSCRI().setEnabled(true);
@@ -170,7 +171,7 @@ public class ControllerInscripcion {
     public void cargarComboBoxVoluntario() {
         try {
             Vector v = new Vector();
-            v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
+            v.addAll((Collection) modeloInscripcion.buscarPersonavolu());
             this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Capturando errores cargando combobox");
@@ -192,7 +193,7 @@ public class ControllerInscripcion {
 
         this.vistad.getCbxCodigoVoluntario().setSelectedIndex(0);
         this.vistad.getCbxCodigoProyecto().setSelectedIndex(0);
-        this.vistad.getjSpinnerDiasParticipacion().setValue(1);
+        //this.vistad.getjSpinnerDiasParticipacion().setValue(1);
 
         this.vistad.getBtnEDITARINSCRI().setEnabled(false);
         this.vistad.getBtnELIMINARINSCRI().setEnabled(false);

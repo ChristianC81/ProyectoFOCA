@@ -197,6 +197,7 @@ public class InscripcionJpaController implements Serializable {
             em.close();
         }
     }
+
     public List<Inscripcion> buscarInscripcion(Number id) {
         System.out.println(id);
         EntityManager em = getEntityManager();
@@ -205,6 +206,19 @@ public class InscripcionJpaController implements Serializable {
             TypedQuery<Inscripcion> query = em.createNamedQuery("Inscripcion.findByIdins", Inscripcion.class);
             query.setParameter("idins", id);
             List<Inscripcion> list = query.getResultList();
+            return list;
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Persona> buscarPersonavolu() {
+        EntityManager em = getEntityManager();
+        String per = "Voluntario";
+        try {
+            TypedQuery<Persona> query = em.createNamedQuery("Persona.findByTipoper", Persona.class);
+            query.setParameter("tipoper", per);
+            List<Persona> list = query.getResultList();
             return list;
         } finally {
             em.close();
