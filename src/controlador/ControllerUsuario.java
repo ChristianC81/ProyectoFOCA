@@ -138,49 +138,49 @@ public class ControllerUsuario {
     public void guardarUsuario() {
         usuario = new Usuario();
 
-//        if (validacionesCamposUsuario() == true) {
-        usuario.setNombreusuario(this.vistap.getTxtNombreUsu().getText());
-        usuario.setClave(this.vistap.getTxtClave().getText());
-        usuario.setIdpersona((Persona) this.vistap.getCbxIdPersona().getSelectedItem());
-        usuario.setIdrol((Roles) this.vistap.getCbxIdRol().getSelectedItem());
-
-        try {
-            modeloUsuario.create(usuario);
-        } catch (IllegalArgumentException e) {
-            Resouces.error("Error en el Proceso", " El usuario ya existe D:");
-        } catch (Exception ex) {
-            ex.getMessage();
-        }
-        cargarDatosUsuarioTbl();
-        Resouces.success("!Usuario Creada!", " Se ha creado con exito \n Usuario con Nombre: " + usuario.getIdpersona().getNombresper());
-        limpiarC();
-
-//        } else {
-//            Resouces.error("Error en el Proceso", " No se creo con exito D:");
-//        }
-    }
-
-    public void editarUsuario() {
-//        if (usuario != null) {
-        try {
-//                if (validacionesCamposUsuario() == true) {
-
+        if (validacionesCamposUsuario() == true) {
             usuario.setNombreusuario(this.vistap.getTxtNombreUsu().getText());
             usuario.setClave(this.vistap.getTxtClave().getText());
             usuario.setIdpersona((Persona) this.vistap.getCbxIdPersona().getSelectedItem());
             usuario.setIdrol((Roles) this.vistap.getCbxIdRol().getSelectedItem());
 
-            modeloUsuario.edit(usuario);
-
-            modeloTabla.eliminar(usuario);
-            modeloTabla.actualizar(usuario);
-            Resouces.success("!Usuario Editada!", " Se ha editado con exito \n Usuario con Nombre: " + usuario.getNombreusuario());
+            try {
+                modeloUsuario.create(usuario);
+            } catch (IllegalArgumentException e) {
+                Resouces.error("Error en el Proceso", " El usuario ya existe D:");
+            } catch (Exception ex) {
+                ex.getMessage();
+            }
+            cargarDatosUsuarioTbl();
+            Resouces.success("!Usuario Creado!", " Se ha creado con exito \n Usuario con Nombre: " + usuario.getIdpersona().getNombresper());
             limpiarC();
-//                }
-        } catch (Exception ex) {
-            Logger.getLogger(ControllerUsuario.class.getName()).log(Level.SEVERE, null, ex);
+
+        } else {
+            Resouces.error("Error en el Proceso", " No se creo con exito D:");
         }
-//        }
+    }
+
+    public void editarUsuario() {
+        if (usuario != null) {
+            try {
+                if (validacionesCamposUsuario() == true) {
+
+                    usuario.setNombreusuario(this.vistap.getTxtNombreUsu().getText());
+                    usuario.setClave(this.vistap.getTxtClave().getText());
+                    usuario.setIdpersona((Persona) this.vistap.getCbxIdPersona().getSelectedItem());
+                    usuario.setIdrol((Roles) this.vistap.getCbxIdRol().getSelectedItem());
+
+                    modeloUsuario.edit(usuario);
+
+                    modeloTabla.eliminar(usuario);
+                    modeloTabla.actualizar(usuario);
+                    Resouces.success("!Usuario Editada!", " Se ha editado con exito \n Usuario con Nombre: " + usuario.getNombreusuario());
+                    limpiarC();
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(ControllerUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
     }
 
@@ -246,64 +246,31 @@ public class ControllerUsuario {
         Validaciones validar = new Validaciones();
         boolean validado = false;
         if (!this.vistap.getTxtNombreUsu().getText().isEmpty()) {
-//            if (validar.ValidarTextoConEspacio(this.vistap.getTxtNombres().getText())) {
-//
-//                if (!this.vistap.getTxtApellidos().getText().isEmpty()) {
-//                    if (validar.ValidarTextoConEspacio(this.vistap.getTxtApellidos().getText())) {
-//
-//                        //segunda  valid
-//                        if (!this.vistap.getTxtCedula().getText().isEmpty()) {
-//                            if (validar.validarCedula(this.vistap.getTxtCedula().getText())) {
-//
-//                                //Segunda valid
-//                                if (!this.vistap.getTxtCelular().getText().isEmpty()) {
-//                                    if (validar.validarCelu(this.vistap.getTxtCelular().getText())) {
-//
-//                                        //Segunda valid
-//                                        if (!this.vistap.getTxtCorreo().getText().isEmpty()) {
-//                                            if (validar.validarEmail(this.vistap.getTxtCorreo().getText())) {
-//
-//                                                //Segunda valid
-//                                                if (!this.vistap.getTxtDireccion().getText().isEmpty()) {
-//                                                    if (validar.validarDirec(this.vistap.getTxtDireccion().getText())) {
-//                                                        //Segunda valid
-//                                                        validado = true;
-//                                                    } else {
-//                                                        this.vistap.getLblDireccionE().setText("* Direccion Invalida");
-//                                                    }
-//                                                } else {
-//                                                    this.vistap.getLblDireccionE().setText("* Campo de Direccion Vacio");
-//                                                }
-//                                            } else {
-//                                                this.vistap.getLblCorreoE().setText("* Correo Electronico Invalida");
-//                                            }
-//                                        } else {
-//                                            this.vistap.getLblCorreoE().setText("* Campo del Correo Electronico Vacio");
-//                                        }
-//                                    } else {
-//                                        this.vistap.getLblCelularE().setText("* Celular Invalida");
-//                                    }
-//                                } else {
-//                                    this.vistap.getLblCelularE().setText("* Campo del Celular Vacio");
-//                                }
-//                            } else {
-//                                this.vistap.getLblCedulaE().setText("* Cedula Invalida");
-//
-//                            }
-//                        } else {
-//                            this.vistap.getLblCedulaE().setText("* Campo de la Cedula Vacio");
-//                        }
-//                    } else {
-//                        this.vistap.getLblApellidosE().setText("* Apellido Invalido");
-//                    }
-//                } else {
-//                    this.vistap.getLblApellidosE().setText("* Campo de Apellidos Vacio");
-//                }
-//            } else {
-//                this.vistap.getLblNombresE().setText("* Nombre Invalido");
+            if (validar.validarUsuario(this.vistap.getTxtNombreUsu().getText())) {
 
+                if (!this.vistap.getTxtClave().getText().isEmpty()) {
+                    if (validar.validarContrasena(this.vistap.getTxtClave().getText())) {
+
+                        if (this.vistap.getCbxIdPersona().getSelectedIndex() != 0) {
+                            if (this.vistap.getCbxIdRol().getSelectedIndex() != 0) {
+
+                            } else {
+                                Resouces.warning("ADVERTENCIA!", " Seleccione un rol para el usuario");
+                            }
+                        } else {
+                            Resouces.warning("ADVERTENCIA!", " Seleccione una persona");
+                        }
+                    } else {
+                        Resouces.warning("ADVERTENCIA!", "Estructura de Clave Incorrecto");
+                    }
+                } else {
+                    Resouces.warning("ADVERTENCIA!", " Campo de Contraseña Vacio");
+                }
+            } else {
+                Resouces.warning("ADVERTENCIA!", "Nombre de Usuario Incorrecto");
+            }
         } else {
-            this.vistap.getLblNombreUsu().setText("*Requrido");
+            Resouces.warning("ADVERTENCIA!", "Nombre de Usuario vacio");
         }
         return validado;
     }
