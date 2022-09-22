@@ -6,10 +6,13 @@
 package controlador;
 
 import Vista.ViewAdministrador;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Vector;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
@@ -36,7 +39,6 @@ public class ControllerProyecto {
     Proyecto proyecto;
     ModeloTablaProyecto modeloTablaProyecto;
     ListSelectionModel listaProyectoModelo;
-    
 
     public ControllerProyecto(ViewAdministrador vistad, ManagerFactory manager, ProyectoJpaController modeloProyecto) {
         this.vistad = vistad;
@@ -44,9 +46,8 @@ public class ControllerProyecto {
         this.modeloProyecto = modeloProyecto;
         this.vistad.setVisible(true);
         iniciarControlProyecto();
-//        cargarComboBoxBeneficiarios();
-//        getpersonacombo(this.vistad.getjComboBoxBeneficiarioProye());
-//        modeloPersona.setModel(modeloPersona.obtenerbeneficiario(this.vistad.getjComboBoxBeneficiarioProye()));
+        cargarComboBoxBeneficiario();
+
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
         this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
@@ -64,7 +65,7 @@ public class ControllerProyecto {
         this.vistad.getBtnlimpiarProyeBsqa().addActionListener(l -> limpiarBuscadorProyecto());
         this.vistad.getBtnbuscarProye().addActionListener(l -> buscarProyecto());
         this.vistad.getChekBsqProyes().addActionListener(l -> buscarProyecto());
-        this.vistad.getBtnREPORTEGENERALPROYE().addActionListener(l-> reporteGeneral());
+        this.vistad.getBtnREPORTEGENERALPROYE().addActionListener(l -> reporteGeneral());
 
         // eventos tabla
         this.vistad.getjTableDatosProyectos().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -85,7 +86,7 @@ public class ControllerProyecto {
     public void reporteGeneral() {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper",new HashMap());
   }
-    
+ 
     private void proyectoSeleccionado() {
         if (this.vistad.getjTableDatosProyectos().getSelectedRow() != -1) {
             proyecto = modeloTablaProyecto.getFilas().get(this.vistad.getjTableDatosProyectos().getSelectedRow());
@@ -181,8 +182,15 @@ public class ControllerProyecto {
         }
 
     }
-    public void getpersonacombo(JComboBox combopersona){
-        modeloPersona.obtenerbeneficiario(combopersona);
+
+    public void cargarComboBoxBeneficiario() {
+        try {
+            Vector v = new Vector();
+            v.addAll((Collection) modeloProyecto.buscarPersonabene());
+            this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Capturando errores cargando combobox");
+        }
     }
 
     //limipiar y validar
@@ -198,7 +206,6 @@ public class ControllerProyecto {
         this.vistad.getBtnELIMINARPROYE().setEnabled(false);
         this.vistad.getBtnCREARPROYE().setEnabled(true);
     }
-
 
     public void limpiarBuscadorProyecto() {
         this.vistad.getTxtBsqProyectos().setText("");
