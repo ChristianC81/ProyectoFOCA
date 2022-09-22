@@ -62,14 +62,23 @@ public class ControllerUsuario {
     }
 
     public void iniciarControlUsu() {
+        //Opciones CRUD
         this.vistap.getBtnCREARUSU().addActionListener(l -> guardarUsuario());
         this.vistap.getBtnEDITARUSU().addActionListener(l -> editarUsuario());
         this.vistap.getBtnELIMINARUSU().addActionListener(l -> eliminarUsuario());
+        this.vistap.getBtnLIMPIARUSU().addActionListener(l -> limpiarC());
+        
+        //Opciones Reportes
 //        this.vistap.getBtnREPORTEINDIVIDUALUSU().addActionListener(l -> reporteIndividual());
         this.vistap.getBtnREPORTEGENERALUSU().addActionListener(l -> reporteGeneral());
-        this.vistap.getBtnLIMPIARUSU().addActionListener(l -> limpiarC());
+        
+        //Opciones de Busqueda
+        this.vistap.getBtnbuscarUsu().addActionListener(l -> buscarUsuario());
+        this.vistap.getChekBsqUsu().addActionListener(l -> mostrarTodos());
         this.vistap.getBtnlimpiarUsubsq().addActionListener(l -> limpiarB());
         this.vistap.getBtnCANCELARUSU().addActionListener(l -> cancelar());
+        
+        //Tabla de datos
         this.vistap.getjTableDatosUsuario().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaUsuarioModel = this.vistap.getjTableDatosUsuario().getSelectionModel();
         listaUsuarioModel.addListSelectionListener(new ListSelectionListener() {
@@ -80,8 +89,7 @@ public class ControllerUsuario {
                 }
             }
         });
-        this.vistap.getBtnbuscarPer().addActionListener(l -> buscarUsuario());
-        this.vistap.getChekBsqPer().addActionListener(l -> mostrarTodos());
+        txtAyuda();
     }
 
     public void usuarioSeleccionada() {
@@ -122,10 +130,10 @@ public class ControllerUsuario {
             System.out.println("Capturando errores cargando combobox");
         }
     }
-//    //llamar
+    
     public void reporteGeneral() {
-        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGUsuarios.jasper",new HashMap());
-  }
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGUsuarios.jasper", new HashMap());
+    }
 //// public void reporteIndividual() {
 ////        if(usuario!=null){
 ////        Map parametros = new HashMap<>();
@@ -200,7 +208,7 @@ public class ControllerUsuario {
     }
 
     public void mostrarTodos() {
-        if (this.vistap.getChekBsqPer().isSelected()) {
+        if (this.vistap.getChekBsqUsu().isSelected()) {
             cargarDatosUsuarioTbl();
         } else {
             buscarUsuario();
@@ -276,4 +284,9 @@ public class ControllerUsuario {
         return validado;
     }
 
+    public void txtAyuda() {
+        TextPrompt nombreUsu = new TextPrompt("robertoSar3", vistap.getTxtNombreUsu());
+        TextPrompt claveUsu = new TextPrompt("*********", vistap.getTxtClave());
+        TextPrompt busqUsu = new TextPrompt("carlosU12", vistap.getTxtBsqUsuarios());
+    }
 }

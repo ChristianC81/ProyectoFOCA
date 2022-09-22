@@ -6,30 +6,18 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
-import java.math.BigInteger;
 import java.util.HashMap;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.DonacionJpaController;
-import modelo.Persona;
 import modelo.PersonaJpaController;
-import modelo.Producto;
-import modelo.ProductoJpaController;
-import modelo.ProyectoJpaController;
 import modelo.Roles;
 import modelo.RolesJpaController;
-import modelo.Usuario;
 import modelo.Validaciones;
-import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 import proyectofoca.ManagerFactory;
@@ -45,24 +33,19 @@ public class ControllerRolesUsuario {
     RolesJpaController modeloRoles;
     ModeloTablaRoles modeloTroles;
     Roles rol;
-    //JDesktopPane panelEscritorio;
     ListSelectionModel listarolmodel;
     Validaciones validacion;
-
-    public ControllerRolesUsuario(ViewAdministrador vista, ManagerFactory manager) {
-        this.vista = vista;
-        this.manager = manager;
-        this.vista.setExtendedState(MAXIMIZED_BOTH);
-        this.vista.setVisible(true);
-    }
 
     public ControllerRolesUsuario(ViewAdministrador vista, ManagerFactory manager, RolesJpaController modeloRoles) {
         this.vista = vista;
         this.manager = manager;
         this.modeloRoles = modeloRoles;
         this.modeloTroles = new ModeloTablaRoles();
+        
         this.modeloTroles.setFilas(modeloRoles.findRolesEntities());
-
+        this.vista.getjTableDatosROLES().setModel(modeloTroles);
+        
+        iniciarControlRol();
     }
 
     public void iniciarControlRol() {
@@ -91,6 +74,7 @@ public class ControllerRolesUsuario {
         // control de botones inicio
         this.vista.getBtnEDITARROL().setEnabled(false);
         this.vista.getBtnELIMINARROL().setEnabled(false);
+        txtAyuda();
     }
 
     private void rolSeleccionado() {
@@ -236,16 +220,9 @@ public class ControllerRolesUsuario {
         return validado;
     }
 
-    // NO SE QUEJESTO XD
-    public void cargarRolAdministrador() {
-
-    }
-
-    public void cargarRolJefe() {
-        new ControllerJefe(vista, manager, new PersonaJpaController(manager.getEmf()));
-    }
-
-    public void cargarVistaAsistente() {
-        new ControllerAsistente(vista, manager, new PersonaJpaController(manager.getEmf()));
+    public void txtAyuda() {
+        TextPrompt nombreRol = new TextPrompt("Jefe", vista.getjTextFieldNOMBREROL());
+        TextPrompt descripRol = new TextPrompt("Su rol es cumplir las diversas actividades en la area de Administración", vista.getTxaDescripcionROL());
+        TextPrompt codOfer = new TextPrompt("Asistente", vista.getTxtBsqCRITERIOROL());
     }
 }

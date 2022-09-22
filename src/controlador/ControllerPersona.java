@@ -123,8 +123,8 @@ public class ControllerPersona {
 
 //    //llamar
     public void reporteGeneral() {
-        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGPersonas.jasper",new HashMap());
-  }
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGPersonas.jasper", new HashMap());
+    }
 //// public void reporteIndividual() {
 ////        if(persona!=null){
 ////        Map parametros = new HashMap<>();
@@ -173,19 +173,19 @@ public class ControllerPersona {
         persona.setTipovol(this.vistap.getTxtTipoVol().getText());
 
         //Guardar foto
-        try {
-         
-            Image imagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
-            persona.setFoto((Serializable) imagen);
-        } catch (IOException ex) {
-            Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//         
+//            Image imagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
+//            persona.setFoto((Serializable) imagen);
+//        } catch (IOException ex) {
+//            Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         try {
             modeloPersona.create(persona);
         } catch (Exception ex) {
             ex.getMessage();
         }
-        cargarDatosPersonaTbl();
+
         Resouces.success("!Persona Creada!", " Se ha creado con exito \n Persona con Nombre: " + persona.getNombresper());
         limpiarC();
 //        } else {
@@ -196,9 +196,9 @@ public class ControllerPersona {
     public void editarPersona() {
         if (persona != null) {
             try {
-                if (validacionesCamposPersona() == true) {
+//                if (validacionesCamposPersona() == true) {
                 persona.setCedulaper(this.vistap.getTxtcedulaPer().getText());
-                persona.setTipoper((String) this.vistap.getCbxTipoPer().getSelectedItem());
+                persona.setTipoper(this.vistap.getCbxTipoPer().getSelectedItem().toString());
                 persona.setNombresper(this.vistap.getTxtnombrePer().getText());
                 persona.setApellidosper(this.vistap.getTxtapellidoPer().getText());
                 persona.setDireccionper(this.vistap.getTxtdireccionPer().getText());
@@ -234,8 +234,8 @@ public class ControllerPersona {
                 modeloTabla.eliminar(persona);
                 modeloTabla.actualizar(persona);
                 Resouces.success("!Persona Editada!", " Se ha editado con exito \n Persona con Nombre: " + persona.getNombresper());
-                    limpiarC();
-                }
+                limpiarC();
+//                }
             } catch (Exception ex) {
                 Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -284,6 +284,7 @@ public class ControllerPersona {
         this.vistap.getTxtcorreoPer().setText("");
         //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
         this.vistap.getTxtestadocivil().setText("");
+        this.vistap.getTxtsalario().setText("");
         this.vistap.getTxtestrato().setText("");
         this.vistap.getTxtTitulo().setText("");
         this.vistap.getTxthorario().setText("");
@@ -343,8 +344,8 @@ public class ControllerPersona {
                                                                 if (validar.validar_email(this.vistap.getTxtcorreoPer().getText())) {
 
                                                                     //Segunda valid
-                                                                    if (!this.vistap.getRbtMasculino().isSelected()) {
-                                                                        if (!this.vistap.getRbtFemenino().isSelected()) {
+                                                                    if (this.vistap.getButtonGroupGenero().getButtonCount() != 0) {
+                                                                        if (this.vistap.getRbtFemenino().isSelected()) {
 
                                                                             //Segunda valid
                                                                             if (validar.validarTextoSinEspacio(this.vistap.getTxtestadocivil().getText())) {
@@ -423,9 +424,7 @@ public class ControllerPersona {
         } else {
             Resouces.warning("ADVERTENCIA!", "Numero de Cedula Vacio");
         }
-        if (validado == false) {
-            Resouces.error("Error en el Proceso", " No se creo con exito D:");
-        }
+
         return validado;
     }
 

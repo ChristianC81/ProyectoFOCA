@@ -17,9 +17,8 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloTablaPersona extends AbstractTableModel {
 
-    private String[] columnas = {"CÉDULA", "TIPO", "NOMBRES", "APELLIDO", "DIRECCIÓN", "TELÉFONO", "CORREO", "GÉNERO",
-        "FECHA NACIMIENTO", "DIRECCIÓN", "ESTADO CIVIL", "SALARIO",
-        "ESTRATO", "TITULO", "SEGURO", "HORARIO", "PERIODO", "TIPO VOLUNTARIO"};
+    private String[] columnas = {"CÉDULA", "TIPO", "NOMBRES Y APELLIDOS", "GÉNERO",
+        "FECHA NACIMIENTO","FOTO"};
     public static List<Persona> filas;
     private Persona personaSelecionado;
     private int indice;
@@ -54,36 +53,12 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 1:
                 return personaSelecionado.getTipoper();
             case 2:
-                return personaSelecionado.getNombresper();
+                return personaSelecionado.getNombresper()+""+personaSelecionado.getApellidosper();
             case 3:
-                return personaSelecionado.getApellidosper();
+                return  personaSelecionado.getGeneroper();
             case 4:
-                return personaSelecionado.getDireccionper();
-            case 5:
-                return personaSelecionado.getTelefonoper();
-            case 6:
-                return personaSelecionado.getCorreoper();
-            case 7:
-                return personaSelecionado.getGeneroper();
-            case 8:
                 return personaSelecionado.getFechanacimiento();
-            case 9:
-                return personaSelecionado.getEstadocivil();
-            case 10:
-                return personaSelecionado.getSalariobenefac();
-            case 11:
-                return personaSelecionado.getEstratosbenefi();
-            case 12:
-                return personaSelecionado.getTitulo();
-            case 13:
-                return personaSelecionado.getSeguro();
-            case 14:
-                return personaSelecionado.getHorario();
-            case 15:
-                return personaSelecionado.getPeriodovol();
-            case 16:
-                return personaSelecionado.getTipovol();
-            case 17:
+            case 6:
                 return personaSelecionado.getFoto();
             default:
                 return null;

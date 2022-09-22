@@ -34,6 +34,7 @@ public class ControllerLogin {
         this.vistaL.setLocationRelativeTo(null);
         this.vistaL.setVisible(true);
         iniciaControl();
+        txtAyuda();
     }
 
     public void iniciaControl() {
@@ -114,5 +115,9 @@ public class ControllerLogin {
             Resouces.warning("Campos Vacios", "Es necesario llenar el nombre de usuario");
             return false;
         }
+    }
+    public void txtAyuda() {
+        TextPrompt nombreUsu = new TextPrompt("admin", vistaL.getTxtusuario());
+        TextPrompt claveUsu = new TextPrompt("*********", vistaL.getTxtPass());
     }
 }
