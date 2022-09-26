@@ -38,7 +38,7 @@ public class ControllerJefe extends ControllerPersona {
         cper.iniciarControlPer();
 
         cdona = new ControllerDonacion(vistap, manager, new DonacionJpaController(manager.getEmf()));
-        cdona.iniciarControDonacion();
+        cdona.iniciarControlDonacion();
         cproy = new ControllerProyecto(vistap, manager, new ProyectoJpaController(manager.getEmf()));
         cproy.iniciarControlProyecto();
         cins = new ControllerInscripcion(vistap, manager, new InscripcionJpaController(manager.getEmf()));

@@ -52,16 +52,17 @@ public class ControllerAdministrador extends ControllerPersona {
         cins = new ControllerInscripcion(vistap, manager, new InscripcionJpaController(manager.getEmf()));
         cins.iniciarControlInscripcion();
         cdon = new ControllerDonacion(vistap, manager, new DonacionJpaController(manager.getEmf()));
-        cdon.iniciarControDonacion();
+        cdon.iniciarControlDonacion();
         cprod = new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf()));
         cprod.iniciarControlProd();
 
-        controldeEventosAdmin(vistap);        
+        controldeEventosAdmin(vistap);
         listaTipoPer();
         verPass();
     }
 
     public void controldeEventosAdmin(ViewAdministrador vistap) {
+        
         vistap.getBtnReportes().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(0));
         vistap.getBtnROLES().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(1));
         vistap.getBtnUsuarios().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(2));
@@ -72,6 +73,7 @@ public class ControllerAdministrador extends ControllerPersona {
         vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
         vistap.getBtnAyuda().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
         vistap.getBtnSalir().addActionListener(l -> Regresar());
+        vistap.getCbxTipoPer().addActionListener(l -> cargarOpcRol());
     }
 
     public void Regresar() {
@@ -88,7 +90,80 @@ public class ControllerAdministrador extends ControllerPersona {
         vistap.getCbxTipoPer().addItem("Beneficiario");
         vistap.getCbxTipoPer().addItem("Voluntario");
     }
-     private void verPass() {
+
+    public void txtComp() {
+       
+        vistap.getTxtcedulaPer().setEnabled(true);
+        vistap.getTxtnombrePer().setEnabled(true);
+        vistap.getTxtapellidoPer().setEnabled(true);
+        vistap.getTxttelefono().setEnabled(true);
+        vistap.getChkseguroiees().setEnabled(true);
+        vistap.getTxtdireccionPer().setEnabled(true);
+        vistap.getTxtTitulo().setEnabled(true);
+        vistap.getTxtestadocivil().setEnabled(true);
+        vistap.getTxtcorreoPer().setEnabled(true);
+        vistap.getTxthorario().setEnabled(true);
+        vistap.getTxtsalario().setEnabled(true);
+        vistap.getTxtestrato().setEnabled(true);
+        vistap.getTxtperiodo().setEnabled(true);
+        vistap.getTxtTipoVol().setEnabled(true);
+        
+    }
+
+    public void cargarOpcRol() {
+        if (this.vistap.getCbxTipoPer().getSelectedIndex() == 1) {
+            txtComp();
+            vistap.getTxtestrato().setEnabled(false);
+            vistap.getTxtperiodo().setEnabled(false);
+            vistap.getTxthorario().setEnabled(false);
+            vistap.getTxtsalario().setEnabled(false);
+            vistap.getTxtTipoVol().setEnabled(false);
+        } else {
+            if (this.vistap.getCbxTipoPer().getSelectedIndex() == 2) {
+                txtComp();
+                vistap.getTxtestrato().setEnabled(false);
+                vistap.getTxtperiodo().setEnabled(false);
+                vistap.getTxthorario().setEnabled(false);
+                vistap.getTxtsalario().setEnabled(false);
+                vistap.getTxtTipoVol().setEnabled(false);
+            } else {
+                if (this.vistap.getCbxTipoPer().getSelectedIndex() == 3) {
+                    txtComp();
+                    vistap.getTxtestrato().setEnabled(false);
+                    vistap.getTxtperiodo().setEnabled(false);
+                    vistap.getTxthorario().setEnabled(false);
+                    vistap.getTxtsalario().setEnabled(false);
+                    vistap.getTxtTipoVol().setEnabled(false);
+                } else {
+                    if (this.vistap.getCbxTipoPer().getSelectedIndex() == 4) {
+                        txtComp();
+                        vistap.getTxtestrato().setEnabled(false);
+                        vistap.getTxtperiodo().setEnabled(false);
+                        vistap.getTxthorario().setEnabled(false);
+                        vistap.getTxtTipoVol().setEnabled(false);
+                        vistap.getChkseguroiees().setEnabled(false);
+                    } else {
+                        if (this.vistap.getCbxTipoPer().getSelectedIndex() == 5) {
+                            txtComp();
+                            vistap.getTxtsalario().setEnabled(false);
+                            vistap.getTxtperiodo().setEnabled(false);
+                            vistap.getTxthorario().setEnabled(false);
+                            vistap.getTxtTipoVol().setEnabled(false);
+                            vistap.getChkseguroiees().setEnabled(false);
+                        } else {
+                            if (this.vistap.getCbxTipoPer().getSelectedIndex() == 6) {
+                                txtComp();
+                                vistap.getChkseguroiees().setEnabled(false);
+                                vistap.getTxtsalario().setEnabled(false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void verPass() {
 
         MouseListener lmouse = new MouseListener() {
             char i;

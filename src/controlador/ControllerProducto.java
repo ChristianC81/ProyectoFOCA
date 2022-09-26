@@ -16,9 +16,11 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import modelo.Donacion;
 import modelo.DonacionJpaController;
 import modelo.Producto;
 import modelo.ProductoJpaController;
+import modelo.Proyecto;
 import modelo.ProyectoJpaController;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
@@ -84,6 +86,7 @@ public class ControllerProducto {
     public void cargarComboBoxDona() {
         try {
             Vector v = new Vector();
+             v.add(new String("Seleccione un Detalle de Donación"));
             v.addAll(new DonacionJpaController(manager.getEmf()).findDonacionEntities());
             this.vistad.getCbxIdDonacion().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -108,7 +111,7 @@ public class ControllerProducto {
             //cargar los datos a la vista
             this.vistad.getTxtTipoProducto().setText(producto.getTipoprod());
             this.vistad.getjSpinnerCantidad().setValue(producto.getCantidadprod());
-            this.vistad.getCbxProyecto().setSelectedItem(producto.getIdproyprod().getNombreproy());
+            this.vistad.getCbxProyecto().setSelectedItem(producto.getIdproyprod());
             this.vistad.getCbxIdDonacion().setSelectedItem(producto.getIddonaprod());
             // control de botones seleccionados
             this.vistad.getBtnEDITARPROD().setEnabled(true);
@@ -124,14 +127,14 @@ public class ControllerProducto {
             Resouces.warning("ATENCIÓN!!!", "Debe llenar todos los campos ¬¬");
         } else {
             producto = new Producto();
-            int id = 1;
-            BigDecimal bid = BigDecimal.valueOf(id);
-            producto.setIdprod(bid);
+//            int id = 1;
+//            BigDecimal bid = BigDecimal.valueOf(id);
             int num = (int) this.vistad.getjSpinnerCantidad().getValue();
             BigInteger bint = BigInteger.valueOf(num);
-            System.out.println("sifuncionaaaaaaaaaaaa");
             producto.setCantidadprod(bint);
             producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
+            producto.setIddonaprod((Donacion) this.vistad.getCbxIdDonacion().getSelectedItem());
+            producto.setIdproyprod((Proyecto) this.vistad.getCbxProyecto().getSelectedItem());
             try {
                 modelPd.create(producto);
             } catch (PreexistingEntityException ex) {
@@ -150,6 +153,8 @@ public class ControllerProducto {
         if (producto != null) {
             producto.setCantidadprod((BigInteger) this.vistad.getjSpinnerCantidad().getValue());
             producto.setTipoprod(this.vistad.getTxtTipoProducto().getText());
+            producto.setIddonaprod((Donacion) this.vistad.getCbxIdDonacion().getSelectedItem());
+            producto.setIdproyprod((Proyecto) this.vistad.getCbxProyecto().getSelectedItem());
             try {
                 modelPd.edit(producto);
                 modeloTablaProd.eliminar(producto);

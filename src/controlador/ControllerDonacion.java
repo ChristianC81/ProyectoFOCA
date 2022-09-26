@@ -45,7 +45,7 @@ public class ControllerDonacion {
         txtAyuda();
     }
 
-    public void iniciarControDonacion() {
+    public void iniciarControlDonacion() {
         this.vistaDona.getBtnCREARDONA().addActionListener(c -> crearDonacion());
         this.vistaDona.getBtnEDITARDONA().addActionListener(e -> editarDonacion());
         this.vistaDona.getBtnELIMINARDONA().addActionListener(el -> eliminarDonacion());
@@ -76,7 +76,7 @@ public class ControllerDonacion {
     public void cargarComboBoxBenefaDONA() {
         try {
             Vector v = new Vector();
-             v.add(new String("Seleccione un Benefactor"));
+            v.add(new String("Seleccione un Benefactor"));
             v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
             this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -105,7 +105,7 @@ public class ControllerDonacion {
         if (camposVacios() == false) {
             Resouces.warning("ATENCIÓN!!", "Por favor, llene todos los campos");
         } else {
-            if (validarCampos() == true) {
+            if (validarCampos() == false) {
                 Resouces.warning("Atención!!", "Por favor, llene todos los campos");
             } else {
                 dona = new Donacion();
@@ -129,29 +129,33 @@ public class ControllerDonacion {
     //EDITAR PERSONA
 
     public void editarDonacion() {
-        if (validarCampos() == false) {
-            Resouces.warning("Atención!!", "Por favor, llene todos los campos");
+        if (camposVacios() == false) {
+            Resouces.warning("ATENCIÓN!!", "Por favor, llene todos los campos");
         } else {
-            if (dona != null) {
-                dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
-                //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
-                dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
-                dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
-                try {
-                    int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
-                    if (select == JOptionPane.YES_OPTION) {
-                        modeloDonacion.edit(dona);
-                        modeloTdona.eliminar(dona);
-                        modeloTdona.actualizar(dona);
-                        Resouces.success("Atención!!", "Producto Editado Exitosamente");
-                    }
-                } catch (Exception e) {
-                    Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
-                }
-                limpiarDonaciones();
+            if (validarCampos() == false) {
+                Resouces.warning("Atención!!", "Por favor, llene todos los campos");
             } else {
-                Resouces.error(" ATENCIÓN!!!", "No se pudo editar el producto :<!");
-                limpiarDonaciones();
+                if (dona != null) {
+                    dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
+                    //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
+                    dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
+                    dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
+                    try {
+                        int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
+                        if (select == JOptionPane.YES_OPTION) {
+                            modeloDonacion.edit(dona);
+                            modeloTdona.eliminar(dona);
+                            modeloTdona.actualizar(dona);
+                            Resouces.success("Atención!!", "Producto Editado Exitosamente");
+                        }
+                    } catch (Exception e) {
+                        Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
+                    }
+                    limpiarDonaciones();
+                } else {
+                    Resouces.error(" ATENCIÓN!!!", "No se pudo editar el producto :<!");
+                    limpiarDonaciones();
+                }
             }
         }
     }
@@ -162,13 +166,9 @@ public class ControllerDonacion {
             try {
                 int select = JOptionPane.showConfirmDialog(vistaDona, "¿ESTÁS SEGUR@ DE EDITAR LOS DATOS DE ESTA DONACIÓN?");
                 if (select == JOptionPane.YES_OPTION) {
-                    try {
-                        modeloDonacion.destroy(dona.getIddona());
-                        modeloTdona.eliminar(dona);
-                        //modeloTdona.actualizar(dona);
-                    } catch (IllegalOrphanException ex) {
-                        Logger.getLogger(ControllerDonacion.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    modeloDonacion.destroy(dona.getIddona());
+                    modeloTdona.eliminar(dona);
+                    //modeloTdona.actualizar(dona);
                     limpiarDonaciones();
                     Resouces.success("Atención!!", "Donación Eliminado Exitosamente");
                 }

@@ -6,6 +6,7 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
+import modelo.DonacionJpaController;
 import modelo.PersonaJpaController;
 import modelo.ProductoJpaController;
 import modelo.UsuarioJpaController;
@@ -21,7 +22,7 @@ public class ControllerAsistente extends ControllerPersona {
     //Benefactores, Beneficiarios y Voluntarios
     ControllerPersona cper;
 
-    ControllerProducto cprod;
+    ControllerDonacion cdona;
 
     //Login
     ControllerLogin clog;
@@ -33,15 +34,15 @@ public class ControllerAsistente extends ControllerPersona {
         vistap.getBtnROLES().setEnabled(false);
         vistap.getBtnUsuarios().setEnabled(false);
         vistap.getBtnInscripciones().setEnabled(false);
-        vistap.getBtnDonaciones().setEnabled(false);
+        vistap.getBtnProductos().setEnabled(false);
         vistap.getBtnproyectos().setEnabled(false);
         
         //Crear y Modificar Benefactores, Beneficiarios y Voluntarios
         cper = new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
         cper.iniciarControlPer();
 
-        cprod = new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf()));
-        cprod.iniciarControlProd();
+        cdona = new ControllerDonacion(vistap, manager, new DonacionJpaController(manager.getEmf()));
+        cdona.iniciarControlDonacion();
         
         controldeEventos(vistap);
         listaTipoPer();
@@ -51,7 +52,7 @@ public class ControllerAsistente extends ControllerPersona {
 
         vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));
 
-        vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
+        vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
 
         vistap.getBtnSalir().addActionListener(l -> Regresar());
     }

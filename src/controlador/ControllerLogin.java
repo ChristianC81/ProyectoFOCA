@@ -4,21 +4,16 @@
  */
 package controlador;
 
-import Vista.InicioSistema;
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileOutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.*;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
@@ -71,21 +66,20 @@ public class ControllerLogin {
                     if (user.getIdrol().getNombrerol().equals("Administrador")) {
                         new ControllerAdministrador(vista, manager, new PersonaJpaController(manager.getEmf()));
                         Resouces.success("!BIENVENIDO!", "Administrador: " + user.getIdpersona().getNombresper());
+                       sendCorreo(user.getIdrol().getNombrerol(), user.getIdpersona().getNombresper().concat(" " + user.getIdpersona().getApellidosper()), user.getIdpersona().getCorreoper());
                         vistaL.dispose();
-                        sendCorreo(user.getIdrol().getNombrerol(), user.getIdpersona().getNombresper().concat(" " + user.getIdpersona().getApellidosper()), "christiancrespoort@gmail.com");
-
                     } else {
                         if (user.getIdrol().getNombrerol().equals("Jefe")) {
                             new ControllerJefe(vista, manager, new PersonaJpaController(manager.getEmf()));
                             Resouces.success("!BIENVENIDO!", "Jefe: " + user.getIdpersona().getNombresper());
-                            vistaL.dispose();
                             sendCorreo(user.getIdrol().getNombrerol(), user.getIdpersona().getNombresper().concat(" " + user.getIdpersona().getApellidosper()), user.getIdpersona().getCorreoper());
+                            vistaL.dispose();
                         } else {
                             if (user.getIdrol().getNombrerol().equals("Asistente")) {
                                 new ControllerAsistente(vista, manager, new PersonaJpaController(manager.getEmf()));
                                 Resouces.success("!BIENVENIDO!", "Asistente: " + user.getIdpersona().getNombresper());
+                                    sendCorreo(user.getIdrol().getNombrerol(), user.getIdpersona().getNombresper().concat(" " + user.getIdpersona().getApellidosper()), user.getIdpersona().getCorreoper());
                                 vistaL.dispose();
-                                sendCorreo(user.getIdrol().getNombrerol(), user.getIdpersona().getNombresper().concat(" " + user.getIdpersona().getApellidosper()), user.getIdpersona().getCorreoper());
                             }
                         }
                     }
@@ -103,15 +97,9 @@ public class ControllerLogin {
     }
 
     public void salirLogin() {
-        //JOptionPane.showMessageDialog(vistaL, "~Saliendo del programa~");
         System.exit(0);
     }
-
-    public void regresar() {
-        vistaL.dispose();
-        vistaL.setVisible(true);
-    }
-
+    
     public void limpiarLogin() {
         vistaL.getTxtusuario().setText("");
         vistaL.getTxtPass().setText("");
@@ -221,6 +209,5 @@ public class ControllerLogin {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 }

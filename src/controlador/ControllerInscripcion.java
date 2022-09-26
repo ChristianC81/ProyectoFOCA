@@ -98,11 +98,12 @@ public class ControllerInscripcion {
     }
 
     public void guardarInscripcion() {
-        inscripcion = new Inscripcion();
-        inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
-        inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-        inscripcion.setNdiasparticipacionins((Integer) this.vistad.getjSpinnerDiasParticipacion().getValue());
         try {
+            inscripcion = new Inscripcion();
+            inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
+            inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
+            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+
             modeloInscripcion.create(inscripcion);
             modeloTablaInscripcion.agregar(inscripcion);
             Resouces.success(" ATENCIÓN!!!", "Inscripción creado correctamente");
@@ -118,7 +119,7 @@ public class ControllerInscripcion {
         if (inscripcion != null) {
             inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
             inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-            inscripcion.setNdiasparticipacionins((Integer) this.vistad.getjSpinnerDiasParticipacion().getValue());
+            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
             try {
                 modeloInscripcion.edit(inscripcion);
             } catch (Exception ex) {
@@ -132,24 +133,18 @@ public class ControllerInscripcion {
 
     }
 
-    public void eliminarInscripcion() {
-        int select = JOptionPane.showConfirmDialog(vistad, "¿Estas seguro de eliminar este proyecto?");
-        if (select == JOptionPane.YES_OPTION) {
-            if (inscripcion != null) {
-                try {
-
-                    modeloInscripcion.destroy(inscripcion.getIdins());
-
-                } catch (NonexistentEntityException ex) {
-                    Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                modeloTablaInscripcion.eliminar(inscripcion);
-                modeloTablaInscripcion.actualizar(inscripcion);
-                Resouces.success(" ATENCIÓN!!!", "Inscripción elminado correctamente");
-                limpiar();
+ public void eliminarInscripcion() {
+        if (inscripcion != null) {
+            try {
+                modeloInscripcion.destroy(inscripcion.getIdins());
+            } catch (NonexistentEntityException ex) {
+                Logger.getLogger(ControllerProducto.class.getName()).log(Level.SEVERE, null, ex);
             }
+            modeloTablaInscripcion.eliminar(inscripcion);
+            modeloTablaInscripcion.actualizar(inscripcion);
+            Resouces.success(" ATENCIÓN!!!", "Inscripción elminado correctamente");
+            limpiar();
         }
-
     }
 
     public void buscarInscripcionn() {
@@ -172,7 +167,7 @@ public class ControllerInscripcion {
     public void cargarComboBoxVoluntario() {
         try {
             Vector v = new Vector();
-             v.add(new String("Seleccione un Voluntario"));
+            v.add(new String("Seleccione un Voluntario"));
             v.addAll((Collection) modeloInscripcion.buscarPersonavolu());
             this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -183,7 +178,7 @@ public class ControllerInscripcion {
     public void cargarComboBoxProyecto() {
         try {
             Vector v = new Vector();
-             v.add(new String("Seleccione un Proyecto"));
+            v.add(new String("Seleccione un Proyecto"));
             v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
             this.vistad.getCbxCodigoProyecto().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {

@@ -197,11 +197,12 @@ public class UsuarioJpaController implements Serializable {
             em.close();
         }
     }
-    public Usuario buscarUsuario(String usuario,String clave){
+
+    public Usuario buscarUsuario(String usuario, String clave) {
         Usuario u = null;
-        for(Usuario user:findUsuarioEntities()){
-            if(user.getNombreusuario().equals(usuario)&&user.getClave().equals(clave)){
-                u=user;
+        for (Usuario user : findUsuarioEntities()) {
+            if (user.getNombreusuario().equals(usuario) && user.getClave().equals(clave)) {
+                u = user;
             }
         }
         return u;
@@ -218,7 +219,7 @@ public class UsuarioJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-}
+        }
     }
-    
+
 }

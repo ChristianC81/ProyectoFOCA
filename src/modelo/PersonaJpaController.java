@@ -321,38 +321,7 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
-//Lista de Beneficiarios
 
-//    public List<Persona> findBeneficiariosEntities() {
-//        return findBeneficiariosEntities(true, -1, -1);
-//    }
-//
-//    public List<Persona> findBeneficiariosEntities(int maxResults, int firstResult) {
-//        return findBeneficiariosEntities(false, maxResults, firstResult);
-//    }
-//
-//    private List<Persona> findBeneficiariosEntities(boolean all, int maxResults, int firstResult) {
-//        EntityManager em = getEntityManager();
-//
-//        String queryStringBaseAll = "Select nombresper || apellidosper from persona WHERE tipoper='Beneficiario' ";
-//
-//        List<Persona> listBeneficiarios = null;
-//        try {
-//
-//            listBeneficiarios = em.createNativeQuery(queryStringBaseAll, Persona.class).getResultList();
-//        } catch (Exception ex) {
-//
-//        }
-//
-//        if (listBeneficiarios == null) {
-//            listBeneficiarios = new ArrayList<>();
-//        }
-//        for (int i = 0; i < listBeneficiarios.size(); i++) {
-//            System.out.println(listBeneficiarios.get(i).getNombresper());
-//        }
-//        return listBeneficiarios;
-//
-//    }
     public Persona findPersona(BigDecimal id) {
         EntityManager em = getEntityManager();
         try {
@@ -374,7 +343,7 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
-
+    
     public List<Persona> buscarPersona(String cedula) {
         System.out.println(cedula);
         EntityManager em = getEntityManager();
@@ -386,7 +355,7 @@ public class PersonaJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
 
     public void obtenerbeneficiario(JComboBox<Persona> comboper) {

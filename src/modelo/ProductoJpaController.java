@@ -6,16 +6,14 @@ package modelo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.TypedQuery;
-import modelo.exceptions.IllegalOrphanException;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -34,29 +32,15 @@ public class ProductoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Producto producto) throws IllegalOrphanException, PreexistingEntityException, Exception {
-        List<String> illegalOrphanMessages = null;
-        Donacion donacionOrphanCheck = producto.getDonacion();
-        if (donacionOrphanCheck != null) {
-            Producto oldProductoOfDonacion = donacionOrphanCheck.getProducto();
-            if (oldProductoOfDonacion != null) {
-                if (illegalOrphanMessages == null) {
-                    illegalOrphanMessages = new ArrayList<String>();
-                }
-                illegalOrphanMessages.add("The Donacion " + donacionOrphanCheck + " already has an item of type Producto whose donacion column cannot be null. Please make another selection for the donacion field.");
-            }
-        }
-        if (illegalOrphanMessages != null) {
-            throw new IllegalOrphanException(illegalOrphanMessages);
-        }
+    public void create(Producto producto) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Donacion donacion = producto.getDonacion();
-            if (donacion != null) {
-                donacion = em.getReference(donacion.getClass(), donacion.getIddona());
-                producto.setDonacion(donacion);
+            Donacion iddonaprod = producto.getIddonaprod();
+            if (iddonaprod != null) {
+                iddonaprod = em.getReference(iddonaprod.getClass(), iddonaprod.getIddona());
+                producto.setIddonaprod(iddonaprod);
             }
             Proyecto idproyprod = producto.getIdproyprod();
             if (idproyprod != null) {
@@ -64,9 +48,9 @@ public class ProductoJpaController implements Serializable {
                 producto.setIdproyprod(idproyprod);
             }
             em.persist(producto);
-            if (donacion != null) {
-                donacion.setProducto(producto);
-                donacion = em.merge(donacion);
+            if (iddonaprod != null) {
+                iddonaprod.getProductoList().add(producto);
+                iddonaprod = em.merge(iddonaprod);
             }
             if (idproyprod != null) {
                 idproyprod.getProductoList().add(producto);
@@ -85,45 +69,32 @@ public class ProductoJpaController implements Serializable {
         }
     }
 
-    public void edit(Producto producto) throws IllegalOrphanException, NonexistentEntityException, Exception {
+    public void edit(Producto producto) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             Producto persistentProducto = em.find(Producto.class, producto.getIdprod());
-            Donacion donacionOld = persistentProducto.getDonacion();
-            Donacion donacionNew = producto.getDonacion();
+            Donacion iddonaprodOld = persistentProducto.getIddonaprod();
+            Donacion iddonaprodNew = producto.getIddonaprod();
             Proyecto idproyprodOld = persistentProducto.getIdproyprod();
             Proyecto idproyprodNew = producto.getIdproyprod();
-            List<String> illegalOrphanMessages = null;
-            if (donacionNew != null && !donacionNew.equals(donacionOld)) {
-                Producto oldProductoOfDonacion = donacionNew.getProducto();
-                if (oldProductoOfDonacion != null) {
-                    if (illegalOrphanMessages == null) {
-                        illegalOrphanMessages = new ArrayList<String>();
-                    }
-                    illegalOrphanMessages.add("The Donacion " + donacionNew + " already has an item of type Producto whose donacion column cannot be null. Please make another selection for the donacion field.");
-                }
-            }
-            if (illegalOrphanMessages != null) {
-                throw new IllegalOrphanException(illegalOrphanMessages);
-            }
-            if (donacionNew != null) {
-                donacionNew = em.getReference(donacionNew.getClass(), donacionNew.getIddona());
-                producto.setDonacion(donacionNew);
+            if (iddonaprodNew != null) {
+                iddonaprodNew = em.getReference(iddonaprodNew.getClass(), iddonaprodNew.getIddona());
+                producto.setIddonaprod(iddonaprodNew);
             }
             if (idproyprodNew != null) {
                 idproyprodNew = em.getReference(idproyprodNew.getClass(), idproyprodNew.getIdproy());
                 producto.setIdproyprod(idproyprodNew);
             }
             producto = em.merge(producto);
-            if (donacionOld != null && !donacionOld.equals(donacionNew)) {
-                donacionOld.setProducto(null);
-                donacionOld = em.merge(donacionOld);
+            if (iddonaprodOld != null && !iddonaprodOld.equals(iddonaprodNew)) {
+                iddonaprodOld.getProductoList().remove(producto);
+                iddonaprodOld = em.merge(iddonaprodOld);
             }
-            if (donacionNew != null && !donacionNew.equals(donacionOld)) {
-                donacionNew.setProducto(producto);
-                donacionNew = em.merge(donacionNew);
+            if (iddonaprodNew != null && !iddonaprodNew.equals(iddonaprodOld)) {
+                iddonaprodNew.getProductoList().add(producto);
+                iddonaprodNew = em.merge(iddonaprodNew);
             }
             if (idproyprodOld != null && !idproyprodOld.equals(idproyprodNew)) {
                 idproyprodOld.getProductoList().remove(producto);
@@ -162,10 +133,10 @@ public class ProductoJpaController implements Serializable {
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The producto with id " + id + " no longer exists.", enfe);
             }
-            Donacion donacion = producto.getDonacion();
-            if (donacion != null) {
-                donacion.setProducto(null);
-                donacion = em.merge(donacion);
+            Donacion iddonaprod = producto.getIddonaprod();
+            if (iddonaprod != null) {
+                iddonaprod.getProductoList().remove(producto);
+                iddonaprod = em.merge(iddonaprod);
             }
             Proyecto idproyprod = producto.getIdproyprod();
             if (idproyprod != null) {

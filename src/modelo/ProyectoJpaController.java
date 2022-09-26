@@ -11,12 +11,10 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
-import javax.swing.JComboBox;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -270,7 +268,7 @@ public class ProyectoJpaController implements Serializable {
             em.close();
         }
     }
-
+    
     public List<Proyecto> buscarProyecto(String nombreproye) {
         EntityManager em = getEntityManager();
         try {
@@ -280,7 +278,7 @@ public class ProyectoJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
 
     public List<Persona> buscarPersonabene() {

@@ -7,8 +7,8 @@ package modelo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,11 +16,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -50,8 +51,8 @@ public class Donacion implements Serializable {
     private Date fechaentregadona;
     @Column(name = "MOTIVODONA")
     private String motivodona;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "donacion")
-    private Producto producto;
+    @OneToMany(mappedBy = "iddonaprod")
+    private List<Producto> productoList;
     @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
     @ManyToOne
     private Persona idpersona;
@@ -95,12 +96,13 @@ public class Donacion implements Serializable {
         this.motivodona = motivodona;
     }
 
-    public Producto getProducto() {
-        return producto;
+    @XmlTransient
+    public List<Producto> getProductoList() {
+        return productoList;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setProductoList(List<Producto> productoList) {
+        this.productoList = productoList;
     }
 
     public Persona getIdpersona() {
@@ -133,7 +135,7 @@ public class Donacion implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Donacion[ iddona=" + iddona + " ]";
+        return detalleproductodona;
     }
     
 }

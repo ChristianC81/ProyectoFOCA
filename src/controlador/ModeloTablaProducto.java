@@ -15,7 +15,7 @@ import modelo.Producto;
  */
 public class ModeloTablaProducto extends AbstractTableModel {
 
-    private String[] columnas = {"TIPO", "CANTIDAD", "PROYECTO", "DONACIÓN"};
+    private String[] columnas = {"TIPO", "CANTIDAD", "DONACIÓN", "PROYECTO"};
     public static List<Producto> filas;
     private Producto productoSeleccionado;
     private int indice;
@@ -49,9 +49,9 @@ public class ModeloTablaProducto extends AbstractTableModel {
             case 1:
                 return productoSeleccionado.getCantidadprod();
             case 2:
-                return productoSeleccionado.getIdproyprod().getNombreproy();
-            case 3:
                 return productoSeleccionado.getIddonaprod();
+            case 3:
+                return productoSeleccionado.getIdproyprod();
             default:
                 return null;
         }

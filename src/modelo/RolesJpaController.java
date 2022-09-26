@@ -202,6 +202,6 @@ public class RolesJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-        }
+}
     }
 }

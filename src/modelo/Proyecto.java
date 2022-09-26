@@ -156,7 +156,7 @@ public class Proyecto implements Serializable {
         return true;
     }
 
-    @Override
+ @Override
     public String toString() {
         return nombreproy;
     }

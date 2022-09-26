@@ -15,7 +15,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
-import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import modelo.exceptions.PreexistingEntityException;
 
@@ -35,33 +34,37 @@ public class DonacionJpaController implements Serializable {
     }
 
     public void create(Donacion donacion) throws PreexistingEntityException, Exception {
+        if (donacion.getProductoList() == null) {
+            donacion.setProductoList(new ArrayList<Producto>());
+        }
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Producto producto = donacion.getProducto();
-            if (producto != null) {
-                producto = em.getReference(producto.getClass(), producto.getIdprod());
-                donacion.setProducto(producto);
-            }
             Persona idpersona = donacion.getIdpersona();
             if (idpersona != null) {
                 idpersona = em.getReference(idpersona.getClass(), idpersona.getIdper());
                 donacion.setIdpersona(idpersona);
             }
-            em.persist(donacion);
-            if (producto != null) {
-                Donacion oldDonacionOfProducto = producto.getDonacion();
-                if (oldDonacionOfProducto != null) {
-                    oldDonacionOfProducto.setProducto(null);
-                    oldDonacionOfProducto = em.merge(oldDonacionOfProducto);
-                }
-                producto.setDonacion(donacion);
-                producto = em.merge(producto);
+            List<Producto> attachedProductoList = new ArrayList<Producto>();
+            for (Producto productoListProductoToAttach : donacion.getProductoList()) {
+                productoListProductoToAttach = em.getReference(productoListProductoToAttach.getClass(), productoListProductoToAttach.getIdprod());
+                attachedProductoList.add(productoListProductoToAttach);
             }
+            donacion.setProductoList(attachedProductoList);
+            em.persist(donacion);
             if (idpersona != null) {
                 idpersona.getDonacionList().add(donacion);
                 idpersona = em.merge(idpersona);
+            }
+            for (Producto productoListProducto : donacion.getProductoList()) {
+                Donacion oldIddonaprodOfProductoListProducto = productoListProducto.getIddonaprod();
+                productoListProducto.setIddonaprod(donacion);
+                productoListProducto = em.merge(productoListProducto);
+                if (oldIddonaprodOfProductoListProducto != null) {
+                    oldIddonaprodOfProductoListProducto.getProductoList().remove(productoListProducto);
+                    oldIddonaprodOfProductoListProducto = em.merge(oldIddonaprodOfProductoListProducto);
+                }
             }
             em.getTransaction().commit();
         } catch (Exception ex) {
@@ -76,44 +79,28 @@ public class DonacionJpaController implements Serializable {
         }
     }
 
-    public void edit(Donacion donacion) throws IllegalOrphanException, NonexistentEntityException, Exception {
+    public void edit(Donacion donacion) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             Donacion persistentDonacion = em.find(Donacion.class, donacion.getIddona());
-            Producto productoOld = persistentDonacion.getProducto();
-            Producto productoNew = donacion.getProducto();
             Persona idpersonaOld = persistentDonacion.getIdpersona();
             Persona idpersonaNew = donacion.getIdpersona();
-            List<String> illegalOrphanMessages = null;
-            if (productoOld != null && !productoOld.equals(productoNew)) {
-                if (illegalOrphanMessages == null) {
-                    illegalOrphanMessages = new ArrayList<String>();
-                }
-                illegalOrphanMessages.add("You must retain Producto " + productoOld + " since its donacion field is not nullable.");
-            }
-            if (illegalOrphanMessages != null) {
-                throw new IllegalOrphanException(illegalOrphanMessages);
-            }
-            if (productoNew != null) {
-                productoNew = em.getReference(productoNew.getClass(), productoNew.getIdprod());
-                donacion.setProducto(productoNew);
-            }
+            List<Producto> productoListOld = persistentDonacion.getProductoList();
+            List<Producto> productoListNew = donacion.getProductoList();
             if (idpersonaNew != null) {
                 idpersonaNew = em.getReference(idpersonaNew.getClass(), idpersonaNew.getIdper());
                 donacion.setIdpersona(idpersonaNew);
             }
-            donacion = em.merge(donacion);
-            if (productoNew != null && !productoNew.equals(productoOld)) {
-                Donacion oldDonacionOfProducto = productoNew.getDonacion();
-                if (oldDonacionOfProducto != null) {
-                    oldDonacionOfProducto.setProducto(null);
-                    oldDonacionOfProducto = em.merge(oldDonacionOfProducto);
-                }
-                productoNew.setDonacion(donacion);
-                productoNew = em.merge(productoNew);
+            List<Producto> attachedProductoListNew = new ArrayList<Producto>();
+            for (Producto productoListNewProductoToAttach : productoListNew) {
+                productoListNewProductoToAttach = em.getReference(productoListNewProductoToAttach.getClass(), productoListNewProductoToAttach.getIdprod());
+                attachedProductoListNew.add(productoListNewProductoToAttach);
             }
+            productoListNew = attachedProductoListNew;
+            donacion.setProductoList(productoListNew);
+            donacion = em.merge(donacion);
             if (idpersonaOld != null && !idpersonaOld.equals(idpersonaNew)) {
                 idpersonaOld.getDonacionList().remove(donacion);
                 idpersonaOld = em.merge(idpersonaOld);
@@ -121,6 +108,23 @@ public class DonacionJpaController implements Serializable {
             if (idpersonaNew != null && !idpersonaNew.equals(idpersonaOld)) {
                 idpersonaNew.getDonacionList().add(donacion);
                 idpersonaNew = em.merge(idpersonaNew);
+            }
+            for (Producto productoListOldProducto : productoListOld) {
+                if (!productoListNew.contains(productoListOldProducto)) {
+                    productoListOldProducto.setIddonaprod(null);
+                    productoListOldProducto = em.merge(productoListOldProducto);
+                }
+            }
+            for (Producto productoListNewProducto : productoListNew) {
+                if (!productoListOld.contains(productoListNewProducto)) {
+                    Donacion oldIddonaprodOfProductoListNewProducto = productoListNewProducto.getIddonaprod();
+                    productoListNewProducto.setIddonaprod(donacion);
+                    productoListNewProducto = em.merge(productoListNewProducto);
+                    if (oldIddonaprodOfProductoListNewProducto != null && !oldIddonaprodOfProductoListNewProducto.equals(donacion)) {
+                        oldIddonaprodOfProductoListNewProducto.getProductoList().remove(productoListNewProducto);
+                        oldIddonaprodOfProductoListNewProducto = em.merge(oldIddonaprodOfProductoListNewProducto);
+                    }
+                }
             }
             em.getTransaction().commit();
         } catch (Exception ex) {
@@ -139,7 +143,7 @@ public class DonacionJpaController implements Serializable {
         }
     }
 
-    public void destroy(BigDecimal id) throws IllegalOrphanException, NonexistentEntityException {
+    public void destroy(BigDecimal id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -151,21 +155,15 @@ public class DonacionJpaController implements Serializable {
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The donacion with id " + id + " no longer exists.", enfe);
             }
-            List<String> illegalOrphanMessages = null;
-            Producto productoOrphanCheck = donacion.getProducto();
-            if (productoOrphanCheck != null) {
-                if (illegalOrphanMessages == null) {
-                    illegalOrphanMessages = new ArrayList<String>();
-                }
-                illegalOrphanMessages.add("This Donacion (" + donacion + ") cannot be destroyed since the Producto " + productoOrphanCheck + " in its producto field has a non-nullable donacion field.");
-            }
-            if (illegalOrphanMessages != null) {
-                throw new IllegalOrphanException(illegalOrphanMessages);
-            }
             Persona idpersona = donacion.getIdpersona();
             if (idpersona != null) {
                 idpersona.getDonacionList().remove(donacion);
                 idpersona = em.merge(idpersona);
+            }
+            List<Producto> productoList = donacion.getProductoList();
+            for (Producto productoListProducto : productoList) {
+                productoListProducto.setIddonaprod(null);
+                productoListProducto = em.merge(productoListProducto);
             }
             em.remove(donacion);
             em.getTransaction().commit();

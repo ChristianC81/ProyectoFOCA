@@ -22,7 +22,7 @@ import sun.swing.table.DefaultTableCellHeaderRenderer;
 public class ModeloTablaPersona extends AbstractTableModel {
 
     private String[] columnas = {"CÉDULA", "TIPO", "NOMBRES Y APELLIDOS", "GÉNERO",
-        "FECHA NACIMIENTO","FOTO"};
+        "FECHA NACIMIENTO", "FOTO"};
     public static List<Persona> filas;
     private Persona personaSelecionado;
     private int indice;
@@ -48,22 +48,22 @@ public class ModeloTablaPersona extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+     
         personaSelecionado = filas.get(rowIndex);
         this.indice = rowIndex;
         switch (columnIndex) {
-
             case 0:
                 return personaSelecionado.getCedulaper();
             case 1:
                 return personaSelecionado.getTipoper();
             case 2:
-                return personaSelecionado.getNombresper()+""+personaSelecionado.getApellidosper();
+                return personaSelecionado.getNombresper() + " " + personaSelecionado.getApellidosper();
             case 3:
-                return  personaSelecionado.getGeneroper();
+                return personaSelecionado.getGeneroper();
             case 4:
                 return personaSelecionado.getFechanacimiento();
             case 6:
-                return personaSelecionado.getFoto();
+                return new JLabel(obtenerFoto());
             default:
                 return null;
         }
@@ -165,6 +165,23 @@ public class ModeloTablaPersona extends AbstractTableModel {
             filas.remove(p);
             fireTableDataChanged();
         }
-
     }
+    public ImageIcon obtenerFoto(){
+          ImageIcon icono = null;
+        if (personaSelecionado.getFoto() == null) {
+            System.out.println("No hay Foto");
+            return icono;
+        } else {
+            Image foto = personaSelecionado.getFoto();
+            if (foto != null) {
+                foto = foto.getScaledInstance(50, 70, Image.SCALE_SMOOTH);
+                icono = new ImageIcon(foto);
+                DefaultTableCellRenderer dtcr = new DefaultTableCellHeaderRenderer();
+                dtcr.setIcon(icono);
+            } else { //No venga foto
+                icono = null;
+            }
+        }
+        return icono;
+    } 
 }

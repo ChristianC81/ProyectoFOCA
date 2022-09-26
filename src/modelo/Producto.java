@@ -15,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -30,8 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Producto.findAll", query = "SELECT p FROM Producto p"),
     @NamedQuery(name = "Producto.findByIdprod", query = "SELECT p FROM Producto p WHERE p.idprod = :idprod"),
     @NamedQuery(name = "Producto.findByCantidadprod", query = "SELECT p FROM Producto p WHERE p.cantidadprod = :cantidadprod"),
-    @NamedQuery(name = "Producto.findByTipoprod", query = "SELECT p FROM Producto p WHERE p.tipoprod = :tipoprod"),
-    @NamedQuery(name = "Producto.findByIddonaprod", query = "SELECT p FROM Producto p WHERE p.iddonaprod = :iddonaprod")})
+    @NamedQuery(name = "Producto.findByTipoprod", query = "SELECT p FROM Producto p WHERE p.tipoprod = :tipoprod")})
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -44,11 +42,9 @@ public class Producto implements Serializable {
     private BigInteger cantidadprod;
     @Column(name = "TIPOPROD")
     private String tipoprod;
-    @Column(name = "IDDONAPROD")
-    private BigInteger iddonaprod;
-    @JoinColumn(name = "IDPROD", referencedColumnName = "IDDONA", insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private Donacion donacion;
+    @JoinColumn(name = "IDDONAPROD", referencedColumnName = "IDDONA")
+    @ManyToOne
+    private Donacion iddonaprod;
     @JoinColumn(name = "IDPROYPROD", referencedColumnName = "IDPROY")
     @ManyToOne
     private Proyecto idproyprod;
@@ -84,20 +80,12 @@ public class Producto implements Serializable {
         this.tipoprod = tipoprod;
     }
 
-    public BigInteger getIddonaprod() {
+    public Donacion getIddonaprod() {
         return iddonaprod;
     }
 
-    public void setIddonaprod(BigInteger iddonaprod) {
+    public void setIddonaprod(Donacion iddonaprod) {
         this.iddonaprod = iddonaprod;
-    }
-
-    public Donacion getDonacion() {
-        return donacion;
-    }
-
-    public void setDonacion(Donacion donacion) {
-        this.donacion = donacion;
     }
 
     public Proyecto getIdproyprod() {
