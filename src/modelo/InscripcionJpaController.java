@@ -198,7 +198,7 @@ public class InscripcionJpaController implements Serializable {
         }
     }
     
-    public List<Inscripcion> buscarInscripcion(Number id) {
+  public List<Inscripcion> buscarInscripcion(BigDecimal id) {
         System.out.println(id);
         EntityManager em = getEntityManager();
         try {
@@ -209,7 +209,7 @@ public class InscripcionJpaController implements Serializable {
             return list;
         } finally {
             em.close();
-}
+        }
     }
 
     public List<Persona> buscarPersonavolu() {

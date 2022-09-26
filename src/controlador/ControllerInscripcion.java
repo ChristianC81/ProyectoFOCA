@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,7 +77,7 @@ public class ControllerInscripcion {
         });
 
         this.vistad.getBtnREPORTEGENERALINSCRI().addActionListener(l -> reporteGeneral());
-//        this.vistad.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
+        this.vistad.getBtnIMPRIMIRINSCRI().addActionListener(l -> reporteIndividual());
 //         control de botones inicio
         this.vistad.getBtnEDITARINSCRI().setEnabled(false);
         this.vistad.getBtnELIMINARINSCRI().setEnabled(false);
@@ -133,7 +134,7 @@ public class ControllerInscripcion {
 
     }
 
- public void eliminarInscripcion() {
+    public void eliminarInscripcion() {
         if (inscripcion != null) {
             try {
                 modeloInscripcion.destroy(inscripcion.getIdins());
@@ -148,20 +149,23 @@ public class ControllerInscripcion {
     }
 
     public void buscarInscripcionn() {
-        if (this.vistad.getChekBsqInscri().isSelected()) {
-            modeloTablaInscripcion.setFilas(modeloInscripcion.findInscripcionEntities());
-            modeloTablaInscripcion.fireTableDataChanged();
-        } else {
-            if (!this.vistad.getTxtBsqInscripiones().getText().isEmpty()) {
-                double idp = Double.parseDouble(this.vistad.getTxtBsqProyectos().getText());
-                BigDecimal idproye = BigDecimal.valueOf(idp);
-                modeloTablaInscripcion.setFilas(modeloInscripcion.buscarInscripcion(idproye));
+        try {
+            if (this.vistad.getChekBsqInscri().isSelected()) {
+                modeloTablaInscripcion.setFilas(modeloInscripcion.findInscripcionEntities());
                 modeloTablaInscripcion.fireTableDataChanged();
             } else {
-                limpiarBuscadorInscripcion();
+                if (!this.vistad.getTxtBsqInscripiones().getText().isEmpty()) {
+                    double idp = Double.parseDouble(this.vistad.getTxtBsqInscripiones().getText());
+                    BigDecimal idproye = BigDecimal.valueOf(idp);
+                    modeloTablaInscripcion.setFilas(modeloInscripcion.buscarInscripcion(idproye));
+                    modeloTablaInscripcion.fireTableDataChanged();
+                } else {
+                    limpiarBuscadorInscripcion();
+                }
             }
+        } catch (Exception e) {
+            Resouces.success(" ATENCIÓN!!!", "Ingrese el id correcto");
         }
-
     }
 
     public void cargarComboBoxVoluntario() {
@@ -190,7 +194,17 @@ public class ControllerInscripcion {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGInscripciones.jasper", new HashMap());
     }
 
+    public void reporteIndividual() {
+        if (inscripcion != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", inscripcion.getIdins());
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIInscripciones.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar una inscripcion :P");
+        }
+    }
 //    limipiar 
+
     public void limpiar() {
 
         this.vistad.getCbxCodigoVoluntario().setSelectedIndex(0);

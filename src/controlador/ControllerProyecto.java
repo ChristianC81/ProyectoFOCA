@@ -8,6 +8,7 @@ package controlador;
 import Vista.ViewAdministrador;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,7 +64,7 @@ public class ControllerProyecto {
         this.vistad.getBtnbuscarProye().addActionListener(l -> buscarProyecto());
         this.vistad.getChekBsqProyes().addActionListener(l -> buscarProyecto());
         this.vistad.getBtnREPORTEGENERALPROYE().addActionListener(l -> reporteGeneral());
-
+        this.vistad.getBtnREPORTEINDIVIDUALPROYE().addActionListener(l -> reporteIndividual());
         // eventos tabla
         this.vistad.getjTableDatosProyectos().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         this.listaProyectoModelo = this.vistad.getjTableDatosProyectos().getSelectionModel();
@@ -84,13 +85,23 @@ public class ControllerProyecto {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper", new HashMap());
     }
 
+    public void reporteIndividual() {
+        if (proyecto != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", proyecto.getIdproy());
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIProyectos.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar un proyecto :P");
+        }
+    }
+
     private void proyectoSeleccionado() {
         if (this.vistad.getjTableDatosProyectos().getSelectedRow() != -1) {
             proyecto = modeloTablaProyecto.getFilas().get(this.vistad.getjTableDatosProyectos().getSelectedRow());
             //CARGAR A LA VISTA
             this.vistad.getTxtNombreProye().setText(proyecto.getNombreproy());
-            //this.vistad.fechainicio
-            //this.vistad.fechafin
+            this.vistad.getJdcFechaInicio().setDate(proyecto.getFechainicioproy());
+            this.vistad.getJdcFechaFin().setDate(proyecto.getFechafinproy());
             this.vistad.getTxtLugarProye().setText(proyecto.getLugarproy());
             this.vistad.getjComboBoxBeneficiarioProye().setSelectedItem(proyecto.getIdpersona());
 
@@ -111,8 +122,8 @@ public class ControllerProyecto {
 //            BigDecimal idproye = BigDecimal.valueOf(idp);
 //            proyecto.setIdproy(idproye);
             proyecto.setNombreproy(this.vistad.getTxtNombreProye().getText());
-            //proyecto.setFechainicio
-            //proyecto.setFechaFin
+            proyecto.setFechainicioproy(this.vistad.getJdcFechaInicio().getDate());
+            proyecto.setFechafinproy(this.vistad.getJdcFechaFin().getDate());
             proyecto.setLugarproy(this.vistad.getTxtLugarProye().getText());
             proyecto.setIdpersona((Persona) this.vistad.getjComboBoxBeneficiarioProye().getSelectedItem());
 

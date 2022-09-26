@@ -7,6 +7,7 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,7 +68,7 @@ public class ControllerDonacion {
 
         });
         this.vistaDona.getBtnREPORTEGENERALDON().addActionListener(lr -> reporteGeneral());
-//        this.vistaDona.getjButtonReporteIndivPro().addActionListener(lr -> reporteIndividual());
+        this.vistaDona.getBtnREPORTEINDIVIDUALDON().addActionListener(lr -> reporteIndividual());
         // control de botones inicio
         this.vistaDona.getBtnEDITARDONA().setEnabled(false);
         this.vistaDona.getBtnELIMINARDONA().setEnabled(false);
@@ -90,7 +91,7 @@ public class ControllerDonacion {
             //cargar los datos a la vista
             this.vistaDona.getTxaDetalleProdDON().setText(dona.getDetalleproductodona());
             this.vistaDona.getTxaMotivoDON().setText(dona.getMotivodona());
-            //this.vistaDona.getjDateChooserFechaEntrega.setDate(dona.getFechaentregadona());
+            this.vistaDona.getJdcFechaEntrega().setDate(dona.getFechaentregadona());
             this.vistaDona.getjComboBoxPersonasBenefactDon().setSelectedItem(dona.getIdpersona());
             //CONTROLES DE BOTONES
             this.vistaDona.getBtnEDITARDONA().setEnabled(true);
@@ -110,7 +111,7 @@ public class ControllerDonacion {
             } else {
                 dona = new Donacion();
                 dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
-                //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
+                dona.setFechaentregadona(this.vistaDona.getJdcFechaEntrega().getDate());
                 dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
                 dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
 
@@ -137,7 +138,7 @@ public class ControllerDonacion {
             } else {
                 if (dona != null) {
                     dona.setDetalleproductodona(this.vistaDona.getTxaDetalleProdDON().getText());
-                    //dona.setFechaentregadona(this.vistaDona.getjDateChooserFechaEntrega().getDate());
+                     dona.setFechaentregadona(this.vistaDona.getJdcFechaEntrega().getDate());
                     dona.setMotivodona(this.vistaDona.getTxaMotivoDON().getText());
                     dona.setIdpersona((Persona) this.vistaDona.getjComboBoxPersonasBenefactDon().getSelectedItem());
                     try {
@@ -181,16 +182,16 @@ public class ControllerDonacion {
     public void reporteGeneral() {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGDonaciones.jasper", new HashMap());
     }
-//    public void reporteIndividual() {
-//        if (dona != null) {
-//            Map parameters = new HashMap();
-//            parameters.put("cod", dona.getIddonaducto());
-//            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/donaIndividual.jasper", parameters);
-//
-//        } else {
-//            Resouces.warning("Atención!!", "Debe seleccionar un donaducto");
-//        }
-//    }
+
+    public void reporteIndividual() {
+        if (dona != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", dona.getIddona()); 
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIDonaciones.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar una donación :P");
+        }
+    }
 
     public void buscarDonacion() {
         if (this.vistaDona.getChekBsqDONA().isSelected()) {
@@ -209,7 +210,7 @@ public class ControllerDonacion {
     public void limpiarDonaciones() {
         vistaDona.getTxaDetalleProdDON().setText("");
         vistaDona.getTxaMotivoDON().setText("");
-        //vistaDona.getjDateChooserFechaEntrega.setdate(null);
+        vistaDona.getJdcFechaEntrega().setDate(null);
         vistaDona.getjComboBoxPersonasBenefactDon().setSelectedIndex(0);
         dona = null;
         //CONTROL DE BOTONES

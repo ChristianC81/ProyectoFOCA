@@ -87,21 +87,21 @@ public class Persona implements Serializable {
     private Date fechanacimiento;
     @Column(name = "ESTADOCIVIL")
     private String estadocivil;
-    
+
     //Benefactor 
     @Column(name = "SALARIOBENEFAC")
     private Double salariobenefac;
-    
+
     //Beneficiario
     @Column(name = "ESTRATOSBENEFI")
     private String estratosbenefi;
-    
+
     //Jefe de Operaciones
     @Column(name = "TITULO")
     private String titulo;
     @Column(name = "SEGURO")
     private String seguro;
-    
+
     //Voluntario
     @Column(name = "HORARIO")
     private String horario;
@@ -110,7 +110,7 @@ public class Persona implements Serializable {
     @Column(name = "TIPOVOL")
     private String tipovol;
     @Lob
-    
+
     @Column(name = "FOTO")
     private byte[] foto;
     @OneToMany(mappedBy = "idpersona")
@@ -278,29 +278,31 @@ public class Persona implements Serializable {
         this.tipovol = tipovol;
     }
 
-     public Image getFoto() {
-      Image imagen = null;
-      ByteArrayInputStream bis = new ByteArrayInputStream(foto); //portada es el array de bytes
-      try {
-         imagen = ImageIO.read(bis);
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
-      return imagen.getScaledInstance(50, 70, Image.SCALE_SMOOTH);
-   }
+    public Image getFoto() {
+         Image imagen = null;
+        try {
+            ByteArrayInputStream bis = new ByteArrayInputStream(foto); //portada es el array de bytes
+
+            imagen = ImageIO.read(bis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imagen.getScaledInstance(50, 70, Image.SCALE_SMOOTH);
+    }
 
     public void setFoto(File imagen) {
-      foto = new byte[(int)imagen.length()];
-      try {
-         FileInputStream fis = new FileInputStream(imagen);
-         fis.read(foto);
-         fis.close();
-      } catch (FileNotFoundException e) {
-         e.printStackTrace();
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
-   }
+        try {
+            foto = new byte[(int) imagen.length()];
+
+            FileInputStream fis = new FileInputStream(imagen);
+            fis.read(foto);
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @XmlTransient
     public List<Inscripcion> getInscripcionList() {

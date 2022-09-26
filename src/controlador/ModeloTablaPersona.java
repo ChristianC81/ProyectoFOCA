@@ -64,9 +64,9 @@ public class ModeloTablaPersona extends AbstractTableModel {
                 return personaSelecionado.getFechanacimiento();
             case 6:
                 return new JLabel(obtenerFoto());
-            default:
-                return null;
+            default:       
         }
+        return null;
     }
 
     @Override
@@ -81,36 +81,14 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 3:
                 return String.class;
             case 4:
-                return String.class;
+                return Date.class;
             case 5:
                 return String.class;
-            case 6:
-                return String.class;
-            case 7:
-                return String.class;
-            case 8:
-                return Date.class;
-            case 9:
-                return String.class;
-            case 10:
-                return Double.class;
-            case 11:
-                return String.class;
-            case 12:
-                return String.class;
-            case 13:
-                return String.class;
-            case 14:
-                return String.class;
-            case 15:
-                return String.class;
-            case 16:
-                return String.class;
-            case 17:
+            case 6:            
                 return Image.class;
             default:
-                return Object.class;
         }
+        return null;
     }
 
     public String[] getColumnas() {

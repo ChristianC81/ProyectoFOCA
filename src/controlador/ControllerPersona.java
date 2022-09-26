@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -98,21 +99,17 @@ public class ControllerPersona {
                 this.vistap.getRbtFemenino().setSelected(true);
             }
 
-            //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
+            this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
             this.vistap.getTxtestadocivil().setText(persona.getEstadocivil());
             this.vistap.getTxtsalario().setText(String.valueOf(persona.getSalariobenefac()));
             this.vistap.getTxtestrato().setText(persona.getEstratosbenefi());
             this.vistap.getTxtTitulo().setText(persona.getTitulo());
-            if (persona.getSeguro().equals("Si")) {
-                this.vistap.getChkseguroiees().setSelected(true);
-            } else {
-                this.vistap.getChkseguroiees().setSelected(false);
-            }
+           
 
             this.vistap.getTxthorario().setText(persona.getHorario());
             this.vistap.getTxtperiodo().setText(persona.getPeriodovol());
             this.vistap.getTxtTipoVol().setText(persona.getTipovol());
-
+            try{
             if (persona.getFoto() == null) {
                 this.vistap.getLblFoto().setIcon(null);
             } else {
@@ -121,6 +118,9 @@ public class ControllerPersona {
                 foto = persona.getFoto().getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
                 icono = new ImageIcon(foto);
                 this.vistap.getLblFoto().setIcon(icono);
+            }
+            }catch(Exception e){
+                System.out.println("Persona seleccionada sin foto D:");
             }
 
             //Acceso de Botones
@@ -137,6 +137,7 @@ public class ControllerPersona {
     }
 
     public void reporteIndividual() {
+    try{
         // validar si existe un registro seleccionado 
         if (persona != null) {
             //contruir los parametros de encio al reporte
@@ -148,6 +149,9 @@ public class ControllerPersona {
         } else {
             Resouces.warning("ATENCIÓN!!!", "Debe seleccionar una persona :P");
         }
+    }catch(NullPointerException e){
+        JOptionPane.showMessageDialog(vistap," :o no a ocurrido algo inesperado, porfavor intentelo más tarde!");
+    }
     }
 
     public void guardarPersona() {
@@ -171,7 +175,7 @@ public class ControllerPersona {
             }
 
             persona.setGeneroper(genero);
-            //persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+            persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
             persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
             salario = Double.valueOf(this.vistap.getTxtsalario().getText());
             persona.setSalariobenefac(salario);
@@ -228,7 +232,7 @@ public class ControllerPersona {
                     }
 
                     persona.setGeneroper(genero);
-                    //persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+                    persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
                     persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
                     salario = Double.valueOf(this.vistap.getTxtsalario().getText());
                     persona.setSalariobenefac(salario);
@@ -245,13 +249,16 @@ public class ControllerPersona {
                     persona.setHorario(this.vistap.getTxthorario().getText());
                     persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
                     persona.setTipovol(this.vistap.getTxtTipoVol().getText());
-
+                    try{
                     if (jfc.getSelectedFile() == null) {
+                        
                         persona.setFoto(null);
                     } else {
                         persona.setFoto(jfc.getSelectedFile());
                     }
-
+                    }catch(NullPointerException e){
+                        System.out.println("No esta seleccionada la foto :c");
+                    }
                     modeloPersona.edit(persona);
                     modeloTabla.eliminar(persona);
                     modeloTabla.actualizar(persona);
@@ -304,7 +311,7 @@ public class ControllerPersona {
         this.vistap.getTxtdireccionPer().setText("");
         this.vistap.getTxttelefono().setText("");
         this.vistap.getTxtcorreoPer().setText("");
-        //this.vistap.getJdcFechaNacPer().setDate(persona.getFechanacimiento());
+        this.vistap.getJdcFechaNacPer().setDate(null);
         this.vistap.getTxtestadocivil().setText("");
         this.vistap.getTxtsalario().setText("");
         this.vistap.getTxtestrato().setText("");

@@ -63,7 +63,7 @@ public class ControllerAdministrador extends ControllerPersona {
 
     public void controldeEventosAdmin(ViewAdministrador vistap) {
         
-        vistap.getBtnReportes().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(0));
+    
         vistap.getBtnROLES().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(1));
         vistap.getBtnUsuarios().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(2));
         vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));

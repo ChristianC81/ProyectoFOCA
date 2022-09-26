@@ -50,7 +50,6 @@ public class ControllerJefe extends ControllerPersona {
 
     public void controldeEventos(ViewAdministrador vistap) {
 
-        vistap.getBtnReportes().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(0));
         vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));
 
         vistap.getBtnInscripciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(4));
@@ -74,4 +73,55 @@ public class ControllerJefe extends ControllerPersona {
         vistap.getCbxTipoPer().addItem("Voluntario");
     }
 
+    public void txtComp() {
+        vistap.getTxtcedulaPer().setEnabled(true);
+        vistap.getTxtnombrePer().setEnabled(true);
+        vistap.getTxtapellidoPer().setEnabled(true);
+        vistap.getTxttelefono().setEnabled(true);
+        vistap.getChkseguroiees().setEnabled(true);
+        vistap.getTxtdireccionPer().setEnabled(true);
+        vistap.getTxtTitulo().setEnabled(true);
+        vistap.getTxtestadocivil().setEnabled(true);
+        vistap.getTxtcorreoPer().setEnabled(true);
+        vistap.getTxthorario().setEnabled(true);
+        vistap.getTxtsalario().setEnabled(true);
+        vistap.getTxtestrato().setEnabled(true);
+        vistap.getTxtperiodo().setEnabled(true);
+        vistap.getTxtTipoVol().setEnabled(true);
+    }
+
+    public void cargarOpcRol() {
+        if (this.vistap.getCbxTipoPer().getSelectedIndex() == 1) {
+            txtComp();
+            vistap.getTxtestrato().setEnabled(false);
+            vistap.getTxtperiodo().setEnabled(false);
+            vistap.getTxthorario().setEnabled(false);
+            vistap.getTxtsalario().setEnabled(false);
+            vistap.getTxtTipoVol().setEnabled(false);
+        } else {
+            if (this.vistap.getCbxTipoPer().getSelectedIndex() == 2) {
+                txtComp();
+                vistap.getTxtestrato().setEnabled(false);
+                vistap.getTxtperiodo().setEnabled(false);
+                vistap.getTxthorario().setEnabled(false);
+                vistap.getTxtTipoVol().setEnabled(false);
+                vistap.getChkseguroiees().setEnabled(false);
+            } else {
+                if (this.vistap.getCbxTipoPer().getSelectedIndex() == 3) {
+                    txtComp();
+                    vistap.getTxtsalario().setEnabled(false);
+                    vistap.getTxtperiodo().setEnabled(false);
+                    vistap.getTxthorario().setEnabled(false);
+                    vistap.getTxtTipoVol().setEnabled(false);
+                    vistap.getChkseguroiees().setEnabled(false);
+                } else {
+                    if (this.vistap.getCbxTipoPer().getSelectedIndex() == 4) {
+                        txtComp();
+                        vistap.getChkseguroiees().setEnabled(false);
+                        vistap.getTxtsalario().setEnabled(false);
+                    }
+                }
+            }
+        }
+    }
 }

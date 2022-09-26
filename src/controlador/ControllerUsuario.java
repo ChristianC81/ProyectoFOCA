@@ -6,6 +6,7 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import java.util.HashMap;
+import java.util.Map;
 
 import java.util.Vector;
 import java.util.logging.Level;
@@ -69,7 +70,7 @@ public class ControllerUsuario {
         this.vistap.getBtnLIMPIARUSU().addActionListener(l -> limpiarC());
 
         //Opciones Reportes
-//        this.vistap.getBtnREPORTEINDIVIDUALUSU().addActionListener(l -> reporteIndividual());
+       this.vistap.getBtnREPORTEINDIVIDUALUSU().addActionListener(l -> reporteIndividual());
         this.vistap.getBtnREPORTEGENERALUSU().addActionListener(l -> reporteGeneral());
 
         //Opciones de Busqueda
@@ -134,15 +135,16 @@ public class ControllerUsuario {
     public void reporteGeneral() {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGUsuarios.jasper", new HashMap());
     }
-//// public void reporteIndividual() {
-////        if(usuario!=null){
-////        Map parametros = new HashMap<>();
-////        parametros.put("id",usuario.getIdusuario());
-////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/ReporteIndividual.jasper",parametros);
-////  }else{
-////        Resouces.warning("!Usuario no Seleccionada!", "Seleccione una usuario");
-////        }
-////    }
+    
+public void reporteIndividual() {
+        if (usuario != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", usuario.getIdusuario()); 
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIUsuarios.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar un Usuario :P");
+        }
+    }
 
     public void guardarUsuario() {
         usuario = new Usuario();

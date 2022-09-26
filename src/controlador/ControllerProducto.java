@@ -9,6 +9,7 @@ import Vista.ViewAdministrador;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -77,7 +78,7 @@ public class ControllerProducto {
         });
 
         this.vistad.getBtnREPORTEGENERALPROD().addActionListener(l -> reporteGeneral());
-//        this.vistad.getBtnReporteIndividual().addActionListener(l -> reporteIndividual());
+       this.vistad.getBtnREPORTEINDIVIDUALPROD().addActionListener(l -> reporteIndividual());
         // control de botones inicio
         this.vistad.getBtnEDITARPROD().setEnabled(false);
         this.vistad.getBtnELIMINARPROD().setEnabled(false);
@@ -204,6 +205,15 @@ public class ControllerProducto {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProductos.jasper", new HashMap());
     }
 
+    public void reporteIndividual() {
+        if (producto != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", producto.getIdprod()); 
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIProductos.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar un producto :P");
+        }
+    }
     //limipiar y validar
     public void limpiarProd() {
         this.vistad.getTxtTipoProducto().setText("");

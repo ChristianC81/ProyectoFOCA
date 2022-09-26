@@ -8,6 +8,7 @@ package controlador;
 import Vista.ViewAdministrador;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -41,10 +42,10 @@ public class ControllerRolesUsuario {
         this.manager = manager;
         this.modeloRoles = modeloRoles;
         this.modeloTroles = new ModeloTablaRoles();
-        
+
         this.modeloTroles.setFilas(modeloRoles.findRolesEntities());
         this.vista.getjTableDatosROLES().setModel(modeloTroles);
-        
+
         iniciarControlRol();
     }
 
@@ -70,7 +71,7 @@ public class ControllerRolesUsuario {
         });
 
         this.vista.getBtnREPORTEGENERALROL().addActionListener(l -> reporteGeneral());
-//        this.vista.getBtnREPORTEINDIVIDUALROL().addActionListener(l -> reporteIndividual());
+        this.vista.getBtnREPORTEINDIVIDUALROL().addActionListener(l -> reporteIndividual());
         // control de botones inicio
         this.vista.getBtnEDITARROL().setEnabled(false);
         this.vista.getBtnELIMINARROL().setEnabled(false);
@@ -174,6 +175,16 @@ public class ControllerRolesUsuario {
 
     public void reporteGeneral() {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGRoles.jasper", new HashMap());
+    }
+
+    public void reporteIndividual() {
+        if (rol != null) {
+            Map parameters = new HashMap();
+            parameters.put("cod", rol.getIdrol());
+            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIRoles.jasper", parameters);
+        } else {
+            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar un Rol :P");
+        }
     }
 
     //limipiar y validar
