@@ -5,7 +5,6 @@
 package controlador;
 
 import java.awt.Image;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

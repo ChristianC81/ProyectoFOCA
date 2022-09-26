@@ -94,6 +94,7 @@ public class ControllerProducto {
     public void cargarComboBoxProy() {
         try {
             Vector v = new Vector();
+            v.add(new String("Seleccione un Proyecto"));
             v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
             this.vistad.getCbxProyecto().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -224,7 +225,9 @@ public class ControllerProducto {
 
         return valid;
     }
-       public void txtAyuda() {  
+
+    public void txtAyuda() {
+        TextPrompt tipoProd = new TextPrompt("Fruta", vistad.getTxtTipoProducto());
         TextPrompt busqdProd = new TextPrompt("Pan", vistad.getTxtBsqProductos());
     }
 }

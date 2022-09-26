@@ -27,6 +27,7 @@ public class InicioSistema extends javax.swing.JFrame implements Runnable {
 
     private JFrame frame = new JFrame();
     private JPanel panel = new JPanel(new BorderLayout());
+    private JPanel panelLogoTit = new JPanel();
 
     private JTextField txtURL = new JTextField();
 
@@ -59,17 +60,22 @@ public class InicioSistema extends javax.swing.JFrame implements Runnable {
         };
         btnIngresoSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-exit-48.png"))); // NOI18N
         btnIngresoSistema.setText("Ingresar al Sistema");
+        transparenciaButton(btnIngresoSistema);
         btnIngresoSistema.setBorder(BorderFactory.createEmptyBorder(25, 5, 25, 5));
         TituloOAC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TituloOAC.setText("ORGANIZACIÓN DE AYUDA COMUNITARIA");
         TituloOAC.setBorder(BorderFactory.createEmptyBorder(25, 5, 25, 5));
-        LogoOAC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        LogoOAC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo2.png"))); // NOI18N
+        LogoOAC.setSize(new Dimension(40, 20));
 
-        panel.add(TituloOAC, BorderLayout.EAST);
-        panel.add(LogoOAC, BorderLayout.NORTH);
+        panelLogoTit.add(LogoOAC);
+        panelLogoTit.add(TituloOAC);
+        panelLogoTit.setBackground(Color.WHITE);
+
+        panel.add(panelLogoTit, BorderLayout.NORTH);
         panel.add(btnIngresoSistema, BorderLayout.PAGE_END);
         panel.add(jfxPanel, BorderLayout.CENTER);
-
+        panel.setBackground(Color.WHITE);
         frame.getContentPane().add(panel);
 
     }
@@ -198,4 +204,9 @@ public class InicioSistema extends javax.swing.JFrame implements Runnable {
         frame.setVisible(true);
     }
 
+    public void transparenciaButton(JButton boton) {
+        boton.setOpaque(false);
+        boton.setContentAreaFilled(false);
+        boton.setBorderPainted(false);
+    }
 }

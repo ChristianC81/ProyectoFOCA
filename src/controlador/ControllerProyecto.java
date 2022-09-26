@@ -46,7 +46,7 @@ public class ControllerProyecto {
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
         this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
-        
+
         iniciarControlProyecto();
         cargarComboBoxBeneficiario();
         txtAyuda();
@@ -81,9 +81,9 @@ public class ControllerProyecto {
     }
 
     public void reporteGeneral() {
-        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper",new HashMap());
-  }
- 
+        Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGProyectos.jasper", new HashMap());
+    }
+
     private void proyectoSeleccionado() {
         if (this.vistad.getjTableDatosProyectos().getSelectedRow() != -1) {
             proyecto = modeloTablaProyecto.getFilas().get(this.vistad.getjTableDatosProyectos().getSelectedRow());
@@ -177,14 +177,14 @@ public class ControllerProyecto {
                 limpiarBuscadorProyecto();
             }
         }
-
     }
 
     public void cargarComboBoxBeneficiario() {
         try {
             Vector v = new Vector();
+            v.add(new String("Seleccione un Beneficiario"));
             v.addAll((Collection) modeloProyecto.buscarPersonabene());
-            this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
+            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Capturando errores cargando combobox");
         }
@@ -235,10 +235,10 @@ public class ControllerProyecto {
         }
         return validado;
     }
-     public void txtAyuda() {
+
+    public void txtAyuda() {
         TextPrompt nombreProy = new TextPrompt("Ayudandonos", vistad.getTxtNombreProye());
         TextPrompt lugarProy = new TextPrompt("Parque Central", vistad.getTxtLugarProye());
         TextPrompt busqdProy = new TextPrompt("Solidaridad", vistad.getTxtBsqProyectos());
     }
 }
-

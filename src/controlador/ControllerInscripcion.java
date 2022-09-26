@@ -172,6 +172,7 @@ public class ControllerInscripcion {
     public void cargarComboBoxVoluntario() {
         try {
             Vector v = new Vector();
+             v.add(new String("Seleccione un Voluntario"));
             v.addAll((Collection) modeloInscripcion.buscarPersonavolu());
             this.vistad.getCbxCodigoVoluntario().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -182,6 +183,7 @@ public class ControllerInscripcion {
     public void cargarComboBoxProyecto() {
         try {
             Vector v = new Vector();
+             v.add(new String("Seleccione un Proyecto"));
             v.addAll(new ProyectoJpaController(manager.getEmf()).findProyectoEntities());
             this.vistad.getCbxCodigoProyecto().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {

@@ -7,9 +7,7 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import java.awt.Image;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +15,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -26,7 +23,6 @@ import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Validaciones;
 import modelo.exceptions.NonexistentEntityException;
-import oracle.net.aso.i;
 import proyectofoca.ManagerFactory;
 import sun.swing.table.DefaultTableCellHeaderRenderer;
 
@@ -34,6 +30,7 @@ import sun.swing.table.DefaultTableCellHeaderRenderer;
  *
  * @author miri
  */
+
 public class ControllerPersona {
 
     ViewAdministrador vistap;
@@ -122,14 +119,13 @@ public class ControllerPersona {
                     ImageIcon icono = new ImageIcon(foto);
                     DefaultTableCellRenderer dtcr = new DefaultTableCellHeaderRenderer();
                     dtcr.setIcon(icono);
-                    vistap.getLblFoto().setIcon(icono);
+                    this.vistap.getLblFoto().setIcon(icono);
                 } else { //No venga foto
-                    vistap.getLblFoto().setIcon(null);
+                    this.vistap.getLblFoto().setIcon(null);
                 }
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-            this.vistap.getLblFoto().setIcon((Icon) persona.getFoto());
             //Acceso de Botones
             this.vistap.getBtnCREARPER().setEnabled(false);
             this.vistap.getBtnEDITARPER().setEnabled(true);
@@ -142,15 +138,16 @@ public class ControllerPersona {
     public void reporteGeneral() {
         Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RGPersonas.jasper", new HashMap());
     }
-//// public void reporteIndividual() {
-////        if(persona!=null){
-////        Map parametros = new HashMap<>();
-////        parametros.put("id",persona.getIdpersona());
-////        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/ReporteIndividual.jasper",parametros);
-////  }else{
-////        Resouces.warning("!Persona no Seleccionada!", "Seleccione una persona");
-////        }
-////    }
+    
+// public void reporteIndividual() {
+//        if(persona!=null){
+//        Map parametros = new HashMap<>();
+//        parametros.put("id",persona.getIdpersona());
+//        Resouces.imprimirReeporte(ManagerFactory.getConnection(manager.getEntityManagerFactory().createEntityManager()), "/reportes/ReporteIndividual.jasper",parametros);
+//  }else{
+//        Resouces.warning("!Persona no Seleccionada!", "Seleccione una persona");
+//        }
+//    }
 
     public void guardarPersona() {
         persona = new Persona();

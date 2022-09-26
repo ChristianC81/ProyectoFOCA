@@ -76,6 +76,7 @@ public class ControllerDonacion {
     public void cargarComboBoxBenefaDONA() {
         try {
             Vector v = new Vector();
+             v.add(new String("Seleccione un Benefactor"));
             v.addAll(new PersonaJpaController(manager.getEmf()).findPersonaEntities());
             this.vistaDona.getjComboBoxPersonasBenefactDon().setModel(new DefaultComboBoxModel(v));
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -252,7 +253,7 @@ public class ControllerDonacion {
     }
 
     public void txtAyuda() {
-        TextPrompt detalleDona = new TextPrompt("", vistaDona.getTxaDetalleProdDON());
+        TextPrompt detalleDona = new TextPrompt("Caja de Uvas", vistaDona.getTxaDetalleProdDON());
         TextPrompt motivoDona = new TextPrompt("Motivo: Causa Solidaria ", vistaDona.getTxaMotivoDON());
         TextPrompt busqdDona = new TextPrompt("Benefactor: Juan", vistaDona.getTxtBsqDonacionesCriterio());
     }
