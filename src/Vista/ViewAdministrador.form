@@ -118,6 +118,22 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="b8" green="c8" red="d1" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/enca1.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="220" y="0" width="1150" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Container class="javax.swing.JTabbedPane" name="pnMenu">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -410,9 +426,7 @@
                                           <Component id="btnREPORTEINDIVIDUALROL" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALROL" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARROL" min="-2" pref="122" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jScrollPane21" min="-2" pref="638" max="-2" attributes="0"/>
@@ -429,7 +443,6 @@
                                   <Component id="jScrollPane21" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARROL" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEINDIVIDUALROL" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALROL" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
@@ -465,17 +478,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARROL">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="12" style="1"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/cross.gif"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="btnREPORTEINDIVIDUALROL">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -838,13 +840,11 @@
                                       <Component id="btnREPORTEINDIVIDUALUSU" min="-2" pref="47" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALUSU" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                      <Component id="btnCANCELARUSU" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="204" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane9" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane9" pref="650" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -856,7 +856,6 @@
                                       <Component id="jScrollPane9" min="-2" pref="193" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnCANCELARUSU" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALUSU" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEINDIVIDUALUSU" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
@@ -893,17 +892,6 @@
                                 </Component>
                               </SubComponents>
                             </Container>
-                            <Component class="javax.swing.JButton" name="btnCANCELARUSU">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI" size="12" style="1"/>
-                                </Property>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/images/cross.gif"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                              </Properties>
-                            </Component>
                             <Component class="javax.swing.JButton" name="btnREPORTEGENERALUSU">
                               <Properties>
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2332,21 +2320,16 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnREPORTEINDIVIDUALPER" min="-2" pref="47" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                              <Component id="btnREPORTEGENERALPER" min="-2" pref="47" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="btnCANCELARPER" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnREPORTEINDIVIDUALPER" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="btnREPORTEGENERALPER" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="14" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2358,7 +2341,6 @@
                                       <Component id="jScrollPane7" min="-2" pref="193" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnCANCELARPER" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALPER" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEINDIVIDUALPER" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
@@ -2413,17 +2395,6 @@
                                 </Component>
                               </SubComponents>
                             </Container>
-                            <Component class="javax.swing.JButton" name="btnCANCELARPER">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI" size="12" style="1"/>
-                                </Property>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/images/cross.gif"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                              </Properties>
-                            </Component>
                             <Component class="javax.swing.JButton" name="btnREPORTEGENERALPER">
                               <Properties>
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2638,9 +2609,7 @@
                                           <Component id="btnREPORTEINDIVIDUALPROYE" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALPROYE" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARPROYE" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2653,7 +2622,6 @@
                                   <Component id="jScrollPane18" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARPROYE" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEINDIVIDUALPROYE" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALPROYE" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
@@ -2712,17 +2680,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARPROYE">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="12" style="1"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/cross.gif"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="btnREPORTEINDIVIDUALPROYE">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3409,9 +3366,7 @@
                                           <Component id="btnIMPRIMIRINSCRI" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALINSCRI" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARINSCRI" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -3424,7 +3379,6 @@
                                   <Component id="jScrollPane19" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARINSCRI" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnIMPRIMIRINSCRI" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALINSCRI" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
@@ -3480,17 +3434,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARINSCRI">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="12" style="1"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/cross.gif"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="btnIMPRIMIRINSCRI">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3809,9 +3752,7 @@
                                           <Component id="btnREPORTEINDIVIDUALDON" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALDON" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARDON" min="-2" pref="122" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jScrollPane15" min="-2" pref="638" max="-2" attributes="0"/>
@@ -3828,7 +3769,6 @@
                                   <Component id="jScrollPane15" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARDON" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEINDIVIDUALDON" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALDON" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
@@ -3885,17 +3825,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARDON">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="12" style="1"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/cross.gif"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="btnREPORTEINDIVIDUALDON">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4502,9 +4431,7 @@
                                           <Component id="btnREPORTEINDIVIDUALPROD" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                                           <Component id="btnREPORTEGENERALPROD" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                          <Component id="btnCANCELARPROD" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -4517,7 +4444,6 @@
                                   <Component id="jScrollPane17" min="-2" pref="193" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnCANCELARPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEINDIVIDUALPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnREPORTEGENERALPROD" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
@@ -4573,17 +4499,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="btnCANCELARPROD">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="12" style="1"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/cross.gif"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="btnREPORTEINDIVIDUALPROD">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4745,22 +4660,6 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b8" green="c8" red="d1" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/enca1.png"/>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="220" y="0" width="1150" height="200"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="javax.swing.JButton" name="btnUsuarios">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

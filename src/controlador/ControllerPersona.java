@@ -67,7 +67,6 @@ public class ControllerPersona {
         this.vistap.getBtnLIMPIARPER().addActionListener(l -> limpiarC());
         this.vistap.getBtnExaminarFoto().addActionListener(l -> examinarFoto());
         this.vistap.getBtnlimpiarPerbsq().addActionListener(l -> limpiarB());
-        this.vistap.getBtnCANCELARPER().addActionListener(l -> cancelar());
         this.vistap.getjTableDatosPersonas().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaPersonaModel = this.vistap.getjTableDatosPersonas().getSelectionModel();
         listaPersonaModel.addListSelectionListener(new ListSelectionListener() {

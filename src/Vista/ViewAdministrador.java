@@ -49,6 +49,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         btnPersona = new javax.swing.JButton();
         btnAyuda = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         pnMenu = new javax.swing.JTabbedPane();
         pnReportes = new javax.swing.JPanel();
         pnPersona4 = new javax.swing.JPanel();
@@ -69,7 +70,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel47 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
         jTableDatosROLES = new javax.swing.JTable();
-        btnCANCELARROL = new javax.swing.JButton();
         btnREPORTEINDIVIDUALROL = new javax.swing.JButton();
         btnREPORTEGENERALROL = new javax.swing.JButton();
         jPanel48 = new javax.swing.JPanel();
@@ -91,7 +91,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel39 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTableDatosUsuario = new javax.swing.JTable();
-        btnCANCELARUSU = new javax.swing.JButton();
         btnREPORTEGENERALUSU = new javax.swing.JButton();
         btnREPORTEINDIVIDUALUSU = new javax.swing.JButton();
         pnAdministrar2 = new javax.swing.JPanel();
@@ -187,7 +186,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel29 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTableDatosPersonas = new javax.swing.JTable();
-        btnCANCELARPER = new javax.swing.JButton();
         btnREPORTEGENERALPER = new javax.swing.JButton();
         btnREPORTEINDIVIDUALPER = new javax.swing.JButton();
         pnProyectos = new javax.swing.JPanel();
@@ -201,7 +199,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel41 = new javax.swing.JPanel();
         jScrollPane18 = new javax.swing.JScrollPane();
         jTableDatosProyectos = new javax.swing.JTable();
-        btnCANCELARPROYE = new javax.swing.JButton();
         btnREPORTEINDIVIDUALPROYE = new javax.swing.JButton();
         btnREPORTEGENERALPROYE = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
@@ -249,7 +246,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel42 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
         jTableDatosInscripciones = new javax.swing.JTable();
-        btnCANCELARINSCRI = new javax.swing.JButton();
         btnIMPRIMIRINSCRI = new javax.swing.JButton();
         btnREPORTEGENERALINSCRI = new javax.swing.JButton();
         pnDonaciones = new javax.swing.JPanel();
@@ -274,7 +270,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel38 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTableDatosDonacione = new javax.swing.JTable();
-        btnCANCELARDON = new javax.swing.JButton();
         btnREPORTEINDIVIDUALDON = new javax.swing.JButton();
         btnREPORTEGENERALDON = new javax.swing.JButton();
         jPanel34 = new javax.swing.JPanel();
@@ -312,7 +307,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel40 = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
         jTableDatosProductos = new javax.swing.JTable();
-        btnCANCELARPROD = new javax.swing.JButton();
         btnREPORTEINDIVIDUALPROD = new javax.swing.JButton();
         btnREPORTEGENERALPROD = new javax.swing.JButton();
         pnConfiguraciones = new javax.swing.JPanel();
@@ -324,7 +318,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnUsuarios = new javax.swing.JButton();
         btnDonaciones = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
@@ -359,6 +352,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
         btnAyuda.setText("AYUDA");
         pnPrincipal.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, 180, -1));
+
+        jLabel2.setBackground(new java.awt.Color(209, 200, 184));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enca1.png"))); // NOI18N
+        jLabel2.setToolTipText("");
+        pnPrincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1150, 200));
 
         pnReportes.setBackground(new java.awt.Color(249, 247, 250));
         pnReportes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -457,10 +455,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jTableDatosROLES.setToolTipText("");
         jScrollPane21.setViewportView(jTableDatosROLES);
 
-        btnCANCELARROL.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARROL.setText("CANCELAR");
-
         btnREPORTEINDIVIDUALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         btnREPORTEGENERALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
@@ -476,9 +470,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(btnCANCELARROL, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43))
+                        .addGap(213, 213, 213))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
                         .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -490,7 +482,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARROL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(230, 230, 230))
@@ -613,10 +604,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         ));
         jScrollPane9.setViewportView(jTableDatosUsuario);
 
-        btnCANCELARUSU.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARUSU.setText("CANCELAR");
-
         btnREPORTEGENERALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
 
         btnREPORTEINDIVIDUALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
@@ -630,12 +617,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(btnCANCELARUSU)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane9)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel39Layout.setVerticalGroup(
@@ -645,7 +630,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCANCELARUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
@@ -1078,10 +1062,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(jTableDatosPersonas);
 
-        btnCANCELARPER.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARPER.setText("CANCELAR");
-
         btnREPORTEGENERALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
 
         btnREPORTEINDIVIDUALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
@@ -1090,18 +1070,15 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(btnCANCELARPER)))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
@@ -1111,7 +1088,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCANCELARPER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
@@ -1195,10 +1171,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jTableDatosProyectos.setToolTipText("");
         jScrollPane18.setViewportView(jTableDatosProyectos);
 
-        btnCANCELARPROYE.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARPROYE.setText("CANCELAR");
-
         btnREPORTEINDIVIDUALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         btnREPORTEGENERALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
@@ -1217,9 +1189,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
                         .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(btnCANCELARPROYE)
-                        .addGap(94, 94, 94))))
+                        .addGap(250, 250, 250))))
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1228,7 +1198,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
@@ -1430,10 +1399,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jTableDatosInscripciones.setToolTipText("");
         jScrollPane19.setViewportView(jTableDatosInscripciones);
 
-        btnCANCELARINSCRI.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARINSCRI.setText("CANCELAR");
-
         btnIMPRIMIRINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         btnREPORTEGENERALINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
@@ -1452,9 +1417,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)
                         .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(btnCANCELARINSCRI)
-                        .addGap(75, 75, 75))))
+                        .addGap(250, 250, 250))))
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1463,7 +1426,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
@@ -1573,10 +1535,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jTableDatosDonacione.setToolTipText("");
         jScrollPane15.setViewportView(jTableDatosDonacione);
 
-        btnCANCELARDON.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARDON.setText("CANCELAR");
-
         btnREPORTEINDIVIDUALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         btnREPORTEGENERALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
@@ -1592,9 +1550,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(btnCANCELARDON, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43))
+                        .addGap(213, 213, 213))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -1606,7 +1562,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(230, 230, 230))
@@ -1796,10 +1751,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jTableDatosProductos.setToolTipText("");
         jScrollPane17.setViewportView(jTableDatosProductos);
 
-        btnCANCELARPROD.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCANCELARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.gif"))); // NOI18N
-        btnCANCELARPROD.setText("CANCELAR");
-
         btnREPORTEINDIVIDUALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
 
         btnREPORTEGENERALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
@@ -1818,9 +1769,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)
                         .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(btnCANCELARPROD)
-                        .addGap(123, 123, 123))))
+                        .addGap(291, 291, 291))))
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1829,7 +1778,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCANCELARPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
@@ -1882,11 +1830,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnMenu.addTab("Ayuda", pnConfiguraciones);
 
         pnPrincipal.add(pnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 1150, 630));
-
-        jLabel2.setBackground(new java.awt.Color(209, 200, 184));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enca1.png"))); // NOI18N
-        jLabel2.setToolTipText("");
-        pnPrincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1150, 200));
 
         btnUsuarios.setBackground(new java.awt.Color(43, 45, 66));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
@@ -1942,22 +1885,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private void lblVerClaveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblVerClaveMousePressed
-    public JButton getBtnCANCELARDON() {
-        return btnCANCELARDON;
-    }
-
-    public void setBtnCANCELARDON(JButton btnCANCELARDON) {
-        this.btnCANCELARDON = btnCANCELARDON;
-    }
-
-    public JButton getBtnCANCELARINSCRI() {
-        return btnCANCELARINSCRI;
-    }
-
-    public void setBtnCANCELARINSCRI(JButton btnCANCELARINSCRI) {
-        this.btnCANCELARINSCRI = btnCANCELARINSCRI;
-    }
-
+    
     public JTextField getTxtBsqDonacionesCriterio() {
         return txtBsqDonacionesCriterio;
     }
@@ -1966,30 +1894,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         this.txtBsqDonacionesCriterio = txtBsqDonacionesCriterio;
     }
 
-    public JButton getBtnCANCELARPER() {
-        return btnCANCELARPER;
-    }
-
-    public void setBtnCANCELARPER(JButton btnCANCELARPER) {
-        this.btnCANCELARPER = btnCANCELARPER;
-    }
-
-    public JButton getBtnCANCELARPROD() {
-        return btnCANCELARPROD;
-    }
-
-    public void setBtnCANCELARPROD(JButton btnCANCELARPROD) {
-        this.btnCANCELARPROD = btnCANCELARPROD;
-    }
-
-    public JButton getBtnCANCELARPROYE() {
-        return btnCANCELARPROYE;
-    }
-
-    public void setBtnCANCELARPROYE(JButton btnCANCELARPROYE) {
-        this.btnCANCELARPROYE = btnCANCELARPROYE;
-    }
-
+   
     public JButton getBtnCREARDONA() {
         return btnCREARDONA;
     }
@@ -2760,13 +2665,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
 //    }
 //    
 
-    public JButton getBtnCANCELARROL() {
-        return btnCANCELARROL;
-    }
-
-    public void setBtnCANCELARROL(JButton btnCANCELARROL) {
-        this.btnCANCELARROL = btnCANCELARROL;
-    }
+   
 
     public JButton getBtnCREARROL() {
         return btnCREARROL;
@@ -2879,14 +2778,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     public void setBtnROLES(JButton btnROLES) {
         this.btnROLES = btnROLES;
     }
-    public JButton getBtnCANCELARUSU() {
-        return btnCANCELARUSU;
-    }
-
-    public void setBtnCANCELARUSU(JButton btnCANCELARUSU) {
-        this.btnCANCELARUSU = btnCANCELARUSU;
-    }
-
     public JButton getBtnCREARUSU() {
         return btnCREARUSU;
     }
@@ -3079,13 +2970,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser JdcFechaInicio;
     private com.toedter.calendar.JDateChooser JdcFechaNacPer;
     private javax.swing.JButton btnAyuda;
-    private javax.swing.JButton btnCANCELARDON;
-    private javax.swing.JButton btnCANCELARINSCRI;
-    private javax.swing.JButton btnCANCELARPER;
-    private javax.swing.JButton btnCANCELARPROD;
-    private javax.swing.JButton btnCANCELARPROYE;
-    private javax.swing.JButton btnCANCELARROL;
-    private javax.swing.JButton btnCANCELARUSU;
     private javax.swing.JButton btnCREARDONA;
     private javax.swing.JButton btnCREARINSCRI;
     private javax.swing.JButton btnCREARPER;

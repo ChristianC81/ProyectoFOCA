@@ -77,7 +77,6 @@ public class ControllerUsuario {
         this.vistap.getBtnbuscarUsu().addActionListener(l -> buscarUsuario());
         this.vistap.getChekBsqUsu().addActionListener(l -> mostrarTodos());
         this.vistap.getBtnlimpiarUsubsq().addActionListener(l -> limpiarB());
-        this.vistap.getBtnCANCELARUSU().addActionListener(l -> cancelar());
 
         //Tabla de datos
         this.vistap.getjTableDatosUsuario().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
