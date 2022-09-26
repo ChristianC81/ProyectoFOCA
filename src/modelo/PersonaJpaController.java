@@ -353,7 +353,6 @@ public class PersonaJpaController implements Serializable {
 //        return listBeneficiarios;
 //
 //    }
-
     public Persona findPersona(BigDecimal id) {
         EntityManager em = getEntityManager();
         try {
@@ -394,7 +393,6 @@ public class PersonaJpaController implements Serializable {
         EntityManager em = tjc.getEntityManager();
         //Para realizar consultas 
         Iterator it = em.createQuery("SELECT p FROM Persona p").getResultList().iterator();
-
         try {
             while (it.hasNext()) {
                 comboper.addItem(p);
@@ -417,5 +415,4 @@ public class PersonaJpaController implements Serializable {
             em.close();
         }
     }
-
 }

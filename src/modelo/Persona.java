@@ -4,10 +4,17 @@
  */
 package modelo;
 
+import java.awt.Image;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import javax.imageio.ImageIO;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -53,6 +60,7 @@ public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    //Propios de Persona
     @Id
     @Basic(optional = false)
     @Column(name = "IDPER")
@@ -79,14 +87,22 @@ public class Persona implements Serializable {
     private Date fechanacimiento;
     @Column(name = "ESTADOCIVIL")
     private String estadocivil;
+    
+    //Benefactor 
     @Column(name = "SALARIOBENEFAC")
     private Double salariobenefac;
+    
+    //Beneficiario
     @Column(name = "ESTRATOSBENEFI")
     private String estratosbenefi;
+    
+    //Jefe de Operaciones
     @Column(name = "TITULO")
     private String titulo;
     @Column(name = "SEGURO")
     private String seguro;
+    
+    //Voluntario
     @Column(name = "HORARIO")
     private String horario;
     @Column(name = "PERIODOVOL")
@@ -94,8 +110,9 @@ public class Persona implements Serializable {
     @Column(name = "TIPOVOL")
     private String tipovol;
     @Lob
+    
     @Column(name = "FOTO")
-    private Serializable foto;
+    private byte[] foto;
     @OneToMany(mappedBy = "idpersona")
     private List<Inscripcion> inscripcionList;
     @OneToMany(mappedBy = "idpersona")
@@ -261,13 +278,29 @@ public class Persona implements Serializable {
         this.tipovol = tipovol;
     }
 
-    public Serializable getFoto() {
-        return foto;
-    }
+     public Image getFoto() {
+      Image imagen = null;
+      ByteArrayInputStream bis = new ByteArrayInputStream(foto); //portada es el array de bytes
+      try {
+         imagen = ImageIO.read(bis);
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+      return imagen.getScaledInstance(50, 70, Image.SCALE_SMOOTH);
+   }
 
-    public void setFoto(Serializable foto) {
-        this.foto = foto;
-    }
+    public void setFoto(File imagen) {
+      foto = new byte[(int)imagen.length()];
+      try {
+         FileInputStream fis = new FileInputStream(imagen);
+         fis.read(foto);
+         fis.close();
+      } catch (FileNotFoundException e) {
+         e.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
 
     @XmlTransient
     public List<Inscripcion> getInscripcionList() {
@@ -327,7 +360,7 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return this.nombresper + " " + this.apellidosper;
+        return this.nombresper + "  " + this.apellidosper;
     }
 
 }

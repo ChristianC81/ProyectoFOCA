@@ -17,14 +17,18 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import modelo.Persona;
 import modelo.PersonaJpaController;
 import modelo.Validaciones;
 import modelo.exceptions.NonexistentEntityException;
+import oracle.net.aso.i;
 import proyectofoca.ManagerFactory;
+import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 /**
  *
@@ -112,6 +116,19 @@ public class ControllerPersona {
             this.vistap.getTxthorario().setText(persona.getHorario());
             this.vistap.getTxtperiodo().setText(persona.getPeriodovol());
             this.vistap.getTxtTipoVol().setText(persona.getTipovol());
+            try {
+                Image foto = persona.getFoto();
+                if (foto != null) {
+                    ImageIcon icono = new ImageIcon(foto);
+                    DefaultTableCellRenderer dtcr = new DefaultTableCellHeaderRenderer();
+                    dtcr.setIcon(icono);
+                    vistap.getLblFoto().setIcon(icono);
+                } else { //No venga foto
+                    vistap.getLblFoto().setIcon(null);
+                }
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
             this.vistap.getLblFoto().setIcon((Icon) persona.getFoto());
             //Acceso de Botones
             this.vistap.getBtnCREARPER().setEnabled(false);
@@ -172,14 +189,9 @@ public class ControllerPersona {
         persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
         persona.setTipovol(this.vistap.getTxtTipoVol().getText());
 
-        //Guardar foto
-//        try {
-//         
-//            Image imagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
-//            persona.setFoto((Serializable) imagen);
-//        } catch (IOException ex) {
-//            Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        //Guardar foto         
+        persona.setFoto(jfc.getSelectedFile());
+
         try {
             modeloPersona.create(persona);
         } catch (Exception ex) {
@@ -229,6 +241,9 @@ public class ControllerPersona {
                 persona.setHorario(this.vistap.getTxthorario().getText());
                 persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
                 persona.setTipovol(this.vistap.getTxtTipoVol().getText());
+
+                //Editar foto         
+                persona.setFoto(jfc.getSelectedFile());
 
                 modeloPersona.edit(persona);
                 modeloTabla.eliminar(persona);

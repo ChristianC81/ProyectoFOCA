@@ -48,6 +48,7 @@ public class ControllerProducto {
         this.vistad.getjTableDatosProductos().setModel(modeloTablaProd);
         cargarComboBoxDona();
         cargarComboBoxProy();
+        txtAyuda();
 
     }
 
@@ -222,5 +223,8 @@ public class ControllerProducto {
         }
 
         return valid;
+    }
+       public void txtAyuda() {  
+        TextPrompt busqdProd = new TextPrompt("Pan", vistad.getTxtBsqProductos());
     }
 }

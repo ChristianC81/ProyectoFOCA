@@ -9,11 +9,9 @@ import Vista.ViewAdministrador;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Vector;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -45,14 +43,13 @@ public class ControllerProyecto {
         this.manager = manager;
         this.modeloProyecto = modeloProyecto;
         this.vistad.setVisible(true);
-        iniciarControlProyecto();
-        cargarComboBoxBeneficiario();
-
         this.modeloTablaProyecto = new ModeloTablaProyecto();
         this.modeloTablaProyecto.setFilas(modeloProyecto.findProyectoEntities());
         this.vistad.getjTableDatosProyectos().setModel(modeloTablaProyecto);
-        //
-
+        
+        iniciarControlProyecto();
+        cargarComboBoxBeneficiario();
+        txtAyuda();
     }
 
     // Iniciar control producto 
@@ -238,13 +235,10 @@ public class ControllerProyecto {
         }
         return validado;
     }
-// public void cargarComboBoxBeneficiarios() {
-//  try {
-//            Vector v = new Vector();
-//            v.addAll(new PersonaJpaController(manager.getEmf()).findBeneficiariosEntities());
-//            this.vistad.getjComboBoxBeneficiarioProye().setModel(new DefaultComboBoxModel(v));
-//        } catch (ArrayIndexOutOfBoundsException e) {
-//            System.out.println("Capturando errores cargando combobox");
-//        }
-//    }
+     public void txtAyuda() {
+        TextPrompt nombreProy = new TextPrompt("Ayudandonos", vistad.getTxtNombreProye());
+        TextPrompt lugarProy = new TextPrompt("Parque Central", vistad.getTxtLugarProye());
+        TextPrompt busqdProy = new TextPrompt("Solidaridad", vistad.getTxtBsqProyectos());
+    }
 }
+

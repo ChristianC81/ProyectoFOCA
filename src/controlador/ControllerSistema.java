@@ -1,13 +1,8 @@
 package controlador;
 
 import Vista.InicioSistema;
-import Vista.InicioSistema;
-import Vista.ViewAdministrador;
 import Vista.ViewLogin;
-import Vista.ViewSistema;
 import static java.awt.Frame.MAXIMIZED_BOTH;
-import modelo.PersonaJpaController;
-import modelo.ProductoJpaController;
 import modelo.UsuarioJpaController;
 import proyectofoca.ManagerFactory;
 

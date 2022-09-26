@@ -6,9 +6,7 @@
 package controlador;
 
 import Vista.ViewAdministrador;
-import java.awt.Dimension;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +19,6 @@ import modelo.*;
 import modelo.exceptions.IllegalOrphanException;
 import modelo.exceptions.NonexistentEntityException;
 import proyectofoca.ManagerFactory;
-//import donayectofoca.ManagerFactory;
 
 /**
  * @author miri
@@ -45,6 +42,7 @@ public class ControllerDonacion {
         this.vistaDona.getjTableDatosDonacione().setModel(modeloTdona);
 
         cargarComboBoxBenefaDONA();
+        txtAyuda();
     }
 
     public void iniciarControDonacion() {
@@ -252,4 +250,11 @@ public class ControllerDonacion {
         }
         return validado;
     }
+
+    public void txtAyuda() {
+        TextPrompt detalleDona = new TextPrompt("", vistaDona.getTxaDetalleProdDON());
+        TextPrompt motivoDona = new TextPrompt("Motivo: Causa Solidaria ", vistaDona.getTxaMotivoDON());
+        TextPrompt busqdDona = new TextPrompt("Benefactor: Juan", vistaDona.getTxtBsqDonacionesCriterio());
+    }
+
 }

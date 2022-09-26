@@ -6,6 +6,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -52,10 +53,14 @@ public class ViewLogin extends javax.swing.JFrame {
         this.btnSalir = btnSalir;
     }
 
+    public JLabel getLblVerClave() {
+        return lblVerClave;
+    }
 
-    
+    public void setLblVerClave(JLabel lblVerClave) {
+        this.lblVerClave = lblVerClave;
+    }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -129,13 +134,12 @@ public class ViewLogin extends javax.swing.JFrame {
 
     private void lblVerClaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMouseClicked
         // TODO add your handling code here:
-        txtPass.setEchoChar(i);
+        
     }//GEN-LAST:event_lblVerClaveMouseClicked
 
     private void lblVerClaveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerClaveMousePressed
         // TODO add your handling code here:
-        i = txtPass.getEchoChar();
-        txtPass.setEchoChar((char) 0);
+
     }//GEN-LAST:event_lblVerClaveMousePressed
 
 

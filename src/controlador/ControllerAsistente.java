@@ -32,11 +32,11 @@ public class ControllerAsistente extends ControllerPersona {
         vistap.getBtnReportes().setEnabled(false);
         vistap.getBtnROLES().setEnabled(false);
         vistap.getBtnUsuarios().setEnabled(false);
-        vistap.getBtnConfiguracion().setEnabled(false);
         vistap.getBtnInscripciones().setEnabled(false);
         vistap.getBtnDonaciones().setEnabled(false);
         vistap.getBtnproyectos().setEnabled(false);
-
+        
+        //Crear y Modificar Benefactores, Beneficiarios y Voluntarios
         cper = new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
         cper.iniciarControlPer();
 

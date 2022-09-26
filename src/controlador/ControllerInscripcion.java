@@ -21,7 +21,6 @@ import javax.swing.event.ListSelectionListener;
 import modelo.Inscripcion;
 import modelo.InscripcionJpaController;
 import modelo.Persona;
-import modelo.PersonaJpaController;
 import modelo.Proyecto;
 import modelo.ProyectoJpaController;
 import modelo.exceptions.NonexistentEntityException;
@@ -45,12 +44,13 @@ public class ControllerInscripcion {
         this.vistad = vistad;
         this.manager = manager;
         this.modeloInscripcion = modeloInscripcion;
-        iniciarControlInscripcion();
-        cargarComboBoxVoluntario();
-        cargarComboBoxProyecto();
         this.modeloTablaInscripcion = new ModeloTablaInscripcion();
         this.modeloTablaInscripcion.setFilas(modeloInscripcion.findInscripcionEntities());
         this.vistad.getjTableDatosInscripciones().setModel(modeloTablaInscripcion);
+        iniciarControlInscripcion();
+        cargarComboBoxVoluntario();
+        cargarComboBoxProyecto();
+        txtAyuda();
     }
 
     //Inicniar control inscripcion
@@ -101,7 +101,7 @@ public class ControllerInscripcion {
         inscripcion = new Inscripcion();
         inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
         inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-        inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+        inscripcion.setNdiasparticipacionins((Integer) this.vistad.getjSpinnerDiasParticipacion().getValue());
         try {
             modeloInscripcion.create(inscripcion);
             modeloTablaInscripcion.agregar(inscripcion);
@@ -118,7 +118,7 @@ public class ControllerInscripcion {
         if (inscripcion != null) {
             inscripcion.setIdpersona((Persona) this.vistad.getCbxCodigoVoluntario().getSelectedItem());
             inscripcion.setIdproyins((Proyecto) this.vistad.getCbxCodigoProyecto().getSelectedItem());
-            inscripcion.setNdiasparticipacionins((BigInteger) this.vistad.getjSpinnerDiasParticipacion().getValue());
+            inscripcion.setNdiasparticipacionins((Integer) this.vistad.getjSpinnerDiasParticipacion().getValue());
             try {
                 modeloInscripcion.edit(inscripcion);
             } catch (Exception ex) {
@@ -211,4 +211,7 @@ public class ControllerInscripcion {
         modeloTablaInscripcion.fireTableDataChanged();
     }
 
+    public void txtAyuda() {
+        TextPrompt busqdInsc = new TextPrompt("Solidaridad", vistad.getTxtBsqInscripiones());
+    }
 }

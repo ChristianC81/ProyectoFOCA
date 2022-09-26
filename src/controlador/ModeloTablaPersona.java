@@ -4,12 +4,17 @@
  */
 package controlador;
 
+import java.awt.Image;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import modelo.Persona;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 /**
  *
@@ -103,7 +108,7 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 16:
                 return String.class;
             case 17:
-                return Serializable.class;
+                return Image.class;
             default:
                 return Object.class;
         }

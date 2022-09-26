@@ -6,6 +6,8 @@ package controlador;
 
 import Vista.ViewAdministrador;
 import Vista.ViewLogin;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import modelo.DonacionJpaController;
 import modelo.InscripcionJpaController;
 import modelo.PersonaJpaController;
@@ -54,8 +56,9 @@ public class ControllerAdministrador extends ControllerPersona {
         cprod = new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf()));
         cprod.iniciarControlProd();
 
-        controldeEventosAdmin(vistap);
+        controldeEventosAdmin(vistap);        
         listaTipoPer();
+        verPass();
     }
 
     public void controldeEventosAdmin(ViewAdministrador vistap) {
@@ -67,7 +70,7 @@ public class ControllerAdministrador extends ControllerPersona {
         vistap.getBtnInscripciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(5));
         vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
         vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
-        vistap.getBtnConfiguracion().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
+        vistap.getBtnAyuda().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
         vistap.getBtnSalir().addActionListener(l -> Regresar());
     }
 
@@ -84,5 +87,35 @@ public class ControllerAdministrador extends ControllerPersona {
         vistap.getCbxTipoPer().addItem("Benefactor");
         vistap.getCbxTipoPer().addItem("Beneficiario");
         vistap.getCbxTipoPer().addItem("Voluntario");
+    }
+     private void verPass() {
+
+        MouseListener lmouse = new MouseListener() {
+            char i;
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                vistap.getTxtClave().setEchoChar(i);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                i = vistap.getTxtClave().getEchoChar();
+                vistap.getTxtClave().setEchoChar((char) 0);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        };
+        vistap.getLblVerClave().addMouseListener(lmouse);
     }
 }

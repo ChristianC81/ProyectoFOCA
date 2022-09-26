@@ -5,12 +5,7 @@
 package proyectofoca;
 
 import Vista.InicioSistema;
-import Vista.InicioSistema;
-import Vista.ViewAdministrador;
-import Vista.ViewLogin;
-import Vista.ViewSistema;
 import controlador.ControllerSistema;
-import modelo.PersonaJpaController;
 import modelo.UsuarioJpaController;
 
 /**
@@ -30,7 +25,5 @@ public class ProyectoFOCA {
         UsuarioJpaController modelo = new UsuarioJpaController(manager.getEmf());
 
         ControllerSistema cs = new ControllerSistema(manager, vistaSis, modelo);
-
-        System.out.println("Palcambio");
     }
 }

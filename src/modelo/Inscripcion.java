@@ -38,7 +38,7 @@ public class Inscripcion implements Serializable {
     @Column(name = "IDINS")
     private BigDecimal idins;
     @Column(name = "NDIASPARTICIPACIONINS")
-    private BigInteger ndiasparticipacionins;
+    private Integer ndiasparticipacionins;
     @JoinColumn(name = "IDPERSONA", referencedColumnName = "IDPER")
     @ManyToOne
     private Persona idpersona;
@@ -61,11 +61,11 @@ public class Inscripcion implements Serializable {
         this.idins = idins;
     }
 
-    public BigInteger getNdiasparticipacionins() {
+    public Integer getNdiasparticipacionins() {
         return ndiasparticipacionins;
     }
 
-    public void setNdiasparticipacionins(BigInteger ndiasparticipacionins) {
+    public void setNdiasparticipacionins(Integer ndiasparticipacionins) {
         this.ndiasparticipacionins = ndiasparticipacionins;
     }
 
