@@ -253,9 +253,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel120 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
-        jSeparator115 = new javax.swing.JSeparator();
         jSeparator116 = new javax.swing.JSeparator();
-        jSeparator117 = new javax.swing.JSeparator();
         jScrollPane13 = new javax.swing.JScrollPane();
         txaMotivoDON = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
@@ -285,7 +283,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel109 = new javax.swing.JLabel();
         jSeparator83 = new javax.swing.JSeparator();
         jSeparator86 = new javax.swing.JSeparator();
-        jSeparator96 = new javax.swing.JSeparator();
         jSpinnerCantidad = new javax.swing.JSpinner();
         txtTipoProducto = new javax.swing.JTextField();
         jLabel110 = new javax.swing.JLabel();
@@ -316,8 +313,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         btnUsuarios = new javax.swing.JButton();
         btnDonaciones = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
@@ -336,22 +333,28 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSalir.setBackground(new java.awt.Color(43, 45, 66));
+        btnSalir.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-exit-48.png"))); // NOI18N
         btnSalir.setText("SALIR");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 720, 180, 40));
 
         btnPersona.setBackground(new java.awt.Color(43, 45, 66));
+        btnPersona.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnPersona.setForeground(new java.awt.Color(255, 255, 255));
-        btnPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empresario.png"))); // NOI18N
+        btnPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-people-30.png"))); // NOI18N
         btnPersona.setText("PERSONAS");
+        btnPersona.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 180, 40));
 
         btnAyuda.setBackground(new java.awt.Color(43, 45, 66));
+        btnAyuda.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnAyuda.setForeground(new java.awt.Color(255, 255, 255));
         btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
         btnAyuda.setText("AYUDA");
-        pnPrincipal.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, 180, -1));
+        btnAyuda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnPrincipal.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 666, 180, 40));
 
         jLabel2.setBackground(new java.awt.Color(209, 200, 184));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enca1.png"))); // NOI18N
@@ -383,120 +386,142 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnRoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel46.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel46.setMinimumSize(new java.awt.Dimension(640, 811));
         jPanel46.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel134.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel134.setForeground(new java.awt.Color(102, 102, 102));
         jLabel134.setText("Nombre Rol:");
-        jPanel46.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        jPanel46.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         jSeparator129.setForeground(new java.awt.Color(204, 204, 204));
         jPanel46.add(jSeparator129, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 220, 10));
 
         txaDescripcionROL.setBackground(new java.awt.Color(249, 247, 250));
         txaDescripcionROL.setColumns(20);
+        txaDescripcionROL.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txaDescripcionROL.setRows(5);
         txaDescripcionROL.setBorder(null);
         jScrollPane20.setViewportView(txaDescripcionROL);
 
-        jPanel46.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 80));
+        jPanel46.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 230, 90));
 
-        btnCREARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel46.add(btnCREARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 40, 50));
+        btnCREARROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel46.add(btnCREARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 50, 40));
 
-        btnEDITARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel46.add(btnEDITARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 40, 50));
+        btnEDITARROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel46.add(btnEDITARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 50, 40));
 
-        btnELIMINARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel46.add(btnELIMINARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 40, 50));
+        btnELIMINARROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel46.add(btnELIMINARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 50, 40));
 
-        btnLIMPIARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel46.add(btnLIMPIARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 40, 50));
+        btnLIMPIARROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel46.add(btnLIMPIARROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 50, 40));
 
         jLabel137.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel137.setForeground(new java.awt.Color(102, 102, 102));
         jLabel137.setText("Descripción:");
         jPanel46.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
+        jTextFieldNOMBREROL.setBackground(new java.awt.Color(249, 247, 250));
+        jTextFieldNOMBREROL.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTextFieldNOMBREROL.setBorder(null);
-        jPanel46.add(jTextFieldNOMBREROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 220, 20));
+        jPanel46.add(jTextFieldNOMBREROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 220, 20));
 
         pnRoles.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         jPanel47.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel47.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel47.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel47.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosROLES.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosROLES.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTableDatosROLES.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nombre Rol", "Descripción"
+
             }
         ));
         jTableDatosROLES.setToolTipText("");
         jScrollPane21.setViewportView(jTableDatosROLES);
 
-        btnREPORTEINDIVIDUALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnREPORTEINDIVIDUALROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEGENERALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALROL.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel47Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                        .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(213, 213, 213))
+                        .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
                         .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(15, 15, 15))))
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(230, 230, 230))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnREPORTEINDIVIDUALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALROL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         pnRoles.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         jPanel48.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel48.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel48.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Roles", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel48.setForeground(new java.awt.Color(255, 255, 255));
         jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarBUSQUEDAROL.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarBUSQUEDAROL.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarBUSQUEDAROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarBUSQUEDAROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarBUSQUEDAROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel48.add(btnlimpiarBUSQUEDAROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 50, 30));
 
@@ -505,7 +530,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnbuscaRROL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
         btnbuscaRROL.setText("Buscar");
         btnbuscaRROL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel48.add(btnbuscaRROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 70, 30));
+        jPanel48.add(btnbuscaRROL, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 80, 30));
 
         chekBsqROL.setBackground(new java.awt.Color(249, 247, 250));
         chekBsqROL.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -531,16 +556,15 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnMenu.addTab("Roles", pnRoles);
 
         pnUsuario.setBackground(new java.awt.Color(249, 247, 250));
-        pnUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel19.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel19.setForeground(new java.awt.Color(255, 255, 255));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarUsubsq.setBackground(new java.awt.Color(249, 247, 250));
-        btnlimpiarUsubsq.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarUsubsq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarUsubsq.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnlimpiarUsubsq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarUsubsq.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel19.add(btnlimpiarUsubsq, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 50, 30));
 
@@ -549,7 +573,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnbuscarUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
         btnbuscarUsu.setText("Buscar");
         btnbuscarUsu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel19.add(btnbuscarUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 70, 30));
+        jPanel19.add(btnbuscarUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 80, 30));
 
         chekBsqUsu.setBackground(new java.awt.Color(249, 247, 250));
         chekBsqUsu.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -570,75 +594,80 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator111.setForeground(new java.awt.Color(204, 204, 204));
         jPanel19.add(jSeparator111, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 190, 10));
 
-        pnUsuario.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 680, 100));
-
         pnPersona5.setBackground(new java.awt.Color(249, 247, 250));
         pnPersona5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel39.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel39.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel39.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel39.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosUsuario.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosUsuario.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTableDatosUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nombre de Usuario", "Contraseña", "Persona", "Rol"
+
             }
         ));
         jScrollPane9.setViewportView(jTableDatosUsuario);
 
-        btnREPORTEGENERALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEINDIVIDUALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnREPORTEINDIVIDUALUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
         jPanel39Layout.setHorizontalGroup(
-            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel39Layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel39Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel39Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                    .addComponent(btnREPORTEINDIVIDUALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALUSU, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pnPersona5.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         pnAdministrar2.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Usuario ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Usuario ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         pnAdministrar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombreUsu.setBackground(new java.awt.Color(249, 247, 250));
@@ -670,10 +699,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnAdministrar2.add(jSeparator78, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 200, 10));
 
         jSeparator82.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator82, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 200, 10));
+        pnAdministrar2.add(jSeparator82, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 200, 10));
 
         jSeparator84.setForeground(new java.awt.Color(204, 204, 204));
-        pnAdministrar2.add(jSeparator84, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 200, 10));
+        pnAdministrar2.add(jSeparator84, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 200, 10));
 
         jLabel105.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel105.setForeground(new java.awt.Color(102, 102, 102));
@@ -698,25 +727,42 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txtTipoVol2.setBorder(null);
         pnAdministrar2.add(txtTipoVol2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 180, -1));
 
-        btnLIMPIARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        pnAdministrar2.add(btnLIMPIARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 40, 50));
+        btnLIMPIARUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar2.add(btnLIMPIARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 50, 40));
 
-        btnCREARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        pnAdministrar2.add(btnCREARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 40, 50));
+        btnCREARUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar2.add(btnCREARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 50, 40));
 
-        btnEDITARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        pnAdministrar2.add(btnEDITARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 40, 50));
+        btnEDITARUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar2.add(btnEDITARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 50, 40));
 
-        btnELIMINARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        pnAdministrar2.add(btnELIMINARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 40, 50));
+        btnELIMINARUSU.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARUSU.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARUSU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARUSU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar2.add(btnELIMINARUSU, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 50, 40));
 
         txtClave.setBackground(new java.awt.Color(255, 255, 255));
+        txtClave.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txtClave.setBorder(null);
         pnAdministrar2.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 200, 20));
 
+        cbxIdPersona.setBackground(new java.awt.Color(249, 247, 250));
+        cbxIdPersona.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         cbxIdPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una Persona" }));
         pnAdministrar2.add(cbxIdPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, 30));
 
+        cbxIdRol.setBackground(new java.awt.Color(249, 247, 250));
+        cbxIdRol.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         cbxIdRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un Rol" }));
         pnAdministrar2.add(cbxIdRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 200, 30));
 
@@ -729,7 +775,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 lblVerClaveMousePressed(evt);
             }
         });
-        pnAdministrar2.add(lblVerClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+        pnAdministrar2.add(lblVerClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 144, -1, 30));
 
         lblNombreUsu.setForeground(new java.awt.Color(204, 0, 0));
         pnAdministrar2.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 20, 20));
@@ -739,7 +785,22 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         pnPersona5.add(pnAdministrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
-        pnUsuario.add(pnPersona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout pnUsuarioLayout = new javax.swing.GroupLayout(pnUsuario);
+        pnUsuario.setLayout(pnUsuarioLayout);
+        pnUsuarioLayout.setHorizontalGroup(
+            pnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnUsuarioLayout.createSequentialGroup()
+                .addGap(460, 460, 460)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(pnPersona5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        pnUsuarioLayout.setVerticalGroup(
+            pnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnUsuarioLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(pnPersona5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pnMenu.addTab("Usuarios", pnUsuario);
 
@@ -747,7 +808,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnAdministrar.setBackground(new java.awt.Color(249, 247, 250));
-        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        pnAdministrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Personas ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         pnAdministrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtcedulaPer.setBackground(new java.awt.Color(249, 247, 250));
@@ -773,7 +834,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txttelefono.setBackground(new java.awt.Color(249, 247, 250));
         txttelefono.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txttelefono.setBorder(null);
-        pnAdministrar.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 200, 20));
+        pnAdministrar.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 200, -1));
 
         txtcorreoPer.setBackground(new java.awt.Color(249, 247, 250));
         txtcorreoPer.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
@@ -830,10 +891,14 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel50.setText("Tipo:");
         pnAdministrar.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
+        cbxTipoPer.setBackground(new java.awt.Color(249, 247, 250));
+        cbxTipoPer.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         cbxTipoPer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el Tipo de Persona" }));
         pnAdministrar.add(cbxTipoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 200, 20));
 
+        rbtFemenino.setBackground(new java.awt.Color(249, 247, 250));
         buttonGroupGenero.add(rbtFemenino);
+        rbtFemenino.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         rbtFemenino.setText("Femenino");
         pnAdministrar.add(rbtFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
 
@@ -842,7 +907,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel8.setText("Género:");
         pnAdministrar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
+        rbtMasculino.setBackground(new java.awt.Color(249, 247, 250));
         buttonGroupGenero.add(rbtMasculino);
+        rbtMasculino.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         rbtMasculino.setText("Masculino");
         pnAdministrar.add(rbtMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
@@ -909,8 +976,11 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator49.setForeground(new java.awt.Color(204, 204, 204));
         pnAdministrar.add(jSeparator49, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 180, 12));
 
+        chkseguroiees.setBackground(new java.awt.Color(249, 247, 250));
+        chkseguroiees.setFont(new java.awt.Font("Leelawadee UI", 1, 11)); // NOI18N
         chkseguroiees.setText("Seguro IEES");
-        pnAdministrar.add(chkseguroiees, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 180, -1));
+        chkseguroiees.setBorder(null);
+        pnAdministrar.add(chkseguroiees, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 180, 30));
 
         jLabel56.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(102, 102, 102));
@@ -976,29 +1046,43 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jSeparator47.setForeground(new java.awt.Color(204, 204, 204));
         pnAdministrar.add(jSeparator47, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 200, 10));
 
-        btnLIMPIARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        pnAdministrar.add(btnLIMPIARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 40, 50));
+        btnLIMPIARPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar.add(btnLIMPIARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 50, 40));
 
-        btnCREARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        pnAdministrar.add(btnCREARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 40, 50));
+        btnCREARPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar.add(btnCREARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 50, 40));
 
-        btnEDITARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        pnAdministrar.add(btnEDITARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 40, 50));
+        btnEDITARPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar.add(btnEDITARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 50, 40));
 
-        btnELIMINARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        pnAdministrar.add(btnELIMINARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 40, 50));
+        btnELIMINARPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnAdministrar.add(btnELIMINARPER, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, 50, 40));
+
+        JdcFechaNacPer.setBackground(new java.awt.Color(249, 247, 250));
         pnAdministrar.add(JdcFechaNacPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, -1));
 
         pnPersona.add(pnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 570));
 
         jPanel16.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel16.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarPerbsq.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarPerbsq.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarPerbsq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarPerbsq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarPerbsq.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel16.add(btnlimpiarPerbsq, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, 30));
 
@@ -1007,7 +1091,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnbuscarPer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
         btnbuscarPer.setText("Buscar");
         btnbuscarPer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel16.add(btnbuscarPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 70, 30));
+        jPanel16.add(btnbuscarPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 80, 30));
 
         chekBsqPer.setBackground(new java.awt.Color(249, 247, 250));
         chekBsqPer.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1034,63 +1118,70 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPersona2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel29.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel29.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosPersonas.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosPersonas.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTableDatosPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+
             }
         ));
         jScrollPane7.setViewportView(jTableDatosPersonas);
 
-        btnREPORTEGENERALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEINDIVIDUALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPER.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALPER.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPER.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnREPORTEINDIVIDUALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALPER, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
 
         pnPersona2.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 490, 470));
@@ -1103,13 +1194,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel37.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Proyecto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel37.setForeground(new java.awt.Color(255, 255, 255));
         jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarProyeBsqa.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarProyeBsqa.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarProyeBsqa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarProyeBsqa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarProyeBsqa.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel37.add(btnlimpiarProyeBsqa, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 50, 30));
 
@@ -1142,38 +1233,44 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProyectos.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 740, 100));
 
         jPanel41.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel41.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProyectos.setBackground(new java.awt.Color(249, 247, 222));
         jTableDatosProyectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "N°de Proyecto", "Nombre", "Inicio", "Fin", "Lugar", "N° de Voluntarios"
+
             }
         ));
         jTableDatosProyectos.setToolTipText("");
         jScrollPane18.setViewportView(jTableDatosProyectos);
 
-        btnREPORTEINDIVIDUALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEGENERALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
@@ -1186,92 +1283,112 @@ public class ViewAdministrador extends javax.swing.JFrame {
                         .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
-                        .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(250, 250, 250))))
+                        .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))))
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnREPORTEINDIVIDUALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEGENERALPROYE, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         pnProyectos.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 740, 470));
 
         jPanel12.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Proyectos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel75.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(102, 102, 102));
         jLabel75.setText("Nombre");
-        jPanel12.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel12.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         jLabel76.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(102, 102, 102));
         jLabel76.setText("Lugar");
-        jPanel12.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jPanel12.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
         jSeparator100.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel12.add(jSeparator100, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, 12));
+        jPanel12.add(jSeparator100, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 200, 12));
 
         jSeparator108.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel12.add(jSeparator108, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 10));
+        jPanel12.add(jSeparator108, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 200, 10));
 
         txtLugarProye.setBackground(new java.awt.Color(249, 247, 250));
+        txtLugarProye.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txtLugarProye.setBorder(null);
-        jPanel12.add(txtLugarProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 200, 20));
+        jPanel12.add(txtLugarProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 200, 20));
 
         jLabel82.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(102, 102, 102));
         jLabel82.setText("Fecha Inicio");
-        jPanel12.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel12.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
         jSeparator109.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel12.add(jSeparator109, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 200, 12));
+        jPanel12.add(jSeparator109, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 200, 12));
 
-        btnCREARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel12.add(btnCREARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 40, 50));
+        btnCREARPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(btnCREARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 50, 40));
 
-        btnEDITARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel12.add(btnEDITARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 40, 50));
+        btnEDITARPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(btnEDITARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 50, 40));
 
-        btnELIMINARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel12.add(btnELIMINARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 40, 50));
+        btnELIMINARPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(btnELIMINARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 50, 40));
 
-        btnLIMPIARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel12.add(btnLIMPIARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 40, 50));
+        btnLIMPIARPROYE.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARPROYE.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARPROYE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARPROYE.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(btnLIMPIARPROYE, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 50, 40));
 
         jLabel78.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(102, 102, 102));
         jLabel78.setText("Fecha Fin");
-        jPanel12.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jPanel12.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         txtNombreProye.setBackground(new java.awt.Color(249, 247, 250));
+        txtNombreProye.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txtNombreProye.setBorder(null);
-        jPanel12.add(txtNombreProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 200, 20));
+        jPanel12.add(txtNombreProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 200, 20));
 
         jSeparator110.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel12.add(jSeparator110, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 12));
+        jPanel12.add(jSeparator110, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 200, 12));
 
         jLabel77.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(102, 102, 102));
         jLabel77.setText("Beneficiario");
-        jPanel12.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        jPanel12.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
-        jPanel12.add(jComboBoxBeneficiarioProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 200, -1));
+        jComboBoxBeneficiarioProye.setBackground(new java.awt.Color(249, 247, 250));
+        jComboBoxBeneficiarioProye.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        jPanel12.add(jComboBoxBeneficiarioProye, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 200, 30));
 
         jSeparator130.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel12.add(jSeparator130, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 200, 12));
-        jPanel12.add(JdcFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 200, -1));
-        jPanel12.add(JdcFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 200, -1));
+        jPanel12.add(jSeparator130, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 200, 12));
+
+        JdcFechaFin.setBackground(new java.awt.Color(249, 247, 250));
+        jPanel12.add(JdcFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 200, -1));
+
+        JdcFechaInicio.setBackground(new java.awt.Color(249, 247, 250));
+        jPanel12.add(JdcFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 200, -1));
 
         pnProyectos.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
@@ -1281,7 +1398,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel11.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel72.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1292,52 +1409,69 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel73.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(102, 102, 102));
         jLabel73.setText("Número de días de Participación");
-        jPanel11.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+        jPanel11.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
         jSeparator98.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator98, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, 12));
+        jPanel11.add(jSeparator98, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 90, 12));
 
         jSeparator103.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator103, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 200, 10));
+        jPanel11.add(jSeparator103, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 200, 10));
 
-        jPanel11.add(cbxCodigoProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 200, 30));
+        cbxCodigoProyecto.setBackground(new java.awt.Color(249, 247, 250));
+        cbxCodigoProyecto.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        jPanel11.add(cbxCodigoProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 200, 30));
 
-        jPanel11.add(cbxCodigoVoluntario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 200, 30));
+        cbxCodigoVoluntario.setBackground(new java.awt.Color(249, 247, 250));
+        cbxCodigoVoluntario.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
+        jPanel11.add(cbxCodigoVoluntario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 200, 30));
 
+        jSpinnerDiasParticipacion.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jSpinnerDiasParticipacion.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         jSpinnerDiasParticipacion.setBorder(null);
-        jPanel11.add(jSpinnerDiasParticipacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 90, 30));
+        jPanel11.add(jSpinnerDiasParticipacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 90, 30));
 
         jLabel81.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(102, 102, 102));
         jLabel81.setText("Código de Proyecto");
-        jPanel11.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        jPanel11.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         jSeparator104.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel11.add(jSeparator104, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 200, 12));
+        jPanel11.add(jSeparator104, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 200, 12));
 
-        btnCREARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel11.add(btnCREARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 40, 50));
+        btnCREARINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.add(btnCREARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 50, 40));
 
-        btnEDITARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel11.add(btnEDITARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 40, 50));
+        btnEDITARINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.add(btnEDITARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 50, 40));
 
-        btnELIMINARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel11.add(btnELIMINARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 40, 50));
+        btnELIMINARINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.add(btnELIMINARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 50, 40));
 
-        btnLIMPIARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel11.add(btnLIMPIARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 40, 50));
+        btnLIMPIARINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.add(btnLIMPIARINSCRI, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 50, 40));
 
         pnIncripciones.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel35.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel35.setForeground(new java.awt.Color(255, 255, 255));
         jPanel35.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarInscriBsqa.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarInscriBsqa.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarInscriBsqa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear_1.png"))); // NOI18N
+        btnlimpiarInscriBsqa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarInscriBsqa.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel35.add(btnlimpiarInscriBsqa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 50, 30));
 
@@ -1370,65 +1504,70 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnIncripciones.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel42.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Inscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel42.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosInscripciones.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosInscripciones.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTableDatosInscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Voluntario", "Proyecto", "Dias de Participación"
+
             }
         ));
         jTableDatosInscripciones.setToolTipText("");
         jScrollPane19.setViewportView(jTableDatosInscripciones);
 
-        btnIMPRIMIRINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnIMPRIMIRINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnIMPRIMIRINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnIMPRIMIRINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnIMPRIMIRINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEGENERALINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALINSCRI.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALINSCRI.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALINSCRI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALINSCRI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
         jPanel42Layout.setHorizontalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel42Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
-                        .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(250, 250, 250))))
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnREPORTEGENERALINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIMPRIMIRINSCRI, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pnIncripciones.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 750, 470));
@@ -1439,7 +1578,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnDonaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel36.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel36.setMinimumSize(new java.awt.Dimension(640, 811));
         jPanel36.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1458,125 +1597,142 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel122.setText("Motivo de Donación:");
         jPanel36.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
-        jSeparator115.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 220, 10));
-
         jSeparator116.setForeground(new java.awt.Color(204, 204, 204));
         jPanel36.add(jSeparator116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, 10));
 
-        jSeparator117.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel36.add(jSeparator117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 220, 13));
-
         txaMotivoDON.setBackground(new java.awt.Color(249, 247, 250));
         txaMotivoDON.setColumns(20);
+        txaMotivoDON.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txaMotivoDON.setRows(5);
         txaMotivoDON.setBorder(null);
         jScrollPane13.setViewportView(txaMotivoDON);
 
-        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 80));
+        jPanel36.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 220, 90));
 
         txaDetalleProdDON.setBackground(new java.awt.Color(249, 247, 250));
         txaDetalleProdDON.setColumns(20);
+        txaDetalleProdDON.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txaDetalleProdDON.setRows(5);
         txaDetalleProdDON.setBorder(null);
         jScrollPane14.setViewportView(txaDetalleProdDON);
 
-        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 80));
+        jPanel36.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 220, 90));
 
-        btnCREARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 40, 50));
+        btnCREARDONA.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel36.add(btnCREARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 50, 40));
 
-        btnEDITARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel36.add(btnEDITARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 40, 50));
+        btnEDITARDONA.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel36.add(btnEDITARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 50, 40));
 
-        btnELIMINARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel36.add(btnELIMINARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 40, 50));
+        btnELIMINARDONA.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel36.add(btnELIMINARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 50, 40));
 
-        btnLIMPIARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 40, 50));
+        btnLIMPIARDONA.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel36.add(btnLIMPIARDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 50, 40));
 
         jLabel123.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel123.setForeground(new java.awt.Color(102, 102, 102));
         jLabel123.setText("Detalle de Producto: ");
         jPanel36.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
+        jComboBoxPersonasBenefactDon.setBackground(new java.awt.Color(249, 247, 250));
+        jComboBoxPersonasBenefactDon.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jPanel36.add(jComboBoxPersonasBenefactDon, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 220, 30));
+
+        JdcFechaEntrega.setBackground(new java.awt.Color(249, 247, 250));
         jPanel36.add(JdcFechaEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 220, -1));
 
         pnDonaciones.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, 570));
 
         jPanel38.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel38.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosDonacione.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosDonacione.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         jTableDatosDonacione.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Codigo", "Producto", "Fecha Entrega", "Motivo"
+
             }
         ));
         jTableDatosDonacione.setToolTipText("");
         jScrollPane15.setViewportView(jTableDatosDonacione);
 
-        btnREPORTEINDIVIDUALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALDON.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALDON.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
 
-        btnREPORTEGENERALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALDON.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALDON.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALDON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
         jPanel38Layout.setHorizontalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
-                        .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(213, 213, 213))
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(230, 230, 230))
+                    .addComponent(btnREPORTEGENERALDON, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEINDIVIDUALDON, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79))
         );
 
         pnDonaciones.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 680, 470));
 
         jPanel34.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel34.setForeground(new java.awt.Color(255, 255, 255));
         jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarDONABUSQ.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarDONABUSQ.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarDONABUSQ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
+        btnlimpiarDONABUSQ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarDONABUSQ.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel34.add(btnlimpiarDONABUSQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 50, 30));
 
@@ -1585,7 +1741,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         btnbuscarDONA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sear.png"))); // NOI18N
         btnbuscarDONA.setText("Buscar");
         btnbuscarDONA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel34.add(btnbuscarDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 70, 30));
+        jPanel34.add(btnbuscarDONA, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 80, 30));
 
         chekBsqDONA.setBackground(new java.awt.Color(249, 247, 250));
         chekBsqDONA.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
@@ -1614,82 +1770,98 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel17.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administrar Producto ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel17.setPreferredSize(new java.awt.Dimension(640, 811));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel61.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(102, 102, 102));
         jLabel61.setText("Tipo de Producto:");
-        jPanel17.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel17.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
         jLabel109.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel109.setForeground(new java.awt.Color(102, 102, 102));
         jLabel109.setText("Nombre de Proyecto:");
-        jPanel17.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
+        jPanel17.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         jSeparator83.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel17.add(jSeparator83, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 220, 10));
+        jPanel17.add(jSeparator83, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 220, 10));
 
         jSeparator86.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel17.add(jSeparator86, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 220, 12));
+        jPanel17.add(jSeparator86, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, 10));
 
-        jSeparator96.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel17.add(jSeparator96, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 220, 10));
-
+        jSpinnerCantidad.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jSpinnerCantidad.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         jSpinnerCantidad.setBorder(null);
-        jPanel17.add(jSpinnerCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 220, 30));
+        jPanel17.add(jSpinnerCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 220, 30));
 
+        txtTipoProducto.setBackground(new java.awt.Color(249, 247, 250));
+        txtTipoProducto.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         txtTipoProducto.setBorder(null);
-        jPanel17.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, 30));
+        jPanel17.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 220, 20));
 
         jLabel110.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel110.setForeground(new java.awt.Color(102, 102, 102));
         jLabel110.setText("Cantidad:");
         jPanel17.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, 20));
 
+        cbxIdDonacion.setBackground(new java.awt.Color(249, 247, 250));
+        cbxIdDonacion.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         cbxIdDonacion.setBorder(null);
-        jPanel17.add(cbxIdDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, 30));
+        jPanel17.add(cbxIdDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 220, 30));
 
-        btnCREARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-save-48.png"))); // NOI18N
-        jPanel17.add(btnCREARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 40, 50));
+        btnCREARPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnCREARPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnCREARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
+        btnCREARPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel17.add(btnCREARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 50, 40));
 
-        btnEDITARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-48.png"))); // NOI18N
-        jPanel17.add(btnEDITARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 40, 50));
+        btnEDITARPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnEDITARPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnEDITARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        btnEDITARPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel17.add(btnEDITARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 50, 40));
 
-        btnELIMINARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-48.png"))); // NOI18N
-        jPanel17.add(btnELIMINARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 40, 50));
+        btnELIMINARPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnELIMINARPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnELIMINARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        btnELIMINARPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel17.add(btnELIMINARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 50, 40));
 
-        btnLIMPIARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear.png"))); // NOI18N
-        jPanel17.add(btnLIMPIARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 40, 50));
+        btnLIMPIARPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnLIMPIARPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnLIMPIARPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
+        btnLIMPIARPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel17.add(btnLIMPIARPROD, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 50, 40));
 
+        cbxProyecto.setBackground(new java.awt.Color(249, 247, 250));
+        cbxProyecto.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         cbxProyecto.setBorder(null);
         cbxProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxProyectoActionPerformed(evt);
             }
         });
-        jPanel17.add(cbxProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 220, 30));
+        jPanel17.add(cbxProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 220, 30));
 
         jSeparator128.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel17.add(jSeparator128, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 333, 220, 10));
+        jPanel17.add(jSeparator128, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 220, 10));
 
         jLabel133.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
         jLabel133.setForeground(new java.awt.Color(102, 102, 102));
         jLabel133.setText("N° Donación:");
-        jPanel17.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        jPanel17.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         pnProductos.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 570));
 
         jPanel33.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel33.setForeground(new java.awt.Color(255, 255, 255));
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnlimpiarProdbsqd.setBackground(new java.awt.Color(249, 247, 250));
         btnlimpiarProdbsqd.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        btnlimpiarProdbsqd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-clear_1.png"))); // NOI18N
+        btnlimpiarProdbsqd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpiar.png"))); // NOI18N
         btnlimpiarProdbsqd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel33.add(btnlimpiarProdbsqd, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 50, 30));
 
@@ -1722,65 +1894,72 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnProductos.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 750, 100));
 
         jPanel40.setBackground(new java.awt.Color(249, 247, 250));
-        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Donaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel40.setForeground(new java.awt.Color(255, 255, 255));
 
         jTableDatosProductos.setBackground(new java.awt.Color(249, 247, 222));
+        jTableDatosProductos.setFont(new java.awt.Font("Leelawadee UI", 0, 11)); // NOI18N
         jTableDatosProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Cantidad", "Tipo de Producto", "Donación"
+
             }
         ));
         jTableDatosProductos.setToolTipText("");
         jScrollPane17.setViewportView(jTableDatosProductos);
 
-        btnREPORTEINDIVIDUALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-printer.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEINDIVIDUALPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEINDIVIDUALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporteIndi.png"))); // NOI18N
+        btnREPORTEINDIVIDUALPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnREPORTEGENERALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printed.png"))); // NOI18N
+        btnREPORTEGENERALPROD.setBackground(new java.awt.Color(249, 247, 250));
+        btnREPORTEGENERALPROD.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        btnREPORTEGENERALPROD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reportegene.png"))); // NOI18N
+        btnREPORTEGENERALPROD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
         jPanel40Layout.setHorizontalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel40Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel40Layout.createSequentialGroup()
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
+                        .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel40Layout.createSequentialGroup()
-                        .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
-                        .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(291, 291, 291))))
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))))
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel40Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+                    .addComponent(btnREPORTEGENERALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnREPORTEINDIVIDUALPROD, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82))
         );
 
         pnProductos.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 750, 470));
@@ -1798,32 +1977,30 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("SOPORTE TÉCNICO");
-        jPanel43.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        jPanel43.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Si necesita ayuda, contactece con sus programadores, proveedores del Programa ");
-        jPanel43.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        jPanel43.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 540, -1));
 
         jLabel6.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("\tAl número telefónico:");
-        jPanel43.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        jPanel43.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("0962670797");
-        jPanel43.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("\t\t\t        >.<");
-        jPanel43.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 80, -1));
+        jPanel43.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Graciasss");
-        jPanel43.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        jPanel43.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        jPanel43.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 470, -1));
 
         pnConfiguraciones.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 630, 590));
 
@@ -1832,39 +2009,51 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pnPrincipal.add(pnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 1150, 630));
 
         btnUsuarios.setBackground(new java.awt.Color(43, 45, 66));
+        btnUsuarios.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
         btnUsuarios.setText("USUARIOS");
+        btnUsuarios.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 180, 40));
 
         btnDonaciones.setBackground(new java.awt.Color(43, 45, 66));
+        btnDonaciones.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnDonaciones.setForeground(new java.awt.Color(255, 255, 255));
         btnDonaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-donation-30.png"))); // NOI18N
         btnDonaciones.setText("DONACIONES");
+        btnDonaciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 180, 40));
 
         btnProductos.setBackground(new java.awt.Color(43, 45, 66));
+        btnProductos.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-products-30.png"))); // NOI18N
         btnProductos.setText("PRODUCTOS");
+        btnProductos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 180, 40));
 
         btnproyectos.setBackground(new java.awt.Color(43, 45, 66));
+        btnproyectos.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnproyectos.setForeground(new java.awt.Color(255, 255, 255));
         btnproyectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-projects-30.png"))); // NOI18N
         btnproyectos.setText("PROYECTOS");
+        btnproyectos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnproyectos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 180, 40));
 
         btnInscripciones.setBackground(new java.awt.Color(43, 45, 66));
+        btnInscripciones.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnInscripciones.setForeground(new java.awt.Color(255, 255, 255));
         btnInscripciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/report.png"))); // NOI18N
         btnInscripciones.setText("INSCRIPCIONES");
+        btnInscripciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnInscripciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 180, 40));
 
         btnROLES.setBackground(new java.awt.Color(43, 45, 66));
+        btnROLES.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
         btnROLES.setForeground(new java.awt.Color(255, 255, 255));
         btnROLES.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empresario.png"))); // NOI18N
         btnROLES.setText("ROLES");
+        btnROLES.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnPrincipal.add(btnROLES, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, 40));
 
         jPanel3.add(pnPrincipal, java.awt.BorderLayout.CENTER);
@@ -3057,6 +3246,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel109;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
@@ -3103,7 +3293,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
@@ -3150,9 +3339,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator109;
     private javax.swing.JSeparator jSeparator110;
     private javax.swing.JSeparator jSeparator111;
-    private javax.swing.JSeparator jSeparator115;
     private javax.swing.JSeparator jSeparator116;
-    private javax.swing.JSeparator jSeparator117;
     private javax.swing.JSeparator jSeparator118;
     private javax.swing.JSeparator jSeparator128;
     private javax.swing.JSeparator jSeparator129;
@@ -3180,7 +3367,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator84;
     private javax.swing.JSeparator jSeparator86;
     private javax.swing.JSeparator jSeparator88;
-    private javax.swing.JSeparator jSeparator96;
     private javax.swing.JSeparator jSeparator98;
     private javax.swing.JSpinner jSpinnerCantidad;
     private javax.swing.JSpinner jSpinnerDiasParticipacion;
