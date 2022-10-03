@@ -242,7 +242,7 @@ public class ControllerProducto {
     }
 
     public void txtAyuda() {
-        TextPrompt tipoProd = new TextPrompt("Fruta", vistad.getTxtTipoProducto());
-        TextPrompt busqdProd = new TextPrompt("Pan", vistad.getTxtBsqProductos());
+        TextPrompt tipoProd = new TextPrompt("Jijode fruta", vistad.getTxtTipoProducto());
+        TextPrompt busqdProd = new TextPrompt("Pan q si to :0", vistad.getTxtBsqProductos());
     }
 }

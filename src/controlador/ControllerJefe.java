@@ -9,6 +9,7 @@ import Vista.ViewLogin;
 import modelo.DonacionJpaController;
 import modelo.InscripcionJpaController;
 import modelo.PersonaJpaController;
+import modelo.ProductoJpaController;
 import modelo.ProyectoJpaController;
 import modelo.UsuarioJpaController;
 import proyectofoca.ManagerFactory;
@@ -25,39 +26,43 @@ public class ControllerJefe extends ControllerPersona {
     ControllerDonacion cdona;
     ControllerProyecto cproy;
     ControllerInscripcion cins;
-
+    ControllerProducto cprod;
     //Login
     ControllerLogin clog;
 
     public ControllerJefe(ViewAdministrador vistap, ManagerFactory manager, PersonaJpaController modelPer) {
         super(vistap, manager, modelPer);
         vistap.setVisible(true);
+        vistap.getBtnROLES().setEnabled(false);
         vistap.getBtnUsuarios().setEnabled(false);
-//        vistap.getBtnConfiguracion().setEnabled(false);
+
         cper = new ControllerPersona(vistap, manager, new PersonaJpaController(manager.getEmf()));
         cper.iniciarControlPer();
-
+        
         cdona = new ControllerDonacion(vistap, manager, new DonacionJpaController(manager.getEmf()));
         cdona.iniciarControlDonacion();
         cproy = new ControllerProyecto(vistap, manager, new ProyectoJpaController(manager.getEmf()));
         cproy.iniciarControlProyecto();
         cins = new ControllerInscripcion(vistap, manager, new InscripcionJpaController(manager.getEmf()));
         cins.iniciarControlInscripcion();
-
+        cprod = new ControllerProducto(vistap, manager, new ProductoJpaController(manager.getEmf()));
+        cprod.iniciarControlProd();
         controldeEventos(vistap);
-        listaTipoPer();
+        
     }
 
     public void controldeEventos(ViewAdministrador vistap) {
 
-        vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));
-
-        vistap.getBtnInscripciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(4));
-        vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(5));
-        vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
-        vistap.getBtnproyectos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
+       vistap.getBtnPersona().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(3));
+       
+        vistap.getBtnproyectos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(4));
+        vistap.getBtnInscripciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(5));
+        vistap.getBtnDonaciones().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(6));
+        vistap.getBtnProductos().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(7));
+        vistap.getBtnAyuda().addActionListener(l -> vistap.getPnMenu().setSelectedIndex(8));
 
         vistap.getBtnSalir().addActionListener(l -> Regresar());
+        listaTipoPer();
     }
 
     public void Regresar() {

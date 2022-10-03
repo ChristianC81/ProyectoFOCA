@@ -1,0 +1,40 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/jfreechart-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jackson-databind-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/RSNotify v1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-beanutils-1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/castor-xml-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/groovy-all-2.4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jasperreports-6.20.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jackson-annotations-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-collections4-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-digester-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jackson-core-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.antlr-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.jpa.jpql-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/bcprov-jdk15on-1.62.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/ojdbc7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.jpa-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javax.persistence-2.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/itext-2.1.7.js7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/castor-core-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.asm-9.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-lang3-3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.jpa.modelgen.processor-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.moxy-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jcalendar-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/org.eclipse.persistence.core-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/ecj-4.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/commons-logging-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -103,22 +103,21 @@ public class ControllerPersona {
             this.vistap.getTxtsalario().setText(String.valueOf(persona.getSalariobenefac()));
             this.vistap.getTxtestrato().setText(persona.getEstratosbenefi());
             this.vistap.getTxtTitulo().setText(persona.getTitulo());
-           
 
             this.vistap.getTxthorario().setText(persona.getHorario());
             this.vistap.getTxtperiodo().setText(persona.getPeriodovol());
             this.vistap.getTxtTipoVol().setText(persona.getTipovol());
-            try{
-            if (persona.getFoto() == null) {
-                this.vistap.getLblFoto().setIcon(null);
-            } else {
-                Image foto;
-                ImageIcon icono;
-                foto = persona.getFoto().getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
-                icono = new ImageIcon(foto);
-                this.vistap.getLblFoto().setIcon(icono);
-            }
-            }catch(Exception e){
+            try {
+                if (persona.getFoto() == null) {
+                    this.vistap.getLblFoto().setIcon(null);
+                } else {
+                    Image foto;
+                    ImageIcon icono;
+                    foto = persona.getFoto().getScaledInstance(vistap.getLblFoto().getWidth(), vistap.getLblFoto().getHeight(), Image.SCALE_DEFAULT);
+                    icono = new ImageIcon(foto);
+                    this.vistap.getLblFoto().setIcon(icono);
+                }
+            } catch (Exception e) {
                 System.out.println("Persona seleccionada sin foto D:");
             }
 
@@ -136,21 +135,20 @@ public class ControllerPersona {
     }
 
     public void reporteIndividual() {
-    try{
-        // validar si existe un registro seleccionado 
-        if (persona != null) {
-            //contruir los parametros de encio al reporte
-            Map parameters = new HashMap(); //  los hash maps son clave valor 
-            // Asignar parametros al 
-            parameters.put("cod", persona.getIdper()); // clave seria el id // valor seria el persona.getIdpersona
-            // llamamos al metodo del reporte
-            Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reporte/RIPersonas.jasper", parameters);
-        } else {
-            Resouces.warning("ATENCIÓN!!!", "Debe seleccionar una persona :P");
-        }
-    }catch(NullPointerException e){
-        JOptionPane.showMessageDialog(vistap," :o no a ocurrido algo inesperado, porfavor intentelo más tarde!");
-    }
+        System.out.println(persona.getIdper());
+   
+            // validar si existe un registro seleccionado 
+            if (persona != null) {
+                //contruir los parametros de encio al reporte
+                Map parameters = new HashMap(); //  los hash maps son clave valor 
+                // Asignar parametros al 
+                parameters.put("cod", persona.getIdper()); // clave seria el id // valor seria el persona.getIdpersona
+                // llamamos al metodo del reporte
+                Resouces.imprimirReporte(ManagerFactory.getConnection(manager.getEmf().createEntityManager()), "/reportes/RIPersonas.jasper", parameters);
+            } else {
+                Resouces.warning("ATENCIÓN!!!", "Debe seleccionar una persona :P");
+            }
+   
     }
 
     public void guardarPersona() {
@@ -174,7 +172,7 @@ public class ControllerPersona {
             }
 
             persona.setGeneroper(genero);
-            persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+            persona.setFechanacimiento(this.vistap.getJdcFechaNacPer().getDate());
             persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
             salario = Double.valueOf(this.vistap.getTxtsalario().getText());
             persona.setSalariobenefac(salario);
@@ -231,7 +229,7 @@ public class ControllerPersona {
                     }
 
                     persona.setGeneroper(genero);
-                    persona.setFechanacimiento( this.vistap.getJdcFechaNacPer().getDate());
+                    persona.setFechanacimiento(this.vistap.getJdcFechaNacPer().getDate());
                     persona.setEstadocivil(this.vistap.getTxtestadocivil().getText());
                     salario = Double.valueOf(this.vistap.getTxtsalario().getText());
                     persona.setSalariobenefac(salario);
@@ -248,14 +246,14 @@ public class ControllerPersona {
                     persona.setHorario(this.vistap.getTxthorario().getText());
                     persona.setPeriodovol(this.vistap.getTxtperiodo().getText());
                     persona.setTipovol(this.vistap.getTxtTipoVol().getText());
-                    try{
-                    if (jfc.getSelectedFile() == null) {
-                        
-                        persona.setFoto(null);
-                    } else {
-                        persona.setFoto(jfc.getSelectedFile());
-                    }
-                    }catch(NullPointerException e){
+                    try {
+                        if (jfc.getSelectedFile() == null) {
+
+                            persona.setFoto(null);
+                        } else {
+                            persona.setFoto(jfc.getSelectedFile());
+                        }
+                    } catch (NullPointerException e) {
                         System.out.println("No esta seleccionada la foto :c");
                     }
                     modeloPersona.edit(persona);
@@ -302,9 +300,9 @@ public class ControllerPersona {
     }
 
     public void limpiarC() {
-
+       
         this.vistap.getTxtcedulaPer().setText("");
-        this.vistap.getCbxTipoPer().setSelectedItem("");
+        this.vistap.getCbxTipoPer().setSelectedIndex(0);
         this.vistap.getTxtnombrePer().setText("");
         this.vistap.getTxtapellidoPer().setText("");
         this.vistap.getTxtdireccionPer().setText("");
