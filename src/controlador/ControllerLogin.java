@@ -175,7 +175,7 @@ public class ControllerLogin {
                     + "Fecha de Acceso: " + dtf4.format(LocalDateTime.now());
             String mensajehtml = "Hola! " + nom_ape + "<br>Nuevo Ingreso al Sistema de Gestion OAC como " + rol + " <br> Fecha de Acceso: " + dtf4.format(LocalDateTime.now())
                     + "<br>"
-                    + "<img src=\"C:/Users/chris/Documents/NetBeansProjects/ProyectoFOCA/src/images/Logo.png\" >"
+                    + "<img src=\"C:/Users/Laptop/Documents/GitHub/ProyectoFOCA/src/images/Logo.png\" >"
                     + "<br>"
                     + "<i>Prueba de Mensaje </i>";
             BodyPart texto = new MimeBodyPart();

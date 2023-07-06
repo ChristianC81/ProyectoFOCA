@@ -198,7 +198,7 @@ public class InicioSistema extends javax.swing.JFrame implements Runnable {
 
         initComponents();
 
-        loadURL("file:///C://Users/chris/Documents/NetBeansProjects/ProyectoFOCA/src/html/index.html");
+        loadURL("file:///C://Users/Laptop/Documents/GitHub/ProyectoFOCA/src/html/index.html");
 
         frame.pack();
         frame.setVisible(true);
